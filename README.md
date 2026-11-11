@@ -1,6 +1,14 @@
 # Flamo Riffs 创意集
 
-源文件在 `html-examples/home/`；`pipe/` 是已接入的第一个作品。官网入口指向 `https://riffs.flamo.dev/`。
+**[在线访问 Flamo Riffs 创意集 →](https://riffs.flamo.dev/)**
+
+这里收录了用 Flamo 制作的交互演示。首页可以搜索作品、观看视频预览，点击卡片就能动手体验。在第一个作品[管道实验室](https://riffs.flamo.dev/pipe/)里，你可以逐条暂停管道、反转流向，也可以用一组按钮同时控制整个管网。
+
+## 关于 Flamo
+
+Flamo 是一款交互界面创作工具。你可以导入 Figma 设计，保留图层和组件结构，用 TypeScript 或 JavaScript 为图形添加行为、接入数据，再到 Flamo Studio 中预览和调试。完成的设计可以导出为 Web Component，嵌入自己的网页或业务系统。管道实验室里的五个管道组件就是这样接入页面的。
+
+[访问 Flamo 官网](https://flamo.dev/) · [阅读开发文档](https://flamo.dev/docs/)
 
 ## 本地预览
 
@@ -8,7 +16,7 @@
 node html-examples/serve.mjs 8189
 ```
 
-打开 http://localhost:8189/ 。根路径和 `/home/` 都是创意首页；`/pipe/` 是工作台。搜索条件写在 `?q=`，可以复制或刷新。播放预览按钮只播放片段；点击卡片进入演示。
+打开 [本地创意首页](http://localhost:8189/) 即可预览。`html-examples/home/` 是首页源码目录，`html-examples/pipe/` 是管道实验室源码目录。
 
 ## 构建静态站
 

@@ -1,0 +1,33 @@
+Flamo Runtime Proprietary License
+
+Copyright (c) 2025-present support@flamo.dev. All rights reserved.
+
+This license applies to the Flamo-owned source code, compiled code,
+documentation, and other materials of the @flamo/runtime package (the
+"Software"). The Software is proprietary and is not open-source software.
+
+No permission is granted by possession of, access to, or delivery of the
+Software to use, reproduce, modify, distribute, sublicense, sell, disclose,
+or create derivative works from it. Any such rights must be expressly
+granted in a separate written agreement by the copyright owner. Authorized
+use is limited to the scope and conditions of that agreement.
+
+Except as permitted by that agreement or by applicable law, you may not
+reverse engineer, decompile, or disassemble the Software, attempt to derive
+its source code, or remove or alter copyright, license, or ownership notices.
+All rights not expressly granted are reserved. No trademark or patent rights
+are granted by this notice.
+
+Third-party software and assets distributed with or referenced by the
+Software remain subject to their respective licenses and ownership notices.
+This license neither replaces nor limits rights granted by those licenses.
+Customer-owned materials are not relicensed by this notice.
+
+Unless a separate written agreement states otherwise, the Software is
+provided "AS IS", without warranties of any kind, express or implied,
+including merchantability, fitness for a particular purpose, and
+non-infringement. To the maximum extent permitted by applicable law, the
+copyright owner is not liable for claims, damages, or other liability
+arising from the Software or its use.
+
+For licensing inquiries, contact support@flamo.dev.

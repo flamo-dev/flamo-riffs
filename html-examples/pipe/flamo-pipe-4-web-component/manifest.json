@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "kind": "flamo.web-component",
+  "viewport": {
+    "pan": false,
+    "zoom": false,
+    "fit": "contain",
+    "transparentBackground": true
+  },
+  "projectId": "1a28eef4-426b-4e03-aa13-72e744cd0c86",
+  "tagName": "flamo-pipe-4",
+  "className": "FlamoPipe4Element",
+  "packageName": "@flamo-components/flamo-pipe-4",
+  "name": "Pipe-4",
+  "generatedAt": "2026-11-10T04:18:00.955Z",
+  "source": {
+    "kind": "local-fig",
+    "id": "e152e609-f128-4def-acb1-1a5b5ab0294a",
+    "name": "管道"
+  },
+  "entry": "dist/flamo-pipe-4.js",
+  "types": "dist/flamo-pipe-4.d.ts",
+  "surface": {
+    "componentPropertiesVersion": "1.0"
+  },
+  "resources": [],
+  "scripts": [
+    {
+      "id": "managed:hmi.pipe-flow@2.6.0",
+      "compiled": ".flamo/interaction-library/managed/behaviors/hmi.pipe-flow/2.6.0.js",
+      "kind": "managed",
+      "language": "js",
+      "behaviorRef": "hmi.pipe-flow",
+      "version": "2.6.0"
+    }
+  ],
+  "slots": {},
+  "startup": {
+    "deferredPaintNodeIds": [
+      "94:23",
+      "94:20",
+      "94:22",
+      "94:27"
+    ]
+  },
+  "documentation": {
+    "schemaVersion": 1,
+    "interactions": "interactions.json",
+    "guide": "INTERACTIONS.md",
+    "api": "INTERACTION_API.md",
+    "integrity": "sha256:f39868e17a471ae51c73b000165911bb0ef431e110c650cce40cd5f68e944c5a"
+  },
+  "integration": {
+    "projectId": "1a28eef4-426b-4e03-aa13-72e744cd0c86",
+    "contractId": "sha256:c3e02a5ce2301bd12dc9c67a79d81d43e9aeb386e34474dff18e1299a0f327f0",
+    "artifactRevision": "local-acba125e3295f09be34a"
+  },
+  "interactionTargets": {},
+  "assets": [],
+  "compiledResources": {
+    "schema": "flamo.resources/2",
+    "manifest": "dist/resources/artifact.json",
+    "integrity": "sha256:6079a71ac52690a150ff7f6937358ebc77ef4250088732165677a6532e1b386c",
+    "report": {
+      "compiler": "flamo.runtime-resources/1",
+      "revision": "local-acba125e3295f09be34a",
+      "manifestBytes": 18850,
+      "binaryBytes": 11788,
+      "blocks": 5,
+      "references": 6,
+      "retained": [
+        "selected dependency closure",
+        "dynamic scripts and variables",
+        "unknown extensions"
+      ],
+      "decoding": "instance-owned mutable arrays"
+    }
+  },
+  "packaging": {
+    "sourceMap": false,
+    "includeResources": false,
+    "cdnBase": "http://localhost:8080/common/",
+    "sharedResources": {
+      "runtime": "http://localhost:8080/common/flamo-runtime/index.es.js?v=6d2ff1a7ac46cbf71db7bc0e5e550b1103dfff6826484a351327f677c7d408f6",
+      "viewport": "http://localhost:8080/common/component-viewport.js?v=7f533668b721e562ddf4b4d8b1b520b1b229234216c8393b7cf1cf5192a1ccd0"
+    },
+    "interactions": "local",
+    "boundaryNodeId": "94:21",
+    "sourceArtifact": "view/data/artifact.flamo.json",
+    "artifactRevision": "local-acba125e3295f09be34a"
+  },
+  "contract": {
+    "components": [],
+    "bindings": []
+  },
+  "ai": {
+    "entry": "AGENTS.md",
+    "usage": "README.md",
+    "typeHints": "dist/flamo-pipe-4.d.ts"
+  },
+  "foundation": {
+    "ref": {
+      "schemaVersion": 1,
+      "namespace": "project.1a28eef4-426b-4e03-aa13-72e744cd0c86",
+      "id": "component-flamo-pipe-4",
+      "version": "0.1.0",
+      "exportName": "Pipe4",
+      "artifactRevision": "local-acba125e3295f09be34a",
+      "artifactHash": "sha256:43468a13a984cfd2acec9cd98b64de47bea8298a907f2125fd5febbac1112c06",
+      "runtimeAbi": "runtime-v1",
+      "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+    },
+    "componentRef": "flamo://components/project.1a28eef4-426b-4e03-aa13-72e744cd0c86/component-flamo-pipe-4@0.1.0#Pipe4",
+    "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
+    "compositionHash": "sha256:1b1cc489206950464741afe42801dcde19890d151d352a6ae9879ceb1b5d33d6",
+    "runtimeAbi": "runtime-v1",
+    "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+  },
+  "distribution": {
+    "loader": "dist/flamo-pipe-4.loader.js",
+    "loadingStyles": "dist/component-loading.css",
+    "browserEsm": "dist/flamo-pipe-4.module.js",
+    "browserEsmManifest": "dist/flamo-pipe-4.browser-manifest.json",
+    "thinSingleJs": "dist/flamo-pipe-4.thin.js",
+    "thinSingleJsModule": "dist/flamo-pipe-4.thin.module.js",
+    "thinSingleJsManifest": "dist/flamo-pipe-4.thin.browser-manifest.json",
+    "customElementsManifest": "custom-elements.json"
+  }
+}

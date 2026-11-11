@@ -1,0 +1,35 @@
+{
+  "name": "@flamo-components/flamo-pipe-3",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "main": "dist/flamo-pipe-3.js",
+  "module": "dist/flamo-pipe-3.js",
+  "types": "dist/flamo-pipe-3.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "AGENTS.md",
+    "manifest.json",
+    "custom-elements.json",
+    "interactions.json",
+    "INTERACTIONS.md",
+    "INTERACTION_API.md"
+  ],
+  "customElements": "custom-elements.json",
+  "exports": {
+    ".": {
+      "types": "./dist/flamo-pipe-3.d.ts",
+      "import": "./dist/flamo-pipe-3.js"
+    },
+    "./browser-manifest": "./dist/flamo-pipe-3.browser-manifest.json",
+    "./loader": "./dist/flamo-pipe-3.loader.js",
+    "./loading.css": "./dist/component-loading.css",
+    "./integration": {
+      "types": "./dist/component-integration.d.ts",
+      "import": "./dist/component-integration.js"
+    },
+    "./thin": "./dist/flamo-pipe-3.thin.js",
+    "./thin-browser-manifest": "./dist/flamo-pipe-3.thin.browser-manifest.json"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": "scene-v1",
+  "shape": [
+    "code",
+    "message",
+    "path",
+    "nodeRef",
+    "expected",
+    "actual",
+    "suggestions",
+    "docsRef",
+    "retryable",
+    "severity"
+  ],
+  "codes": {
+    "scene.node_not_found": "The node reference cannot be resolved in the current instance.",
+    "scene.cross_instance_reference": "The node belongs to a different instance.",
+    "scene.parent_cycle": "The requested hierarchy would contain a cycle.",
+    "scene.placement_conflict": "More than one of index/before/after was supplied.",
+    "scene.sibling_not_in_parent": "The placement sibling is not a child of the target parent.",
+    "scene.primitive_not_supported": "The PrimitiveRegistry does not contain this kind.",
+    "scene.property_not_writable": "The semantic property is not writable for this node.",
+    "scene.backend_not_registered": "The requested HtmlSurface backend is unavailable.",
+    "scene.capability_denied": "The caller or node lacks the required capability.",
+    "scene.revision_conflict": "The mutation was based on a stale runtime revision.",
+    "scene.id_conflict": "The requested id or tempId is already in use.",
+    "scene.create_limit_exceeded": "The transaction exceeds the configured creation budget.",
+    "scene.apply_failed": "Execution failed after validation; inspect retryable and traceId.",
+    "LAYOUT_WRITE_CONFLICT": "The script attempts to change a layout-owned property or design layout configuration.",
+    "LAYOUT_CONTEXT_UNAVAILABLE": "No reliable node layout context is available; wait for materialization before geometry mutation."
+  }
+}

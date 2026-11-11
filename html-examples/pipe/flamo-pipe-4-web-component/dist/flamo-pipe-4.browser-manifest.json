@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "ref": {
+    "schemaVersion": 1,
+    "namespace": "project.1a28eef4-426b-4e03-aa13-72e744cd0c86",
+    "id": "component-flamo-pipe-4",
+    "version": "0.1.0",
+    "exportName": "Pipe4",
+    "artifactRevision": "local-acba125e3295f09be34a",
+    "artifactHash": "sha256:43468a13a984cfd2acec9cd98b64de47bea8298a907f2125fd5febbac1112c06",
+    "runtimeAbi": "runtime-v1",
+    "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+  },
+  "tagName": "flamo-pipe-4",
+  "packageMode": "browser-esm",
+  "entry": "https://components.invalid/flamo-pipe-4/dist/flamo-pipe-4.module.js",
+  "resourceBase": "https://components.invalid/flamo-pipe-4/dist/",
+  "integrity": "sha256:79608180ca320e53b0bb29a16f8d9323887c1d80b3e980847273c701643c85ca",
+  "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
+  "compositionHash": "sha256:1b1cc489206950464741afe42801dcde19890d151d352a6ae9879ceb1b5d33d6",
+  "dependencies": [],
+  "assets": [
+    {
+      "url": "https://components.invalid/flamo-pipe-4/dist/resources/artifact.json",
+      "integrity": "sha256:6079a71ac52690a150ff7f6937358ebc77ef4250088732165677a6532e1b386c",
+      "type": "application/json"
+    },
+    {
+      "url": "https://components.invalid/flamo-pipe-4/dist/component-resources.js",
+      "integrity": "sha256:a6587f2c1d51a5560d1abb442883a99a9ef063d74e16b5e1350d8d33bfffd8fd",
+      "type": "text/javascript"
+    },
+    {
+      "url": "https://components.invalid/flamo-pipe-4/dist/resources/08506976c22d53b906b1e68de595ca0345f168150eabe624c7e7db48b4ebfdec.bin",
+      "integrity": "sha256:08506976c22d53b906b1e68de595ca0345f168150eabe624c7e7db48b4ebfdec",
+      "type": "application/octet-stream"
+    }
+  ]
+}

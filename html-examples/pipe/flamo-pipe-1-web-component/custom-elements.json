@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "README.md",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "dist/flamo-pipe-1.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "name": "FlamoPipe1Element",
+          "customElement": true,
+          "tagName": "flamo-pipe-1",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getInteractionTarget",
+              "parameters": [
+                {
+                  "name": "targetId",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "FlamoInteractionTarget | null"
+                }
+              },
+              "description": "Instance-scoped target. See INTERACTION_API.md and interactions.json."
+            },
+            {
+              "kind": "method",
+              "name": "inspectInteractionTargets",
+              "return": {
+                "type": {
+                  "text": "FlamoInteractionTargetStatus"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "slotStyles",
+              "type": {
+                "text": "string"
+              },
+              "description": "CSS scoped by the host to projected slot content; empty string clears it."
+            }
+          ],
+          "attributes": [],
+          "events": [
+            {
+              "name": "flamo-interaction-targets-change",
+              "type": {
+                "text": "CustomEvent<{ generation: number; targetIds: string[] }>"
+              }
+            },
+            {
+              "name": "flamo-disconnected",
+              "type": {
+                "text": "CustomEvent<null>"
+              }
+            },
+            {
+              "name": "flamo-destroyed",
+              "type": {
+                "text": "CustomEvent<null>"
+              }
+            },
+            {
+              "name": "flamo-integration-error",
+              "type": {
+                "text": "CustomEvent<{ targetId: string; message: string }>"
+              }
+            }
+          ],
+          "slots": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "flamo-pipe-1",
+          "declaration": {
+            "name": "FlamoPipe1Element",
+            "module": "dist/flamo-pipe-1.js"
+          }
+        }
+      ]
+    }
+  ]
+}

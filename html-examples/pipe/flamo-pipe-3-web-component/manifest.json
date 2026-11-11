@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "kind": "flamo.web-component",
+  "viewport": {
+    "pan": false,
+    "zoom": false,
+    "fit": "contain",
+    "transparentBackground": true
+  },
+  "projectId": "9c6e9c90-5573-4133-961c-0a2091f5083d",
+  "tagName": "flamo-pipe-3",
+  "className": "FlamoPipe3Element",
+  "packageName": "@flamo-components/flamo-pipe-3",
+  "name": "Pipe-3",
+  "generatedAt": "2026-11-09T02:36:18.267Z",
+  "source": {
+    "kind": "local-fig",
+    "id": "0206b9df-14d3-4714-913e-66eeef8dfebf",
+    "name": "管道"
+  },
+  "entry": "dist/flamo-pipe-3.js",
+  "types": "dist/flamo-pipe-3.d.ts",
+  "surface": {
+    "componentPropertiesVersion": "1.0"
+  },
+  "resources": [],
+  "scripts": [
+    {
+      "id": "managed:hmi.pipe-flow@2.2.0",
+      "compiled": ".flamo/interaction-library/managed/behaviors/hmi.pipe-flow/2.2.0.js",
+      "kind": "managed",
+      "language": "js",
+      "behaviorRef": "hmi.pipe-flow",
+      "version": "2.2.0"
+    }
+  ],
+  "slots": {},
+  "startup": {
+    "deferredPaintNodeIds": [
+      "10:13"
+    ]
+  },
+  "documentation": {
+    "schemaVersion": 1,
+    "interactions": "interactions.json",
+    "guide": "INTERACTIONS.md",
+    "api": "INTERACTION_API.md",
+    "integrity": "sha256:b00f6c2ae04ee96a2c512b58fbe8786caab9bd635cbd9c7a97c0449eb686d55f"
+  },
+  "integration": {
+    "projectId": "9c6e9c90-5573-4133-961c-0a2091f5083d",
+    "contractId": "sha256:6b28aa86dc1d1d5f533dd1e7b48abc2182c49ba0b3d413128e4077177eb97c83",
+    "artifactRevision": "local-4b0a3b2770efb30e3021"
+  },
+  "interactionTargets": {},
+  "assets": [],
+  "compiledResources": {
+    "schema": "flamo.resources/2",
+    "manifest": "dist/resources/artifact.json",
+    "integrity": "sha256:6c06069941f875a5e7bfca31cca60159179926abeb69c9019bee4c55e48fe12d",
+    "report": {
+      "compiler": "flamo.runtime-resources/1",
+      "revision": "local-4b0a3b2770efb30e3021",
+      "manifestBytes": 8793,
+      "binaryBytes": 160930,
+      "blocks": 5,
+      "references": 6,
+      "retained": [
+        "selected dependency closure",
+        "dynamic scripts and variables",
+        "unknown extensions"
+      ],
+      "decoding": "instance-owned mutable arrays"
+    }
+  },
+  "packaging": {
+    "sourceMap": false,
+    "includeResources": false,
+    "cdnBase": "http://localhost:8080/common/",
+    "sharedResources": {
+      "runtime": "http://localhost:8080/common/flamo-runtime/index.es.js?v=6d2ff1a7ac46cbf71db7bc0e5e550b1103dfff6826484a351327f677c7d408f6",
+      "viewport": "http://localhost:8080/common/component-viewport.js?v=7f533668b721e562ddf4b4d8b1b520b1b229234216c8393b7cf1cf5192a1ccd0"
+    },
+    "interactions": "local",
+    "boundaryNodeId": "10:11",
+    "sourceArtifact": "view/data/artifact.flamo.json",
+    "artifactRevision": "local-4b0a3b2770efb30e3021"
+  },
+  "contract": {
+    "components": [],
+    "bindings": []
+  },
+  "ai": {
+    "entry": "AGENTS.md",
+    "usage": "README.md",
+    "typeHints": "dist/flamo-pipe-3.d.ts"
+  },
+  "foundation": {
+    "ref": {
+      "schemaVersion": 1,
+      "namespace": "project.9c6e9c90-5573-4133-961c-0a2091f5083d",
+      "id": "component-flamo-pipe-3",
+      "version": "0.1.0",
+      "exportName": "Pipe3",
+      "artifactRevision": "local-4b0a3b2770efb30e3021",
+      "artifactHash": "sha256:6e1128fab0d27c1100c1158ca1907865db6839997ed67bc3a5563d5a948dd51d",
+      "runtimeAbi": "runtime-v1",
+      "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+    },
+    "componentRef": "flamo://components/project.9c6e9c90-5573-4133-961c-0a2091f5083d/component-flamo-pipe-3@0.1.0#Pipe3",
+    "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
+    "compositionHash": "sha256:7dafe1fbd4799af36923ebc498a586367960b28fd4bbbdd2c8bd0e6b21ad6459",
+    "runtimeAbi": "runtime-v1",
+    "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+  },
+  "distribution": {
+    "loader": "dist/flamo-pipe-3.loader.js",
+    "loadingStyles": "dist/component-loading.css",
+    "browserEsm": "dist/flamo-pipe-3.module.js",
+    "browserEsmManifest": "dist/flamo-pipe-3.browser-manifest.json",
+    "thinSingleJs": "dist/flamo-pipe-3.thin.js",
+    "thinSingleJsModule": "dist/flamo-pipe-3.thin.module.js",
+    "thinSingleJsManifest": "dist/flamo-pipe-3.thin.browser-manifest.json",
+    "customElementsManifest": "custom-elements.json"
+  }
+}

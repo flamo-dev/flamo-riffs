@@ -1,0 +1,25 @@
+# 站点构建与发布产物。组件包内部的 dist/ 是演示的输入，需要提交。
+/dist/
+/flamo-riffs-site.tar.gz
+/flamo-projects/*/flamo-*-web-component.zip
+
+# Flamo 专有 Runtime 从对应版本的共享资源包安装，保留许可声明。
+/flamo-projects/*/flamo-shared-resources-*.zip
+/html-examples/common/flamo-runtime/*
+!/html-examples/common/flamo-runtime/*FLAMO-RUNTIME-LICENSE
+!/html-examples/common/flamo-runtime/*THIRD-PARTY-LICENSES.txt
+
+# 本地恢复记录、验收输出和未用于演示的个人图片。
+/flamo-projects/*/.flamo/recovery/
+/html-examples/*/verification/
+/html-examples/*/flamo-integration.report.json
+/html-examples/common/me.jpeg
+
+# 开发工具与本机配置。
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

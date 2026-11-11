@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f8">
+  <meta name="description" content="Flamo 管道交互演示：独立控制四种管道与组合管道的运行状态和流动方向。">
+  <title>Flamo · 管道实验室</title>
+  <link rel="icon" type="image/png" href="../common/favicon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/common/riffs.css?v=2">
+  <link rel="canonical" href="https://riffs.flamo.dev/pipe/">
+  <script defer src="/common/riffs-shell.js?v=2"></script>
+  <script type="module" src="./demo.js?v=20261110-pipe4-acba125e"></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="3"/></symbol>
+    <symbol id="icon-forward" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="icon-reverse" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+  </svg>
+
+  <header data-riffs-header><a href="/">Flamo Riffs</a></header>
+
+  <main id="main">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">FLAMO STUDIO <span>管道组件演示</span></p>
+        <h1 id="page-title">让流动，<span>清晰可见。</span></h1>
+        <p class="intro-copy">从单条路径到组合管网，探索流动的每一种可能。<br class="mobile-break">点击卡片下方按钮，独立控制启停与方向。</p>
+      </div>
+      <div class="overview" aria-label="组件运行概览">
+        <div><strong>05</strong><span>交互组件</span></div>
+        <span class="overview-divider"></span>
+        <div><strong id="running-count">00</strong><span><i class="tiny-dot"></i>正在运行</span></div>
+      </div>
+    </section>
+
+    <section aria-label="管道组件展示">
+      <div class="section-heading"><h2>流动工作台</h2><p><span class="tiny-dot"></span><span id="workspace-status" role="status">正在准备组件</span></p></div>
+      <div class="component-grid">
+        <article class="pipe-card" data-pipe="1" aria-labelledby="pipe-title-1">
+          <header class="card-heading"><div><span class="card-number">01</span><h3 id="pipe-title-1">管道一</h3></div><span class="state-pill" data-state-label>加载中</span></header>
+          <div class="stage">
+            <span class="stage-caption">SINGLE PATH / 01</span>
+            <flamo-pipe-1 data-flamo-component inert aria-busy="true" aria-label="管道一动态预览"></flamo-pipe-1>
+            <div class="loading-overlay" role="status"><span class="loading-indicator"></span><span data-loading-message>正在加载管道…</span><button class="retry" hidden type="button">刷新重试</button></div>
+            <span class="stage-corner" aria-hidden="true">+</span>
+          </div>
+          <footer class="card-footer"><code>flamo-pipe-1</code><div class="controls"><button type="button" data-action="play" disabled><svg class="icon"><use href="#icon-pause"/></svg><span>暂停</span></button><button type="button" data-action="direction" disabled><svg class="icon"><use href="#icon-forward"/></svg><span>正向</span></button></div></footer>
+          <p class="card-error" role="alert" hidden></p>
+        </article>
+
+        <article class="pipe-card" data-pipe="2" aria-labelledby="pipe-title-2">
+          <header class="card-heading"><div><span class="card-number">02</span><h3 id="pipe-title-2">管道二</h3></div><span class="state-pill" data-state-label>加载中</span></header>
+          <div class="stage">
+            <span class="stage-caption">SINGLE PATH / 02</span>
+            <flamo-pipe-2 data-flamo-component inert aria-busy="true" aria-label="管道二动态预览"></flamo-pipe-2>
+            <div class="loading-overlay" role="status"><span class="loading-indicator"></span><span data-loading-message>正在加载管道…</span><button class="retry" hidden type="button">刷新重试</button></div>
+            <span class="stage-corner" aria-hidden="true">+</span>
+          </div>
+          <footer class="card-footer"><code>flamo-pipe-2</code><div class="controls"><button type="button" data-action="play" disabled><svg class="icon"><use href="#icon-pause"/></svg><span>暂停</span></button><button type="button" data-action="direction" disabled><svg class="icon"><use href="#icon-forward"/></svg><span>正向</span></button></div></footer>
+          <p class="card-error" role="alert" hidden></p>
+        </article>
+
+        <article class="pipe-card" data-pipe="3" aria-labelledby="pipe-title-3">
+          <header class="card-heading"><div><span class="card-number">03</span><h3 id="pipe-title-3">管道三</h3></div><span class="state-pill" data-state-label>加载中</span></header>
+          <div class="stage">
+            <span class="stage-caption">SINGLE PATH / 03</span>
+            <flamo-pipe-3 data-flamo-component inert aria-busy="true" aria-label="管道三动态预览"></flamo-pipe-3>
+            <div class="loading-overlay" role="status"><span class="loading-indicator"></span><span data-loading-message>正在加载管道…</span><button class="retry" hidden type="button">刷新重试</button></div>
+            <span class="stage-corner" aria-hidden="true">+</span>
+          </div>
+          <footer class="card-footer"><code>flamo-pipe-3</code><div class="controls"><button type="button" data-action="play" disabled><svg class="icon"><use href="#icon-pause"/></svg><span>暂停</span></button><button type="button" data-action="direction" disabled><svg class="icon"><use href="#icon-forward"/></svg><span>正向</span></button></div></footer>
+          <p class="card-error" role="alert" hidden></p>
+        </article>
+
+        <article class="pipe-card" data-pipe="4" aria-labelledby="pipe-title-4">
+          <header class="card-heading"><div><span class="card-number">04</span><h3 id="pipe-title-4">管道四</h3></div><span class="state-pill" data-state-label>加载中</span></header>
+          <div class="stage">
+            <span class="stage-caption">SINGLE PATH / 04</span>
+            <flamo-pipe-4 data-flamo-component inert aria-busy="true" aria-label="管道四动态预览"></flamo-pipe-4>
+            <div class="loading-overlay" role="status"><span class="loading-indicator"></span><span data-loading-message>正在加载管道…</span><button class="retry" hidden type="button">刷新重试</button></div>
+            <span class="stage-corner" aria-hidden="true">+</span>
+          </div>
+          <footer class="card-footer"><code>flamo-pipe-4</code><div class="controls"><button type="button" data-action="play" disabled><svg class="icon"><use href="#icon-pause"/></svg><span>暂停</span></button><button type="button" data-action="direction" disabled><svg class="icon"><use href="#icon-forward"/></svg><span>正向</span></button></div></footer>
+          <p class="card-error" role="alert" hidden></p>
+        </article>
+
+        <article class="pipe-card group-card" data-pipe="group" aria-labelledby="pipe-title-group">
+          <header class="card-heading"><div><span class="card-number">05</span><h3 id="pipe-title-group">组合管道</h3></div><span class="state-pill" data-state-label>加载中</span></header>
+          <div class="group-intro"><span class="group-badge">CONNECTED FLOW</span><p>多条路径，同步流动。</p><span>一组控制，联动整个管网。</span></div>
+          <div class="stage">
+            <span class="stage-caption">PIPE NETWORK / 05</span>
+            <flamo-pipe-group data-flamo-component inert aria-busy="true" aria-label="组合管道动态预览"></flamo-pipe-group>
+            <div class="loading-overlay" role="status"><span class="loading-indicator"></span><span data-loading-message>正在加载管网…</span><button class="retry" hidden type="button">刷新重试</button></div>
+            <span class="stage-corner" aria-hidden="true">+</span>
+          </div>
+          <div class="group-note"><span class="tiny-dot"></span>组内管道同步启停与切换方向</div>
+          <footer class="card-footer"><code>flamo-pipe-group</code><div class="controls"><button type="button" data-action="play" disabled><svg class="icon"><use href="#icon-pause"/></svg><span>暂停</span></button><button type="button" data-action="direction" disabled><svg class="icon"><use href="#icon-forward"/></svg><span>正向</span></button></div></footer>
+          <p class="card-error" role="alert" hidden></p>
+        </article>
+      </div>
+    </section>
+    <div class="workbench-tip"><span>↔</span>方向按钮显示当前流向，点击即可切换；暂停后仍可调整方向。</div>
+    <noscript><p class="noscript">请启用 JavaScript 以加载管道和使用控制按钮。</p></noscript>
+  </main>
+  <footer data-riffs-footer><a href="https://flamo.dev/">Flamo 官网</a></footer>
+</body>
+</html>

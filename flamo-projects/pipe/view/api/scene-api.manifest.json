@@ -1,0 +1,19 @@
+{
+  "version": "scene-v1",
+  "owner": "@flamo/runtime",
+  "scope": "FlamoInstance",
+  "apis": [
+    { "name": "scene.capabilities", "signature": "scene.capabilities() -> SceneCapabilities", "constraints": ["Call before generating mutations when the runtime build is not known."] },
+    { "name": "scene.describe", "signature": "scene.describe({ scope?, depth?, maxNodes?, include? }) -> SceneDescription", "constraints": ["Returns a bounded semantic projection, never ECS objects."] },
+    { "name": "scene.inspect", "signature": "scene.inspect(nodeRef) -> RuntimeNodeDescription | null", "constraints": ["Use after flush to verify runtime ownership, hierarchy, and capabilities."] },
+    { "name": "scene.findByName", "signature": "scene.findByName(name, { scope?: NodeRef | 'global' }) -> RuntimeNode[]", "constraints": ["Name matching is exact and case-sensitive.", "Returns semantic Artifact, instance-scoped, or Scene-created nodes only; mounted ECS clone ids are never traversed or returned.", "Duplicate names are preserved in deterministic scene-tree order within the semantic domain; no match or an unresolved scope returns an empty array.", "global is limited to the owning FlamoInstance and does not cross runtime instances.", "Use ctx.mounted.resolve/children/probe when current physical materialization is required."] },
+    { "name": "scene.create", "signature": "scene.create(kind, props?) | scene.create(FlamoNodeSpec)", "constraints": ["Creates a detached runtime node.", "Built-in primitives are framework-owned and do not depend on a Figma template."] },
+    { "name": "scene.mount", "signature": "scene.mount(node, { parent, index? | before? | after?, position? })", "constraints": ["Exactly zero or one placement selector may be supplied.", "References must resolve inside the same instance."] },
+    { "name": "scene.apply", "signature": "await scene.apply(mutations, { dryRun?, atomic?, clientMutationId?, source? })", "constraints": ["Prefer this structured path for AI-generated changes.", "clientMutationId makes retries idempotent."] },
+    { "name": "scene.flush", "signature": "await scene.flush()", "constraints": ["Wait before probe, inspect, screenshot, or harness verification."] },
+    { "name": "scene.verify", "signature": "await scene.verify(receiptOrTransactionId) -> SceneVerificationResult", "constraints": ["Checks committed revision, node existence/removal, and hierarchy after flush.", "Visual and interaction-specific contracts still require screenshot/trace harness assertions."] },
+    { "name": "scene.snapshot", "signature": "scene.snapshot() -> RuntimeSceneSnapshot", "constraints": ["Snapshot is read-only runtime evidence."] },
+    { "name": "scene.exportPatch", "signature": "scene.exportPatch({ includeSession?, includeEphemeral?, sinceRevision? })", "constraints": ["Ephemeral nodes are excluded by default.", "Persistence remains explicit."] }
+  ],
+  "workflow": ["capabilities", "describe", "validate", "apply", "flush", "inspect", "trace-or-harness", "exportPatch-if-requested"]
+}

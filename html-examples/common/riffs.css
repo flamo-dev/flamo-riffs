@@ -12,6 +12,18 @@ html{scroll-padding-top:76px}
 }
 .riffs-nav,.riffs-foot,.riffs-nav>div,.riffs-brand{display:flex;align-items:center}
 .riffs-nav{height:68px;justify-content:space-between}.riffs-nav>div{gap:22px}
+.riffs-github{
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+}
+.riffs-github:hover{background:#f4f2f7}
+@media(max-width:380px){
+  .riffs-nav.riffs-wrap{width:calc(100% - 20px)}
+  .riffs-nav.riffs-wrap>div{gap:4px;white-space:nowrap}
+}
 [data-riffs-header] a,[data-riffs-footer] a{color:inherit;text-decoration:none}
 .riffs-brand{gap:8px;white-space:nowrap}.riffs-brand img{object-fit:contain}.riffs-brand b{font-size:26px;letter-spacing:-1.7px;line-height:1}.riffs-brand i,.riffs-foot i{font-style:normal;color:#b9b8c0;font-weight:300;margin:0 5px}.riffs-brand span{font-weight:550;font-size:17px;letter-spacing:-.7px}
 .riffs-nav .riffs-current{font-size:13px;font-weight:650}.riffs-nav .riffs-external{border:1px solid #ceccd1;border-radius:30px;font-size:12px;font-weight:550;padding:9px 15px}.riffs-external span{margin-left:5px}

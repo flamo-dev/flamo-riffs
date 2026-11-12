@@ -1,5 +1,6 @@
 import type { GpuSurface } from '/vendor/flamo-runtime/index.es.js';
-import { packedScene, meshData, atlasURL } from './baked/scene';
+import { packedScene, recipe, atlasURL } from './baked/scene';
+import workerSource from './baked/worker';
 import { rainShader } from './rain';
 import { createActors } from './actors';
 import { atmosphere, geometry, pavement, display } from './shaders';
@@ -10,13 +11,24 @@ export const startCamera: Camera = { x:-32, z:6, yaw:.018, pitch:.055 };
 export const width=1280, height=720;
 const hdr:GPUTextureFormat='rgba16float', zFormat:GPUTextureFormat='depth32float';
 
-async function loadGeometry(){
-  const binary=atob(meshData);
-  const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
-  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
-  const unpacked=await new Response(stream).arrayBuffer();
-  if(unpacked.byteLength!==packedScene.vertexBytes+packedScene.indexCount*4)throw Error('港区几何数据长度不一致');
-  return unpacked;
+type HarborGeometry={vertices:Uint8Array<ArrayBuffer>;indices:Uint32Array<ArrayBuffer>;solidIndices:number};
+function loadGeometry(surface:GpuSurface):Promise<HarborGeometry>{
+  return new Promise((resolve,reject)=>{
+    const url=URL.createObjectURL(new Blob([workerSource],{type:'text/javascript'}));
+    const worker=new Worker(url);
+    let running=true;
+    function finish(){
+      if(!running)return;
+      running=false;worker.terminate();URL.revokeObjectURL(url);
+    }
+    surface.own({destroy(){finish();reject(new Error('港区已关闭'));}});
+    worker.onerror=event=>{finish();reject(new Error(event.message));};
+    worker.onmessage=event=>{
+      finish();
+      if(event.data.error)reject(new Error(event.data.error));else resolve(event.data);
+    };
+    worker.postMessage(recipe);
+  });
 }
 function cameraData(c:Camera, mirror:boolean, time:number){
   const co=Math.cos(c.yaw),si=Math.sin(c.yaw),cp=Math.cos(c.pitch),sp=Math.sin(c.pitch),sign=mirror?-1:1;
@@ -60,15 +72,16 @@ export async function createHarbor(surface:GpuSurface,onProgress:(value:number,l
       ...(depth?{depthStencil:{format:zFormat,depthWriteEnabled:!alpha,depthCompare:'less-equal',depthBias:bias,depthBiasSlopeScale:bias>0?1.5:0}}:{})
     });
   }
-  const atlas=surface.own(device.createTexture({label:'Saltline / berth materials',size:[256,256,packedScene.rows*8],format:'rgba8unorm',mipLevelCount:9,usage:GPUTextureUsage.TEXTURE_BINDING|GPUTextureUsage.COPY_DST|GPUTextureUsage.RENDER_ATTACHMENT}));
+  const mips=Math.log2(packedScene.tile)+1;
+  const atlas=surface.own(device.createTexture({label:'Saltline / berth materials',size:[packedScene.tile,packedScene.tile,packedScene.rows*8],format:'rgba8unorm',mipLevelCount:mips,usage:GPUTextureUsage.TEXTURE_BINDING|GPUTextureUsage.COPY_DST|GPUTextureUsage.RENDER_ATTACHMENT}));
   async function uploadAtlas(){
     const payload=atlasURL.slice(atlasURL.indexOf(',')+1);
-    const bitmap=await createImageBitmap(new Blob([Uint8Array.from(atob(payload),x=>x.charCodeAt(0))],{type:'image/webp'}));
+    const bitmap=await createImageBitmap(new Blob([Uint8Array.from(atob(payload),x=>x.charCodeAt(0))],{type:atlasURL.slice(5,atlasURL.indexOf(';'))}));
     const canvas=new OffscreenCanvas(1,1), ctx=canvas.getContext('2d');
     if(!ctx)throw Error('材质图集初始化失败');
     try{
-      for(let mip=0;mip<9;mip++){
-        const size=256>>mip; canvas.width=8*size;canvas.height=packedScene.rows*size;
+      for(let mip=0;mip<mips;mip++){
+        const size=packedScene.tile>>mip; canvas.width=8*size;canvas.height=packedScene.rows*size;
         ctx.imageSmoothingQuality='high';ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);
         for(let layer=0;layer<packedScene.rows*8;layer++){
           device.queue.copyExternalImageToTexture({source:canvas,origin:[(layer%8)*size,Math.floor(layer/8)*size]},
@@ -78,17 +91,18 @@ export async function createHarbor(surface:GpuSurface,onProgress:(value:number,l
     } finally{bitmap.close();}
   }
   const rainModule=device.createShaderModule({label:'Saltline / windblown rain',code:atmosphere.split('@group(0) @binding(1)')[0]+rainShader});
-  const rainPipe=await pipeline(rainModule,'rainVertex','rainFragment',hdr,true,false,0,true);
-  const [shadowPipe,skyPipe,opaquePipe,decalPipe,groundPipe,gradePipe,data]=await Promise.all([
+  const [shadowPipe,skyPipe,opaquePipe,decalPipe,groundPipe,gradePipe,rainPipe,data,actors]=await Promise.all([
     pipeline(solid,'shadowVertex',undefined,hdr,true,true,2),pipeline(solid,'fullscreen','sky'),
     pipeline(solid,'geometry','surface',hdr,true,true),pipeline(solid,'geometry','surface',hdr,true,true,-1,true),pipeline(ground,'fullscreen','pavement',hdr,true),
-    pipeline(grade,'fullscreen','grade','rgba8unorm'),loadGeometry(),uploadAtlas()
+    pipeline(grade,'fullscreen','grade','rgba8unorm'),pipeline(rainModule,'rainVertex','rainFragment',hdr,true,false,0,true),
+    loadGeometry(surface),createActors(surface),uploadAtlas()
   ]);
   function createBuffer(label:string,size:number,usage:number){return surface.own(device.createBuffer({label,size,usage:usage|GPUBufferUsage.COPY_DST}));}
-  const vertices=createBuffer('Berth meshes',packedScene.vertexBytes,GPUBufferUsage.VERTEX);
-  const indices=createBuffer('Berth indices',packedScene.indexCount*4,GPUBufferUsage.INDEX);
-  device.queue.writeBuffer(vertices,0,data,0,packedScene.vertexBytes);
-  device.queue.writeBuffer(indices,0,data,packedScene.vertexBytes);
+  const indexCount=data.indices.length,solidIndices=data.solidIndices;
+  const vertices=createBuffer('Berth meshes',data.vertices.byteLength,GPUBufferUsage.VERTEX);
+  const indices=createBuffer('Berth indices',data.indices.byteLength,GPUBufferUsage.INDEX);
+  device.queue.writeBuffer(vertices,0,data.vertices);
+  device.queue.writeBuffer(indices,0,data.indices);
   function group(pipe:GPURenderPipeline,entries:[number,GPUBindingResource][]){return device.createBindGroup({layout:pipe.getBindGroupLayout(0),entries:entries.map(([binding,resource])=>({binding,resource}))});}
   const atlasView=atlas.createView({dimension:'2d-array'});
   function viewBindings(){
@@ -102,7 +116,7 @@ export async function createHarbor(surface:GpuSurface,onProgress:(value:number,l
   const lightGroup=group(shadowPipe,[[0,{buffer:main.uni}]]);
   const floorGroup=group(groundPipe,[[0,{buffer:main.uni}],[1,shadow],[2,cmp],[3,mirrorColor],[4,smooth]]);
   const sunlitComposite=(depth:GPUTextureView)=>group(gradePipe,[[0,{buffer:main.uni}],[1,scene],[2,smooth],[3,depth],[4,shadow],[5,cmp]]);
-  const actors=await createActors(surface),gunDepth=texture('Saltline / foreground depth',width,height,zFormat).createView();
+  const gunDepth=texture('Saltline / foreground depth',width,height,zFormat).createView();
   let first=true,lastPose='',busy=false,frames=0,mirrorFrames=0,finished=0,lastWait=0;
   function draw(c:Camera,time:number,game?:any){
     if(busy || surface.status!=='ready')return;
@@ -116,13 +130,13 @@ export async function createHarbor(surface:GpuSurface,onProgress:(value:number,l
       function zAttachment(view:GPUTextureView):GPURenderPassDepthStencilAttachment{return {view,depthLoadOp:'clear',depthClearValue:1,depthStoreOp:'store'};}
       function drawIndexed(p:GPURenderPassEncoder,count:number){p.setVertexBuffer(0,vertices);p.setIndexBuffer(indices,'uint32');p.drawIndexed(count);}
       if(first){const p=encoder.beginRenderPass({label:'Directional shadow',colorAttachments:[],depthStencilAttachment:zAttachment(shadow)});
-        p.setPipeline(shadowPipe);p.setBindGroup(0,lightGroup);drawIndexed(p,packedScene.solidIndices);p.end();first=false;}
+        p.setPipeline(shadowPipe);p.setBindGroup(0,lightGroup);drawIndexed(p,solidIndices);p.end();first=false;}
       function drawView(out:GPUTextureView,z:GPUTextureView,bindings:ReturnType<typeof viewBindings>,withFloor:boolean){
         const sky=encoder.beginRenderPass({colorAttachments:[attachment(out)]});sky.setPipeline(skyPipe);sky.setBindGroup(0,bindings.sky);sky.draw(3);sky.end();
         const p=encoder.beginRenderPass({colorAttachments:[attachment(out,'load')],depthStencilAttachment:zAttachment(z)});
         if(withFloor){p.setPipeline(groundPipe);p.setBindGroup(0,floorGroup);p.draw(3);}
-        p.setPipeline(opaquePipe);p.setBindGroup(0,bindings.mesh);drawIndexed(p,packedScene.solidIndices);
-        p.setPipeline(decalPipe);p.setBindGroup(0,bindings.decals);p.drawIndexed(packedScene.indexCount-packedScene.solidIndices,1,packedScene.solidIndices);p.end();
+        p.setPipeline(opaquePipe);p.setBindGroup(0,bindings.mesh);drawIndexed(p,solidIndices);
+        p.setPipeline(decalPipe);p.setBindGroup(0,bindings.decals);p.drawIndexed(indexCount-solidIndices,1,solidIndices);p.end();
       }
       if(updateMirror){drawView(mirrorColor,mirrorDepth,reflected,false);mirrorFrames++;lastPose=pose;}
       drawView(scene,depth,main,true);
@@ -135,5 +149,5 @@ export async function createHarbor(surface:GpuSurface,onProgress:(value:number,l
     const start=performance.now();
     device.queue.onSubmittedWorkDone().then(()=>{lastWait=performance.now()-start;finished++;busy=false;},()=>{busy=false;});
   }
-  return {draw,inspect:()=>({...actors.stats(),frames,finished,mirrorFrames,lastQueueWaitMs:lastWait,triangles:packedScene.indexCount/3,resolution:[width,height],errors:[...errors]})};
+  return {draw,inspect:()=>({...actors.stats(),frames,finished,mirrorFrames,lastQueueWaitMs:lastWait,triangles:indexCount/3,resolution:[width,height],errors:[...errors]})};
 }

@@ -16,7 +16,7 @@ export default defineNodeScript({setup(_props,ctx){
   const surface=ctx.createGpuSurface({imageId:key,width,height,sampling:'linear'});
   const frame={x:0,y:0,z:0,yaw:0,pitch:0,fov:60,matrix:[] as number[]};
   let host:HTMLElement|null=null,boot:HTMLElement|null=null,presented=false;
-  const loadingCard='<div data-boot style="position:absolute;inset:0;z-index:8;background:#101519;color:#e8e4da;display:grid;align-content:center;justify-items:center;gap:14px;font:14px system-ui"><strong style="font-size:clamp(32px,6vw,76px);letter-spacing:.15em">SALTLINE</strong><span>正在准备港区…</span><progress aria-label="港区加载进度" max="100" value="65" style="width:min(320px,70%);height:4px;accent-color:#ffb347"></progress></div>';
+  const loadingCard='<div data-boot style="position:absolute;inset:0;z-index:8;background:linear-gradient(#10151940,#10151990);color:#e8e4da;display:grid;align-content:center;justify-items:center;gap:14px;font:14px system-ui"><strong style="font-size:clamp(32px,6vw,76px);letter-spacing:.15em">SALTLINE</strong><span>正在准备港区…</span><progress aria-label="港区加载进度" max="100" value="65" style="width:min(320px,70%);height:4px;accent-color:#ffb347"></progress></div>';
   function progress(value:number,label:string){
     const bar=boot?.querySelector('progress'),caption=boot?.querySelector('span');
     if(bar)bar.value=value;if(caption)caption.textContent=label;
@@ -40,7 +40,7 @@ export default defineNodeScript({setup(_props,ctx){
       frame.x=c.position.x;frame.y=c.position.y;frame.z=c.position.z;frame.fov=c.fov;frame.matrix=c.matrixWorld.elements;
       renderer.draw(frame,g.time.t,g);
       if(!presented && renderer.inspect().finished>0){
-        presented=true;progress(100,'四号泊位已就绪');boot?.remove();loading.setVisible(false);ctx.role('poster')?.setVisible(false);
+        presented=true;if(host){host.inert=false;host.style.visibility='';}progress(100,'四号泊位已就绪');boot?.remove();loading.setVisible(false);ctx.role('poster')?.setVisible(false);
       }
       if(performance.now()-lastReport>250){report();lastReport=performance.now();}
     }catch(e){fail(e);}
@@ -51,9 +51,12 @@ export default defineNodeScript({setup(_props,ctx){
     if(disposed)return;if(!host)throw Error('无法挂载操作界面');
     boot=host.parentElement?.querySelector('[data-boot]')??null;
     progress(65,'正在启动 Flamo 渲染');
-    const nextRenderer=await createHarbor(surface,progress);if(disposed)return;
-    progress(91,'正在准备武器与机械守卫');
-    const game=await createGame(host,fn=>{if(disposed)fn();else cleanups.push(fn);});if(disposed)return;
+    host.inert=true;host.style.visibility='hidden';
+    const [nextRenderer,game]=await Promise.all([
+      createHarbor(surface,progress),
+      createGame(host,fn=>{if(disposed)fn();else cleanups.push(fn);}),
+    ]);
+    if(disposed)return;
     const picture=ctx.scene.create('image',{id:key+'-view',name:'Saltline · Flamo WebGPU',assetId:key,position:{x:0,y:0},size:{width,height},fit:'FILL',interactive:false});
     parent.prepend(picture);owned.push(picture);renderer=nextRenderer;live=game;
     progress(97,'正在绘制首帧');await ctx.scene.flush();ctx.trace('saltline.ready',{});report();

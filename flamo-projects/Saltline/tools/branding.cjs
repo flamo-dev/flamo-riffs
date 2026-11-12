@@ -11,4 +11,20 @@ function brand(html) {
     .replaceAll('几猫3A大作','Saltline')
     .replaceAll('几猫','Flamo');
 }
-module.exports={brand};
+// The shipped project builds from its generated recipe. Rebaking can use an
+// external original or the exact reference blob in the author's Git history.
+function readReference() {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const file = process.env.SALTLINE_REFERENCE_HTML || path.join(__dirname, '../Saltline.html');
+  if (process.env.SALTLINE_REFERENCE_HTML || fs.existsSync(file)) return brand(fs.readFileSync(file, 'utf8'));
+  try {
+    const source = require('node:child_process').execFileSync('git',
+      ['cat-file', 'blob', '928688b0e606330e574e6608ec21de86aa5d625f'],
+      {cwd: __dirname, encoding: 'utf8', maxBuffer: 4 * 1024 * 1024, windowsHide: true});
+    return brand(source);
+  } catch (cause) {
+    throw new Error('Rebaking requires the original Saltline.html. Set SALTLINE_REFERENCE_HTML to its path.', {cause});
+  }
+}
+module.exports={brand,readReference};

@@ -7,6 +7,7 @@ const records = entries.map(entry => {
   const text = normalize(entry.innerText + ' ' + entry.dataset.keywords);
   const video = entry.querySelector('video');
   const toggle = entry.querySelector('.preview');
+  if (!video || !toggle) return {text, setVisible(visible) { entry.hidden = !visible; }};
   let pausedByUser = false;
   function updateButton() {
     toggle.textContent = video.paused ? '播放预览' : '暂停预览';

@@ -1,0 +1,669 @@
+import {
+  createFlamoRuntime,
+  createFlamoResourcePool,
+  createInteractionTargetController,
+  materializeCurrentArtifactComponent,
+  prepareFigmaSceneNodes,
+  registerProxyBinding,
+  unregisterProxyBinding,
+  batchUnregisterProxyBindings,
+  dispatchEntityEvent,
+  updateEntityReactiveState,
+  createEntityHandle,
+  computed,
+  reactive,
+  ref,
+  watch,
+  getGlobalEventBridge,
+  FlamoConfig,
+} from "./flamo-runtime/index.es.js";
+import * as interactions from "./interactions/index.js";
+import { attachComponentViewport } from "./component-viewport.js";
+import { loadPackagedArtifact } from './component-resources.js';
+
+export const flamoComponentManifest = {
+  "schemaVersion": 1,
+  "kind": "flamo.web-component",
+  "viewport": {
+    "pan": false,
+    "zoom": false,
+    "fit": "contain",
+    "transparentBackground": true
+  },
+  "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+  "tagName": "flamo-saltline",
+  "className": "FlamoSaltlineElement",
+  "packageName": "@flamo-components/flamo-saltline",
+  "name": "Saltline · 第一人称射击游戏",
+  "generatedAt": "2026-11-11T21:28:13.996Z",
+  "entry": "dist/flamo-saltline.js",
+  "types": "dist/flamo-saltline.d.ts",
+  "surface": {
+    "componentPropertiesVersion": "1.0"
+  },
+  "resources": [],
+  "scripts": [
+    {
+      "id": "saltline-harbor",
+      "kind": "composition",
+      "src": "src/harbor/script.ts",
+      "compiled": ".flamo/generated/interactions/revisions/3be892e0b156902fa58e/scripts/saltline-harbor/register.js"
+    }
+  ],
+  "slots": {},
+  "startup": {
+    "deferredPaintNodeIds": []
+  },
+  "documentation": {
+    "schemaVersion": 1,
+    "interactions": "interactions.json",
+    "guide": "INTERACTIONS.md",
+    "api": "INTERACTION_API.md",
+    "integrity": "sha256:d2986866428c3e1defeb2415ac036ffa973dd668f85cad659329b28a133b0636"
+  },
+  "integration": {
+    "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+    "contractId": "sha256:dea3131626b779580f9e427564e1a523f42937cca343153740045c3e0cc6c3d4",
+    "artifactRevision": "local-3be892e0b156902fa58e"
+  },
+  "interactionTargets": {},
+  "assets": [
+    {
+      "hash": "76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd",
+      "path": "dist/assets/images/76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd.png"
+    }
+  ],
+  "compiledResources": {
+    "schema": "flamo.resources/2",
+    "manifest": "dist/resources/artifact.json",
+    "integrity": "sha256:d560028793bb3cfa52e2f5ed55da5a9403d67cc748607aea52f34b2e46a0014c",
+    "report": {
+      "compiler": "flamo.runtime-resources/1",
+      "revision": "local-3be892e0b156902fa58e",
+      "manifestBytes": 3180,
+      "binaryBytes": 0,
+      "blocks": 0,
+      "references": 0,
+      "retained": [
+        "selected dependency closure",
+        "dynamic scripts and variables",
+        "unknown extensions"
+      ],
+      "decoding": "instance-owned mutable arrays"
+    }
+  },
+  "packaging": {
+    "sourceMap": false,
+    "includeResources": true,
+    "interactions": "local",
+    "boundaryNodeId": "1795213250:1",
+    "sourceArtifact": "view/data/artifact.flamo.json",
+    "artifactRevision": "local-3be892e0b156902fa58e"
+  },
+  "contract": {
+    "components": [],
+    "bindings": []
+  },
+  "ai": {
+    "entry": "AGENTS.md",
+    "usage": "README.md",
+    "typeHints": "dist/flamo-saltline.d.ts"
+  },
+  "foundation": {
+    "ref": {
+      "schemaVersion": 1,
+      "namespace": "project.c7cde71e-a762-423c-a19f-876aff4ce912",
+      "id": "component-flamo-saltline",
+      "version": "0.1.0",
+      "exportName": "Saltline",
+      "artifactRevision": "local-3be892e0b156902fa58e",
+      "artifactHash": "sha256:a4a6ec0cf2b5cb17ad48640344f6ec9f3b60044b21158b6565104fb30b65327a",
+      "runtimeAbi": "runtime-v1",
+      "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+    },
+    "componentRef": "flamo://components/project.c7cde71e-a762-423c-a19f-876aff4ce912/component-flamo-saltline@0.1.0#Saltline",
+    "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
+    "compositionHash": "sha256:8682d286a9492dc24452ef43e9a1e31dae0e0ceef17d647a5946d4a304af41a5",
+    "runtimeAbi": "runtime-v1",
+    "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+  },
+  "distribution": {
+    "loader": "dist/flamo-saltline.loader.js",
+    "loadingStyles": "dist/component-loading.css",
+    "browserEsm": "dist/flamo-saltline.module.js",
+    "browserEsmManifest": "dist/flamo-saltline.browser-manifest.json",
+    "thinSingleJs": "dist/flamo-saltline.thin.js",
+    "thinSingleJsModule": "dist/flamo-saltline.thin.module.js",
+    "thinSingleJsManifest": "dist/flamo-saltline.thin.browser-manifest.json",
+    "customElementsManifest": "custom-elements.json"
+  }
+};
+const imageAssets = [{"hash":"76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd","path":".flamo/imports/assets/76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd.png","packagedPath":"assets/images/76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd.png"}];
+const publicSurface = flamoComponentManifest.surface ?? {};
+const w3cSurface = {"properties":[],"attributes":[],"events":[],"methods":[],"slots":[]};
+const packagingSlots = flamoComponentManifest.slots ?? {};
+
+/** Embedded into each exported wrapper; depends only on public instance APIs. */
+function installComponentPublicSurface(ElementClass, surface, definitions) {
+  const values = new WeakMap();
+  const collected = new WeakMap();
+  const properties = new Map(surface.properties.map(property => [property.name, property]));
+  const attributes = new Map(surface.attributes.map(attribute => [attribute.name, attribute.property]));
+  const names = [...properties.keys(), ...surface.methods.map(method => method.name)];
+  const used = new Set();
+  for (const name of names) {
+    if (used.has(name) || name in ElementClass.prototype || name.startsWith('_') ||
+        ['ready', 'runtime', 'instance', 'app', 'flamo', 'canvas'].includes(name)) {
+      throw new Error('FLAMO_PUBLIC_MEMBER_CONFLICT: ' + name);
+    }
+    used.add(name);
+  }
+  if (attributes.size !== surface.attributes.length || attributes.has('paused')) {
+    throw new Error('FLAMO_PUBLIC_ATTRIBUTE_CONFLICT');
+  }
+  const state = element => {
+    if (!values.has(element)) values.set(element, new Map());
+    return values.get(element);
+  };
+  const fromAttribute = (element, property) => {
+    const raw = property.attribute ? element.getAttribute(property.attribute) : null;
+    if (raw === null) {
+      const value = definitions[property.name]?.default;
+      return value && typeof value === 'object' ? structuredClone(value) : value;
+    }
+    const definition = definitions[property.name] ?? {};
+    const type = definition.schema?.type ?? definition.type;
+    if (type === 'boolean') return raw === '' || raw === 'true';
+    if (type === 'number' || type === 'integer') {
+      const number = Number(raw);
+      return Number.isFinite(number) ? number : raw;
+    }
+    return raw;
+  };
+  const write = (element, name, value) => {
+    // Let Runtime validation throw before retaining a rejected value.
+    if (element.isConnected && element.instance) element.instance.set(name, value);
+    state(element).set(name, value);
+    if (element.isConnected && element.instance) element.syncSlots();
+  };
+  const collect = element => Object.fromEntries([...properties].map(([name, property]) =>
+    [name, state(element).has(name) ? state(element).get(name) : fromAttribute(element, property)])
+    .filter(([, value]) => value !== undefined));
+  for (const [name, property] of properties) {
+    Object.defineProperty(ElementClass.prototype, name, {
+      configurable: true, enumerable: true,
+      get() {
+        if (this.isConnected && this.instance) return this.instance.get(name);
+        return state(this).has(name) ? state(this).get(name) : fromAttribute(this, property);
+      },
+      set(value) { write(this, name, value); },
+    });
+  }
+  for (const method of surface.methods) {
+    Object.defineProperty(ElementClass.prototype, method.name, {
+      configurable: true, writable: true,
+      value(...args) {
+        if (!this.isConnected || this.getAttribute('data-flamo-state') !== 'ready' || !this.instance) {
+          const error = new Error('FLAMO_COMPONENT_NOT_READY: await element.ready before calling ' + method.name);
+          if (/=>\s*Promise\s*</.test(method.signature)) return Promise.reject(error);
+          throw error;
+        }
+        return this.instance.call(method.name, ...args);
+      },
+    });
+  }
+  return {
+    upgrade(element) {
+      // Values assigned before customElements.define shadow prototype setters.
+      for (const name of properties.keys()) {
+        if (!Object.prototype.hasOwnProperty.call(element, name)) continue;
+        const value = element[name];
+        delete element[name];
+        element[name] = value;
+      }
+    },
+    collect(element) {
+      const props = collect(element);
+      collected.set(element, new Map(state(element)));
+      return props;
+    },
+    attributeChanged(element, attribute) {
+      const name = attributes.get(attribute);
+      if (name !== undefined) write(element, name, fromAttribute(element, properties.get(name)));
+    },
+    flush(element) {
+      // A host can change props while runtime.create is awaiting scene readiness.
+      const initial = collected.get(element) ?? new Map();
+      for (const [name, value] of state(element)) {
+        if (!initial.has(name) || !Object.is(initial.get(name), value)) element.instance.set(name, value);
+      }
+    },
+  };
+}
+
+
+function normalizeToNodeArray(raw) {
+  if (Array.isArray(raw)) return prepareFigmaSceneNodes(raw);
+  if (raw?.scene?.nodes) return prepareFigmaSceneNodes(raw.scene.nodes);
+  if (raw?.document?.children) return prepareFigmaSceneNodes(raw.document.children);
+  if (raw?.type && typeof raw.type === 'string') return prepareFigmaSceneNodes([raw]);
+  return [];
+}
+
+function registerPackagedAssets(imageRegistry) {
+  for (const image of imageAssets) {
+    imageRegistry.registerUrl(image.hash, new URL('./' + image.packagedPath, import.meta.url).href);
+  }
+}
+
+function propToAttribute(name) {
+  return String(name).replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+async function createArtifactForMount(signal) {
+  const artifactData = await loadPackagedArtifact(import.meta.url, "d560028793bb3cfa52e2f5ed55da5a9403d67cc748607aea52f34b2e46a0014c", signal);
+  if (artifactData?.scene?.nodes) {
+    const name = flamoComponentManifest.name;
+    const boundaryNodeId = flamoComponentManifest.packaging.boundaryNodeId;
+    const selected = { ...artifactData,
+      exports: { [name]: { name, boundaryNodeId, surface: publicSurface,
+        surfaceRef: { kind: 'nodeArtifact', nodeId: boundaryNodeId, path: 'surface' } } },
+      metadata: { ...artifactData.metadata, mainExport: name } };
+    return materializeCurrentArtifactComponent(selected, name);
+  }
+  const boundaryNodeId = flamoComponentManifest.packaging?.boundaryNodeId ?? 'artifact:main';
+  const exportName = flamoComponentManifest.name ?? 'FlamoComponent';
+  return {
+    kind: 'flamo.artifact',
+    schemaVersion: '0.1',
+    scene: {
+      format: 'flamo-scene-v0',
+      nodes: normalizeToNodeArray(artifactData?.scene?.nodes ?? []),
+    },
+    nodeArtifacts: {
+      [boundaryNodeId]: {
+        role: 'component',
+        boundary: true,
+        capabilities: ['localBehavior', 'publicSurface', 'exportable'],
+        surface: publicSurface,
+        backend: { kind: 'flamo' },
+      },
+    },
+    exports: {
+      [exportName]: {
+        name: exportName,
+        boundaryNodeId,
+        tagName: flamoComponentManifest.tagName,
+        surfaceRef: { kind: 'nodeArtifact', nodeId: boundaryNodeId, path: 'surface' },
+      },
+    },
+    metadata: { mainExport: exportName },
+  };
+}
+
+function createFlamoApi(app) {
+  const flamoApi = {
+    app,
+    registerProxyBinding,
+    unregisterProxyBinding,
+    batchUnregisterProxyBindings,
+    dispatchEntityEvent,
+    updateEntityReactiveState,
+    createEntityHandle,
+    computed,
+    reactive,
+    ref,
+    watch,
+    getGlobalEventBridge,
+    getBindingCount() {
+      return app?._bindingSys?.environments?.size ?? 0;
+    },
+    hasBinding(nodeId) {
+      return app?._bindingSys?.environments?.has(nodeId) ?? false;
+    },
+  };
+  return flamoApi;
+}
+
+async function resolvePackagedNodeScript(script) {
+  if (typeof interactions.resolveNodeScript === 'function') {
+    const resolved = await interactions.resolveNodeScript(script);
+    if (resolved) return resolved;
+  }
+  const compiled = script?.compiled || (script?.id ? '.flamo/generated/interactions/scripts/' + script.id + '/register.js' : '');
+  const packagedPath = String(compiled).replace(/^\.flamo\/generated\/interactions\//, "./interactions/");
+  if (!packagedPath || packagedPath === String(compiled)) return null;
+  return import(packagedPath);
+}
+
+export class FlamoSaltlineElement extends HTMLElement {
+  static get observedAttributes() {
+    return ['paused', ...w3cSurface.attributes.map(attribute => attribute.name)];
+  }
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = '<style>:host{display:block;position:relative;width:300px;height:150px;contain:content}.viewport{position:absolute;inset:0;overflow:hidden;opacity:0}:host([data-flamo-state="ready"]) .viewport,:host([data-flamo-state="static"]) .viewport{opacity:1}.canvas-layer{position:sticky;top:0;left:0;width:100%;height:0;z-index:1}canvas{display:block;position:absolute;top:0;left:0}.extent{pointer-events:none}.slot-collector{display:none}</style><div class="viewport" part="viewport" inert><div class="canvas-layer"><canvas part="canvas" tabindex="0"></canvas></div><div class="extent"></div></div><div class="slot-collector"><slot></slot></div>';
+    this.canvas = this.shadowRoot.querySelector('canvas');
+    this.ready = null;
+    this.runtime = null;
+    this.instance = null;
+    this.app = null;
+    this.flamo = null;
+    this._slotDisposers = [];
+    this._lifecycle = Promise.resolve();
+    this._connectionVersion = 0;
+    this._retainedApp = null;
+    if (Object.prototype.hasOwnProperty.call(this, 'slotStyles')) {
+      const styles = this.slotStyles;
+      delete this.slotStyles;
+      this.slotStyles = styles;
+    }
+  }
+
+  get slotStyles() { return this._slotStyles ?? ''; }
+
+  getInteractionTarget(targetId) {
+    if (!this.isConnected || this.getAttribute('data-flamo-state') !== 'ready') return null;
+    return this._interactionTargets?.get(targetId) ?? null;
+  }
+
+  inspectInteractionTargets() {
+    return this._interactionTargets?.inspect() ?? { generation: 0, destroyed: true, diagnostics: {} };
+  }
+
+  set slotStyles(value) {
+    if (typeof value !== 'string') throw new TypeError('slotStyles must be a CSS string');
+    this._slotStyles = value;
+    if (!this._slotStyleElement) {
+      this._slotStyleElement = this.ownerDocument.createElement('style');
+      this._slotStyleElement.dataset.flamoSlotStyles = '';
+      this.shadowRoot.appendChild(this._slotStyleElement);
+    }
+    this._slotStyleElement.textContent = value;
+  }
+
+  connectedCallback() {
+    publicBridge.upgrade(this);
+    const version = ++this._connectionVersion;
+    this.setLoadingState('loading');
+    this.dispatchEvent(new CustomEvent('flamo-loading'));
+    const mountTask = this._lifecycle
+      .catch(() => undefined)
+      .then(() => {
+        if (!this.isConnected || version !== this._connectionVersion) return this;
+        return this.mount();
+      });
+    this.ready = mountTask;
+    this._lifecycle = mountTask.catch(() => undefined);
+  }
+
+  disconnectedCallback() {
+    this.dispatchEvent(new CustomEvent('flamo-disconnected'));
+    this._interactionTargets?.destroy();
+    this._interactionTargets = null;
+    ++this._connectionVersion;
+    this._resourceAbort?.abort();
+    this.setLoadingState('loading');
+    this.ready = null;
+    const destroyTask = this._lifecycle
+      .catch(() => undefined)
+      .then(() => this.destroy({ preserveReady: true }));
+    this._lifecycle = destroyTask.catch(() => undefined);
+  }
+
+  attributeChangedCallback(name) {
+    if (name === 'paused' && this.app) {
+      if (this.hasAttribute('paused')) this.app.pause?.();
+      else this.app.resume?.();
+      return;
+    }
+    publicBridge.attributeChanged(this, name);
+  }
+
+  collectProps() {
+    return publicBridge.collect(this);
+  }
+
+  connectSlotCollectors() {
+    this._slotDisposers.forEach(dispose => dispose());
+    this._slotDisposers = [];
+    for (const slot of this.shadowRoot.querySelectorAll('slot')) {
+      const listener = () => this.syncSlots();
+      slot.addEventListener('slotchange', listener);
+      this._slotDisposers.push(() => slot.removeEventListener('slotchange', listener));
+    }
+  }
+
+  async mount() {
+    const version = this._connectionVersion;
+    this._resourceAbort = new AbortController();
+    try {
+      FlamoConfig.setAssetBase(new URL('.', new URL("./flamo-runtime/index.es.js", import.meta.url)).href);
+      // Pin CSS size before ECS observes the canvas. Its intrinsic bitmap size
+      // must not feed back into CSS layout and grow by DPR on every frame.
+      const viewport = this.shadowRoot.querySelector('.viewport');
+      this.canvas.style.width = Math.max(1, viewport.clientWidth) + 'px';
+      this.canvas.style.height = Math.max(1, viewport.clientHeight) + 'px';
+      this._resourcePool ||= createFlamoResourcePool();
+      // GPU acquisition and Artifact IO are independent. Reuse this pool's
+      // in-flight promise; normal app creation still owns fallback/error handling.
+      void this._resourcePool.getGpuResources().catch(() => {});
+      registerPackagedAssets(this._resourcePool.imageRegistry);
+      const artifact = await createArtifactForMount(this._resourceAbort.signal);
+      if (version !== this._connectionVersion || !this.isConnected) return;
+      this.runtime ||= createFlamoRuntime({
+        canvas: this.canvas,
+        resourcePool: this._resourcePool,
+        shareApp: true,
+        destroySharedAppOnIdle: false,
+        // A disconnected Custom Element can reconnect; keep its ECS surface reusable.
+        retainSharedCanvasOnIdle: true,
+        nodeScriptResolver: resolvePackagedNodeScript,
+        appConfig: {
+          platform: 'web',
+          transparentBackground: true,
+          cameraControls: { pan: flamoComponentManifest.viewport.pan, zoom: flamoComponentManifest.viewport.zoom,
+            nativeScroll: flamoComponentManifest.viewport.fit !== 'contain' },
+          sceneOptions: { expandInstances: false },
+          gameLoop: { fixedTimeStep: 1 / 60 },
+        },
+      });
+      // A previous paused mount still owns the retained ECS canvas. Scene loading
+      // needs frames before runtime.create resolves; restore paused after loading.
+      this._retainedApp?.resume?.();
+      let scenePrepared = false;
+      const prepareScene = instance => {
+        this.instance = instance;
+        this.app = instance.app;
+        this._retainedApp = this.app;
+        publicBridge.flush(this);
+        this._disposeViewport?.();
+        this._disposeViewport = attachComponentViewport(this, this.app, () => {
+          const root = this.instance.resolveNodeId(flamoComponentManifest.packaging.boundaryNodeId);
+          return root ? this.app.getNodeProbeSnapshot(root)?.bounds : null;
+        }, flamoComponentManifest.viewport);
+        this.flamo = instance.createScopedFlamoApi(createFlamoApi(this.app));
+        this.connectSlotCollectors();
+        this.syncSlots();
+        scenePrepared = true;
+      };
+      const assertConnected = () => {
+        if (!this.isConnected || version !== this._connectionVersion) throw new DOMException('Component disconnected', 'AbortError');
+      };
+      this.instance = await this.runtime.create({
+        artifact,
+        target: this,
+        host: this,
+        props: this.collectProps(),
+        nodeScriptResolver: resolvePackagedNodeScript,
+        deferNodePaintUntilScripts: flamoComponentManifest.startup?.deferredPaintNodeIds ?? [],
+        onSceneReady: async instance => {
+          assertConnected();
+          prepareScene(instance);
+          await this.waitForSlotImages();
+          await this.app.presentFrame();
+          assertConnected();
+          this.setLoadingState('static');
+          this.dispatchEvent(new CustomEvent('flamo-static-ready', { detail: { manifest: flamoComponentManifest } }));
+          // Yield a paint opportunity before the behavior initialization task.
+          // A hidden tab must still be able to finish loading without rAF.
+          await new Promise(resolve => {
+            let frame;
+            const signal = this._resourceAbort.signal;
+            const finish = () => {
+              cancelAnimationFrame(frame);
+              document.removeEventListener('visibilitychange', visibility);
+              signal.removeEventListener('abort', finish);
+              resolve();
+            };
+            const visibility = () => { if (document.hidden) finish(); };
+            if (document.hidden || signal.aborted) { resolve(); return; }
+            document.addEventListener('visibilitychange', visibility);
+            signal.addEventListener('abort', finish, { once: true });
+            frame = requestAnimationFrame(() => { frame = requestAnimationFrame(finish); });
+          });
+          assertConnected();
+          void interactions.preload?.().catch(() => {});
+        },
+      });
+      // Older external Runtime versions do not call onSceneReady.
+      if (!scenePrepared) prepareScene(this.instance);
+      if (this.hasAttribute('paused')) this.app.pause?.();
+      else this.app.resume?.();
+      await this.instance.ready;
+      publicBridge.flush(this);
+      this.syncSlots();
+      await this.reloadInteractions();
+      await this.waitForSlotImages();
+      await this.app.presentFrame();
+      if (!this.isConnected || version !== this._connectionVersion) return this;
+      this.setLoadingState('ready');
+      this._interactionTargets?.destroy();
+      this._interactionTargets = createInteractionTargetController(this.instance, flamoComponentManifest.interactionTargets ?? {}, detail => {
+        this.dispatchEvent(new CustomEvent('flamo-interaction-targets-change', { detail }));
+      });
+      this.dispatchEvent(new CustomEvent('flamo-ready', { detail: { app: this.app, instance: this.instance, flamo: this.flamo, manifest: flamoComponentManifest } }));
+      return this;
+    } catch (error) {
+      if (this.isConnected && version === this._connectionVersion) {
+        this.setLoadingState('error');
+        this.dispatchEvent(new CustomEvent('flamo-error', { detail: { error } }));
+      }
+      throw error;
+    }
+  }
+
+  setLoadingState(state) {
+    this.setAttribute('data-flamo-state', state);
+    this.setAttribute('aria-busy', String(state === 'loading' || state === 'static'));
+    this.inert = state !== 'ready';
+    this.shadowRoot.querySelector('.viewport').inert = state !== 'ready';
+  }
+
+  async waitForSlotImages() {
+    // DOM providers may move images into the shadow overlay during a frame.
+    const images = new Set([...this.querySelectorAll('img'), ...this.shadowRoot.querySelectorAll('img')]);
+    await Promise.all([...images].map(async image => {
+      if (!image.complete) await new Promise(resolve => {
+        const done = () => { image.removeEventListener('load', done); image.removeEventListener('error', done); resolve(); };
+        image.addEventListener('load', done);
+        image.addEventListener('error', done);
+      });
+      if (image.naturalWidth && image.decode) await image.decode().catch(() => undefined);
+    }));
+  }
+
+  async reloadInteractions() {
+    if (!this.flamo) return undefined;
+    if (typeof interactions.activateLatest === 'function') return interactions.activateLatest(this.flamo);
+    return undefined;
+  }
+
+  async destroy({ preserveReady = false } = {}) {
+    this.dispatchEvent(new CustomEvent('flamo-destroyed'));
+    this._interactionTargets?.destroy();
+    this._interactionTargets = null;
+    if (!preserveReady) this.setLoadingState('loading');
+    this._disposeViewport?.();
+    this._disposeViewport = null;
+    const runtime = this.runtime;
+    const instance = this.instance;
+    const app = this.app;
+    this._slotDisposers.forEach(dispose => dispose());
+    this._slotDisposers = [];
+    this.instance = null;
+    this.app = null;
+    this.flamo = null;
+    if (!preserveReady) this.ready = null;
+    if (runtime && instance) await runtime.destroy(instance);
+    else if (app?.destroy) await app.destroy();
+  }
+
+  materializeSlotContent(slot, slotName) {
+    const assigned = slot.assignedNodes({ flatten: true }).filter(node => node.nodeType !== Node.TEXT_NODE || node.textContent.trim());
+    if (assigned.length === 0) {
+      return packagingSlots[slotName]?.defaultContent ?? null;
+    }
+    if (assigned.length === 1 && assigned[0].nodeType === Node.TEXT_NODE) {
+      return assigned[0].textContent;
+    }
+    return assigned.length === 1 ? assigned[0] : assigned;
+  }
+
+  applySlotProps(slotName, content) {
+    const props = {};
+    const slotIR = packagingSlots[slotName] ?? {};
+    for (const [name, definition] of Object.entries(slotIR.props ?? {})) {
+      if (definition?.from?.kind === 'prop') props[name] = this.instance?.get?.(definition.from.path);
+      else if (definition?.from?.kind === 'literal') props[name] = definition.from.value;
+      else if (Object.prototype.hasOwnProperty.call(definition ?? {}, 'default')) props[name] = definition.default;
+    }
+    const nodes = Array.isArray(content) ? content : [content];
+    for (const node of nodes) {
+      if (!node || typeof node !== 'object' || node.nodeType === Node.TEXT_NODE) continue;
+      node.flamoSlotProps = props;
+      for (const [name, value] of Object.entries(props)) {
+        if (value === null || value === undefined || typeof value === 'object') continue;
+        if (node.setAttribute) node.setAttribute('data-' + propToAttribute(name), String(value));
+      }
+      node.dispatchEvent?.(new CustomEvent('flamo-slot-props-change', {
+        bubbles: true,
+        composed: true,
+        detail: { slot: slotName, props },
+      }));
+    }
+  }
+
+  syncSlots() {
+    if (!this.instance) return;
+    const assignments = Object.create(null);
+    for (const slot of this.shadowRoot.querySelectorAll('slot')) {
+      const name = slot.name || 'default';
+      assignments[name] = this.materializeSlotContent(slot, name);
+    }
+    if (typeof this.instance.mountSlots === 'function') this.instance.mountSlots(assignments);
+    else for (const [name, content] of Object.entries(assignments)) this.instance.mountSlot?.(name, content);
+    for (const [name, content] of Object.entries(assignments)) this.applySlotProps(name, content);
+  }
+}
+
+const publicBridge = installComponentPublicSurface(FlamoSaltlineElement, w3cSurface, publicSurface.parameters ?? {});
+
+export const componentRef = flamoComponentManifest.foundation.componentRef;
+export const runtimeAbi = flamoComponentManifest.foundation.ref.runtimeAbi;
+export const componentAbi = flamoComponentManifest.foundation.ref.componentAbi;
+export const tagName = 'flamo-saltline';
+
+export function registerFlamoComponent() {
+  const existing = customElements.get('flamo-saltline');
+  if (existing && existing !== FlamoSaltlineElement) {
+    throw new Error('Custom Element tag conflict: flamo-saltline');
+  }
+  if (!existing) customElements.define('flamo-saltline', FlamoSaltlineElement);
+}
+
+registerFlamoComponent();
+
+export default FlamoSaltlineElement;

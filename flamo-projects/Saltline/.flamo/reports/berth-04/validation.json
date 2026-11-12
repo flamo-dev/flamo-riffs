@@ -1,0 +1,69 @@
+{
+  "preview": {
+    "backend": "webgpu",
+    "revision": "local-bac25a9140409bbe8fe5",
+    "errors": [],
+    "gpu": [
+      "intel",
+      "xe-lpg"
+    ],
+    "ready": true
+  },
+  "scene": {
+    "ready": true,
+    "error": "",
+    "camera": {
+      "x": -32,
+      "z": 6,
+      "yaw": 0.018,
+      "pitch": 0.055
+    },
+    "active": false,
+    "frames": 15,
+    "finished": 14,
+    "mirrorFrames": 1,
+    "lastQueueWaitMs": 7.5999999940395355,
+    "triangles": 271747,
+    "resolution": [
+      1280,
+      720
+    ],
+    "errors": []
+  },
+  "walking": {
+    "start": {
+      "x": -32,
+      "z": 6,
+      "yaw": 0.018,
+      "pitch": 0.055
+    },
+    "end": {
+      "x": -13.943525543809073,
+      "z": 6.325051646547536,
+      "yaw": 0.018,
+      "pitch": 0.055
+    },
+    "turned": {
+      "x": -13.943525543809073,
+      "z": 6.325051646547536,
+      "yaw": 0.635142822265625,
+      "pitch": 0.12250007629394533
+    },
+    "reflectionCount": 295
+  },
+  "check": {
+    "reset": true,
+    "buttons": true,
+    "threeRequested": false,
+    "runtimeErrors": []
+  },
+  "timing": {
+    "elapsedMs": 5000,
+    "samples": 300,
+    "rafHz": 60,
+    "p50": 16.7,
+    "p95": 16.8,
+    "p99": 16.8
+  },
+  "bad": []
+}

@@ -1,0 +1,45 @@
+{
+  "version": "p3-grounding-v1",
+  "validChannels": [
+    "x",
+    "y",
+    "position.x",
+    "position.y",
+    "width",
+    "height",
+    "rotation",
+    "opacity",
+    "node.opacity",
+    "visible",
+    "cornerRadius",
+    "scaleX",
+    "scaleY",
+    "scale.x",
+    "scale.y",
+    "strokeDashOffset"
+  ],
+  "channelPropertyMap": {
+    "x": "TransformCpt.transform.m02",
+    "y": "TransformCpt.transform.m12",
+    "position.x": "TransformCpt.transform.m02",
+    "position.y": "TransformCpt.transform.m12",
+    "rotation": "TransformCpt.rotation",
+    "width": "TransformCpt.size.x",
+    "height": "TransformCpt.size.y",
+    "scaleX": "TransformCpt.transform.m00",
+    "scaleY": "TransformCpt.transform.m11",
+    "scale.x": "TransformCpt.transform.m00",
+    "scale.y": "TransformCpt.transform.m11",
+    "opacity": "NodeCpt.opacity",
+    "node.opacity": "NodeCpt.opacity",
+    "visible": "NodeCpt.visible",
+    "cornerRadius": "CornerCpt.cornerRadius",
+    "strokeDashOffset": "StrokeStyleCpt.strokeDashOffset"
+  },
+  "forbiddenChannels": ["scale"],
+  "notes": [
+    "MotionSpec channel 'opacity' is runtime-safe even though bare EntityHandle opacity is not.",
+    "Arc-throw style motion should drive x and y together and include at least one performance channel such as width, height, rotation, scaleX, or scaleY.",
+    "Bare channel 'scale' is ambiguous; use scaleX/scaleY, scale.x/scale.y, width/height, or setScale() when available."
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "kind": "flamo.web-component",
+  "viewport": {
+    "pan": false,
+    "zoom": false,
+    "fit": "contain",
+    "transparentBackground": true
+  },
+  "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+  "tagName": "flamo-saltline",
+  "className": "FlamoSaltlineElement",
+  "packageName": "@flamo-components/flamo-saltline",
+  "name": "Saltline · 第一人称射击游戏",
+  "generatedAt": "2026-11-11T21:28:13.996Z",
+  "entry": "dist/flamo-saltline.js",
+  "types": "dist/flamo-saltline.d.ts",
+  "surface": {
+    "componentPropertiesVersion": "1.0"
+  },
+  "resources": [],
+  "scripts": [
+    {
+      "id": "saltline-harbor",
+      "kind": "composition",
+      "src": "src/harbor/script.ts",
+      "compiled": ".flamo/generated/interactions/revisions/3be892e0b156902fa58e/scripts/saltline-harbor/register.js"
+    }
+  ],
+  "slots": {},
+  "startup": {
+    "deferredPaintNodeIds": []
+  },
+  "documentation": {
+    "schemaVersion": 1,
+    "interactions": "interactions.json",
+    "guide": "INTERACTIONS.md",
+    "api": "INTERACTION_API.md",
+    "integrity": "sha256:d2986866428c3e1defeb2415ac036ffa973dd668f85cad659329b28a133b0636"
+  },
+  "integration": {
+    "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+    "contractId": "sha256:dea3131626b779580f9e427564e1a523f42937cca343153740045c3e0cc6c3d4",
+    "artifactRevision": "local-3be892e0b156902fa58e"
+  },
+  "interactionTargets": {},
+  "assets": [
+    {
+      "hash": "76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd",
+      "path": "dist/assets/images/76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd.png"
+    }
+  ],
+  "compiledResources": {
+    "schema": "flamo.resources/2",
+    "manifest": "dist/resources/artifact.json",
+    "integrity": "sha256:d560028793bb3cfa52e2f5ed55da5a9403d67cc748607aea52f34b2e46a0014c",
+    "report": {
+      "compiler": "flamo.runtime-resources/1",
+      "revision": "local-3be892e0b156902fa58e",
+      "manifestBytes": 3180,
+      "binaryBytes": 0,
+      "blocks": 0,
+      "references": 0,
+      "retained": [
+        "selected dependency closure",
+        "dynamic scripts and variables",
+        "unknown extensions"
+      ],
+      "decoding": "instance-owned mutable arrays"
+    }
+  },
+  "packaging": {
+    "sourceMap": false,
+    "includeResources": true,
+    "interactions": "local",
+    "boundaryNodeId": "1795213250:1",
+    "sourceArtifact": "view/data/artifact.flamo.json",
+    "artifactRevision": "local-3be892e0b156902fa58e"
+  },
+  "contract": {
+    "components": [],
+    "bindings": []
+  },
+  "ai": {
+    "entry": "AGENTS.md",
+    "usage": "README.md",
+    "typeHints": "dist/flamo-saltline.d.ts"
+  },
+  "foundation": {
+    "ref": {
+      "schemaVersion": 1,
+      "namespace": "project.c7cde71e-a762-423c-a19f-876aff4ce912",
+      "id": "component-flamo-saltline",
+      "version": "0.1.0",
+      "exportName": "Saltline",
+      "artifactRevision": "local-3be892e0b156902fa58e",
+      "artifactHash": "sha256:a4a6ec0cf2b5cb17ad48640344f6ec9f3b60044b21158b6565104fb30b65327a",
+      "runtimeAbi": "runtime-v1",
+      "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+    },
+    "componentRef": "flamo://components/project.c7cde71e-a762-423c-a19f-876aff4ce912/component-flamo-saltline@0.1.0#Saltline",
+    "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
+    "compositionHash": "sha256:8682d286a9492dc24452ef43e9a1e31dae0e0ceef17d647a5946d4a304af41a5",
+    "runtimeAbi": "runtime-v1",
+    "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
+  },
+  "distribution": {
+    "loader": "dist/flamo-saltline.loader.js",
+    "loadingStyles": "dist/component-loading.css",
+    "browserEsm": "dist/flamo-saltline.module.js",
+    "browserEsmManifest": "dist/flamo-saltline.browser-manifest.json",
+    "thinSingleJs": "dist/flamo-saltline.thin.js",
+    "thinSingleJsModule": "dist/flamo-saltline.thin.module.js",
+    "thinSingleJsManifest": "dist/flamo-saltline.thin.browser-manifest.json",
+    "customElementsManifest": "custom-elements.json"
+  }
+}

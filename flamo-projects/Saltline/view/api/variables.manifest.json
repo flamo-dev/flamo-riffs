@@ -1,0 +1,68 @@
+{
+  "version": "variables-v0",
+  "owner": "@flamo/runtime",
+  "layers": [
+    {
+      "name": "artifact.tokens",
+      "signature": "artifact.tokens: { format: 'flamo-tokens-v0', schemaVersion: '0.1', variables?: FlamoVariableGraph }",
+      "constraints": [
+        "The variables graph is artifact-local; cross-artifact and cross-project reuse belongs in a later resources layer.",
+        "Figma VARIABLE_SET and VARIABLE nodes are compiled before non-rendering metadata nodes are filtered from artifact.scene.",
+        "Bindings store both scenePath for import-time default application and componentPath for runtime ECS updates."
+      ]
+    },
+    {
+      "name": "flamo.variables",
+      "signature": "listCollections | listVariables | getCollection | getVariable | getActiveMode | getValue | resolveValue | setMode | override | clearOverride | clearOverrides | reset | subscribe",
+      "constraints": [
+        "setMode validates collection and mode IDs before changing active mode.",
+        "override is runtime-local and takes precedence over the active mode value.",
+        "getValue resolves alias values by default with cycle and maximum-depth protection; pass resolveAlias: false to inspect the alias edge.",
+        "Each mounted instance owns its active modes and overrides by default; modeScope: app is an explicit opt-in.",
+        "Mode and override writes enqueue component-path updates for bound scene targets."
+      ]
+    },
+    {
+      "name": "authoring.variables",
+      "signature": "create/update/delete collection, mode, variable, binding; setVariableValue; validate; applyPatch",
+      "constraints": [
+        "Authoring APIs mutate artifact.tokens.variables with structured operations.",
+        "applyPatch validates all operations against a graph copy and commits atomically; dryRun returns the planned receipt without committing.",
+        "Destructive deletes fail closed unless explicit cascade or fallback options are supplied.",
+        "validate reports invalid modes and values, alias cycles and type mismatches, and invalid or duplicate binding targets."
+      ]
+    }
+  ],
+  "resolvedTypes": [
+    "COLOR",
+    "FLOAT",
+    "STRING",
+    "BOOLEAN",
+    "TEXT_DATA",
+    "TIMING",
+    "EASING",
+    "RAW"
+  ],
+  "supportedFigmaFields": [
+    "fillPaints[*].colorVar",
+    "strokePaints[*].colorVar",
+    "variableConsumptionMap.entries[*]",
+    "parameterConsumptionMap.entries[*]",
+    "VARIABLE_SET.variableSetModes",
+    "VARIABLE.variableDataValues"
+  ],
+  "supportedVariableFields": [
+    "FILL_PAINTS",
+    "STROKE_PAINTS",
+    "CORNER_RADIUS",
+    "RECTANGLE_TOP_LEFT_CORNER_RADIUS",
+    "RECTANGLE_TOP_RIGHT_CORNER_RADIUS",
+    "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS",
+    "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS",
+    "FONT_SIZE",
+    "TEXT_DATA",
+    "CHARACTERS",
+    "OPACITY",
+    "VISIBLE"
+  ]
+}

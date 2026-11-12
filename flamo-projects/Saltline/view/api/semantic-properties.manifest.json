@@ -1,0 +1,32 @@
+{
+  "version": "semantic-v1",
+  "snapshotApi": {
+    "design": "handle.design() -> NodeSemanticSnapshot",
+    "current": "await handle.current() -> NodeSemanticSnapshot",
+    "textMetrics": "handle.measureText(text) -> number",
+    "layout": "handle.layout(): NodeLayoutSnapshot | null"
+  },
+  "groups": [
+    { "name": "identity", "appliesTo": ["*"], "read": "design+runtime", "write": "rename", "fields": ["id", "name", "kind", "role", "sourceKind", "boundary", "capabilities"] },
+    { "name": "hierarchy", "appliesTo": ["*"], "read": "design+runtime", "write": "read-only", "fields": ["parentId", "childrenIds", "index", "depth", "renderOrder"] },
+    { "name": "geometry", "appliesTo": ["*"], "read": "design+runtime", "write": "setPosition|setSize|setRotation|setScale|setTransform|animate", "fields": ["position", "size", "scale", "rotationDeg", "localTransform", "worldTransform", "localBounds", "worldBounds"] },
+    { "name": "compositing", "appliesTo": ["*"], "read": "design+runtime", "write": "setVisible|setOpacity|setBlendMode", "fields": ["visible", "opacity", "locked", "blendMode", "clipContent"] },
+    { "name": "layout", "appliesTo": ["CANVAS", "FRAME", "GROUP", "SYMBOL"], "read": "design+runtime", "write": "setLayout", "fields": ["direction", "gap", "crossGap", "padding", "primaryAlign", "crossAlign", "wrap", "primarySizing", "crossSizing"] },
+    {"name": "layoutContext", "appliesTo": ["*"], "read": "design+runtime", "write": "read-only", "fields": ["nodeId", "parentId", "source", "participation", "owners", "borderBox", "contentBox", "settings"]},
+    { "name": "constraints", "appliesTo": ["*"], "read": "design+runtime", "write": "setConstraints", "fields": ["positioning", "horizontal", "vertical", "grow", "alignSelf", "insets"] },
+    { "name": "appearance", "appliesTo": ["FRAME", "GROUP", "VECTOR", "ROUNDED_RECTANGLE", "ELLIPSE", "REGULAR_POLYGON", "STAR", "LINE", "TEXT"], "read": "design+runtime", "write": "setFill|setFillColor|setFillOpacity|setStroke|setStrokeColor|setStrokeWidth|setCorners", "fields": ["fills", "strokes", "stroke", "corners", "effects"] },
+    { "name": "text", "appliesTo": ["TEXT"], "read": "design+runtime", "write": "setText|setTextStyle", "fields": ["characters", "styleRuns", "autoResize", "decoration", "overflow", "style.fontFamily", "style.fontStyle", "style.fontWeight", "style.fontSizePx", "style.lineHeightPx", "style.letterSpacingPx", "style.horizontalAlign", "style.verticalAlign", "style.color", "style.cssFont", "style.fontAvailable"] },
+    { "name": "media", "appliesTo": ["FRAME", "VECTOR", "ROUNDED_RECTANGLE", "ELLIPSE"], "read": "design+runtime", "write": "setMedia", "fields": ["kind", "assetId", "source", "naturalSize", "fit", "crop", "rotation", "scale", "loadStatus"] },
+    { "name": "interaction", "appliesTo": ["*"], "read": "design+runtime", "write": "setInteractive|setCursor|ctx.on", "fields": ["enabled", "cursor", "zIndex", "hitBounds", "registeredEvents", "lastEvent"] },
+    { "name": "component", "appliesTo": ["SYMBOL", "INSTANCE"], "read": "design+runtime", "write": "instance.set|instance.patch|instance.call", "fields": ["definitionId", "instanceOf", "props", "slots", "variants", "overrides", "roles", "publicSurface"] },
+    { "name": "htmlSurface", "appliesTo": ["HTML_SURFACE"], "read": "design+runtime", "write": "instance.patch", "fields": ["backend", "eventMode", "moduleRef", "resourceRefs", "status"] },
+    { "name": "canvas", "appliesTo": ["CANVAS"], "read": "design+runtime", "write": "app API", "fields": ["background", "viewport", "devicePixelRatio", "zoom", "platform"] },
+    { "name": "accessibility", "appliesTo": ["*"], "read": "design+runtime", "write": "artifact patch", "fields": ["semanticRole", "label", "description", "tabIndex", "disabled", "valueText"] }
+  ],
+  "rawEscapeHatch": {
+    "api": "handle.get('ComponentCpt.path')",
+    "policy": "debug-only",
+    "hiddenByDefault": ["guid", "sessionID", "localID", "parentIndex", "derivedTextData", "geometryVersion", "needsGeometryUpdate", "cachedRenderData", "symbolOverrides"]
+  },
+  "fallbackPolicy": "Every unresolved or lossy normalization must emit a SemanticWarning; defaults must not masquerade as source facts."
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "saltline-full-frame-cover",
+  "requestFingerprint": "15adaf546856bfb75a1831770be28072abcef7d8ecba04848078e72c93efffc8",
+  "status": "applied",
+  "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+  "artifactRevisionBefore": "artifact-rev-1794412857579-qo3kgd",
+  "artifactRevisionAfter": "artifact-rev-1794416192699-979b1d73",
+  "created": {},
+  "createdAssetIds": {
+    "cover": "76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd"
+  },
+  "affectedNodeIds": [
+    "1795213250:1",
+    "583770208:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "76812311eb43ae79e29663dba9c37cdc7f5ad6d8fff68dbb1390b897454bcdbd"
+    },
+    {
+      "index": 1,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "583770208:1"
+    },
+    {
+      "index": 2,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "1795213250:1"
+    }
+  ],
+  "resources": [],
+  "resourcePreflight": {
+    "status": "passed",
+    "assets": 1,
+    "svg": 0,
+    "fonts": 0,
+    "bytes": 1591544,
+    "runtimeFontRasterVerification": "not-required"
+  },
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+      "artifactRevision": "artifact-rev-1794416192699-979b1d73"
+    }
+  },
+  "createdAt": "2026-11-11T16:56:32.699Z"
+}

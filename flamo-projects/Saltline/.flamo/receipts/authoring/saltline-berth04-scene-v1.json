@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "saltline-berth04-scene-v1",
+  "requestFingerprint": "610e8c57c2ffe3974138d57eb081bb78f568bb725f745f34738ff0aa2d7e5fbc",
+  "status": "applied",
+  "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+  "artifactRevisionBefore": "a3a23b76-51a6-4050-aa18-eab2cffffde0",
+  "artifactRevisionAfter": "artifact-rev-1794411189660-4d450bf3",
+  "created": {
+    "berth": "1795213250:1"
+  },
+  "affectedNodeIds": [
+    "0:1",
+    "1795213250:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "rename_page",
+      "status": "applied",
+      "nodeId": "0:1",
+      "pageId": "0:1"
+    },
+    {
+      "index": 1,
+      "op": "create_node",
+      "status": "applied",
+      "nodeId": "1795213250:1",
+      "createdNodeIds": [
+        "1795213250:1"
+      ]
+    },
+    {
+      "index": 2,
+      "op": "mount_node",
+      "status": "applied",
+      "nodeId": "1795213250:1"
+    }
+  ],
+  "resources": [],
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+      "artifactRevision": "artifact-rev-1794411189660-4d450bf3"
+    }
+  },
+  "createdAt": "2026-11-11T15:33:09.659Z"
+}

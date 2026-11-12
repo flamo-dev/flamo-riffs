@@ -1,0 +1,35 @@
+{
+  "name": "@flamo-components/flamo-saltline",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "main": "dist/flamo-saltline.js",
+  "module": "dist/flamo-saltline.js",
+  "types": "dist/flamo-saltline.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "AGENTS.md",
+    "manifest.json",
+    "custom-elements.json",
+    "interactions.json",
+    "INTERACTIONS.md",
+    "INTERACTION_API.md"
+  ],
+  "customElements": "custom-elements.json",
+  "exports": {
+    ".": {
+      "types": "./dist/flamo-saltline.d.ts",
+      "import": "./dist/flamo-saltline.js"
+    },
+    "./browser-manifest": "./dist/flamo-saltline.browser-manifest.json",
+    "./loader": "./dist/flamo-saltline.loader.js",
+    "./loading.css": "./dist/component-loading.css",
+    "./integration": {
+      "types": "./dist/component-integration.d.ts",
+      "import": "./dist/component-integration.js"
+    },
+    "./thin": "./dist/flamo-saltline.thin.js",
+    "./thin-browser-manifest": "./dist/flamo-saltline.thin.browser-manifest.json"
+  }
+}

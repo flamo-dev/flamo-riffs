@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "saltline-berth-cover",
+  "requestFingerprint": "9053297ed1a86d784ec07e36da95d1c3ca2ce1cce1b7479d1db21228c3171a3b",
+  "status": "applied",
+  "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+  "artifactRevisionBefore": "artifact-rev-1794411353999-tgz125",
+  "artifactRevisionAfter": "artifact-rev-1794412802995-ffd9909c",
+  "created": {
+    "poster": "583770208:1"
+  },
+  "createdAssetIds": {
+    "berth-cover": "19f2a2db44469d9f00ff1265c821b1fd2abc8f9c2a3791349fb52bf6e601c817"
+  },
+  "affectedNodeIds": [
+    "1795213250:1",
+    "583770208:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "19f2a2db44469d9f00ff1265c821b1fd2abc8f9c2a3791349fb52bf6e601c817"
+    },
+    {
+      "index": 1,
+      "op": "create_node",
+      "status": "applied",
+      "nodeId": "583770208:1",
+      "createdNodeIds": [
+        "583770208:1"
+      ]
+    },
+    {
+      "index": 2,
+      "op": "mount_node",
+      "status": "applied",
+      "nodeId": "583770208:1"
+    }
+  ],
+  "resources": [],
+  "resourcePreflight": {
+    "status": "passed",
+    "assets": 1,
+    "svg": 0,
+    "fonts": 0,
+    "bytes": 1590468,
+    "runtimeFontRasterVerification": "not-required"
+  },
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "c7cde71e-a762-423c-a19f-876aff4ce912",
+      "artifactRevision": "artifact-rev-1794412802995-ffd9909c"
+    }
+  },
+  "createdAt": "2026-11-11T16:00:02.995Z"
+}

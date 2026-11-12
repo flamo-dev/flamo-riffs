@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "policy": "flamo-core-release-v2",
+  "obfuscatorVersion": "5.7.0",
+  "packageName": "@flamo/runtime",
+  "packageVersion": "1.0.0",
+  "copyright": "Copyright (c) 2025-present support@flamo.dev. All rights reserved.",
+  "sourceMaps": false,
+  "chunks": {
+    "assets/geometry.worker-BsP2_coW.js": {
+      "sha256": "fc805e04f378b98d25321d7b2f89d9b53c61d85ac77a8b557acfc6d4c5fe785e",
+      "inputBytes": 75268,
+      "outputBytes": 101399,
+      "exports": []
+    }
+  },
+  "vendorChunks": {
+    "assets/flamo-vendor-4WJ5pE4J.js": {
+      "sha256": "6a4ed04ddf31c6a68a572b875dfc9af7780e0baa1d9c7b25b869b0eace957c46",
+      "bytes": 68067,
+      "obfuscated": false
+    }
+  }
+}

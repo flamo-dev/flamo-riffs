@@ -1,0 +1,521 @@
+{
+  "id": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+  "name": "风大侠",
+  "assets": {
+    "images": [
+      {
+        "assetId": "0932d50c5d33c37e7919f776246298a950c94104e1039f022dcd2a96d5e6896b",
+        "kind": "image",
+        "format": "jpeg",
+        "hash": "0932d50c5d33c37e7919f776246298a950c94104e1039f022dcd2a96d5e6896b",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "494867a08c0ae809c166cb6156cad781fcf9ce98"
+        },
+        "path": ".flamo/imports/assets/0932d50c5d33c37e7919f776246298a950c94104e1039f022dcd2a96d5e6896b.jpg",
+        "mimeType": "image/jpeg",
+        "byteLength": 342981,
+        "naturalSize": {
+          "height": 941,
+          "width": 1672
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/gorge.jpg",
+          "fileName": "gorge.jpg"
+        }
+      },
+      {
+        "assetId": "8c5aaa5a69a359144903fd923068604bd981749c0f12b8e6452ca98ab6193a9c",
+        "kind": "image",
+        "format": "png",
+        "hash": "8c5aaa5a69a359144903fd923068604bd981749c0f12b8e6452ca98ab6193a9c",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "779b5c94b360749eafcb2e0fb8e863b7deaef9f3"
+        },
+        "path": ".flamo/imports/assets/8c5aaa5a69a359144903fd923068604bd981749c0f12b8e6452ca98ab6193a9c.png",
+        "mimeType": "image/png",
+        "byteLength": 227226,
+        "naturalSize": {
+          "width": 322,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/idle.png",
+          "fileName": "idle.png"
+        }
+      },
+      {
+        "assetId": "35684772af9977e70f2f4632d6ae6760b4862e6029e0298487b3c8021d02ff73",
+        "kind": "image",
+        "format": "png",
+        "hash": "35684772af9977e70f2f4632d6ae6760b4862e6029e0298487b3c8021d02ff73",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "1598b767caf6c6af066a4eb86a19aabab27056eb"
+        },
+        "path": ".flamo/imports/assets/35684772af9977e70f2f4632d6ae6760b4862e6029e0298487b3c8021d02ff73.png",
+        "mimeType": "image/png",
+        "byteLength": 241129,
+        "naturalSize": {
+          "width": 371,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/walk.png",
+          "fileName": "walk.png"
+        }
+      },
+      {
+        "assetId": "088a4a255ce8b1ff62f7b2cc72b7caa549e07819cd85b063652bcfd084b1b0b3",
+        "kind": "image",
+        "format": "png",
+        "hash": "088a4a255ce8b1ff62f7b2cc72b7caa549e07819cd85b063652bcfd084b1b0b3",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "e509b0c16e151323797aedff99604d2b96c33656"
+        },
+        "path": ".flamo/imports/assets/088a4a255ce8b1ff62f7b2cc72b7caa549e07819cd85b063652bcfd084b1b0b3.png",
+        "mimeType": "image/png",
+        "byteLength": 280008,
+        "naturalSize": {
+          "width": 411,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/jump.png",
+          "fileName": "jump.png"
+        }
+      },
+      {
+        "assetId": "108e273af58a635bf924aa76da634a1a19cd6cde5fe7a95b791db877d3df49aa",
+        "kind": "image",
+        "format": "png",
+        "hash": "108e273af58a635bf924aa76da634a1a19cd6cde5fe7a95b791db877d3df49aa",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "17e7fdeeeb8f45d63ce2a63b1b8c81719c7d3209"
+        },
+        "path": ".flamo/imports/assets/108e273af58a635bf924aa76da634a1a19cd6cde5fe7a95b791db877d3df49aa.png",
+        "mimeType": "image/png",
+        "byteLength": 344430,
+        "naturalSize": {
+          "width": 525,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/glide.png",
+          "fileName": "glide.png"
+        }
+      },
+      {
+        "assetId": "f4ea7fe70cea97495de7fef3260ec52b0b8db04fbd07946a05f206917e74ee5e",
+        "kind": "image",
+        "format": "png",
+        "hash": "f4ea7fe70cea97495de7fef3260ec52b0b8db04fbd07946a05f206917e74ee5e",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "bf590962d7bff32bb2fdcebaeb1529e43b64f265"
+        },
+        "path": ".flamo/imports/assets/f4ea7fe70cea97495de7fef3260ec52b0b8db04fbd07946a05f206917e74ee5e.png",
+        "mimeType": "image/png",
+        "byteLength": 4651137,
+        "naturalSize": {
+          "width": 1920,
+          "height": 1080
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/concept-hero.png",
+          "fileName": "concept-hero.png"
+        }
+      },
+      {
+        "assetId": "19334fe45b23bb33e24595a8f67d693f3aae0061368d902be731eb33c116fbb5",
+        "kind": "image",
+        "format": "png",
+        "hash": "19334fe45b23bb33e24595a8f67d693f3aae0061368d902be731eb33c116fbb5",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "78cd684a317eccd7a7c321946fbb7ce5cebf9337"
+        },
+        "path": ".flamo/imports/assets/19334fe45b23bb33e24595a8f67d693f3aae0061368d902be731eb33c116fbb5.png",
+        "mimeType": "image/png",
+        "byteLength": 4254307,
+        "naturalSize": {
+          "width": 1920,
+          "height": 1080
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/concept-scene.png",
+          "fileName": "concept-scene.png"
+        }
+      },
+      {
+        "assetId": "aab7b72556b4c93e790bf6ed876c744ccaa0fb39707df82d9007facbd58d4584",
+        "kind": "image",
+        "format": "png",
+        "hash": "aab7b72556b4c93e790bf6ed876c744ccaa0fb39707df82d9007facbd58d4584",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "ddfa72faa6650310c3d7fd54f68907d0c1268655"
+        },
+        "path": ".flamo/imports/assets/aab7b72556b4c93e790bf6ed876c744ccaa0fb39707df82d9007facbd58d4584.png",
+        "mimeType": "image/png",
+        "byteLength": 135331,
+        "naturalSize": {
+          "width": 277,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait.png",
+          "fileName": "wait.png"
+        }
+      },
+      {
+        "assetId": "7bdcdfb9daaf384fd782b1730a251f5e38900538831ac141d9b8de9741e4f023",
+        "kind": "image",
+        "format": "jpeg",
+        "hash": "7bdcdfb9daaf384fd782b1730a251f5e38900538831ac141d9b8de9741e4f023",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "3d9e06b2dee2d30a64492cfbac12ce0a3ef75f76"
+        },
+        "path": ".flamo/imports/assets/7bdcdfb9daaf384fd782b1730a251f5e38900538831ac141d9b8de9741e4f023.jpg",
+        "mimeType": "image/jpeg",
+        "byteLength": 166030,
+        "naturalSize": {
+          "height": 941,
+          "width": 1672
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/gorge-distant.jpg",
+          "fileName": "gorge-distant.jpg"
+        }
+      },
+      {
+        "assetId": "6a04e0b27dabb3eea2f9cecc4676afcc0c5dbe12b1dcf4c202f884dbb4fa9541",
+        "kind": "image",
+        "format": "png",
+        "hash": "6a04e0b27dabb3eea2f9cecc4676afcc0c5dbe12b1dcf4c202f884dbb4fa9541",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "38e7c69896196cef2e1f5b7f23a6edc78b45e091"
+        },
+        "path": ".flamo/imports/assets/6a04e0b27dabb3eea2f9cecc4676afcc0c5dbe12b1dcf4c202f884dbb4fa9541.png",
+        "mimeType": "image/png",
+        "byteLength": 1014099,
+        "naturalSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/gorge-ridges.png",
+          "fileName": "gorge-ridges.png"
+        }
+      },
+      {
+        "assetId": "61aee78f6368924758b4c441779c25537b994015fa538a73cd5ffd63fe52e607",
+        "kind": "image",
+        "format": "png",
+        "hash": "61aee78f6368924758b4c441779c25537b994015fa538a73cd5ffd63fe52e607",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "25247873b6758894fa63bf3883142fefe4a41b36"
+        },
+        "path": ".flamo/imports/assets/61aee78f6368924758b4c441779c25537b994015fa538a73cd5ffd63fe52e607.png",
+        "mimeType": "image/png",
+        "byteLength": 1050039,
+        "naturalSize": {
+          "width": 1672,
+          "height": 941
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/gorge-banks.png",
+          "fileName": "gorge-banks.png"
+        }
+      },
+      {
+        "assetId": "a1a4ed23f404ed8f79094a8a998a874a859839e7399a77f67b368cde55c68b03",
+        "kind": "image",
+        "format": "png",
+        "hash": "a1a4ed23f404ed8f79094a8a998a874a859839e7399a77f67b368cde55c68b03",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "d7b07baba9272fd66080e53064e514a8cc7df505"
+        },
+        "path": ".flamo/imports/assets/a1a4ed23f404ed8f79094a8a998a874a859839e7399a77f67b368cde55c68b03.png",
+        "mimeType": "image/png",
+        "byteLength": 25782,
+        "naturalSize": {
+          "width": 344,
+          "height": 240
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/beacon-unlit.png",
+          "fileName": "beacon-unlit.png"
+        }
+      },
+      {
+        "assetId": "a9e2f1bf78c024e445ff0e1f3c5f424be90e7944785fdb0c6744b0a36a39d8fe",
+        "kind": "image",
+        "format": "png",
+        "hash": "a9e2f1bf78c024e445ff0e1f3c5f424be90e7944785fdb0c6744b0a36a39d8fe",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "7ee334301788c1c75b42fce0da109c9c5b72f8c4"
+        },
+        "path": ".flamo/imports/assets/a9e2f1bf78c024e445ff0e1f3c5f424be90e7944785fdb0c6744b0a36a39d8fe.png",
+        "mimeType": "image/png",
+        "byteLength": 133873,
+        "naturalSize": {
+          "width": 409,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait-rear.png",
+          "fileName": "wait-rear.png"
+        }
+      },
+      {
+        "assetId": "51e8d9269b5106a6e570f15484fa3c6c1e136fd7accf9e93ba234c180cecd549",
+        "kind": "image",
+        "format": "png",
+        "hash": "51e8d9269b5106a6e570f15484fa3c6c1e136fd7accf9e93ba234c180cecd549",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "4b8604fd63561c00b6712c3f4e9ce802eaf80a86"
+        },
+        "path": ".flamo/imports/assets/51e8d9269b5106a6e570f15484fa3c6c1e136fd7accf9e93ba234c180cecd549.png",
+        "mimeType": "image/png",
+        "byteLength": 142805,
+        "naturalSize": {
+          "width": 277,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait-front-knot.png",
+          "fileName": "wait-front-knot.png"
+        }
+      },
+      {
+        "assetId": "1a659a37eb05850cbd23e2dee08829898d212aa55939d35acb5dc093037cd010",
+        "kind": "image",
+        "format": "png",
+        "hash": "1a659a37eb05850cbd23e2dee08829898d212aa55939d35acb5dc093037cd010",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "65539b7d83324dab4f7d95b238b7a9f58fc569c4"
+        },
+        "path": ".flamo/imports/assets/1a659a37eb05850cbd23e2dee08829898d212aa55939d35acb5dc093037cd010.png",
+        "mimeType": "image/png",
+        "byteLength": 133296,
+        "naturalSize": {
+          "width": 409,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait-rear.png",
+          "fileName": "wait-rear.png"
+        }
+      },
+      {
+        "assetId": "4a38d9ccd60c1604b498fdb2c9d46f74fe2b574ddcb6f65f70fe61398851f7ac",
+        "kind": "image",
+        "format": "png",
+        "hash": "4a38d9ccd60c1604b498fdb2c9d46f74fe2b574ddcb6f65f70fe61398851f7ac",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "2f6b22e6105259d8bcacfc97f9e4932c8e9748f0"
+        },
+        "path": ".flamo/imports/assets/4a38d9ccd60c1604b498fdb2c9d46f74fe2b574ddcb6f65f70fe61398851f7ac.png",
+        "mimeType": "image/png",
+        "byteLength": 196819,
+        "naturalSize": {
+          "width": 577,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/standing-cloth-atlas.png",
+          "fileName": "standing-cloth-atlas.png"
+        }
+      },
+      {
+        "assetId": "4145cf3855311e3fd2e6e9266b2fb30c5197697b4bcf23b87bf0753e7d73eb7f",
+        "kind": "image",
+        "format": "png",
+        "hash": "4145cf3855311e3fd2e6e9266b2fb30c5197697b4bcf23b87bf0753e7d73eb7f",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "22083dc392aaf3ccdd12f600a44bffabf405459d"
+        },
+        "path": ".flamo/imports/assets/4145cf3855311e3fd2e6e9266b2fb30c5197697b4bcf23b87bf0753e7d73eb7f.png",
+        "mimeType": "image/png",
+        "byteLength": 132499,
+        "naturalSize": {
+          "width": 390,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait-rear.png",
+          "fileName": "wait-rear.png"
+        }
+      },
+      {
+        "assetId": "dbc295615d7ac3bfdd7816b112b2425dd82b1c87e427e0169c2c8a302196ef40",
+        "kind": "image",
+        "format": "png",
+        "hash": "dbc295615d7ac3bfdd7816b112b2425dd82b1c87e427e0169c2c8a302196ef40",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "748a9d3122855b02393bbb41b68624f1a8a3ec80"
+        },
+        "path": ".flamo/imports/assets/dbc295615d7ac3bfdd7816b112b2425dd82b1c87e427e0169c2c8a302196ef40.png",
+        "mimeType": "image/png",
+        "byteLength": 117799,
+        "naturalSize": {
+          "width": 308,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait-rear.png",
+          "fileName": "wait-rear.png"
+        }
+      },
+      {
+        "assetId": "110393f72bdfff6019de588ff4b0c25a769ee55dc223a6fdd4dc6048d88b53f3",
+        "kind": "image",
+        "format": "png",
+        "hash": "110393f72bdfff6019de588ff4b0c25a769ee55dc223a6fdd4dc6048d88b53f3",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "bbc757e6938fdd33795718abeec45c1c437e4042"
+        },
+        "path": ".flamo/imports/assets/110393f72bdfff6019de588ff4b0c25a769ee55dc223a6fdd4dc6048d88b53f3.png",
+        "mimeType": "image/png",
+        "byteLength": 109545,
+        "naturalSize": {
+          "width": 308,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait-rear.png",
+          "fileName": "wait-rear.png"
+        }
+      },
+      {
+        "assetId": "d3c30fcbfbef4b6bde232371437ce45c4631ac7832a749a95889e98ac5f46ea4",
+        "kind": "image",
+        "format": "png",
+        "hash": "d3c30fcbfbef4b6bde232371437ce45c4631ac7832a749a95889e98ac5f46ea4",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "eb86b5df1c8391ca477d016f986e9ca07e9d1304"
+        },
+        "path": ".flamo/imports/assets/d3c30fcbfbef4b6bde232371437ce45c4631ac7832a749a95889e98ac5f46ea4.png",
+        "mimeType": "image/png",
+        "byteLength": 107147,
+        "naturalSize": {
+          "width": 308,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/wait-rear.png",
+          "fileName": "wait-rear.png"
+        }
+      },
+      {
+        "assetId": "7ca9354fbcff8c919d07c7cbe6d4a19d4e3fdbb1f31e19b8248e7617b78e1e01",
+        "kind": "image",
+        "format": "png",
+        "hash": "7ca9354fbcff8c919d07c7cbe6d4a19d4e3fdbb1f31e19b8248e7617b78e1e01",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "f088ba6f290be86ef301c67158f62d4b320529c3"
+        },
+        "path": ".flamo/imports/assets/7ca9354fbcff8c919d07c7cbe6d4a19d4e3fdbb1f31e19b8248e7617b78e1e01.png",
+        "mimeType": "image/png",
+        "byteLength": 218035,
+        "naturalSize": {
+          "width": 577,
+          "height": 360
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/standing-windward-atlas.png",
+          "fileName": "standing-windward-atlas.png"
+        }
+      },
+      {
+        "assetId": "0071b65a0f7adc360b6ca5eb82349c75bc96fca65e52039cf22ea68074208fd2",
+        "kind": "image",
+        "format": "png",
+        "hash": "0071b65a0f7adc360b6ca5eb82349c75bc96fca65e52039cf22ea68074208fd2",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "467ec41c4ca0a574181b9cf4231d74a2739614cd"
+        },
+        "path": ".flamo/imports/assets/0071b65a0f7adc360b6ca5eb82349c75bc96fca65e52039cf22ea68074208fd2.png",
+        "mimeType": "image/png",
+        "byteLength": 340595,
+        "naturalSize": {
+          "width": 640,
+          "height": 448
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/foreground-reeds.png",
+          "fileName": "foreground-reeds.png"
+        }
+      },
+      {
+        "assetId": "1d785c75cf3e2b869a3ad44ccac9612b9d891189b4c22af36ca1ccad4f24a095",
+        "kind": "image",
+        "format": "png",
+        "hash": "1d785c75cf3e2b869a3ad44ccac9612b9d891189b4c22af36ca1ccad4f24a095",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "8c760352c23eeb30365a03cf15a27b2de07eef6e"
+        },
+        "path": ".flamo/imports/assets/1d785c75cf3e2b869a3ad44ccac9612b9d891189b4c22af36ca1ccad4f24a095.png",
+        "mimeType": "image/png",
+        "byteLength": 5263,
+        "naturalSize": {
+          "width": 407,
+          "height": 175
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/logo_text.png",
+          "fileName": "logo_text.png"
+        }
+      }
+    ],
+    "videos": [],
+    "fonts": []
+  },
+  "artifactRevision": "artifact-rev-1794741839222-2a45af3e",
+  "entrypoints": {
+    "artifact": "view/data/artifact.flamo.json"
+  },
+  "updatedAt": "2026-11-15T11:23:59.222Z"
+}

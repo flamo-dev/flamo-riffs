@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "mw-tailwind",
+  "requestFingerprint": "ed1f796b7fa7ae2fe5cbf0b6d971b71d3ea3234e3fb225a719bd4ed4369a9617",
+  "status": "applied",
+  "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+  "artifactRevisionBefore": "artifact-rev-1794664595805-ibdyql",
+  "artifactRevisionAfter": "artifact-rev-1794664964613-790f3ae2",
+  "created": {
+    "wait": "983213256:1"
+  },
+  "createdAssetIds": {
+    "wait-art": "aab7b72556b4c93e790bf6ed876c744ccaa0fb39707df82d9007facbd58d4584"
+  },
+  "affectedNodeIds": [
+    "1530701981:1",
+    "1530701981:4",
+    "1530701981:7",
+    "983213256:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "1530701981:4"
+    },
+    {
+      "index": 1,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "aab7b72556b4c93e790bf6ed876c744ccaa0fb39707df82d9007facbd58d4584"
+    },
+    {
+      "index": 2,
+      "op": "create_node",
+      "status": "applied",
+      "nodeId": "983213256:1",
+      "createdNodeIds": [
+        "983213256:1"
+      ]
+    },
+    {
+      "index": 3,
+      "op": "mount_node",
+      "status": "applied",
+      "nodeId": "983213256:1"
+    },
+    {
+      "index": 4,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "1530701981:7"
+    }
+  ],
+  "resources": [],
+  "resourcePreflight": {
+    "status": "passed",
+    "assets": 1,
+    "svg": 0,
+    "fonts": 0,
+    "bytes": 135331,
+    "runtimeFontRasterVerification": "not-required"
+  },
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+      "artifactRevision": "artifact-rev-1794664964613-790f3ae2"
+    }
+  },
+  "createdAt": "2026-11-14T14:02:44.613Z"
+}

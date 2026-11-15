@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "mw-sweeping-fold-pose",
+  "requestFingerprint": "43adc11001bf0f556b67461270549a4a1bc4c6e6dac802641e4e5944e0d9b000",
+  "status": "applied",
+  "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+  "artifactRevisionBefore": "artifact-rev-1794700035075-63665ab5",
+  "artifactRevisionAfter": "artifact-rev-1794701042729-3b967c8a",
+  "created": {},
+  "createdAssetIds": {
+    "continuous-pose": "d3c30fcbfbef4b6bde232371437ce45c4631ac7832a749a95889e98ac5f46ea4"
+  },
+  "affectedNodeIds": [
+    "545615765:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "d3c30fcbfbef4b6bde232371437ce45c4631ac7832a749a95889e98ac5f46ea4"
+    },
+    {
+      "index": 1,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "545615765:1"
+    }
+  ],
+  "resources": [],
+  "resourcePreflight": {
+    "status": "passed",
+    "assets": 1,
+    "svg": 0,
+    "fonts": 0,
+    "bytes": 107147,
+    "runtimeFontRasterVerification": "not-required"
+  },
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+      "artifactRevision": "artifact-rev-1794701042729-3b967c8a"
+    }
+  },
+  "createdAt": "2026-11-15T00:04:02.729Z"
+}

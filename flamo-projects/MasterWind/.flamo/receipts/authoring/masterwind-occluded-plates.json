@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "masterwind-occluded-plates",
+  "requestFingerprint": "5c466217dc9276e20e594227a760617b7001ba6c55ede2d424a4c935750d17bf",
+  "status": "applied",
+  "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+  "artifactRevisionBefore": "artifact-rev-1794667978441-rurt4w",
+  "artifactRevisionAfter": "artifact-rev-1794669078977-f28f6cf7",
+  "created": {
+    "distant": "1424682235:1",
+    "ridges": "1424682235:2",
+    "banks": "1424682235:3"
+  },
+  "createdAssetIds": {
+    "distant-img": "7bdcdfb9daaf384fd782b1730a251f5e38900538831ac141d9b8de9741e4f023",
+    "ridges-img": "6a04e0b27dabb3eea2f9cecc4676afcc0c5dbe12b1dcf4c202f884dbb4fa9541",
+    "banks-img": "61aee78f6368924758b4c441779c25537b994015fa538a73cd5ffd63fe52e607"
+  },
+  "affectedNodeIds": [
+    "1424682235:1",
+    "1424682235:2",
+    "1424682235:3",
+    "1530701981:1",
+    "1530701981:3"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "1530701981:3"
+    },
+    {
+      "index": 1,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "7bdcdfb9daaf384fd782b1730a251f5e38900538831ac141d9b8de9741e4f023"
+    },
+    {
+      "index": 2,
+      "op": "create_node",
+      "status": "applied",
+      "nodeId": "1424682235:1",
+      "createdNodeIds": [
+        "1424682235:1"
+      ]
+    },
+    {
+      "index": 3,
+      "op": "mount_node",
+      "status": "applied",
+      "nodeId": "1424682235:1"
+    },
+    {
+      "index": 4,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "6a04e0b27dabb3eea2f9cecc4676afcc0c5dbe12b1dcf4c202f884dbb4fa9541"
+    },
+    {
+      "index": 5,
+      "op": "create_node",
+      "status": "applied",
+      "nodeId": "1424682235:2",
+      "createdNodeIds": [
+        "1424682235:2"
+      ]
+    },
+    {
+      "index": 6,
+      "op": "mount_node",
+      "status": "applied",
+      "nodeId": "1424682235:2"
+    },
+    {
+      "index": 7,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "61aee78f6368924758b4c441779c25537b994015fa538a73cd5ffd63fe52e607"
+    },
+    {
+      "index": 8,
+      "op": "create_node",
+      "status": "applied",
+      "nodeId": "1424682235:3",
+      "createdNodeIds": [
+        "1424682235:3"
+      ]
+    },
+    {
+      "index": 9,
+      "op": "mount_node",
+      "status": "applied",
+      "nodeId": "1424682235:3"
+    }
+  ],
+  "resources": [],
+  "resourcePreflight": {
+    "status": "passed",
+    "assets": 3,
+    "svg": 0,
+    "fonts": 0,
+    "bytes": 2230168,
+    "runtimeFontRasterVerification": "not-required"
+  },
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+      "artifactRevision": "artifact-rev-1794669078977-f28f6cf7"
+    }
+  },
+  "createdAt": "2026-11-14T15:11:18.977Z"
+}

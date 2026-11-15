@@ -11,6 +11,11 @@ async function copy(path, dest = path) {
 }
 for (const path of ['home','common/riffs-shell.js','common/riffs.css','common/favicon.png','common/logo.png','common/component-viewport.js','common/flamo-runtime','pipe/index.html','pipe/styles.css','pipe/demo.js','pipe/preview-viewport.js','pipe/pipe.mp4','pipe/pipe-preview.mp4','pipe/pipe-poster.jpg']) await copy(path);
 await copy('home/index.html','index.html');
+await copy('MasterWind/masterwind-preview.mp4','masterwind/masterwind-preview.mp4');
+await copy('MasterWind/masterwind-poster.jpg','masterwind/masterwind-poster.jpg');
+// The offline export embeds binary data as Windows-1252 text. The web host serves HTML as UTF-8.
+const windPage = new TextDecoder('windows-1252').decode(await readFile(join(source,'MasterWind/MasterWind.html')));
+await writeFile(join(out,'masterwind/index.html'),windPage.replace('<meta charset="windows-1252">','<meta charset="utf-8">'));
 const game='saltline/flamo-saltline-web-component/';
 const gameManifest=JSON.parse(await readFile(join(source,game,'manifest.json'),'utf8'));
 const gameVersion=gameManifest.packaging.artifactRevision;

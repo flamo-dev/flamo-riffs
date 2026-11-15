@@ -15,6 +15,9 @@
 /html-examples/*/flamo-integration.report.json
 /html-examples/common/me.jpeg
 
+# 推广视频
+/flamo-videos/
+
 # 开发工具与本机配置。
 node_modules/
 .env

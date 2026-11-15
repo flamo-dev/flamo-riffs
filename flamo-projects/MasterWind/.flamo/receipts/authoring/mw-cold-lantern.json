@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "mw-cold-lantern",
+  "requestFingerprint": "4338f8b90316e5edf804a805542ad749bf067f5da2af36fc51616f429b54e6e8",
+  "status": "applied",
+  "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+  "artifactRevisionBefore": "artifact-rev-1794671036890-0537efb1",
+  "artifactRevisionAfter": "artifact-rev-1794694017024-be6380de",
+  "created": {
+    "unlit": "1070463637:1"
+  },
+  "createdAssetIds": {
+    "lantern-pane": "a1a4ed23f404ed8f79094a8a998a874a859839e7399a77f67b368cde55c68b03"
+  },
+  "affectedNodeIds": [
+    "1070463637:1",
+    "1530701981:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "register_asset",
+      "status": "applied",
+      "assetId": "a1a4ed23f404ed8f79094a8a998a874a859839e7399a77f67b368cde55c68b03"
+    },
+    {
+      "index": 1,
+      "op": "create_node",
+      "status": "applied",
+      "nodeId": "1070463637:1",
+      "createdNodeIds": [
+        "1070463637:1"
+      ]
+    },
+    {
+      "index": 2,
+      "op": "mount_node",
+      "status": "applied",
+      "nodeId": "1070463637:1"
+    }
+  ],
+  "resources": [],
+  "resourcePreflight": {
+    "status": "passed",
+    "assets": 1,
+    "svg": 0,
+    "fonts": 0,
+    "bytes": 25782,
+    "runtimeFontRasterVerification": "not-required"
+  },
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "e6de3080-ea78-4e0c-9177-c693a8735fd0",
+      "artifactRevision": "artifact-rev-1794694017024-be6380de"
+    }
+  },
+  "createdAt": "2026-11-14T22:06:57.024Z"
+}

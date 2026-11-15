@@ -13,15 +13,17 @@ createServer(async (req,res) => {
     if (!['GET','HEAD'].includes(req.method)) return res.writeHead(405).end();
     const url = new URL(req.url,'http://localhost');
     const path = decodeURIComponent(url.pathname);
-    let target = resolve(root,'.'+(path === '/' ? '/home/index.html' : path));
+    const sourcePath = path.replace(/^\/masterwind(?=\/|$)/, '/MasterWind');
+    let target = resolve(root,'.'+(path === '/' ? '/home/index.html' : sourcePath));
     const rel = relative(root,target);
     if (rel.startsWith('..') || isAbsolute(rel)) return res.writeHead(403).end();
     if ((await stat(target)).isDirectory()) {
       if (!path.endsWith('/')) return res.writeHead(308,{Location:url.pathname+'/'+url.search}).end();
-      target = resolve(target,'index.html');
+      target = resolve(target,sourcePath === '/MasterWind/' ? 'MasterWind.html' : 'index.html');
     }
     const info = await stat(target);
     const headers = {'Content-Type':types[extname(target)] || 'application/octet-stream','Cache-Control':'no-cache'};
+    if (target === resolve(root,'MasterWind/MasterWind.html')) headers['Content-Type'] = 'text/html; charset=windows-1252';
     if (isExportEntry(path)) {
       const body = Buffer.from(relocateExport(path,await readFile(target,'utf8')));
       return res.writeHead(200,{...headers,'Content-Length':body.length}).end(req.method==='HEAD'?undefined:body);

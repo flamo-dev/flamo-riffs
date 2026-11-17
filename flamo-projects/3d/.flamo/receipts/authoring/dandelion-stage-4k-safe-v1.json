@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "dandelion-stage-4k-safe-v1",
+  "requestFingerprint": "fa7a63d183f3231c03c8bab64578d9e4d21b816e18eefd74a587ac310e9444d6",
+  "status": "applied",
+  "projectId": "7f916e2c-5629-416f-b459-4c19328fe3b1",
+  "artifactRevisionBefore": "artifact-rev-1794877581893-c595d47a",
+  "artifactRevisionAfter": "artifact-rev-1794894740562-3f117ba2",
+  "created": {},
+  "affectedNodeIds": [
+    "198777897:2",
+    "198777897:3",
+    "778261585:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "198777897:2"
+    },
+    {
+      "index": 1,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "198777897:3"
+    },
+    {
+      "index": 2,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "778261585:1"
+    }
+  ],
+  "resources": [],
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "7f916e2c-5629-416f-b459-4c19328fe3b1",
+      "artifactRevision": "artifact-rev-1794894740562-3f117ba2"
+    }
+  },
+  "createdAt": "2026-11-17T05:52:20.561Z"
+}

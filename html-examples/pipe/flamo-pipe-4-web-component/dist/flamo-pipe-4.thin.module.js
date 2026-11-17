@@ -19,7 +19,7 @@ export const flamoComponentManifest = {
   "className": "FlamoPipe4Element",
   "packageName": "@flamo-components/flamo-pipe-4",
   "name": "Pipe-4",
-  "generatedAt": "2026-11-10T04:18:00.955Z",
+  "generatedAt": "2026-11-17T09:06:53.167Z",
   "source": {
     "kind": "local-fig",
     "id": "e152e609-f128-4def-acb1-1a5b5ab0294a",
@@ -59,7 +59,7 @@ export const flamoComponentManifest = {
   },
   "integration": {
     "projectId": "1a28eef4-426b-4e03-aa13-72e744cd0c86",
-    "contractId": "sha256:c3e02a5ce2301bd12dc9c67a79d81d43e9aeb386e34474dff18e1299a0f327f0",
+    "contractId": "sha256:35f73cadd61da17f49d4f7cbd7f47115589c8f7db18b94bca70b76aa15b3c471",
     "artifactRevision": "local-acba125e3295f09be34a"
   },
   "interactionTargets": {},
@@ -67,7 +67,7 @@ export const flamoComponentManifest = {
   "compiledResources": {
     "schema": "flamo.resources/2",
     "manifest": "dist/resources/artifact.json",
-    "integrity": "sha256:6079a71ac52690a150ff7f6937358ebc77ef4250088732165677a6532e1b386c",
+    "integrity": "sha256:ede7e41c25d000bac69482134860b1804824b71dc38fd82e421631f6a669bbb9",
     "report": {
       "compiler": "flamo.runtime-resources/1",
       "revision": "local-acba125e3295f09be34a",
@@ -88,8 +88,8 @@ export const flamoComponentManifest = {
     "includeResources": false,
     "cdnBase": "http://localhost:8080/common/",
     "sharedResources": {
-      "runtime": "http://localhost:8080/common/flamo-runtime/index.es.js?v=6d2ff1a7ac46cbf71db7bc0e5e550b1103dfff6826484a351327f677c7d408f6",
-      "viewport": "http://localhost:8080/common/component-viewport.js?v=7f533668b721e562ddf4b4d8b1b520b1b229234216c8393b7cf1cf5192a1ccd0"
+      "runtime": "http://localhost:8080/common/flamo-runtime/index.es.js?v=e05cccaf4d1047c23416f98d46dbb5aaaddc1a4c3d01a8fafe61e6b623ee5ff4",
+      "viewport": "http://localhost:8080/common/component-viewport.js?v=8a9625e8b5d2fa2deb7a029f6c243937929a722f2a098a30bd3157466c5df6ae"
     },
     "interactions": "local",
     "boundaryNodeId": "94:21",
@@ -113,7 +113,7 @@ export const flamoComponentManifest = {
       "version": "0.1.0",
       "exportName": "Pipe4",
       "artifactRevision": "local-acba125e3295f09be34a",
-      "artifactHash": "sha256:43468a13a984cfd2acec9cd98b64de47bea8298a907f2125fd5febbac1112c06",
+      "artifactHash": "sha256:ffefa22231b2dee5464eb48e2f56af2cfa412de98f3a1f31cde3f48e51d26939",
       "runtimeAbi": "runtime-v1",
       "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
     },
@@ -257,7 +257,7 @@ function propToAttribute(name) {
 }
 
 async function createArtifactForMount(signal) {
-  const artifactData = await loadPackagedArtifact(import.meta.url, "6079a71ac52690a150ff7f6937358ebc77ef4250088732165677a6532e1b386c", signal);
+  const artifactData = await loadPackagedArtifact(import.meta.url, "ede7e41c25d000bac69482134860b1804824b71dc38fd82e421631f6a669bbb9", signal);
   if (artifactData?.scene?.nodes) {
     const name = flamoComponentManifest.name;
     const boundaryNodeId = flamoComponentManifest.packaging.boundaryNodeId;
@@ -436,7 +436,7 @@ export class FlamoPipe4Element extends HTMLElement {
     const version = this._connectionVersion;
     this._resourceAbort = new AbortController();
     try {
-      FlamoConfig.setAssetBase(new URL('.', new URL("http://localhost:8080/common/flamo-runtime/index.es.js?v=6d2ff1a7ac46cbf71db7bc0e5e550b1103dfff6826484a351327f677c7d408f6", import.meta.url)).href);
+      FlamoConfig.setAssetBase(new URL('.', new URL("http://localhost:8080/common/flamo-runtime/index.es.js?v=e05cccaf4d1047c23416f98d46dbb5aaaddc1a4c3d01a8fafe61e6b623ee5ff4", import.meta.url)).href);
       // Pin CSS size before ECS observes the canvas. Its intrinsic bitmap size
       // must not feed back into CSS layout and grow by DPR on every frame.
       const viewport = this.shadowRoot.querySelector('.viewport');
@@ -461,7 +461,7 @@ export class FlamoPipe4Element extends HTMLElement {
           platform: 'web',
           transparentBackground: true,
           cameraControls: { pan: flamoComponentManifest.viewport.pan, zoom: flamoComponentManifest.viewport.zoom,
-            nativeScroll: flamoComponentManifest.viewport.fit !== 'contain' },
+            nativeScroll: ['width', 'height'].includes(flamoComponentManifest.viewport.fit) },
           sceneOptions: { expandInstances: false },
           gameLoop: { fixedTimeStep: 1 / 60 },
         },

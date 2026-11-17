@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "project.coal.extension",
+  "version": "1.0.0",
+  "requiredRoles": { "root": { "required": true, "cardinality": "one", "capabilities": [] } },
+  "listens": ["coal:device:update", "coal:device:ready", "coal:device:ack"],
+  "writes": ["root.visible"],
+  "state": ["unknown", "hidden", "visible"],
+  "invariants": ["Only a strictly true computed configuration value displays the extension", "Full snapshots clear omitted states", "Targets and cleanup belong to one mounted instance"],
+  "requiredEvidence": ["role-binding-compatible", "script-mounted", "instance-isolation", "rendered-output"]
+}

@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "ref": {
     "schemaVersion": 1,
-    "namespace": "project.9c6e9c90-5573-4133-961c-0a2091f5083d",
+    "namespace": "project.1a28eef4-426b-4e03-aa13-72e744cd0c86",
     "id": "component-flamo-pipe-group",
     "version": "0.1.0",
     "exportName": "PipeGroup",
-    "artifactRevision": "local-4b0a3b2770efb30e3021",
-    "artifactHash": "sha256:349f2d9be38361b35e2d4ec8b7cee7c471dd86e426f3f2e28bb77becc8e6128d",
+    "artifactRevision": "local-acba125e3295f09be34a",
+    "artifactHash": "sha256:ffefa22231b2dee5464eb48e2f56af2cfa412de98f3a1f31cde3f48e51d26939",
     "runtimeAbi": "runtime-v1",
     "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
   },
@@ -15,19 +15,19 @@
   "packageMode": "browser-esm",
   "entry": "https://components.invalid/flamo-pipe-group/dist/flamo-pipe-group.module.js",
   "resourceBase": "https://components.invalid/flamo-pipe-group/dist/",
-  "integrity": "sha256:a67961064cd3490d2905055212d02137fdf3f4558e57b8d19fc3dfadefa0e3d4",
+  "integrity": "sha256:ffa88feb0edf7265cf6b0e45e3da8ca08f8d7865ff76dff26ab2000b07459042",
   "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
-  "compositionHash": "sha256:a392c3c98113d312873108560085b4141334592f3a13bdcc191e19bedc38c45a",
+  "compositionHash": "sha256:78e630bd650262f06939c751cdefa9980fdb737771b677f4fa9d16363df587ab",
   "dependencies": [],
   "assets": [
     {
       "url": "https://components.invalid/flamo-pipe-group/dist/resources/artifact.json",
-      "integrity": "sha256:03dc59feb621bca98b68007160738b2f79249a9a23af700a0eecee8ebe781f91",
+      "integrity": "sha256:fdc188b7cef226a22b58af0f63daf3c1934ab8a6cb330f048a84b3f3f826cf8b",
       "type": "application/json"
     },
     {
       "url": "https://components.invalid/flamo-pipe-group/dist/component-resources.js",
-      "integrity": "sha256:a6587f2c1d51a5560d1abb442883a99a9ef063d74e16b5e1350d8d33bfffd8fd",
+      "integrity": "sha256:d41cc0bdb89cdcd550613b63b43cba3f087c176c8ba5a5f91b357d65fafad730",
       "type": "text/javascript"
     },
     {

@@ -19,6 +19,7 @@
     @media(orientation:landscape) and (max-height:550px){nav{display:none}.flamo-component-shell{width:min(100vw,177.7778svh)}main{display:grid;grid-template-rows:1fr}}
   </style>
   <script type="module">
+    import { runtimePath } from '/common/cdn-config.js';
     const game=document.querySelector('flamo-saltline'),status=document.querySelector('[data-flamo-status]'),message=status.querySelector('[data-flamo-message]'),retry=status.querySelector('button');
     retry.addEventListener('click',()=>location.reload());
     function show(state,text){
@@ -40,8 +41,8 @@
       else {
         show('loading','正在载入四号泊位…');
         let downloaded=4;progress(downloaded,'正在下载游戏资源…');
-        for(const [name,weight] of [['interactions/bundle.js',38],['flamo-runtime/index.es.js',16]]){
-          const link=document.createElement('link');link.rel='modulepreload';link.href='./flamo-saltline-web-component/dist/'+name;
+        for(const [url,weight] of [['./flamo-saltline-web-component/dist/interactions/bundle.js',38],[runtimePath,16]]){
+          const link=document.createElement('link');link.rel='modulepreload';link.href=url;
           link.onload=()=>{downloaded+=weight;progress(downloaded,'正在加载 Flamo 与港区资源…');};document.head.append(link);
         }
         game.addEventListener('saltline-progress',({detail})=>{progress(detail.value,detail.label);if(detail.value===100){frameReady=true;finish();}});

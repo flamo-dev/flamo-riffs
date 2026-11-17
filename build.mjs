@@ -3,6 +3,7 @@ import { cp, mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relocateExport } from './html-examples/relocate-export.mjs';
+import { hostOfflinePage } from './html-examples/host-offline-page.mjs';
 const source = fileURLToPath(new URL('./html-examples/',import.meta.url));
 const out = process.env.RIFFS_BUILD_DIR ? resolve(process.env.RIFFS_BUILD_DIR) : fileURLToPath(new URL('./dist/',import.meta.url));
 async function copy(path, dest = path) {
@@ -11,11 +12,32 @@ async function copy(path, dest = path) {
 }
 for (const path of ['home','common/riffs-shell.js','common/riffs.css','common/favicon.png','common/logo.png','common/component-viewport.js','common/flamo-runtime','pipe/index.html','pipe/styles.css','pipe/demo.js','pipe/preview-viewport.js','pipe/pipe.mp4','pipe/pipe-preview.mp4','pipe/pipe-poster.jpg']) await copy(path);
 await copy('home/index.html','index.html');
+await copy('favicon.ico');
+await copy('common/demo-screen.js');
+await copy('common/cdn-config.js');
+for (const [page, component, hostFiles] of [
+  ['shumei', 'flamo-coal-system', ['coal-slots.js', 'robot-template.js']],
+  ['jianpan', 'flamo-jianpan', ['monitor.css', 'trend.js', 'beng-green.png', 'beng-red.png', 'feng-green.png', 'feng-red.png', 'fire-burning.gif', 'smoke.gif']],
+]) {
+  for (const file of ['index.html', 'demo.js', page+'-preview.mp4', page+'-poster.jpg', ...hostFiles]) {
+    await copy(page+'/'+file);
+  }
+  const componentDist = page+'/'+component+'-web-component/dist';
+  for (const file of [component+'.js', component+'.loader.js', 'cdn-config.js', 'component-loading.css', 'component-resources.js', 'assets', 'interactions', 'resources']) {
+    await copy(componentDist+'/'+file);
+  }
+}
 await copy('MasterWind/masterwind-preview.mp4','masterwind/masterwind-preview.mp4');
 await copy('MasterWind/masterwind-poster.jpg','masterwind/masterwind-poster.jpg');
-// The offline export embeds binary data as Windows-1252 text. The web host serves HTML as UTF-8.
-const windPage = new TextDecoder('windows-1252').decode(await readFile(join(source,'MasterWind/MasterWind.html')));
-await writeFile(join(out,'masterwind/index.html'),windPage.replace('<meta charset="windows-1252">','<meta charset="utf-8">'));
+await copy('dandelion/dandelion-preview.mp4');
+await copy('dandelion/dandelion-poster.jpg');
+// The offline exports embed binary data as Windows-1252 text. The web host serves HTML as UTF-8.
+for (const [file, destination] of [
+  ['MasterWind/MasterWind.html', 'masterwind/index.html'],
+  ['dandelion/Dandelion · meadow.html', 'dandelion/index.html'],
+]) {
+  await writeFile(join(out, destination), hostOfflinePage(await readFile(join(source, file))));
+}
 const game='saltline/flamo-saltline-web-component/';
 const gameManifest=JSON.parse(await readFile(join(source,game,'manifest.json'),'utf8'));
 const gameVersion=gameManifest.packaging.artifactRevision;
@@ -26,7 +48,11 @@ await copy('saltline/saltline-preview.mp4');
 await copy(game+'manifest.json',publicGame+'manifest.json');
 const gameHost=await readFile(join(source,'saltline/index.html'),'utf8');
 await writeFile(join(out,'saltline/index.html'),gameHost.replaceAll('./flamo-saltline-web-component/','./'+gameVersion+'/'));
-for (const path of ['flamo-saltline.js','component-integration.js','component-resources.js','component-viewport.js','component-loading.css','interactions','resources','flamo-runtime','assets']) await copy(game+'dist/'+path,publicGame+'dist/'+path);
+for (const path of ['component-integration.js','component-resources.js','component-loading.css','interactions','resources','assets']) await copy(game+'dist/'+path,publicGame+'dist/'+path);
+for (const path of ['flamo-saltline.js','interactions/bundle.js']) {
+  const file = game+'dist/'+path;
+  await writeFile(join(out,publicGame+'dist/'+path), relocateExport(file,await readFile(join(source,file),'utf8')));
+}
 for (const id of ['1','2','3','4','group']) {
   const tag = 'flamo-pipe-' + id;
   const ws = 'pipe/' + tag + '-web-component/';

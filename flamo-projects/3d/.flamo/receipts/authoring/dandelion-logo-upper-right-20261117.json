@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "dandelion-logo-upper-right-20261117",
+  "requestFingerprint": "6c68505f2b0072e355be9ae82f6ab51690e6f6aa70968b50c1224d850cc58349",
+  "status": "applied",
+  "projectId": "7f916e2c-5629-416f-b459-4c19328fe3b1",
+  "artifactRevisionBefore": "artifact-rev-1794894740562-3f117ba2",
+  "artifactRevisionAfter": "artifact-rev-1794896093592-6238c8b4",
+  "created": {},
+  "affectedNodeIds": [
+    "778261585:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "778261585:1"
+    }
+  ],
+  "resources": [],
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "7f916e2c-5629-416f-b459-4c19328fe3b1",
+      "artifactRevision": "artifact-rev-1794896093592-6238c8b4"
+    }
+  },
+  "createdAt": "2026-11-17T06:14:53.592Z"
+}

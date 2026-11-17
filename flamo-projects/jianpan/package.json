@@ -1,0 +1,17 @@
+{
+  "name": "u_34e681a53e_import_10f69fc0d2a6",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/flamo-dev.mjs",
+    "link": "node scripts/flamo-dev.mjs link",
+    "pull": "node scripts/flamo-dev.mjs pull",
+    "push": "node scripts/flamo-dev.mjs push",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/flamo-verify.mjs",
+    "build:component": "node scripts/flamo-build-component.mjs"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2"
+  }
+}

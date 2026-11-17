@@ -2,12 +2,17 @@
 import { createServer } from 'node:http';
 import { createReadStream } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';
-import { dirname, resolve, relative, extname, isAbsolute } from 'node:path';
+import { basename, dirname, resolve, relative, extname, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isExportEntry, relocateExport } from './relocate-export.mjs';
+import { hostOfflinePage } from './host-offline-page.mjs';
 const root = dirname(fileURLToPath(import.meta.url));
 const port = Number(process.argv[2] || 8080);
-const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json','.wasm':'application/wasm','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.mp4':'video/mp4','.woff2':'font/woff2' };
+const offlinePages = new Map([
+  [resolve(root, 'MasterWind'), 'MasterWind.html'],
+  [resolve(root, 'dandelion'), 'Dandelion · meadow.html'],
+]);
+const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json','.wasm':'application/wasm','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.jpg':'image/jpeg','.mp4':'video/mp4','.woff2':'font/woff2' };
 createServer(async (req,res) => {
   try {
     if (!['GET','HEAD'].includes(req.method)) return res.writeHead(405).end();
@@ -19,13 +24,15 @@ createServer(async (req,res) => {
     if (rel.startsWith('..') || isAbsolute(rel)) return res.writeHead(403).end();
     if ((await stat(target)).isDirectory()) {
       if (!path.endsWith('/')) return res.writeHead(308,{Location:url.pathname+'/'+url.search}).end();
-      target = resolve(target,sourcePath === '/MasterWind/' ? 'MasterWind.html' : 'index.html');
+      target = resolve(target,offlinePages.get(target) || 'index.html');
     }
     const info = await stat(target);
     const headers = {'Content-Type':types[extname(target)] || 'application/octet-stream','Cache-Control':'no-cache'};
-    if (target === resolve(root,'MasterWind/MasterWind.html')) headers['Content-Type'] = 'text/html; charset=windows-1252';
-    if (isExportEntry(path)) {
-      const body = Buffer.from(relocateExport(path,await readFile(target,'utf8')));
+    const offlinePage = offlinePages.get(dirname(target)) === basename(target);
+    const hostedPage = offlinePage && path.endsWith('/');
+    if (offlinePage && !hostedPage) headers['Content-Type'] = 'text/html; charset=windows-1252';
+    if (hostedPage || isExportEntry(path)) {
+      const body = Buffer.from(hostedPage ? hostOfflinePage(await readFile(target)) : relocateExport(path,await readFile(target,'utf8')));
       return res.writeHead(200,{...headers,'Content-Length':body.length}).end(req.method==='HEAD'?undefined:body);
     }
     let start=0, end=info.size-1, status=200;

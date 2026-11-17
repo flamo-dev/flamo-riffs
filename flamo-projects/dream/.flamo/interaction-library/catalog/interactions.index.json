@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 2,
+  "package": "@flamo/interaction-library",
+  "version": "0.20.0",
+  "registryPolicy": {
+    "immutableVersions": true,
+    "defaultAllowedTiers": ["official", "recommended"],
+    "tiers": ["experimental", "verified", "recommended", "official"],
+    "reservedScopes": {
+      "@flamo": "official"
+    },
+    "namespacePolicy": "Community interactions must publish under their own package scope. They may compete with official assets by kind and contract, but must not reuse an official package/name/version identity."
+  },
+  "assets": [
+    {
+      "id": "hmi/path-flow-appearance",
+      "name": "@flamo/hmi-pipe-flow",
+      "version": "2.4.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "hmi-pipe-flow",
+      "summary": "Design-visible pipe layers with instance-local runtime visibility and arc-length flow controls.",
+      "triggers": [
+        "runtime visibility",
+        "管道隐藏",
+        "设计态可见"
+      ],
+      "roles": [
+        "root",
+        "flow",
+        "motion",
+        "wall",
+        "medium"
+      ],
+      "events": [
+        "business-update",
+        "flamo:hmi-pipe-flow:set",
+        "flamo:hmi-pipe-flow:state"
+      ],
+      "capabilities": [
+        "visibility",
+        "stroke-style",
+        "animation-frame",
+        "dispose",
+        "instance-isolated-state",
+        "transform",
+        "scene-create",
+        "scene-remove"
+      ],
+      "contracts": [
+        "pipe-flow-state",
+        "arc-length-range",
+        "atomic-patch",
+        "phase-direction",
+        "lifecycle-safe-scheduling"
+      ],
+      "examples": [
+        "straight-pipe-range",
+        "bent-pipe-range",
+        "component-forwarding"
+      ],
+      "source": "src/hmi/path-flow-appearance.ts",
+      "contract": "contracts/hmi-path-flow-appearance.behavior.json",
+      "recipe": "recipes/hmi-path-flow-appearance.md",
+      "packageRef": "@flamo/interaction-library/hmi/path-flow-appearance",
+      "behaviorRef": "hmi.pipe-flow",
+      "managedModule": "managed/behaviors/hmi.pipe-flow/2.4.0.js",
+      "managedModuleSha256": "1983ac7550c31eda675cf2f1d2ea4c81baef930d0a7e193635f887eb77f1faa8"
+    },
+    {
+      "id": "hmi/path-flow-range",
+      "name": "@flamo/hmi-pipe-flow",
+      "version": "2.3.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "hmi-pipe-flow",
+      "summary": "Script-friendly path contract, arc-length flow ranges and instance-local lifecycle-safe controls.",
+      "triggers": ["pipe endpoint", "flow range", "管道起止点", "路径区间", "pipStop"],
+      "roles": ["root", "flow", "motion"],
+      "events": ["business-update", "flamo:hmi-pipe-flow:set", "flamo:hmi-pipe-flow:state"],
+      "capabilities": ["visibility", "stroke-style", "animation-frame", "dispose", "instance-isolated-state", "transform", "scene-create", "scene-remove"],
+      "contracts": ["pipe-flow-state", "arc-length-range", "atomic-patch", "phase-direction", "lifecycle-safe-scheduling"],
+      "examples": ["straight-pipe-range", "bent-pipe-range", "component-forwarding"],
+      "source": "src/hmi/path-flow-range.ts",
+      "contract": "contracts/hmi-path-flow-range.behavior.json",
+      "recipe": "recipes/hmi-path-flow-range.md",
+      "packageRef": "@flamo/interaction-library/hmi/path-flow-range",
+      "behaviorRef": "hmi.pipe-flow",
+      "managedModule": "managed/behaviors/hmi.pipe-flow/2.3.0.js",
+      "managedModuleSha256": "c059335628545405ce348691facf1d7453d7aa1f17498e707385021a6680c4af"
+    },
+    {
+      "id": "hmi/path-flow-runtime",
+      "name": "@flamo/hmi-pipe-flow",
+      "version": "2.2.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "hmi-pipe-flow",
+      "summary": "Runtime-owned ephemeral particles with compact Figma path metadata; no design-time particle pools.",
+      "triggers": ["runtime particles", "管道性能", "path acceleration", "free fall", "加速度", "自由落体", "煤块", "循环组"],
+      "roles": ["root", "flow"],
+      "events": ["business-update", "flamo:hmi-pipe-flow:set", "flamo:hmi-pipe-flow:state"],
+      "capabilities": ["visibility", "stroke-style", "animation-frame", "dispose", "instance-isolated-state", "transform", "opacity", "fill", "scene-create", "scene-remove"],
+      "contracts": ["pipe-flow-state", "atomic-patch", "phase-direction", "lifecycle-safe-scheduling", "independent-acceleration"],
+      "examples": ["figma-hmi-pipe", "falling-coal"],
+      "source": "src/hmi/path-flow-runtime.ts",
+      "contract": "contracts/hmi-path-flow-runtime.behavior.json",
+      "recipe": "recipes/hmi-path-flow-runtime.md",
+      "packageRef": "@flamo/interaction-library/hmi/path-flow-runtime",
+      "behaviorRef": "hmi.pipe-flow",
+      "managedModule": "managed/behaviors/hmi.pipe-flow/2.2.0.js",
+      "managedModuleSha256": "0aace4c4637274669f131b5721438fcb8bfe9f39d0eea2aa08dd694e3e541da1"
+    },
+    {
+      "id": "hmi/path-flow-accelerated",
+      "name": "@flamo/hmi-pipe-flow",
+      "version": "2.1.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "hmi-pipe-flow",
+      "summary": "Independent age-based path acceleration in m/s² with physical scale, periodic emission and legacy uniform motion.",
+      "triggers": ["path acceleration", "free fall", "加速度", "自由落体", "煤块", "循环组"],
+      "roles": ["root", "flow"],
+      "events": ["business-update", "flamo:hmi-pipe-flow:set", "flamo:hmi-pipe-flow:state"],
+      "capabilities": ["visibility", "stroke-style", "animation-frame", "dispose", "instance-isolated-state", "transform", "opacity", "fill"],
+      "contracts": ["pipe-flow-state", "atomic-patch", "phase-direction", "lifecycle-safe-scheduling", "independent-acceleration"],
+      "examples": ["figma-hmi-pipe", "falling-coal"],
+      "source": "src/hmi/path-flow-accelerated.ts",
+      "contract": "contracts/hmi-path-flow-accelerated.behavior.json",
+      "recipe": "recipes/hmi-path-flow-accelerated.md",
+      "packageRef": "@flamo/interaction-library/hmi/path-flow-accelerated",
+      "behaviorRef": "hmi.pipe-flow",
+      "managedModule": "managed/behaviors/hmi.pipe-flow/2.1.0.js",
+      "managedModuleSha256": "b608484e7a607dac1b804b3c5759ad02b4b810ed76fad214b5d965b94d358844"
+    },
+    {
+      "id": "hmi/path-flow",
+      "name": "@flamo/hmi-pipe-flow",
+      "version": "2.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "hmi-pipe-flow",
+      "summary": "Deterministic path cycle groups and scatter material pools with scoped native transforms.",
+      "triggers": [
+        "HMI pipe flow",
+        "animated pipe",
+        "flow direction",
+        "管道流动",
+        "流向",
+        "启停",
+        "cycle group",
+        "scatter",
+        "煤块",
+        "循环组"
+      ],
+      "roles": [
+        "root",
+        "flow"
+      ],
+      "events": [
+        "business-update",
+        "flamo:hmi-pipe-flow:set",
+        "flamo:hmi-pipe-flow:state"
+      ],
+      "capabilities": [
+        "visibility",
+        "stroke-style",
+        "animation-frame",
+        "dispose",
+        "instance-isolated-state",
+        "transform",
+        "opacity",
+        "fill"
+      ],
+      "contracts": [
+        "pipe-flow-state",
+        "atomic-patch",
+        "phase-direction",
+        "lifecycle-safe-scheduling"
+      ],
+      "examples": [
+        "figma-hmi-pipe"
+      ],
+      "source": "src/hmi/path-flow.ts",
+      "contract": "contracts/hmi-path-flow.behavior.json",
+      "recipe": "recipes/hmi-path-flow.md",
+      "packageRef": "@flamo/interaction-library/hmi/path-flow",
+      "behaviorRef": "hmi.pipe-flow",
+      "managedModule": "managed/behaviors/hmi.pipe-flow/2.0.0.js",
+      "managedModuleSha256": "c5b14f47ee63b1e583ef6a7c5f94286ea1f17db2a987daf3207f57dbd28ffad1"
+    },
+    {
+      "id": "base/bind-number",
+      "name": "@flamo/number-binding",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "numeric-display-binding",
+      "summary": "Linear numeric ratio dimensions and decimal text using public Runtime layout observation and preflight, preserving Auto Layout.",
+      "triggers": [
+        "numeric binding",
+        "gauge",
+        "progress bar",
+        "数值绑定",
+        "液位",
+        "量程"
+      ],
+      "roles": [
+        "fill",
+        "track",
+        "label"
+      ],
+      "events": [],
+      "capabilities": [
+        "layout-observation",
+        "layout-write-preflight",
+        "single-axis-size",
+        "text",
+        "dispose"
+      ],
+      "contracts": [
+        "numeric-range-projection",
+        "preserved-layout",
+        "lifecycle-cleanup"
+      ],
+      "examples": [
+        "control-panel"
+      ],
+      "source": "src/base/bind-number.ts",
+      "recipe": "recipes/number-binding.md",
+      "packageRef": "@flamo/interaction-library/base"
+    },
+    {
+      "id": "base/scroll-container",
+      "name": "@flamo/scroll-container",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "scroll-container",
+      "summary": "Role-bound two-axis scroll state, constant-time thumb drag math, touch/pen momentum and bounce, delayed auto-hide, frame coalescing, transparent gutters, and keyboard navigation.",
+      "triggers": ["scroll container", "scrollbar", "thumb drag", "滚动容器", "滚动条", "滑块拖拽"],
+      "roles": ["viewport", "content", "horizontalBar", "verticalBar"],
+      "events": ["pointerover", "pointerout", "pointerdown", "pointermove", "pointerup", "pointercancel", "lostpointercapture", "wheel", "keydown", "focus", "blur"],
+      "capabilities": ["mounted-content", "transparent-hit-surface", "pointer-capture", "frame-coalescing", "touch-pen-momentum", "reduced-motion", "delayed-auto-hide", "keyboard-scroll", "accessibility-scrollbar", "instance-isolated-state"],
+      "contracts": ["constant-time-drag", "transaction-cleanup", "both-axis", "bounded-overscroll", "keyboard-navigation", "accessibility-range", "visual-state-delta"],
+      "examples": ["vertical-only", "horizontal-only", "both-axis", "auto-hidden", "touch-momentum"],
+      "source": "src/base/scroll-container.ts",
+      "contract": "contracts/scroll-container.behavior.json",
+      "recipe": "recipes/scroll-container.md",
+      "packageRef": "@flamo/interaction-library/base/scroll-container"
+    },
+    {
+      "id": "base/button-pointer-feedback",
+      "name": "@flamo/button-pointer-feedback",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "button-pointer-feedback",
+      "summary": "Role-bound pointer hover, press, release, cancel, and click state contract for buttons.",
+      "triggers": ["button interaction", "hover", "pressed", "按钮交互", "鼠标移入", "点击反馈"],
+      "roles": ["root"],
+      "events": ["pointerenter", "pointerleave", "pointerdown", "pointerup", "pointercancel", "click"],
+      "capabilities": ["hit-test", "pointer-events", "transform", "opacity", "instance-isolated-state"],
+      "contracts": ["stable-resting-state", "primary-button-press", "visual-state-delta"],
+      "examples": ["button"],
+      "source": "src/base/button-pointer-feedback.ts",
+      "contract": "contracts/button-pointer-feedback.behavior.json",
+      "packageRef": "@flamo/interaction-library/base/button-pointer-feedback"
+    },
+    {
+      "id": "hmi/pipe-flow",
+      "name": "@flamo/hmi-pipe-flow",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "hmi-pipe-flow",
+      "summary": "Node-scoped HMI pipe flow controller with deterministic phase, business-state controls, and lifecycle-safe scheduling.",
+      "triggers": ["HMI pipe flow", "animated pipe", "flow direction", "管道流动", "流向", "启停"],
+      "roles": ["root", "flow"],
+      "events": ["business-update", "flamo:hmi-pipe-flow:set", "flamo:hmi-pipe-flow:state"],
+      "capabilities": ["visibility", "stroke-style", "animation-frame", "dispose", "instance-isolated-state"],
+      "contracts": ["pipe-flow-state", "atomic-patch", "phase-direction", "lifecycle-safe-scheduling"],
+      "examples": ["figma-hmi-pipe"],
+      "source": "src/hmi/pipe-flow.ts",
+      "contract": "contracts/hmi-pipe-flow.behavior.json",
+      "recipe": "recipes/hmi-pipe-flow.md",
+      "packageRef": "@flamo/interaction-library/hmi/pipe-flow",
+      "behaviorRef": "hmi.pipe-flow",
+      "managedModule": "managed/behaviors/hmi.pipe-flow/1.0.0.js",
+      "managedModuleSha256": "93b1c5aab07337d8bb8cd0c46b641e4afb50b098ac22c2fbfb67b2f3580bd969"
+    },
+    {
+      "id": "base/use-cursor-blink",
+      "name": "@flamo/use-cursor-blink",
+      "version": "0.9.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "cursor-state",
+      "summary": "Lifecycle-safe blinking state for carets and attention indicators.",
+      "triggers": ["cursor blink", "caret", "光标闪烁"],
+      "roles": [],
+      "events": [],
+      "capabilities": ["timer", "dispose"],
+      "contracts": ["cursor-blink-dispose"],
+      "examples": [],
+      "source": "src/base/use-cursor-blink.ts",
+      "packageRef": "@flamo/interaction-library/base/use-cursor-blink"
+    },
+    {
+      "id": "base/single-line-layout",
+      "name": "@flamo/single-line-layout",
+      "version": "0.9.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "deprecated",
+      "immutable": true,
+      "kind": "text-input-layout",
+      "summary": "Legacy end-caret layout retained for compatibility; do not select for new editors.",
+      "triggers": ["text overflow", "single line input", "输入框滚动", "光标定位"],
+      "roles": ["body", "content", "cursor"],
+      "events": [],
+      "capabilities": ["layout-computation"],
+      "contracts": ["legacy-end-caret-layout"],
+      "examples": [],
+      "source": "src/base/single-line-layout.ts",
+      "packageRef": "@flamo/interaction-library/base/single-line-layout"
+    },
+    {
+      "id": "base/single-line-viewport",
+      "name": "@flamo/single-line-viewport",
+      "version": "0.9.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "text-input-viewport",
+      "summary": "Explicit preserve, reveal-caret, and reset-start viewport policies.",
+      "triggers": ["caret overflow", "text scroll", "光标溢出", "输入框滚动", "失焦复位"],
+      "roles": ["body", "content", "cursor"],
+      "events": ["focus", "blur", "input", "keydown", "pointerdown"],
+      "capabilities": ["viewport-policy", "caret-reveal", "scroll-reset"],
+      "contracts": ["caret-visible", "blur-reset-scroll"],
+      "examples": ["single-line text editor"],
+      "source": "src/base/single-line-viewport.ts",
+      "packageRef": "@flamo/interaction-library/base/single-line-viewport"
+    },
+    {
+      "id": "web/use-text-input",
+      "name": "@flamo/use-text-input",
+      "version": "0.9.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "text-input",
+      "summary": "Hidden DOM input bridge with focus, IME composition, internal-refocus blur cancellation, commit, and cleanup.",
+      "triggers": ["text input", "input field", "IME", "中文输入", "输入框", "回车提交"],
+      "roles": [],
+      "events": ["focus", "blur", "input", "compositionstart", "compositionend", "keydown"],
+      "capabilities": ["dom-input-bridge", "ime", "internal-refocus-blur-cancellation", "selection", "dispose"],
+      "contracts": ["input-state-sync", "composition-safe-commit", "internal-refocus-preserves-focus", "dispose-removes-input"],
+      "examples": ["text-input"],
+      "source": "src/web/use-text-input.ts",
+      "recipe": "recipes/text-input.md",
+      "packageRef": "@flamo/interaction-library/web/use-text-input"
+    },
+    {
+      "id": "web/use-single-line-text-editor",
+      "name": "@flamo/single-line-text-editor",
+      "version": "0.9.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "text-input",
+      "summary": "Stateful single-line editor with pointer placement, keyboard caret movement, pending-blur internal refocus cancellation, explicit viewport policies, and natural text width snapshots.",
+      "triggers": ["single line editor", "caret placement", "光标定位", "左右键", "输入框滚动", "内部失焦"],
+      "roles": ["body", "content", "cursor"],
+      "events": ["pointerdown", "focus", "blur", "input", "keydown"],
+      "capabilities": ["dom-input-bridge", "node-transform", "node-size", "node-visibility", "viewport-policy", "caret-reveal", "internal-refocus-blur-cancellation", "instance-isolated-state"],
+      "contracts": ["caret-visible", "instance-isolated", "blur-reset-scroll", "internal-refocus-preserves-focus", "natural-text-width"],
+      "examples": ["basic", "long-text", "multi-instance"],
+      "source": "src/web/use-single-line-text-editor.ts",
+      "recipe": "recipes/text-input.md",
+      "contract": "contracts/text-input.behavior.json",
+      "depends": ["web/use-text-input", "base/use-cursor-blink", "base/single-line-viewport"],
+      "packageRef": "@flamo/interaction-library/web/use-single-line-text-editor"
+    },
+    {
+      "id": "hmi/path-flow-batched",
+      "name": "@flamo/hmi-pipe-flow",
+      "version": "2.5.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "hmi-pipe-flow",
+      "summary": "GPU-instanced polygon particles with existing path, acceleration, range and appearance controls.",
+      "triggers": [
+        "particle flow",
+        "GPU batching",
+        "粒子性能"
+      ],
+      "roles": [
+        "root",
+        "flow",
+        "motion",
+        "wall",
+        "medium"
+      ],
+      "events": [
+        "business-update",
+        "flamo:hmi-pipe-flow:set",
+        "flamo:hmi-pipe-flow:state"
+      ],
+      "capabilities": [
+        "visibility",
+        "stroke-style",
+        "animation-frame",
+        "dispose",
+        "instance-isolated-state",
+        "transform",
+        "scene-create",
+        "scene-remove",
+        "shape-instances"
+      ],
+      "contracts": [
+        "pipe-flow-state",
+        "arc-length-range",
+        "atomic-patch",
+        "phase-direction",
+        "lifecycle-safe-scheduling"
+      ],
+      "examples": [
+        "straight-pipe-range",
+        "bent-pipe-range",
+        "component-forwarding"
+      ],
+      "source": "src/hmi/path-flow-batched.ts",
+      "contract": "contracts/hmi-path-flow-batched.behavior.json",
+      "recipe": "recipes/hmi-path-flow-batched.md",
+      "packageRef": "@flamo/interaction-library/hmi/path-flow-batched",
+      "behaviorRef": "hmi.pipe-flow",
+      "managedModule": "managed/behaviors/hmi.pipe-flow/2.5.0.js",
+      "managedModuleSha256": "25a182b51782e52a1dcef280f57106d704ce5b77c0a025591e630e066ad8fc77"
+    },
+    {
+      "id": "base/stage-camera",
+      "name": "@flamo/stage-camera",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "animation-policy",
+      "summary": "Contained stage camera and authored 2.5D parallax",
+      "triggers": [
+        "stage-camera",
+        "角色动画"
+      ],
+      "roles": [],
+      "events": [],
+      "capabilities": [
+        "contain",
+        "pointer-inverse",
+        "parallax"
+      ],
+      "contracts": [
+        "instance-local",
+        "external-clock"
+      ],
+      "examples": [
+        "bilingual-story-pilot"
+      ],
+      "source": "src/base/stage-camera.ts",
+      "recipe": "recipes/character-performance.md",
+      "packageRef": "@flamo/interaction-library/base"
+    },
+    {
+      "id": "base/character-performance",
+      "name": "@flamo/character-performance",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "animation-policy",
+      "summary": "Clock-driven interruptible additive character performances",
+      "triggers": [
+        "character-performance",
+        "角色动画"
+      ],
+      "roles": [],
+      "events": [],
+      "capabilities": [
+        "pose-blend",
+        "priority-interrupt",
+        "reset"
+      ],
+      "contracts": [
+        "instance-local",
+        "external-clock"
+      ],
+      "examples": [
+        "bilingual-story-pilot"
+      ],
+      "source": "src/base/character-performance.ts",
+      "recipe": "recipes/character-performance.md",
+      "packageRef": "@flamo/interaction-library/base"
+    }
+  ]
+}

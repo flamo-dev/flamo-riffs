@@ -1,0 +1,67 @@
+{
+  "id": "7f916e2c-5629-416f-b459-4c19328fe3b1",
+  "name": "3d",
+  "assets": {
+    "images": [
+      {
+        "hash": "d317ddd16380f30da090091ab8e065262c254bfa3a04ffe0ebdff51242ca4735",
+        "path": "assets/house-poster.jpg",
+        "name": "House preview poster"
+      },
+      {
+        "hash": "09ca59d1806516c6fc5a93382ace66c81060ad1f428ebc47eb2a7532cca6e469",
+        "path": "assets/dandelion-poster.png",
+        "name": "Dandelion rendered scene"
+      },
+      {
+        "assetId": "7bb17569d94ecc9730c0b2582c531fe68416366a8f19ea0172d62644d8f0a5d5",
+        "kind": "image",
+        "format": "jpeg",
+        "hash": "7bb17569d94ecc9730c0b2582c531fe68416366a8f19ea0172d62644d8f0a5d5",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "b32d409bc4423643d965e5257d3690fabcfe5cd5"
+        },
+        "path": ".flamo/imports/assets/7bb17569d94ecc9730c0b2582c531fe68416366a8f19ea0172d62644d8f0a5d5.jpg",
+        "mimeType": "image/jpeg",
+        "byteLength": 130686,
+        "naturalSize": {
+          "height": 1080,
+          "width": 1920
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/dandelion-landscape.jpg",
+          "fileName": "dandelion-landscape.jpg"
+        }
+      },
+      {
+        "assetId": "1d785c75cf3e2b869a3ad44ccac9612b9d891189b4c22af36ca1ccad4f24a095",
+        "kind": "image",
+        "format": "png",
+        "hash": "1d785c75cf3e2b869a3ad44ccac9612b9d891189b4c22af36ca1ccad4f24a095",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "8c760352c23eeb30365a03cf15a27b2de07eef6e"
+        },
+        "path": ".flamo/imports/assets/1d785c75cf3e2b869a3ad44ccac9612b9d891189b4c22af36ca1ccad4f24a095.png",
+        "mimeType": "image/png",
+        "byteLength": 5263,
+        "naturalSize": {
+          "width": 407,
+          "height": 175
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/logo_text.png",
+          "fileName": "logo_text.png"
+        }
+      }
+    ]
+  },
+  "artifactRevision": "artifact-rev-1794896093592-6238c8b4",
+  "entrypoints": {
+    "artifact": "view/data/artifact.flamo.json"
+  },
+  "updatedAt": "2026-11-17T06:14:53.592Z"
+}

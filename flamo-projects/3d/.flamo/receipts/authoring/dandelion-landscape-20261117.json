@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "dandelion-landscape-20261117",
+  "requestFingerprint": "71990c2bbf451fd51891eeae5e3c61809a26ac527ab9216029c138ff29e632f7",
+  "status": "applied",
+  "projectId": "7f916e2c-5629-416f-b459-4c19328fe3b1",
+  "artifactRevisionBefore": "04da846c-4cb5-404e-90cd-41456a6420e6",
+  "artifactRevisionAfter": "artifact-rev-1794876775927-1a2d54df",
+  "created": {},
+  "affectedNodeIds": [
+    "198777897:10",
+    "198777897:11",
+    "198777897:12",
+    "198777897:13",
+    "198777897:14",
+    "198777897:15",
+    "198777897:16",
+    "198777897:2",
+    "198777897:3"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "198777897:2"
+    },
+    {
+      "index": 1,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "198777897:3"
+    },
+    {
+      "index": 2,
+      "op": "remove_node",
+      "status": "applied",
+      "nodeId": "198777897:10"
+    },
+    {
+      "index": 3,
+      "op": "remove_node",
+      "status": "applied",
+      "nodeId": "198777897:11"
+    },
+    {
+      "index": 4,
+      "op": "remove_node",
+      "status": "applied",
+      "nodeId": "198777897:12"
+    },
+    {
+      "index": 5,
+      "op": "remove_node",
+      "status": "applied",
+      "nodeId": "198777897:13"
+    },
+    {
+      "index": 6,
+      "op": "remove_node",
+      "status": "applied",
+      "nodeId": "198777897:14"
+    },
+    {
+      "index": 7,
+      "op": "remove_node",
+      "status": "applied",
+      "nodeId": "198777897:15"
+    },
+    {
+      "index": 8,
+      "op": "remove_node",
+      "status": "applied",
+      "nodeId": "198777897:16"
+    }
+  ],
+  "resources": [],
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "7f916e2c-5629-416f-b459-4c19328fe3b1",
+      "artifactRevision": "artifact-rev-1794876775927-1a2d54df"
+    }
+  },
+  "createdAt": "2026-11-17T00:52:55.927Z"
+}

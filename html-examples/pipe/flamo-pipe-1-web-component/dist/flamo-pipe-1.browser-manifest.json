@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "ref": {
     "schemaVersion": 1,
-    "namespace": "project.9c6e9c90-5573-4133-961c-0a2091f5083d",
+    "namespace": "project.1a28eef4-426b-4e03-aa13-72e744cd0c86",
     "id": "component-flamo-pipe-1",
     "version": "0.1.0",
     "exportName": "Pipe1",
-    "artifactRevision": "local-4b0a3b2770efb30e3021",
-    "artifactHash": "sha256:e90c136a6c8df8831b377e5840e3caeeb40a31ca046b706958d69c742b5f5805",
+    "artifactRevision": "local-acba125e3295f09be34a",
+    "artifactHash": "sha256:ffefa22231b2dee5464eb48e2f56af2cfa412de98f3a1f31cde3f48e51d26939",
     "runtimeAbi": "runtime-v1",
     "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
   },
@@ -15,19 +15,19 @@
   "packageMode": "browser-esm",
   "entry": "https://components.invalid/flamo-pipe-1/dist/flamo-pipe-1.module.js",
   "resourceBase": "https://components.invalid/flamo-pipe-1/dist/",
-  "integrity": "sha256:57784fe7debc9133066180f5dd4b74ca3d83e64927ce3a2f4954eba0d151fb7f",
+  "integrity": "sha256:048736ff7e09de72864a9f16e0a679d73eac62f10b92df65b5770d420d0c7d4d",
   "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
-  "compositionHash": "sha256:ae38b5ec0cc09c8f710b4e4d9976deb2d3aa02dece518fc6eee2e14730a0a5ce",
+  "compositionHash": "sha256:a23c602948e9dea4cceea296e057ea3ab3c641658099d3e26dd0d47f1af7ea18",
   "dependencies": [],
   "assets": [
     {
       "url": "https://components.invalid/flamo-pipe-1/dist/resources/artifact.json",
-      "integrity": "sha256:9ece1f12e95f7d28c7085c8baacc8891580d41bd19e814cf830da01e0a6336ba",
+      "integrity": "sha256:add09e8d657f19f55b6d0ce71a772015f2a70c13f6c757b11e6364219e195420",
       "type": "application/json"
     },
     {
       "url": "https://components.invalid/flamo-pipe-1/dist/component-resources.js",
-      "integrity": "sha256:a6587f2c1d51a5560d1abb442883a99a9ef063d74e16b5e1350d8d33bfffd8fd",
+      "integrity": "sha256:d41cc0bdb89cdcd550613b63b43cba3f087c176c8ba5a5f91b357d65fafad730",
       "type": "text/javascript"
     },
     {

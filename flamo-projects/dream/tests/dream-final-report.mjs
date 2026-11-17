@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+const root='.flamo/reports/dream-final',p=JSON.parse(fs.readFileSync(root+'/final/preview.json')),prior=JSON.parse(fs.readFileSync(root+'/preview.json'));
+const d=p.performance?.intervals||[],sorted=[...d].sort((a,b)=>a-b),frames=p.performance?.frames||[];
+const quant=q=>sorted[Math.min(sorted.length-1,Math.floor(q*sorted.length))];
+const peak=k=>Math.max(0,...(p.witness?.frames||[]).map(f=>f[k]||0));
+const ref=prior.samples.find(s=>s.name==='new-seed');let drift=0;
+for(const s of prior.samples.filter(s=>['drag','positive-pan','negative-far','near'].includes(s.name)))for(const n of s.nodes){const r=ref.nodes.find(r=>r.id===n.id);drift=Math.max(drift,Math.abs(n.screen.x-r.screen.x),Math.abs(n.screen.y-r.screen.y));}
+const report={kind:'project-diagnostic-not-completion-receipt',complete:false,revision:p.revision,artifactSha256:p.artifactSha256,sourceHashes:p.sourceHashes,
+ snapshot:'snapshot.json',build:{typecheck:'passed',compile:'passed',officialStructureAndGraph:'passed',sourceAndBindings:'source-checks.json',officialToolsUnmodified:true},
+ localOfficialTrace:p.formalTrace,officialEvidencePath:'../evidence/latest/evidence.json',onlineRevisionBoundCompletion:'pending Orchestrator promotion and main-thread desktop POST /verification/interaction',
+ inputs:{errors:p.errors,touchBeforeButtons:p.touchBeforeButton,touchAfterButtons:p.touchAfterButtons,dragBefore:p.dragBefore,dragAfter:p.dragAfter},
+ labelReadbacks:p.samples.map(s=>({name:s.name,labels:s.nodes.filter(n=>[30,32,34].includes(n.id)).map(n=>({id:n.id,text:n.semantic.text.characters,style:n.semantic.text.style}))})),
+ cameraEvidence:{file:'preview.json',sourceFingerprint:'run2-source.json',maximumNativeHudDriftCssPx:drift,panCoordinates:[70000,-70000],zoomLevels:[.2,1,3],note:'Earlier exact-source run; final changes restricted to HUD gesture hit exclusions, canonical text setter and brand sizing. See final screenshots for last-source brand and labels.'},
+ brand:{measurements:p.brands,click:p.brandClick,narrow:p.samples.find(s=>s.name==='narrow')?.brand},
+ performance:{status:'not-accepted',visibility:p.performance?.visibility,intervalCount:d.length,meanFps:d.length?1000*d.length/d.reduce((a,b)=>a+b,0):null,p50Ms:quant(.5),p95Ms:quant(.95),sampleSpanMs:d.reduce((a,b)=>a+b,0),cpuBuildMs:{min:Math.min(...frames.map(f=>f.cpuBuildMs)),max:Math.max(...frames.map(f=>f.cpuBuildMs))},environment:p.environment,peaks:Object.fromEntries(['dots','lines','partitions','groups','stars','nebulae','batchCount','bufferBytes','dotCapacity','lineCapacity'].map(k=>[k,peak(k)])),note:'visible Chromium headless / SwiftShader; background throttling launch flags disabled; no screenshots during measured 10.5s window; CPU timing is not GPU timing. Group/nebula counters include culling guard band, not pixel-visible-object ground truth.'},
+ algorithmChecks:'world-checks.json',pixelParity:'unavailable: no approved PNG',remaining:['Desktop hardware GPU performance acceptance','Chinese glyph visual centering (headless missing glyphs)','Published revision-bound online completion receipt','Continuous multi-direction pan/zoom beyond sampled coordinates and viewport sizes']};
+fs.writeFileSync(root+'/summary.json',JSON.stringify(report,null,2));console.log(JSON.stringify({trace:report.localOfficialTrace?.passed,inputs:report.inputs,performance:{...report.performance,environment:undefined},brand:report.brand},null,2));

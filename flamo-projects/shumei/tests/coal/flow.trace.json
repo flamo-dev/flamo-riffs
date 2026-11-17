@@ -1,0 +1,7 @@
+{
+  "id": "project.coal.flow-update",
+  "requiredTraceActions": ["coal.device.visual"],
+  "renderTraceAction": "coal.device.visual",
+  "traceAssertions": [{"action":"coal.device.visual","field":"status","equals":"observed"}],
+  "requiredEvidence": ["all-targets-committed", "scoped-flow-enabled-state", "rendered-output"]
+}

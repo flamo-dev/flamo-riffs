@@ -16,7 +16,7 @@ Flamo 是一款交互界面创作工具。你可以导入 Figma 设计，保留�
 node html-examples/serve.mjs 8189
 ```
 
-打开 [本地创意首页](http://localhost:8189/) 即可预览。`html-examples/home/` 是首页源码目录，`html-examples/pipe/` 是管道实验室源码目录。
+打开 [本地创意首页](http://localhost:8189/) 即可预览。`html-examples/home/` 是首页源码目录。`html-examples/shumei/`、`html-examples/jianpan/` 分别存放输煤监测中心、智能监盘中心及各自的 15 秒预览视频。
 
 ## 构建静态站
 
@@ -24,7 +24,9 @@ node html-examples/serve.mjs 8189
 node build.mjs
 ```
 
-将生成的 `dist/` 作为**独立站点根目录**。构建器保留导出包里的组件合同和版本参数，仅在交付副本中把模块与 Worker 的本机资源地址改为同源 `/common/`；源 ZIP 不变。不要直接发布整个工程（其中含有源设计和验收材料）。静态主机需要正常提供目录首页、JavaScript MIME、HTTPS 和视频 Range 请求。
+将生成的 `dist/` 作为**独立站点根目录**。构建器保留导出包里的组件合同，并将在线页面的模块和 Worker 指向同源的共享资源。不要直接发布整个工程（其中含有源设计和验收材料）。静态主机需要正常提供目录首页、JavaScript MIME、HTTPS 和视频 Range 请求。
+
+所有在线案例共用 `/common/flamo-runtime/` 和 `/common/component-viewport.js`。升级时，将最新 Flamo 共享资源包安装到 `html-examples/common/`，并将包提供的两个版本参数更新到 `html-examples/common/cdn-config.js`。风大侠和蒲公英的原始单页 HTML 仍可离线打开。发布时用空目录构建，避免带入上次发布的旧文件。
 
 ## Flamo 自托管配置
 

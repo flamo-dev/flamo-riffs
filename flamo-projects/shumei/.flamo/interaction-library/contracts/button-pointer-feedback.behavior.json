@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "button.pointer-feedback",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": ["hit-test", "pointer-events", "transform", "opacity"]
+    }
+  },
+  "listens": ["pointerenter", "pointerleave", "pointerdown", "pointerup", "pointercancel", "click"],
+  "writes": ["transform.scaleX", "transform.scaleY", "opacity"],
+  "state": ["idle", "hover", "pressed", "clicked"],
+  "transitions": [
+    { "event": "pointerenter", "from": ["idle"], "to": "hover" },
+    { "event": "pointerleave", "from": ["hover", "pressed", "clicked"], "to": "idle" },
+    { "event": "pointerdown", "guard": "primary-button", "from": ["idle", "hover"], "to": "pressed" },
+    { "event": "pointerup", "from": ["pressed"], "to": "hover" },
+    { "event": "pointercancel", "from": ["pressed"], "to": "idle" },
+    { "event": "click", "from": ["hover"], "to": "clicked" },
+    { "event": "settle", "from": ["clicked"], "to": "hover" }
+  ],
+  "invariants": [
+    "pointerleave and pointercancel restore a stable resting state",
+    "only primary-button pointerdown enters pressed",
+    "every visual state write is scoped to the bound root role"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "all-listeners-routed",
+    "pointer-trace",
+    "visual-state-delta"
+  ],
+  "requiredTraceActions": [
+    "event.pointerenter",
+    "event.pointerleave",
+    "event.pointerdown",
+    "event.pointerup",
+    "event.click"
+  ],
+  "visualEvidence": {
+    "required": true,
+    "targetRole": "root",
+    "minimumChangedPixels": 1
+  }
+}

@@ -7,15 +7,15 @@
     "fit": "contain",
     "transparentBackground": true
   },
-  "projectId": "9c6e9c90-5573-4133-961c-0a2091f5083d",
+  "projectId": "1a28eef4-426b-4e03-aa13-72e744cd0c86",
   "tagName": "flamo-pipe-1",
   "className": "FlamoPipe1Element",
   "packageName": "@flamo-components/flamo-pipe-1",
   "name": "Pipe-1",
-  "generatedAt": "2026-11-09T01:30:44.401Z",
+  "generatedAt": "2026-11-17T09:06:27.118Z",
   "source": {
     "kind": "local-fig",
-    "id": "0206b9df-14d3-4714-913e-66eeef8dfebf",
+    "id": "e152e609-f128-4def-acb1-1a5b5ab0294a",
     "name": "管道"
   },
   "entry": "dist/flamo-pipe-1.js",
@@ -45,23 +45,23 @@
     "interactions": "interactions.json",
     "guide": "INTERACTIONS.md",
     "api": "INTERACTION_API.md",
-    "integrity": "sha256:765a1692a9ff70de492755662e00aabbbe1a4092b83ba1e20373a6daefe244a5"
+    "integrity": "sha256:c750d50e4ad8c8257746f9aa1879212b3522306e0e2a22bd903b30a72d505ea3"
   },
   "integration": {
-    "projectId": "9c6e9c90-5573-4133-961c-0a2091f5083d",
-    "contractId": "sha256:87bf73edc181620df2b90ecadb733ebf7a0d70092d48aeb74af6495ddd8e73bd",
-    "artifactRevision": "local-4b0a3b2770efb30e3021"
+    "projectId": "1a28eef4-426b-4e03-aa13-72e744cd0c86",
+    "contractId": "sha256:569f9f8ff80050d0129b59adcc91635b69b5d3b6e9d31ec46df62323626fa03c",
+    "artifactRevision": "local-acba125e3295f09be34a"
   },
   "interactionTargets": {},
   "assets": [],
   "compiledResources": {
     "schema": "flamo.resources/2",
     "manifest": "dist/resources/artifact.json",
-    "integrity": "sha256:9ece1f12e95f7d28c7085c8baacc8891580d41bd19e814cf830da01e0a6336ba",
+    "integrity": "sha256:add09e8d657f19f55b6d0ce71a772015f2a70c13f6c757b11e6364219e195420",
     "report": {
       "compiler": "flamo.runtime-resources/1",
-      "revision": "local-4b0a3b2770efb30e3021",
-      "manifestBytes": 8869,
+      "revision": "local-acba125e3295f09be34a",
+      "manifestBytes": 8854,
       "binaryBytes": 4632,
       "blocks": 5,
       "references": 6,
@@ -78,13 +78,13 @@
     "includeResources": false,
     "cdnBase": "http://localhost:8080/common/",
     "sharedResources": {
-      "runtime": "http://localhost:8080/common/flamo-runtime/index.es.js?v=6d2ff1a7ac46cbf71db7bc0e5e550b1103dfff6826484a351327f677c7d408f6",
-      "viewport": "http://localhost:8080/common/component-viewport.js?v=7f533668b721e562ddf4b4d8b1b520b1b229234216c8393b7cf1cf5192a1ccd0"
+      "runtime": "http://localhost:8080/common/flamo-runtime/index.es.js?v=e05cccaf4d1047c23416f98d46dbb5aaaddc1a4c3d01a8fafe61e6b623ee5ff4",
+      "viewport": "http://localhost:8080/common/component-viewport.js?v=8a9625e8b5d2fa2deb7a029f6c243937929a722f2a098a30bd3157466c5df6ae"
     },
     "interactions": "local",
     "boundaryNodeId": "13:15",
     "sourceArtifact": "view/data/artifact.flamo.json",
-    "artifactRevision": "local-4b0a3b2770efb30e3021"
+    "artifactRevision": "local-acba125e3295f09be34a"
   },
   "contract": {
     "components": [],
@@ -98,18 +98,18 @@
   "foundation": {
     "ref": {
       "schemaVersion": 1,
-      "namespace": "project.9c6e9c90-5573-4133-961c-0a2091f5083d",
+      "namespace": "project.1a28eef4-426b-4e03-aa13-72e744cd0c86",
       "id": "component-flamo-pipe-1",
       "version": "0.1.0",
       "exportName": "Pipe1",
-      "artifactRevision": "local-4b0a3b2770efb30e3021",
-      "artifactHash": "sha256:e90c136a6c8df8831b377e5840e3caeeb40a31ca046b706958d69c742b5f5805",
+      "artifactRevision": "local-acba125e3295f09be34a",
+      "artifactHash": "sha256:ffefa22231b2dee5464eb48e2f56af2cfa412de98f3a1f31cde3f48e51d26939",
       "runtimeAbi": "runtime-v1",
       "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
     },
-    "componentRef": "flamo://components/project.9c6e9c90-5573-4133-961c-0a2091f5083d/component-flamo-pipe-1@0.1.0#Pipe1",
+    "componentRef": "flamo://components/project.1a28eef4-426b-4e03-aa13-72e744cd0c86/component-flamo-pipe-1@0.1.0#Pipe1",
     "surfaceHash": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98",
-    "compositionHash": "sha256:ae38b5ec0cc09c8f710b4e4d9976deb2d3aa02dece518fc6eee2e14730a0a5ce",
+    "compositionHash": "sha256:a23c602948e9dea4cceea296e057ea3ab3c641658099d3e26dd0d47f1af7ea18",
     "runtimeAbi": "runtime-v1",
     "componentAbi": "sha256:61887a960f599e7f7d3c6d2afcb619575fcbf8181fcbcb289c62d15ce60fcc98"
   },

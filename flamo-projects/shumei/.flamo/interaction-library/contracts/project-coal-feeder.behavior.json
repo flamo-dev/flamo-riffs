@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "project.coal.feeder",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "on1": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "on2": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "off1": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "off2": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "bars1": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "bars2": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "references1": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "references2": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    }
+  },
+  "listens": [
+    "coal:device:update",
+    "coal:device:ready",
+    "coal:device:ack"
+  ],
+  "writes": [
+    "on1.visible",
+    "on2.visible",
+    "off1.visible",
+    "off2.visible",
+    "bars1.width",
+    "bars2.width"
+  ],
+  "state": [
+    "unknown",
+    "stopped",
+    "running"
+  ],
+  "invariants": [
+    "State and disposal are scoped to the mounted instance",
+    "Missing run defaults to false with complementary original image visibility",
+    "Missing or invalid position preserves the last valid or authored width",
+    "Measure the mounted component root runtime contentBox; HUG intermediate parents are not measurement references",
+    "Only bar width is written; native HUG/alignment/constraints remain unchanged",
+    "Setter submission is not command commit or visual acceptance"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "instance-isolation",
+    "rendered-output"
+  ]
+}

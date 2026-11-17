@@ -1,0 +1,14 @@
+.flamo-component-shell{position:relative;isolation:isolate;overflow:hidden;min-width:0;--flamo-loading-accent:#00c5ed;--flamo-loading-color:#a9c6dc}
+.flamo-component-shell>[data-flamo-component]{display:block;width:100%;height:100%;opacity:0;pointer-events:none;transition:opacity .18s ease}
+.flamo-component-shell>[data-flamo-component][data-flamo-state="ready"]{opacity:1;pointer-events:auto}
+.flamo-component-shell>[data-flamo-component][data-flamo-state="static"]{opacity:1;pointer-events:none;transition:none}
+.flamo-component-shell>[data-flamo-status]{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:var(--flamo-loading-color);font:14px/1.5 system-ui,sans-serif;text-align:center;padding:24px}
+.flamo-component-shell>[data-flamo-status][data-state="static"],.flamo-component-shell>[data-flamo-component][data-flamo-state="static"]~[data-flamo-status]{inset:auto 12px 12px auto;z-index:2;flex-direction:row;gap:8px;padding:8px 12px;border-radius:4px;background:#102436e6;pointer-events:none;font-size:12px}
+.flamo-component-shell>[data-flamo-status][data-state="static"]::before,.flamo-component-shell>[data-flamo-component][data-flamo-state="static"]~[data-flamo-status]::before{width:14px;height:14px}
+.flamo-component-shell [hidden]{display:none!important}
+.flamo-component-shell [data-flamo-status]::before{content:"";width:32px;height:32px;border:2px solid #728a9d30;border-top-color:var(--flamo-loading-accent);border-radius:50%;animation:flamo-loading-spin 1s linear infinite}
+.flamo-component-shell [data-flamo-status][data-state="error"]::before{animation:none;border-color:#cf924b;content:"!";display:grid;place-items:center;color:#cf924b}
+.flamo-component-shell [data-flamo-status] button{background:transparent;border:1px solid var(--flamo-loading-accent);border-radius:4px;padding:6px 16px;color:inherit;font:inherit;cursor:pointer}
+.flamo-component-shell [data-flamo-status] button:focus-visible{outline:2px solid var(--flamo-loading-accent);outline-offset:3px}
+@keyframes flamo-loading-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.flamo-component-shell>[data-flamo-component]{transition:none}.flamo-component-shell [data-flamo-status]::before{animation:none}}

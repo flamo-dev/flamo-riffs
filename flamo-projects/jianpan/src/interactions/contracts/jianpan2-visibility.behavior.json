@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "jianpan2.visibility",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "ltzq1Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzs1Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzs2zShow": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzs2yShow": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzs3Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzs4Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzf1Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzf2Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzf3Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzf4Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzy1Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzy2Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "ltzy3Show": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    }
+  },
+  "listens": [],
+  "writes": [
+    "ltzq1Show.visible",
+    "ltzs1Show.visible",
+    "ltzs2zShow.visible",
+    "ltzs2yShow.visible",
+    "ltzs3Show.visible",
+    "ltzs4Show.visible",
+    "ltzf1Show.visible",
+    "ltzf2Show.visible",
+    "ltzf3Show.visible",
+    "ltzf4Show.visible",
+    "ltzy1Show.visible",
+    "ltzy2Show.visible",
+    "ltzy3Show.visible"
+  ],
+  "state": [
+    "ltzq1Show",
+    "ltzs1Show",
+    "ltzs2zShow",
+    "ltzs2yShow",
+    "ltzs3Show",
+    "ltzs4Show",
+    "ltzf1Show",
+    "ltzf2Show",
+    "ltzf3Show",
+    "ltzf4Show",
+    "ltzy1Show",
+    "ltzy2Show",
+    "ltzy3Show"
+  ],
+  "invariants": [
+    "Only boolean values change the corresponding mounted-instance group visibility",
+    "All roles are resolved in the current instance; no shared definition writes",
+    "Visibility does not change pipe enabled, speed, appearance or phase",
+    "Disposal stops watchers and restores prior visibility"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "instance-isolation",
+    "rendered-output"
+  ]
+}

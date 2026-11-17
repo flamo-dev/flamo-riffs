@@ -2,17 +2,20 @@
 export function computeComponentViewport(bounds, width, height, fit = 'contain') {
   if (![bounds?.x, bounds?.y, bounds?.width, bounds?.height, width, height].every(Number.isFinite)
     || bounds.width <= 0 || bounds.height <= 0 || width <= 0 || height <= 0) return null;
-  const zoom = fit === 'width' ? width / bounds.width
-    : fit === 'height' ? height / bounds.height
-      : Math.min(width / bounds.width, height / bounds.height);
+  const scaleX = width / bounds.width;
+  const scaleY = height / bounds.height;
+  const zoom = fit === 'width' ? scaleX : fit === 'height' ? scaleY
+    : fit === 'cover' ? Math.max(scaleX, scaleY) : Math.min(scaleX, scaleY);
   const contentWidth = bounds.width * zoom;
   const contentHeight = bounds.height * zoom;
+  const extentWidth = fit === 'height' ? Math.max(width, contentWidth) : width;
+  const extentHeight = fit === 'width' ? Math.max(height, contentHeight) : height;
   return {
     zoom,
-    width: fit === 'height' ? Math.max(width, contentWidth) : width,
-    height: fit === 'width' ? Math.max(height, contentHeight) : height,
-    positionX: bounds.x * zoom - Math.max(0, (width - contentWidth) / 2),
-    positionY: bounds.y * zoom - Math.max(0, (height - contentHeight) / 2),
+    width: extentWidth,
+    height: extentHeight,
+    positionX: bounds.x * zoom + (contentWidth - extentWidth) / 2,
+    positionY: bounds.y * zoom + (contentHeight - extentHeight) / 2,
     rotation: 0,
   };
 }

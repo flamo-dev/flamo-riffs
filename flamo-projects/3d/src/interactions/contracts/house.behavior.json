@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "project.house-diorama",
+  "version": "1.0.0",
+  "requiredRoles": {"root":{"required":true,"cardinality":"one","capabilities":["transform"]}},
+  "listens": ["click", "pointerdown", "pointermove", "pointerup"],
+  "writes": ["house.camera", "house.time", "house.texture"],
+  "state": ["ready", "playing", "orbit", "time", "yaw"],
+  "invariants": ["same device and borrowed output texture", "pause freezes animation time", "reset restores authored view", "one scoped update callback", "owned GPU resources are released on teardown"],
+  "requiredTraceActions": ["house.mounted", "house.rotate", "house.pause", "house.reset"],
+  "requiredEvidence": ["script-mounted", "rendered-output", "instance-isolation"],
+  "visualEvidence": {"required":true,"targetRole":"root","minimumChangedPixels":1}
+}

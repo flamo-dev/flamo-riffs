@@ -1,0 +1,2496 @@
+{
+  "version": 1,
+  "bindings": [
+    {
+      "id": "coal-209-818",
+      "kind": "node-script",
+      "nodeId": "209:818",
+      "source": "src/components/coal/device-209-818.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.crusher",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "209:818",
+        "on1": "339:389",
+        "off1": "339:378"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-221-951",
+      "kind": "node-script",
+      "nodeId": "221:951",
+      "source": "src/components/coal/device-221-951.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.screen",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "221:951",
+        "on1": "241:279",
+        "off1": "225:977"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-94-101272",
+      "kind": "node-script",
+      "nodeId": "94:101272",
+      "source": "src/components/coal/device-94-101272.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.plough",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "94:101272",
+        "parts1": "94:101270",
+        "parts2": "94:101268",
+        "parts3": "94:101269"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-94-101209",
+      "kind": "node-script",
+      "nodeId": "94:101209",
+      "source": "src/components/coal/device-94-101209.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.plough",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "94:101209",
+        "parts1": "94:101201",
+        "parts2": "94:101199",
+        "parts3": "94:101200"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-94-101607",
+      "kind": "node-script",
+      "nodeId": "94:101607",
+      "source": "src/components/coal/device-94-101607.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.motor",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "94:101607",
+        "on1": "307:482",
+        "off1": "307:458"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-94-101763",
+      "kind": "node-script",
+      "nodeId": "94:101763",
+      "source": "src/components/coal/device-94-101763.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.tee",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "94:101763",
+        "on1": "241:320",
+        "on2": "94:101760",
+        "on3": "94:101759",
+        "off1": "94:101761",
+        "off2": "241:319",
+        "off3": "241:318"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-209-639",
+      "kind": "node-script",
+      "nodeId": "209:639",
+      "source": "src/components/coal/device-209-639.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.feeder",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "209:639",
+        "on1": "225:1068",
+        "on2": "225:1086",
+        "off1": "225:1064",
+        "off2": "225:1087",
+        "bars1": "334:338",
+        "bars2": "334:361",
+        "references1": "209:639",
+        "references2": "209:639"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-system",
+      "kind": "node-script",
+      "nodeId": "166:730",
+      "source": "src/components/coal/script.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.system",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "166:730"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1572",
+      "kind": "node-script",
+      "nodeId": "187:1572",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1572"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1577",
+      "kind": "node-script",
+      "nodeId": "187:1577",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1577"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1582",
+      "kind": "node-script",
+      "nodeId": "187:1582",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1582"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1587",
+      "kind": "node-script",
+      "nodeId": "187:1587",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1587"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1592",
+      "kind": "node-script",
+      "nodeId": "187:1592",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1592"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1597",
+      "kind": "node-script",
+      "nodeId": "187:1597",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1597"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1602",
+      "kind": "node-script",
+      "nodeId": "187:1602",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1602"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1607",
+      "kind": "node-script",
+      "nodeId": "187:1607",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1607"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1612",
+      "kind": "node-script",
+      "nodeId": "187:1612",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1612"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1617",
+      "kind": "node-script",
+      "nodeId": "187:1617",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1617"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1622",
+      "kind": "node-script",
+      "nodeId": "187:1622",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1622"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-1627",
+      "kind": "node-script",
+      "nodeId": "187:1627",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:1627"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-261-1228",
+      "kind": "node-script",
+      "nodeId": "261:1228",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "261:1228"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-271-1594",
+      "kind": "node-script",
+      "nodeId": "271:1594",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.flow",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "271:1594"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100532",
+      "kind": "node-script",
+      "nodeId": "91:100532",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100532"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100533",
+      "kind": "node-script",
+      "nodeId": "91:100533",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100533"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100542",
+      "kind": "node-script",
+      "nodeId": "91:100542",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100542"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100543",
+      "kind": "node-script",
+      "nodeId": "91:100543",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100543"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-197-310",
+      "kind": "node-script",
+      "nodeId": "197:310",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "197:310"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-197-311",
+      "kind": "node-script",
+      "nodeId": "197:311",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "197:311"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-197-312",
+      "kind": "node-script",
+      "nodeId": "197:312",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "197:312"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100651",
+      "kind": "node-script",
+      "nodeId": "91:100651",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100651"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100652",
+      "kind": "node-script",
+      "nodeId": "91:100652",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100652"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100512",
+      "kind": "node-script",
+      "nodeId": "91:100512",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100512"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100513",
+      "kind": "node-script",
+      "nodeId": "91:100513",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100513"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-339",
+      "kind": "node-script",
+      "nodeId": "176:339",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:339"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-83-99032",
+      "kind": "node-script",
+      "nodeId": "83:99032",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "83:99032"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-83-99033",
+      "kind": "node-script",
+      "nodeId": "83:99033",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "83:99033"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-83-99034",
+      "kind": "node-script",
+      "nodeId": "83:99034",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "83:99034"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100522",
+      "kind": "node-script",
+      "nodeId": "91:100522",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100522"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100523",
+      "kind": "node-script",
+      "nodeId": "91:100523",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100523"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100488",
+      "kind": "node-script",
+      "nodeId": "91:100488",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100488"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100487",
+      "kind": "node-script",
+      "nodeId": "91:100487",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100487"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100502",
+      "kind": "node-script",
+      "nodeId": "91:100502",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100502"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100503",
+      "kind": "node-script",
+      "nodeId": "91:100503",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100503"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100479",
+      "kind": "node-script",
+      "nodeId": "91:100479",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100479"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100478",
+      "kind": "node-script",
+      "nodeId": "91:100478",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100478"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100470",
+      "kind": "node-script",
+      "nodeId": "91:100470",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100470"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100469",
+      "kind": "node-script",
+      "nodeId": "91:100469",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100469"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100461",
+      "kind": "node-script",
+      "nodeId": "91:100461",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100461"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100460",
+      "kind": "node-script",
+      "nodeId": "91:100460",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100460"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-59-764",
+      "kind": "node-script",
+      "nodeId": "59:764",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "59:764"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-59-763",
+      "kind": "node-script",
+      "nodeId": "59:763",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "59:763"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-329",
+      "kind": "node-script",
+      "nodeId": "176:329",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:329"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-332",
+      "kind": "node-script",
+      "nodeId": "176:332",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:332"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-335",
+      "kind": "node-script",
+      "nodeId": "176:335",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:335"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-166-735",
+      "kind": "node-script",
+      "nodeId": "166:735",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "166:735"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-342",
+      "kind": "node-script",
+      "nodeId": "176:342",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:342"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-351",
+      "kind": "node-script",
+      "nodeId": "176:351",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:351"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-193-195",
+      "kind": "node-script",
+      "nodeId": "193:195",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "193:195"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-354",
+      "kind": "node-script",
+      "nodeId": "176:354",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:354"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-357",
+      "kind": "node-script",
+      "nodeId": "176:357",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:357"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100661",
+      "kind": "node-script",
+      "nodeId": "91:100661",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100661"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-91-100662",
+      "kind": "node-script",
+      "nodeId": "91:100662",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.wheel",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "91:100662"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-345",
+      "kind": "node-script",
+      "nodeId": "176:345",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:345"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-348",
+      "kind": "node-script",
+      "nodeId": "176:348",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:348"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-325-942",
+      "kind": "node-script",
+      "nodeId": "325:942",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "325:942"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-325-944",
+      "kind": "node-script",
+      "nodeId": "325:944",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.alarm",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "325:944"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-372",
+      "kind": "node-script",
+      "nodeId": "176:372",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:372"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-373",
+      "kind": "node-script",
+      "nodeId": "176:373",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:373"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-197-313",
+      "kind": "node-script",
+      "nodeId": "197:313",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "197:313"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-374",
+      "kind": "node-script",
+      "nodeId": "176:374",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:374"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-368",
+      "kind": "node-script",
+      "nodeId": "176:368",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:368"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-371",
+      "kind": "node-script",
+      "nodeId": "176:371",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:371"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-369",
+      "kind": "node-script",
+      "nodeId": "176:369",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:369"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-366",
+      "kind": "node-script",
+      "nodeId": "176:366",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:366"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-367",
+      "kind": "node-script",
+      "nodeId": "176:367",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:367"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-365",
+      "kind": "node-script",
+      "nodeId": "176:365",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:365"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-364",
+      "kind": "node-script",
+      "nodeId": "176:364",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:364"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-362",
+      "kind": "node-script",
+      "nodeId": "176:362",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:362"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-361",
+      "kind": "node-script",
+      "nodeId": "176:361",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:361"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-176-375",
+      "kind": "node-script",
+      "nodeId": "176:375",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.number",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "176:375"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-86-100003",
+      "kind": "node-script",
+      "nodeId": "86:100003",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "86:100003"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-86-100008",
+      "kind": "node-script",
+      "nodeId": "86:100008",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "86:100008"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-86-100013",
+      "kind": "node-script",
+      "nodeId": "86:100013",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "86:100013"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-86-100018",
+      "kind": "node-script",
+      "nodeId": "86:100018",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "86:100018"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-86-100023",
+      "kind": "node-script",
+      "nodeId": "86:100023",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "86:100023"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-86-100028",
+      "kind": "node-script",
+      "nodeId": "86:100028",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "86:100028"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-830",
+      "kind": "node-script",
+      "nodeId": "187:830",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:830"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-835",
+      "kind": "node-script",
+      "nodeId": "187:835",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:835"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-840",
+      "kind": "node-script",
+      "nodeId": "187:840",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:840"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-845",
+      "kind": "node-script",
+      "nodeId": "187:845",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:845"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-850",
+      "kind": "node-script",
+      "nodeId": "187:850",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:850"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-187-855",
+      "kind": "node-script",
+      "nodeId": "187:855",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "187:855"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-325-990",
+      "kind": "node-script",
+      "nodeId": "325:990",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.level",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "325:990"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-ui-bind-ids",
+      "kind": "prop-to-script",
+      "nodeId": "166:730",
+      "from": "props.uiBindIds",
+      "source": "src/components/coal/script.ts",
+      "semantics": "[{id,notes?,value}] default []; legacy Record accepted; normalize by business ID, complete replacement, missing clears; lifecycle-owned watcher and compatibility method share pipeline",
+      "verification": {
+        "status": "pending"
+      },
+      "behaviorRef": "project.coal.system",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "166:730"
+      }
+    },
+    {
+      "id": "coal-351-489",
+      "kind": "node-script",
+      "nodeId": "351:489",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:489"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-491",
+      "kind": "node-script",
+      "nodeId": "351:491",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:491"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-493",
+      "kind": "node-script",
+      "nodeId": "351:493",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:493"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-495",
+      "kind": "node-script",
+      "nodeId": "351:495",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:495"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-514",
+      "kind": "node-script",
+      "nodeId": "351:514",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:514"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-516",
+      "kind": "node-script",
+      "nodeId": "351:516",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:516"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-712",
+      "kind": "node-script",
+      "nodeId": "350:712",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:712"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-714",
+      "kind": "node-script",
+      "nodeId": "350:714",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:714"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-716",
+      "kind": "node-script",
+      "nodeId": "350:716",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:716"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-718",
+      "kind": "node-script",
+      "nodeId": "350:718",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:718"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-400",
+      "kind": "node-script",
+      "nodeId": "351:400",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:400"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-407",
+      "kind": "node-script",
+      "nodeId": "351:407",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:407"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-428",
+      "kind": "node-script",
+      "nodeId": "351:428",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:428"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-435",
+      "kind": "node-script",
+      "nodeId": "351:435",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:435"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-464",
+      "kind": "node-script",
+      "nodeId": "351:464",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:464"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-466",
+      "kind": "node-script",
+      "nodeId": "351:466",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:466"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-468",
+      "kind": "node-script",
+      "nodeId": "351:468",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:468"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-470",
+      "kind": "node-script",
+      "nodeId": "351:470",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:470"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-654",
+      "kind": "node-script",
+      "nodeId": "350:654",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:654"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-673",
+      "kind": "node-script",
+      "nodeId": "350:673",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:673"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-656",
+      "kind": "node-script",
+      "nodeId": "350:656",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:656"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-658",
+      "kind": "node-script",
+      "nodeId": "350:658",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:658"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-547",
+      "kind": "node-script",
+      "nodeId": "351:547",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:547"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-549",
+      "kind": "node-script",
+      "nodeId": "351:549",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:549"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-551",
+      "kind": "node-script",
+      "nodeId": "351:551",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:551"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-553",
+      "kind": "node-script",
+      "nodeId": "351:553",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:553"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-555",
+      "kind": "node-script",
+      "nodeId": "351:555",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:555"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-557",
+      "kind": "node-script",
+      "nodeId": "351:557",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:557"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-635",
+      "kind": "node-script",
+      "nodeId": "350:635",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:635"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-637",
+      "kind": "node-script",
+      "nodeId": "350:637",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:637"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-639",
+      "kind": "node-script",
+      "nodeId": "350:639",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:639"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-616",
+      "kind": "node-script",
+      "nodeId": "350:616",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:616"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-618",
+      "kind": "node-script",
+      "nodeId": "350:618",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:618"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-620",
+      "kind": "node-script",
+      "nodeId": "350:620",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:620"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-536",
+      "kind": "node-script",
+      "nodeId": "350:536",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:536"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-543",
+      "kind": "node-script",
+      "nodeId": "350:543",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:543"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-550",
+      "kind": "node-script",
+      "nodeId": "350:550",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:550"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-589",
+      "kind": "node-script",
+      "nodeId": "350:589",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:589"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-591",
+      "kind": "node-script",
+      "nodeId": "350:591",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:591"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-350-593",
+      "kind": "node-script",
+      "nodeId": "350:593",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "350:593"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-348-466",
+      "kind": "node-script",
+      "nodeId": "348:466",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "348:466"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-348-467",
+      "kind": "node-script",
+      "nodeId": "348:467",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "348:467"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-348-478",
+      "kind": "node-script",
+      "nodeId": "348:478",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "348:478"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-348-480",
+      "kind": "node-script",
+      "nodeId": "348:480",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "348:480"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-584",
+      "kind": "node-script",
+      "nodeId": "351:584",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:584"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-586",
+      "kind": "node-script",
+      "nodeId": "351:586",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:586"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-588",
+      "kind": "node-script",
+      "nodeId": "351:588",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:588"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-590",
+      "kind": "node-script",
+      "nodeId": "351:590",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:590"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-592",
+      "kind": "node-script",
+      "nodeId": "351:592",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:592"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-594",
+      "kind": "node-script",
+      "nodeId": "351:594",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:594"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-621",
+      "kind": "node-script",
+      "nodeId": "351:621",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:621"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-623",
+      "kind": "node-script",
+      "nodeId": "351:623",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:623"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-625",
+      "kind": "node-script",
+      "nodeId": "351:625",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:625"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-627",
+      "kind": "node-script",
+      "nodeId": "351:627",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:627"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-629",
+      "kind": "node-script",
+      "nodeId": "351:629",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:629"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-351-631",
+      "kind": "node-script",
+      "nodeId": "351:631",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.fall",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "351:631"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-346-329",
+      "kind": "node-script",
+      "nodeId": "346:329",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.extension",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "346:329"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-346-325",
+      "kind": "node-script",
+      "nodeId": "346:325",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.extension",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "346:325"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-346-327",
+      "kind": "node-script",
+      "nodeId": "346:327",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.extension",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "346:327"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "coal-346-323",
+      "kind": "node-script",
+      "nodeId": "346:323",
+      "source": "src/components/coal/leaf.ts",
+      "mount": "artifact.nodeArtifacts",
+      "scope": "166:730 and actual dependencies",
+      "behaviorRef": "project.coal.extension",
+      "version": "1.0.0",
+      "roleBindings": {
+        "root": "346:323"
+      },
+      "verification": {
+        "status": "pending"
+      }
+    }
+  ],
+  "updatedAt": "2026-10-09T03:16:30.302379+00:00"
+}

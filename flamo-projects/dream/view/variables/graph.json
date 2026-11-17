@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "source": "artifact.tokens.variables",
+  "graph": {
+    "collections": {},
+    "variables": {},
+    "bindings": {},
+    "defaults": {
+      "activeModesByCollectionId": {}
+    }
+  },
+  "updatedAt": "2026-09-30T18:08:08.546Z"
+}

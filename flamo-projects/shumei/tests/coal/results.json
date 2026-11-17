@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "kind": "source-mock-not-browser",
+  "assertions": 21861,
+  "mappedDevices": 195,
+  "realRuntimeTrace": false
+}

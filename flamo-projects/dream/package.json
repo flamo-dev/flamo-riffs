@@ -1,0 +1,17 @@
+{
+  "name": "u_5ce5548fa8_dream_a0o30u",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/flamo-dev.mjs",
+    "link": "node scripts/flamo-dev.mjs link",
+    "pull": "node scripts/flamo-dev.mjs pull",
+    "push": "node scripts/flamo-dev.mjs push",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/flamo-verify.mjs",
+    "build:component": "node scripts/flamo-build-component.mjs"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2"
+  }
+}

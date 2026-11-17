@@ -1,0 +1,1539 @@
+{
+  "schemaVersion": 1,
+  "projectId": "u_5ce5548fa8_project_9ix5p5",
+  "components": [
+    {
+      "nodeId": "166:730",
+      "name": "输煤组件",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/166:730",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "slots": {
+          "robot__166_0": {
+            "name": "robot",
+            "description": "<p>机器人占位</p>",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "166:732",
+            "outlets": [
+              {
+                "outletId": "robot:166%3A732",
+                "target": "166:732"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "166:0",
+              "name": "robot",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "description": "<p>机器人占位</p>",
+              "bindingProjection": "metadata"
+            }
+          },
+          "alarm3A__166_1": {
+            "name": "Alarm3A__166_1",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "166:735",
+            "outlets": [
+              {
+                "outletId": "alarm3A__166_1:166%3A735",
+                "target": "166:735"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "166:1",
+              "name": "Alarm3A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm3A__169_0": {
+            "name": "Alarm3A__169_0",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "169:979",
+            "outlets": [
+              {
+                "outletId": "alarm3A:169%3A979",
+                "target": "169:979"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "169:0",
+              "name": "Alarm3A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "metadata"
+            }
+          },
+          "alarm1A__176_0": {
+            "name": "Alarm1A__176_0",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:326",
+            "outlets": [
+              {
+                "outletId": "alarm1A:176%3A326",
+                "target": "176:326"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:0",
+              "name": "Alarm1A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "metadata"
+            }
+          },
+          "alarm2A": {
+            "name": "Alarm2A",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:329",
+            "outlets": [
+              {
+                "outletId": "alarm2A:176%3A329",
+                "target": "176:329"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:1",
+              "name": "Alarm2A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm2B": {
+            "name": "Alarm2B",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:332",
+            "outlets": [
+              {
+                "outletId": "alarm2B:176%3A332",
+                "target": "176:332"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:2",
+              "name": "Alarm2B",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm3B": {
+            "name": "Alarm3B",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:335",
+            "outlets": [
+              {
+                "outletId": "alarm3B:176%3A335",
+                "target": "176:335"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:3",
+              "name": "Alarm3B",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm4A": {
+            "name": "Alarm4A",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:339",
+            "outlets": [
+              {
+                "outletId": "alarm4A:176%3A339",
+                "target": "176:339"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:4",
+              "name": "Alarm4A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm6A": {
+            "name": "Alarm6A",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:342",
+            "outlets": [
+              {
+                "outletId": "alarm6A:176%3A342",
+                "target": "176:342"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:5",
+              "name": "Alarm6A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm6C": {
+            "name": "Alarm6C",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:345",
+            "outlets": [
+              {
+                "outletId": "alarm6C:176%3A345",
+                "target": "176:345"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:6",
+              "name": "Alarm6C",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm6D": {
+            "name": "Alarm6D",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:348",
+            "outlets": [
+              {
+                "outletId": "alarm6D:176%3A348",
+                "target": "176:348"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:7",
+              "name": "Alarm6D",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm6B": {
+            "name": "Alarm6B",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:351",
+            "outlets": [
+              {
+                "outletId": "alarm6B:176%3A351",
+                "target": "176:351"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:8",
+              "name": "Alarm6B",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm5A": {
+            "name": "Alarm5A",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:354",
+            "outlets": [
+              {
+                "outletId": "alarm5A:176%3A354",
+                "target": "176:354"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:9",
+              "name": "Alarm5A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm5B": {
+            "name": "Alarm5B",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:357",
+            "outlets": [
+              {
+                "outletId": "alarm5B:176%3A357",
+                "target": "176:357"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:10",
+              "name": "Alarm5B",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1A皮带电机电流": {
+            "name": "1A皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:361",
+            "outlets": [
+              {
+                "outletId": "1A皮带电机电流:176%3A361",
+                "target": "176:361"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:12",
+              "name": "1A皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1B皮带电机电流": {
+            "name": "1B皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:362",
+            "outlets": [
+              {
+                "outletId": "1B皮带电机电流:176%3A362",
+                "target": "176:362"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:13",
+              "name": "1B皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2A皮带电机电流": {
+            "name": "2A皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:364",
+            "outlets": [
+              {
+                "outletId": "2A皮带电机电流:176%3A364",
+                "target": "176:364"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:14",
+              "name": "2A皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2B皮带电机电流": {
+            "name": "2B皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:365",
+            "outlets": [
+              {
+                "outletId": "2B皮带电机电流:176%3A365",
+                "target": "176:365"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:15",
+              "name": "2B皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "3A皮带电机电流": {
+            "name": "3A皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:366",
+            "outlets": [
+              {
+                "outletId": "3A皮带电机电流:176%3A366",
+                "target": "176:366"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:16",
+              "name": "3A皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "3B皮带电机电流": {
+            "name": "3B皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:367",
+            "outlets": [
+              {
+                "outletId": "3B皮带电机电流:176%3A367",
+                "target": "176:367"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:17",
+              "name": "3B皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "4A皮带电机电流": {
+            "name": "4A皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:368",
+            "outlets": [
+              {
+                "outletId": "4A皮带电机电流:176%3A368",
+                "target": "176:368"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:18",
+              "name": "4A皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "4B皮带电机电流": {
+            "name": "4B皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:369",
+            "outlets": [
+              {
+                "outletId": "4B皮带电机电流:176%3A369",
+                "target": "176:369"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:19",
+              "name": "4B皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "5B皮带电机电流": {
+            "name": "5B皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:371",
+            "outlets": [
+              {
+                "outletId": "5B皮带电机电流:176%3A371",
+                "target": "176:371"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:21",
+              "name": "5B皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "6A皮带电机电流": {
+            "name": "6A皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:372",
+            "outlets": [
+              {
+                "outletId": "6A皮带电机电流:176%3A372",
+                "target": "176:372"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:22",
+              "name": "6A皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "6B皮带电机电流": {
+            "name": "6B皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:373",
+            "outlets": [
+              {
+                "outletId": "6B皮带电机电流:176%3A373",
+                "target": "176:373"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:23",
+              "name": "6B皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "6C皮带电机电流": {
+            "name": "6C皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:374",
+            "outlets": [
+              {
+                "outletId": "6C皮带电机电流:176%3A374",
+                "target": "176:374"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:24",
+              "name": "6C皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "6D皮带电机电流": {
+            "name": "6D皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "176:375",
+            "outlets": [
+              {
+                "outletId": "6D皮带电机电流:176%3A375",
+                "target": "176:375"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "176:25",
+              "name": "6D皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1F原煤仓料位": {
+            "name": "1F原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:866",
+            "outlets": [
+              {
+                "outletId": "1F原煤仓料位:187%3A866",
+                "target": "187:866"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:28",
+              "name": "1F原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1E原煤仓料位": {
+            "name": "1E原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1534",
+            "outlets": [
+              {
+                "outletId": "1E原煤仓料位:187%3A1534",
+                "target": "187:1534"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:29",
+              "name": "1E原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1D原煤仓料位": {
+            "name": "1D原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1540",
+            "outlets": [
+              {
+                "outletId": "1D原煤仓料位:187%3A1540",
+                "target": "187:1540"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:30",
+              "name": "1D原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1C原煤仓料位": {
+            "name": "1C原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1543",
+            "outlets": [
+              {
+                "outletId": "1C原煤仓料位:187%3A1543",
+                "target": "187:1543"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:31",
+              "name": "1C原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1B原煤仓料位": {
+            "name": "1B原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1546",
+            "outlets": [
+              {
+                "outletId": "1B原煤仓料位:187%3A1546",
+                "target": "187:1546"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:32",
+              "name": "1B原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "1A原煤仓料位": {
+            "name": "1A原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1549",
+            "outlets": [
+              {
+                "outletId": "1A原煤仓料位:187%3A1549",
+                "target": "187:1549"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:33",
+              "name": "1A原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2F原煤仓料位": {
+            "name": "2F原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1552",
+            "outlets": [
+              {
+                "outletId": "2F原煤仓料位:187%3A1552",
+                "target": "187:1552"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:34",
+              "name": "2F原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2E原煤仓料位": {
+            "name": "2E原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1554",
+            "outlets": [
+              {
+                "outletId": "2E原煤仓料位:187%3A1554",
+                "target": "187:1554"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:35",
+              "name": "2E原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2D原煤仓料位": {
+            "name": "2D原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1556",
+            "outlets": [
+              {
+                "outletId": "2D原煤仓料位:187%3A1556",
+                "target": "187:1556"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:36",
+              "name": "2D原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2C原煤仓料位": {
+            "name": "2C原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1558",
+            "outlets": [
+              {
+                "outletId": "2C原煤仓料位:187%3A1558",
+                "target": "187:1558"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:37",
+              "name": "2C原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2B原煤仓料位": {
+            "name": "2B原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1560",
+            "outlets": [
+              {
+                "outletId": "2B原煤仓料位:187%3A1560",
+                "target": "187:1560"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:38",
+              "name": "2B原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "2A原煤仓料位": {
+            "name": "2A原煤仓料位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "187:1562",
+            "outlets": [
+              {
+                "outletId": "2A原煤仓料位:187%3A1562",
+                "target": "187:1562"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "187:39",
+              "name": "2A原煤仓料位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm4B": {
+            "name": "Alarm4B",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "193:195",
+            "outlets": [
+              {
+                "outletId": "alarm4B:193%3A195",
+                "target": "193:195"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "193:0",
+              "name": "Alarm4B",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "5A皮带电机电流": {
+            "name": "5A皮带电机电流",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "197:313",
+            "outlets": [
+              {
+                "outletId": "5A皮带电机电流:197%3A313",
+                "target": "197:313"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "197:5",
+              "name": "5A皮带电机电流",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm1A2": {
+            "name": "Alarm1A2",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "316:508",
+            "outlets": [
+              {
+                "outletId": "alarm1A2:316%3A508",
+                "target": "316:508"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "316:0",
+              "name": "Alarm1A2",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "metadata"
+            }
+          },
+          "alarm6C2": {
+            "name": "Alarm6C2",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "325:1",
+              "name": "Alarm6C2",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "metadata"
+            }
+          },
+          "alarm1A__325_2": {
+            "name": "Alarm1A__325_2",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "325:942",
+            "outlets": [
+              {
+                "outletId": "alarm1A__325_2:325%3A942",
+                "target": "325:942"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "325:2",
+              "name": "Alarm1A",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "alarm1B": {
+            "name": "Alarm1B",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "325:944",
+            "outlets": [
+              {
+                "outletId": "alarm1B:325%3A944",
+                "target": "325:944"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "325:3",
+              "name": "Alarm1B",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "robot__344_0": {
+            "name": "Robot",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "344:1116",
+            "outlets": [
+              {
+                "outletId": "robot__344_0:344%3A1116",
+                "target": "344:1116"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "344:0",
+              "name": "Robot",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "消防高位水箱水位": {
+            "name": "消防高位水箱水位",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "344:1123",
+            "outlets": [
+              {
+                "outletId": "消防高位水箱水位:344%3A1123",
+                "target": "344:1123"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "344:1",
+              "name": "消防高位水箱水位",
+              "type": "SLOT",
+              "nodeId": "166:730",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          }
+        },
+        "events": {
+          "coalStateChange": {
+            "payload": {
+              "devices": "unknown",
+              "epoch": "unknown",
+              "robot": "unknown",
+              "values": "unknown"
+            },
+            "source": "script",
+            "generatedBy": "node-script-public-surface@1",
+            "scriptId": "coal-system",
+            "scriptSrc": "src/components/coal/script.ts"
+          }
+        },
+        "imperative": {
+          "applyPointValues": {
+            "args": {
+              "valuesInput": "unknown"
+            },
+            "returns": "void",
+            "source": "script",
+            "generatedBy": "node-script-public-surface@1",
+            "scriptId": "coal-system",
+            "scriptSrc": "src/components/coal/script.ts"
+          },
+          "getCoalState": {
+            "args": {},
+            "returns": "unknown",
+            "source": "script",
+            "generatedBy": "node-script-public-surface@1",
+            "scriptId": "coal-system",
+            "scriptSrc": "src/components/coal/script.ts"
+          }
+        },
+        "parameters": {
+          "uiBindIds": {
+            "type": "array",
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "notes": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "left": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
+                              },
+                              "right": {
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "left",
+                              "right"
+                            ],
+                            "additionalProperties": false
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "value"
+                    ],
+                    "additionalProperties": true
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "left": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "right": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "left",
+                          "right"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "default": [],
+            "attribute": false,
+            "description": "Primary: [{id, notes?, value}], default []; legacy config-ID Record accepted. Complete snapshot replacement; missing IDs clear to unknown. notes is metadata only; last duplicate ID wins. Host-owned data only."
+          }
+        }
+      }
+    },
+    {
+      "nodeId": "94:101607",
+      "name": "皮带电机",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/94:101607",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "parameters": {
+          "coalInput": {
+            "type": "object",
+            "description": "Local semantic device state; unknown by default"
+          },
+          "djRun": {
+            "type": "number",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          }
+        }
+      }
+    },
+    {
+      "nodeId": "94:101763",
+      "name": "三通",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/94:101763",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "parameters": {
+          "coalInput": {
+            "type": "object",
+            "description": "Local semantic device state; unknown by default"
+          },
+          "leftRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          },
+          "rightRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          }
+        }
+      }
+    },
+    {
+      "nodeId": "209:639",
+      "name": "叶轮给煤机",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/209:639",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "parameters": {
+          "gmjPosition1": {
+            "type": "number",
+            "description": "0..53; width = live mounted component root content width * value / 53. Missing/invalid preserves last valid or authored width.",
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 53
+            }
+          },
+          "gmjPosition2": {
+            "type": "number",
+            "description": "0..53; width = live mounted component root content width * value / 53. Missing/invalid preserves last valid or authored width.",
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 53
+            }
+          },
+          "gmjRun1": {
+            "type": "boolean",
+            "description": "True: original running image; false or missing: original stopped image. Independent per feeder.",
+            "default": false
+          },
+          "gmjRun2": {
+            "type": "boolean",
+            "description": "True: original running image; false or missing: original stopped image. Independent per feeder.",
+            "default": false
+          }
+        }
+      }
+    },
+    {
+      "nodeId": "94:101209",
+      "name": "落煤挡板-斜皮带",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/94:101209",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "parameters": {
+          "coalInput": {
+            "type": "object",
+            "description": "Local semantic device state; unknown by default"
+          },
+          "taiqiRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          },
+          "luoxiaRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          },
+          "zhongjianRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          }
+        }
+      }
+    },
+    {
+      "nodeId": "94:101272",
+      "name": "落煤挡板-横皮带",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/94:101272",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "parameters": {
+          "coalInput": {
+            "type": "object",
+            "description": "Local semantic device state; unknown by default"
+          },
+          "taiqiRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          },
+          "luoxiaRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          },
+          "zhongjianRun": {
+            "type": "boolean",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          }
+        }
+      }
+    },
+    {
+      "nodeId": "209:818",
+      "name": "碎煤机",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/209:818",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "parameters": {
+          "coalInput": {
+            "type": "object",
+            "description": "Local semantic device state; unknown by default"
+          },
+          "smjRun": {
+            "type": "number",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          }
+        }
+      }
+    },
+    {
+      "nodeId": "221:951",
+      "name": "滚轴筛",
+      "sourceOfTruth": "view/data/artifact.flamo.json#nodeArtifacts/221:951",
+      "surface": {
+        "componentPropertiesVersion": "1.0",
+        "parameters": {
+          "coalInput": {
+            "type": "object",
+            "description": "Local semantic device state; unknown by default"
+          },
+          "gzRun": {
+            "type": "number",
+            "description": "Annotation property; omitted/null is unknown. No implicit stopped value."
+          }
+        }
+      }
+    }
+  ],
+  "updatedAt": "2026-10-09T03:16:30.302379+00:00"
+}

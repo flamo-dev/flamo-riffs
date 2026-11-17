@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "bindings": [
+    {
+      "id": "dream-star-sea-v1",
+      "nodeId": "778376733:1",
+      "src": "src/nodes/star-sea/script.ts",
+      "roles": {
+        "threads": "778376733:20",
+        "starlight": "778376733:21",
+        "still": "778376733:10",
+        "replay": "778376733:33",
+        "collisionAura": "778376733:19",
+        "root": "778376733:1",
+        "background": "778376733:2"
+      }
+    }
+  ],
+  "updatedAt": "2026-09-30T23:23:18.952Z"
+}

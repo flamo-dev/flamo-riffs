@@ -4,7 +4,7 @@ Framework-independent Web Component exported by Flamo.
 
 Set the element's width and height with CSS (default 300px by 150px). Content follows
 the exported fit mode in manifest.viewport and adapts when the container resizes.
-Width fit scrolls vertically; height fit scrolls horizontally when needed.
+Cover fills the host and crops equally on opposite edges. Width fit scrolls vertically; height fit scrolls horizontally when needed.
 The canvas background is transparent; authored node fills are preserved. Host CSS
 can supply a background. Canvas movement and zoom are disabled unless enabled at export.
 Source maps are included only when Source Map is checked at export (default off).
@@ -94,8 +94,8 @@ Renaming slots or changing props/events is a contract change; review the manifes
 
 Deploy flamo-runtime/ and component-viewport.js from the separately downloaded public resource archive directly under http://localhost:8080/common/. No generated JavaScript edits are needed.
 
-Runtime: http://localhost:8080/common/flamo-runtime/index.es.js?v=6d2ff1a7ac46cbf71db7bc0e5e550b1103dfff6826484a351327f677c7d408f6
-Viewport: http://localhost:8080/common/component-viewport.js?v=7f533668b721e562ddf4b4d8b1b520b1b229234216c8393b7cf1cf5192a1ccd0
+Runtime: http://localhost:8080/common/flamo-runtime/index.es.js?v=e05cccaf4d1047c23416f98d46dbb5aaaddc1a4c3d01a8fafe61e6b623ee5ff4
+Viewport: http://localhost:8080/common/component-viewport.js?v=8a9625e8b5d2fa2deb7a029f6c243937929a722f2a098a30bd3157466c5df6ae
 
 The interactions directory contains project scripts and stays local. Serve CDN JavaScript with a JavaScript MIME type and CORS. Keep the Runtime directory contents together and use a new version directory when updating a versioned deployment.
 

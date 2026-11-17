@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>输煤交互验收</title>
+<style>body{margin:0;background:#eef2f7;color:#172033;font:14px system-ui}header{padding:10px 16px;display:flex;gap:10px;align-items:center}button{padding:7px 14px}iframe{display:block;width:100%;height:75vh;border:0;background:white}pre{white-space:pre-wrap;max-height:180px;overflow:auto;margin:10px 16px}#status{font-weight:bold}</style>
+<header><strong>输煤组件 166:730 · 本地验收</strong><button id="run">运行回归</button><button id="running">展示运行</button><button id="stop">展示停止</button><button id="unknown">展示未知</button><span id="status">加载真实 Preview…</span></header>
+<iframe id="preview" src="/preview?pageId=0:1"></iframe><pre id="result"></pre>
+<script type="module">
+const frame=document.querySelector('iframe'),status=document.querySelector('#status'),result=document.querySelector('#result');
+const mapping=await fetch('/files/docs/coal/mapping.json').then(r=>r.json());
+let project,root;
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+const ready=async()=>{for(let i=0;i<180;i++){project=frame.contentWindow.__flamo_project;if(project){root=project.instance.scene.get('166:730');if(root)break;}await delay(500);}if(!root)throw Error('Preview component unavailable');return root;};
+const values=run=>Object.fromEntries([...new Set(mapping.flatMap(m=>m.keys))].map(k=>[k,k.startsWith('ST_')?{left:run,right:run}:/GMJWZ$/.test(k)?26.5:/^(DJDL|YMCLW|SW)_/.test(k)?7:run]));
+const state=()=>root.call('getCoalState');
+const apply=async data=>{root.call('applyPointValues',data);for(let i=0;i<100;i++){await delay(100);const s=state();if(s.devices.every(d=>d.receipt?.visual?.status==='observed'))return s;}return state();};
+const show=data=>result.textContent=JSON.stringify(data,null,2);
+const collect=s=>({epoch:s.epoch,devices:s.devices.length,missing:s.devices.filter(d=>!d.runtimeNode||!d.receipt).map(d=>d.node),errors:s.devices.filter(d=>d.receipt?.errors?.length||d.receipt?.visual?.status!=='observed').map(d=>({node:d.node,kind:d.kind,receipt:d.receipt}))});
+async function scenario(name,data){const s=await apply(data),check=collect(s);const flow=[];for(const m of mapping.filter(m=>m.flowTargets)){for(const id of m.flowTargets){const h=project.instance.scene.get(id);const actual=h?.call('getFlowState');flow.push({carrier:m.node,node:id,expected:s.devices.find(d=>d.node===m.node).run===true,enabled:actual?.enabled,ready:actual?.ready,error:actual?.error});}}return {name,...check,flows:flow,passed:check.missing.length===0&&check.errors.length===0&&flow.every(x=>x.enabled===x.expected&&x.ready===true&&!x.error)};}
+async function run(){status.textContent='正在验证…';await ready();const scriptStatus=project.debugScripts();const scenarios=[];for(const [name,data] of [['运行',values(true)],['停止',values(false)],['未知',{}],['恢复',values(true)]]){const row=await scenario(name,data);scenarios.push(row);show({current:name,passed:row.passed,missing:row.missing,errors:row.errors,flowFailures:row.flows.filter(x=>x.enabled!==x.expected||!x.ready||x.error)});}
+ const trace=await project.verifyInteractionTrace('tests/coal/flow.trace.json','coal-');
+ const report={revision:project.artifactData.metadata.revision,scriptStatus,scenarios,trace,passed:scenarios.every(s=>s.passed)&&trace.passed};
+ window.coalVerification=report;
+ await fetch('/__flamo_bridge__/evidence',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(project.collectInteractionEvidence(report))});
+ status.textContent=report.passed?'真实 Preview 验证通过':'验证发现问题';show({revision:report.revision,passed:report.passed,scenarios:scenarios.map(s=>({name:s.name,passed:s.passed,devices:s.devices,missing:s.missing,errors:s.errors,flowFailures:s.flows.filter(x=>x.enabled!==x.expected||!x.ready||x.error)})),trace:{passed:trace.passed,failures:trace.failures}});
+}
+const guard=fn=>async()=>{try{await fn();}catch(e){status.textContent='验证失败';show({error:String(e),stack:e.stack});}};
+document.querySelector('#run').onclick=guard(run);
+for(const [id,data] of [['running',values(true)],['stop',values(false)],['unknown',{}]])document.querySelector('#'+id).onclick=guard(async()=>{await ready();show(collect(await apply(data)));status.textContent=id;});
+guard(async()=>{await ready();status.textContent='Preview 就绪';show({revision:project.artifactData.metadata.revision,devices:mapping.length,flows:mapping.filter(m=>m.flowTargets).length});})();
+</script></html>

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "id": "project.coal.screen",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "on1": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    },
+    "off1": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": []
+    }
+  },
+  "listens": [
+    "coal:device:update",
+    "coal:device:ready",
+    "coal:device:ack"
+  ],
+  "writes": [
+    "on1.visible",
+    "off1.visible"
+  ],
+  "state": [
+    "unknown",
+    "stopped",
+    "running"
+  ],
+  "invariants": [
+    "Full snapshot replacement clears omitted values",
+    "State and disposal are scoped to the mounted instance"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "instance-isolation",
+    "rendered-output"
+  ]
+}

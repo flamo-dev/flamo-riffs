@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "hmi.pipe-flow",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": ["transform"]
+    },
+    "flow": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": ["transform", "visibility"]
+    }
+  },
+  "listens": ["business-update", "flamo:hmi-pipe-flow:set"],
+  "writes": [
+    "flow.visible",
+    "flow.stroke.color",
+    "flow.stroke.width",
+    "flow.stroke.dashArray",
+    "flow.stroke.dashOffset"
+  ],
+  "state": ["enabled", "speed", "direction", "offset", "color", "width", "dashPattern", "running"],
+  "invariants": [
+    "all writes are scoped to the bound flow role",
+    "enabled false hides the flow layer and stops frame scheduling",
+    "speed zero preserves the current phase without scheduling frames",
+    "direction changes only the sign of phase progression",
+    "dashPattern accepts 1-64 finite non-negative items with at least one positive item",
+    "a rejected patch leaves the complete prior state unchanged",
+    "disposing the node script cancels its pending animation frame"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "phase-delta",
+    "rendered-output",
+    "business-state-control"
+  ],
+  "requiredTraceActions": [
+    "pipe-flow.mounted",
+    "pipe-flow.state",
+    "pipe-flow.phase-sample"
+  ],
+  "visualEvidence": {
+    "required": true,
+    "targetRole": "flow",
+    "minimumChangedPixels": 1
+  },
+  "hostEvents": {
+    "command": "flamo:hmi-pipe-flow:set",
+    "state": "flamo:hmi-pipe-flow:state",
+    "target": "nodeId and/or instanceId"
+  }
+}

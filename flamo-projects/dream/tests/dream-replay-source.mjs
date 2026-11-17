@@ -1,0 +1,11 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const hash=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const a=JSON.parse(fs.readFileSync('view/data/artifact.flamo.json'));const flatten=ns=>ns.flatMap(n=>[n,...flatten(n.children||[])]),nodes=flatten(a.scene.nodes),labels=[];
+for(const id of [34]){const n=nodes.find(n=>n.guid?.sessionID===778376733&&n.guid.localID===id);assert.equal(n.transform.m02,0);assert.equal(n.transform.m12,0);assert.deepEqual(n.size,{x:130,y:45});assert.equal(n.textAlignHorizontal,'CENTER');assert.equal(n.textAlignVertical,'CENTER');assert.equal(n.textAutoResize,'NONE');labels.push({id,text:n.textData.characters,size:n.size,alignH:n.textAlignHorizontal,alignV:n.textAlignVertical});}
+const tools=JSON.parse(fs.readFileSync('view/api/runtime-contract.json'));for(const [p,h] of Object.entries({...tools.manifests,...tools.toolchain}))assert.equal(hash(p),h,p);for(const t of [tools.bundle,tools.declarations])assert.equal(hash(t.path),t.sha256,t.path);
+for(const id of [29,30,31,32])assert(!nodes.some(n=>n.guid?.sessionID===778376733&&n.guid.localID===id));
+const bindings=JSON.parse(fs.readFileSync('view/data/bindings.json'));assert(!JSON.stringify(bindings).match(/pause|meteor|778376733:(29|30|31|32)"/));
+const script=fs.readFileSync('src/nodes/star-sea/script.ts','utf8');assert(!script.includes("onActivate('pause'"));assert(!script.includes("onActivate('meteor'"));
+const source=fs.readFileSync('src/nodes/star-sea/viewport.ts','utf8');for(const literal of ['https://flamo.dev/','target="_blank"','rel="noopener noreferrer"','aria-label='])assert(source.includes(literal));
+const files=['view/data/artifact.flamo.json','view/data/bindings.json','src/nodes/star-sea/script.ts','src/nodes/star-sea/viewport.ts','src/nodes/star-sea/painter.ts','.flamo/generated/interactions/scripts/dream-star-sea-v1/register.definition.js'];
+fs.writeFileSync('/tmp/dream-replay-source-checks.json',JSON.stringify({revision:a.metadata.revision,passed:true,labels,officialToolHashesMatch:true,removedControlsVerified:true,hashes:Object.fromEntries(files.map(p=>[p,hash(p)])),note:'Static configuration, not glyph-rendering or screen-placement acceptance'},null,2));console.log('Source, centering configuration and official hashes passed');

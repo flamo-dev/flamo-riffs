@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>梦境 Runtime 验收</title>
+<style>html,body{margin:0;background:#0b1020;color:#d1ddf1;font:12px system-ui}header{padding:8px;display:flex;gap:12px;align-items:center;height:36px;white-space:nowrap}header b,button{flex-shrink:0}#live{overflow:hidden;text-overflow:ellipsis}button{cursor:pointer;padding:6px 12px}iframe{width:100%;height:78vh;border:0;background:white}pre{margin:8px;white-space:pre-wrap;max-height:16vh;overflow:auto}</style>
+<header><b>Dream · 实际 Runtime 验收</b><button id="verify">保存交互验收</button><span id="live">加载中</span></header>
+<iframe id="preview" src="/projects/u_5ce5548fa8_dream_a0o30u/preview?pageId=0%3A1"></iframe><pre id="result">请在实际画面轻触、暂停/继续、重返梦境、唤来流星，等待碰撞后保存验收。</pre>
+<script type="module">
+const iframe=document.querySelector('iframe'),live=document.querySelector('#live'),result=document.querySelector('#result');
+const api=()=>iframe.contentWindow?.__flamo_project;
+setInterval(()=>{const a=api();if(!a)return;const trace=a.traceInteraction('dream');const last=trace.at(-1);live.textContent='已加载 '+(a.manifest.artifactRevision||'')+' · '+trace.length+' 条轨迹 · '+(last?.action||'')+' '+JSON.stringify(last?.detail||{});},500);
+document.querySelector('#verify').onclick=async()=>{try{const a=api();if(!a)throw Error('Runtime not ready');const trace=a.traceInteraction('dream');const contract=await(await fetch('../src/interactions/contracts/dream-star-sea.behavior.json')).json();const required=contract.requiredTraceActions;const missing=required.filter(x=>!trace.some(t=>t.action===x));const lifecycle=a.debugScripts();const receipt=await a.persistCompletion();result.textContent=JSON.stringify({missingActions:missing,scriptStates:lifecycle.nodeScripts?.map(s=>({id:s.scriptId,status:s.status,lifecycle:s.lifecycle,error:s.error})),receipt,trace:trace.filter(t=>t.action!=='dream.frame').map(t=>({action:t.action,detail:t.detail}))},null,2);}catch(e){result.textContent=String(e.stack||e);}};
+</script></html>

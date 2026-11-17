@@ -1,0 +1,124 @@
+{
+  "fileKey": "85d078e19fd9dc02",
+  "syncedAt": "2026-10-22T07:45:30.912Z",
+  "note": "Local paths exist when bytes were provided by a .fig ZIP upload or downloaded from a Figma asset URL during direct capture.",
+  "images": [
+    {
+      "hash": "154a95c3e7e44b5d4f617fad52dec98a4ad4d52b",
+      "available": true,
+      "path": ".flamo/imports/assets/images/154a95c3e7e44b5d4f617fad52dec98a4ad4d52b.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "2955846a2b879500c2c2c92385f48280d5d4fbe5",
+      "available": true,
+      "path": ".flamo/imports/assets/images/2955846a2b879500c2c2c92385f48280d5d4fbe5.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "23:3",
+          "nodeName": "Group 1 1",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": "38:59",
+          "nodeName": "Group 1 1",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "832b3aab2f54501f8ea091b7f76864730dff912d",
+      "available": true,
+      "path": ".flamo/imports/assets/images/832b3aab2f54501f8ea091b7f76864730dff912d.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "8b79b3f4db05057c36e785579e6c474b167116e7",
+      "available": true,
+      "path": ".flamo/imports/assets/images/8b79b3f4db05057c36e785579e6c474b167116e7.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "b3a3331310d637127767250d79271e644a2f6937",
+      "available": true,
+      "path": ".flamo/imports/assets/images/b3a3331310d637127767250d79271e644a2f6937.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "17:20",
+          "nodeName": "Vector 1",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "fecc0cf4a15b1017e57a3a5b7cae56283550b304",
+      "available": true,
+      "path": ".flamo/imports/assets/images/fecc0cf4a15b1017e57a3a5b7cae56283550b304.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "38:58",
+          "nodeName": "Vector 1",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    }
+  ],
+  "videos": []
+}

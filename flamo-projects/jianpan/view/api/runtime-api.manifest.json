@@ -1,0 +1,489 @@
+{
+  "version": "semantic-v1",
+  "apis": [
+    {
+      "name": "validateAnimationAsset",
+      "signature": "validateAnimationAsset(unknown) -> Array<{ code: string; path: string; message: string }>",
+      "constraints": [
+        "Pure validation of flamo.animation-asset version 1: pixel-local size/source crop, parent bones, invertible bind poses, skin mesh weights, triangle indices and named poses. Empty issues means data validation only, not rendered or visual acceptance.",
+        "At most 256 bones, 4096 vertices and 8192 triangles per mesh; 1..4 known weights per vertex must sum to 1. Anatomy and missing pixels are never inferred."
+      ]
+    },
+    {
+      "name": "AnimationSurface",
+      "signature": "surface.clear(); draw(source, x?, y?, width?, height?); drawMesh(source, vertices, triangles); applyMatte(source, 'alpha' | 'luminance'); commit() -> number; dispose()",
+      "constraints": [
+        "Create through app.createAnimationSurface with a unique id and fixed integer dimensions 1..2048. Reuse the surface; bind its id as the assetId of a native Scene IMAGE.",
+        "Vertices contain x/y in surface pixels and u/v in source pixels. Matte must already align to the same coordinates and decoded time. Explicit alpha or luminance masking is not automatic segmentation.",
+        "commit uploads a new image revision. dispose clears visibility and invalidates further writes; stable texture allocation is reclaimed with the owning pool. Do not resize or reuse disposed ids."
+      ]
+    },
+    {
+      "name": "videoRegistry.seekFrame",
+      "signature": "videoRegistry.seekFrame(id, timeMs, { timeoutMs?, signal?, maxFrameErrorMs? }?) -> Promise<VideoFrameReceipt>",
+      "constraints": [
+        "Use the owning Flamo resource pool videoRegistry and registered media. Read the decoded-time receipt, validate the allowed deviation, and snapshot pixels during timeline prepare; a live video element is not a stable prepared frame.",
+        "Caller coordinates same-time color/matte seeks and serializes/coalesces requests for each media source. Abort/obsolete frames must not update the visible scene. This does not synthesize video, speech or alignment."
+      ]
+    },
+    {
+      "name": "app.createAnimationSurface",
+      "signature": "app.createAnimationSurface({ id, width, height }) -> AnimationSurface",
+      "constraints": [
+        "Small CPU Canvas2D mesh/matte surface, fixed dimensions 1..2048. Pool budget is 16M dynamic pixels and 64 ids, retained until pool destruction. Reuse surfaces across frames. Append a Scene IMAGE with assetId equal to surface.id; no DOM renderer overlay.",
+        "clear/draw/drawMesh/applyMatte modify staging pixels; commit advances the native texture revision. UV coordinates are source pixels; vertex positions are surface pixels.",
+        "Unique image ids belong to the resource pool. Dispose clears visibility and rejects further commits; stable GPU allocation is reclaimed when the owning pool is destroyed. Do not resize or reuse disposed ids."
+      ]
+    },
+    {
+      "name": "Skeleton2D",
+      "signature": "new Skeleton2D(asset); setPose(localPose); deform(mesh); joint(id); boneTransform(id)",
+      "constraints": [
+        "Versioned flamo.animation-asset v1 uses local pixel bind transforms, degrees and normalized per-vertex weights. Unknown parents, cycles, zero scales and invalid triangles are rejected.",
+        "setPose is absolute local pose with omitted fields retaining bind values. Skinning applies posedWorld times inverseBind. Anatomy and behavior belong to the project; Runtime does not infer them.",
+        "setMixedPose mixes partial clips against this skeleton's bind transforms, retaining omitted neck/attachment fields. Static mix accepts an optional bind pose; omitted fields in both clips stay omitted."
+      ]
+    },
+    {
+      "name": "AnimationTimeline",
+      "signature": "new AnimationTimeline({ durationMs, tracks, clock?, events? }); seek/play/pause/tick/step",
+      "constraints": [
+        "Time is milliseconds. A shared injected clock drives every track. prepare may decode asynchronously; commit must be synchronous and non-throwing, release reclaims staged values.",
+        "All preparations must succeed before committing. Latest request wins; pause and dispose invalidate in-flight work. Seek does not replay historical events. Property ownership conflicts are rejected.",
+        "Adapters must snapshot decoded color/matte pixels during prepare; do not commit live video aliases that can be changed by superseded decoders."
+      ]
+    },
+    {
+      "name": "importFigmaMotion",
+      "signature": "importFigmaMotion(unknown) -> { supported, issues, sample(timeMs) }",
+      "constraints": [
+        "First version recognizes explicit flamo.figma-motion-exchange v1, not arbitrary Dev Mode or plugin JSON. No native motion data yields NO_MOTION; unrecognized schemas yield UNKNOWN_FORMAT.",
+        "Supports numeric x/y/width/height/rotation/opacity/scaleX/scaleY, linear/hold/cubic-bezier and shared once/loop/boomerang cohorts. Absolute values retain source offsets.",
+        "Springs, paths and unsupported properties fail closed; never approximate physical springs as Bezier or silently drop tracks. Bind each source node id to a verified project node before applying samples."
+      ]
+    },
+    {
+      "name": "ctx.onUpdate",
+      "signature": "ctx.onUpdate(callback: (deltaTime: number) => void) -> () => void",
+      "constraints": [
+        "deltaTime is seconds; callback and unsubscribe belong to the script scope."
+      ]
+    },
+    {
+      "name": "defineNodeScript",
+      "signature": "defineNodeScript<Props>({ setup(props: Readonly<Props>, ctx: NodeScriptContext) { ... } })",
+      "constraints": [
+        "New Node Script source uses the Vue 3 parameter order setup(props, ctx); props is the first argument and Runtime capabilities are on ctx.",
+        "props is one shallow-readonly reactive proxy for the current concrete instance public surface. Read props inside handlers or watch getters and write only through ctx.instance.setProps().",
+        "Ordinary Components, inherited Component Set scripts, and ordinary graphic nodes all use setup(props, ctx). The target changes the source of props, not the setup signature.",
+        "An inherited Component Set script reads the current instance selection and imported component properties, never the owning page or definition root props; separate instances remain isolated.",
+        "For an ordinary graphic node, props contains owning FlamoInstance inputs plus Node Script overlay props; x, y, size, fill, opacity, text, and other node visual fields are not projected into props. Use ctx.node(), ctx.$/ctx.$$, or ctx.scene queries with design/current snapshots and semantic setters or animations.",
+        "defineNodeScript<Props> is TypeScript typing only and does not create an Artifact public surface. Promote externally configurable persistent values to a component boundary with a canonical surface.",
+        "update, variantchange, componentpropertychange, and reload synchronize the same props proxy so ctx.watch(() => props.name, ...) observes committed changes.",
+        "ctx.props is a deprecated alias retained for compiled setup(ctx) compatibility. New TypeScript declarations require setup(props, ctx); getVariant/getComponentProperties remain advanced introspection APIs."
+      ]
+    },
+    {
+      "name": "ctx.on",
+      "signature": "ctx.on(eventName, (event: NodeScriptEventMap[eventName]) => void, { capture?, once?, passive? }?)",
+      "constraints": [
+        "Consumes canonical Runtime input only; public ctx.emit output is not looped back into ctx.on.",
+        "Events route on the canonical ECS ancestry path in capture, target, and bubble phases; stopPropagation, stopImmediatePropagation, preventDefault, once, and passive follow DOM-style semantics.",
+        "Pointer and click coordinates are under event.coordinates, never event.position.",
+        "event.coordinates.local is relative to the event target. Use ctx.eventPoint(event, targetRef) for a child role or another node.",
+        "Common routed families include pointer, click, wheel, focus, keyboard, drag, tap/pan/pinch/rotate, input/composition, and clipboard events.",
+        "Runtime owns hit-testing: the Web path uses dirty-on-change color-ID picking with event-time pixel reads, while unsupported or Canvas2D paths use the same interaction descriptors for affine and clip-aware CPU fallback.",
+        "Use pointerdown rather than click when an internal pointer transaction must be marked before a DOM input blur."
+      ]
+    },
+    {
+      "name": "NodeScriptEvent",
+      "signature": "NodeScriptEvent<T> = T with target: string | null, currentTarget: string | null, composedPath(): string[]",
+      "constraints": [
+        "target is the canonical Runtime ECS id selected by framework-owned hit-testing; its logical identity remains stable across Variant rematerialization for the complete pointer transaction.",
+        "currentTarget and phase update as the event traverses capture, target, and bubble listeners.",
+        "composedPath() returns a defensive copy of the canonical target-to-instance-root ECS id chain, including dynamically materialized component descendants.",
+        "User scripts must not reconstruct the target chain from bounds, colors, clone ids, or private ECS parent fields."
+      ]
+    },
+    {
+      "name": "NodeScriptEventMap",
+      "signature": "pointerdown|pointermove|pointerup|pointercancel|pointerover|pointerout|pointerenter|pointerleave|gotpointercapture|lostpointercapture|wheel|click|doubleclick|contextmenu|focus|blur|focusin|focusout|keydown|keyup|dragstart|drag|dragend|tap|longpress|panstart|pan|panend|pinchstart|pinch|pinchend|rotatestart|rotate|rotateend|beforeinput|input|change|compositionstart|compositionupdate|compositionend|copy|cut|paste",
+      "constraints": [
+        "This is the complete typed routed event set for the current semantic-v1 Runtime manifest.",
+        "Pointer capture, focus, gesture, input, composition, and clipboard families use the same canonical target chain and listener options as pointer and click events.",
+        "HTML Surface input, composition, and clipboard events are bridged into the same NodeScriptEvent target projection."
+      ]
+    },
+    {
+      "name": "ctx.eventPoint",
+      "signature": "ctx.eventPoint(event, targetRef?) -> { x, y } | null",
+      "constraints": [
+        "Converts event.coordinates.world through the target node's live world transform.",
+        "Prefer this over hard-coded parent offsets or design-time transform arithmetic.",
+        "Returns null if the target cannot be probed or its transform is singular."
+      ]
+    },
+    {
+      "name": "ctx.mounted",
+      "signature": "ctx.mounted.resolve(ref) | ctx.mounted.children(ref) | ctx.mounted.probe(ref)",
+      "constraints": [
+        "This is the explicit read boundary for the current physical ECS materialization; SceneApi remains semantic-only.",
+        "resolve returns the canonical mounted entity plus semanticRef, sourceNodeId, instanceRootId, live probe, and scene revision when available.",
+        "children returns current direct mounted children in ECS relation order; it does not perform recursive name lookup.",
+        "Mounted entity handles are transient across Variant replacement, slot replacement, and rematerialization. Re-resolve after revision changes and never persist or parse physical ids."
+      ]
+    },
+    {
+      "name": "ctx.mountedContent",
+      "signature": "ctx.mountedContent(viewportRoleOrNodeRef) -> { viewport, contents, primary, viewportSnapshot, contentSnapshots, primarySnapshot, revision } | null",
+      "constraints": [
+        "Deprecated compatibility projection of ctx.mounted.children(viewportRoleOrNodeRef); new scripts should use ctx.mounted.",
+        "Returns current physical direct children without requiring physical clone-id parsing in the script.",
+        "Use revision to invalidate cached scroll geometry after slot replacement or scene mutation.",
+        "Measure during mount or revision change, not inside every pointermove."
+      ]
+    },
+    {
+      "name": "ctx.createShapeBatch",
+      "signature": "ctx.createShapeBatch({ node, polygon, capacity }) -> { update(Float32Array, count), dispose() }",
+      "constraints": [
+        "Owner must already be mounted; polygon is a flat finite simple polygon [x,y,...]. Capacity is 1..100000.",
+        "Each instance contains [m00,m10,m01,m11,m02,m12,r,g,b,a] in owner-local coordinates. RGBA is 0..1. Frame data is validated and copied atomically.",
+        "Copies inherit owner and ancestor transform, opacity, visibility, render order and clipping. They are ephemeral, non-interactive and do not create individual scene nodes.",
+        "One WebGPU/WebGL2 instanced draw per batch; update count 0 hides all copies. Dispose is idempotent and automatic on script teardown.",
+        "Use separate batches for separate materials; do not persist physical owner IDs or GPU state in Artifact."
+      ]
+    },
+    {
+      "name": "ctx.createShaderLayer",
+      "signature": "ctx.createShaderLayer({ wgsl, glsl, label?, uniforms?, phase? }) -> ShaderLayerHandle",
+      "constraints": [
+        "Managed screen-space GPU fragment layer, independent of the scene camera; background before native nodes or foreground after them.",
+        "Supply fn flamoFragment(uv: vec2<f32>) -> vec4<f32> in WGSL and vec4 flamoFragment(vec2 uv) in GLSL. UV origin is top-left; output straight-alpha RGBA. Engine entry points and bindings are reserved.",
+        "WGSL built-ins: flamo.resolution, flamo.time, flamo.parameters[0..3] (vec4). GLSL built-ins: u_resolution, u_time, u_parameters[0..3]. Up to 16 finite float uniforms and 8 layers per canvas.",
+        "Handle provides ready, status, error, setUniforms(values), setTime(seconds|null), setVisible(visible), dispose(). Compile errors reject ready and leave the native scene running. Script disposal automatically releases GPU resources.",
+        "The layer fills the canvas and does not inherit node fills, visibility or clipping. Make opaque native background fills transparent when composing a shader behind them."
+      ]
+    },
+    {
+      "name": "ctx.setTransformsBatch",
+      "signature": "ctx.setTransformsBatch([{ ref, x, y }, ...]) -> { accepted, missing }",
+      "constraints": [
+        "Queues every accepted position write on the owning SceneRuntime fast channel.",
+        "Use one batch per scheduled frame for content and thumb motion.",
+        "The fast-channel flush publishes one scene mutation revision for the batch so renderer and picking refresh from one committed geometry state."
+      ]
+    },
+    {
+      "name": "ctx.onNode",
+      "signature": "ctx.onNode(roleOrNodeRef, eventName, (event: NodeScriptEventMap[eventName]) => void, { capture?, once?, passive? }?)",
+      "constraints": [
+        "Binds directly to the role or node that participates in hit-testing instead of depending on parent bubbling.",
+        "Prefer role names from nodeArtifacts[*].roles, such as ctx.onNode('body', 'pointerdown', handler).",
+        "Common roles are inferred only from unambiguous component child names; Runtime selector fallback is a compatibility path and emits a persistence warning.",
+        "Use ctx.eventPoint(event, targetRef) when coordinates are needed in another role's local space."
+      ]
+    },
+    {
+      "name": "ctx.delegate",
+      "signature": "ctx.delegate(eventName, { name, scope? }, (event: NodeScriptEventMap[eventName]) => void, { capture?, once?, passive? }?)",
+      "constraints": [
+        "Matches an exact node name against the framework-owned canonical event target path; scope defaults to the current script boundary.",
+        "The query is resolved when each event occurs so variant changes and dynamically present or absent nodes require no user-script cache.",
+        "Use this instead of geometry, bounds, pick colors, clone-id parsing, or manual parent traversal in user scripts.",
+        "No match is a normal no-op, including when the dynamic node does not currently exist.",
+        "pointerenter, pointerleave, focus, blur, and pointer-capture boundary events do not bubble; Runtime emits a development diagnostic and delegates them through the stable ancestor capture path."
+      ]
+    },
+    {
+      "name": "ctx.onChild",
+      "signature": "ctx.onChild(eventName, { name, scope? }, handler, { capture?, once?, passive? }?)",
+      "constraints": [
+        "Binds directly to every current exact-name descendant, including non-bubbling boundary events.",
+        "Bindings are refreshed after Variant, component-property, and Artifact rematerialization.",
+        "Use this for dynamic descendants whose physical clone ids may change."
+      ]
+    },
+    {
+      "name": "ctx.onActivate",
+      "signature": "ctx.onActivate(roleOrNodeRefOrUndefined, handler, { disabled?, preventDefault? }?)",
+      "constraints": [
+        "Unifies pointer click and non-repeating Enter or Space keyboard activation.",
+        "The same disabled rule gates every input modality.",
+        "Keyboard activation prevents the platform default unless preventDefault is false."
+      ]
+    },
+    {
+      "name": "RuntimeNode.on",
+      "signature": "runtimeNode.on(event: UnifiedEventType, handler: UnifiedEventHandler, { capture?, once?, passive? }?) -> dispose",
+      "constraints": [
+        "Registers a lifecycle-owned listener directly on a live Runtime node and returns an idempotent disposer.",
+        "Uses the same canonical ECS target chain, event payloads, Interact policy, and listener semantics as ctx.on and ctx.onNode.",
+        "Prefer ctx.delegate for dynamically present named descendants so variant changes do not require rebinding."
+      ]
+    },
+    {
+      "name": "ctx.emit",
+      "signature": "ctx.emit(eventName, payload?) -> void",
+      "constraints": [
+        "Emits one public component business event such as onClose or onClick through the current Flamo instance; consumers receive the payload directly.",
+        "Use routed input listeners to decide when to emit; ctx.emit does not replace framework hit-testing or input propagation.",
+        "Internal Node Script messaging uses ctx.bus.emit/on instead of ctx.emit/on.",
+        "Public event names must be static string literals so the build can persist them in the canonical Artifact surface.",
+        "Keep the payload serializable when the event crosses host or Web Component boundaries."
+      ]
+    },
+    {
+      "name": "ctx.expose",
+      "signature": "ctx.expose({ methodName(...args) { ... } }) -> void",
+      "constraints": [
+        "Exposes public component methods; internal helpers remain ordinary module or closure functions.",
+        "Method names must be static object keys so the build can persist imperative ABI in the canonical Artifact surface.",
+        "Legacy non-boundary expose remains Runtime-compatible for one migration window but emits a deprecation diagnostic."
+      ]
+    },
+    {
+      "name": "ctx.bus",
+      "signature": "ctx.bus.on(eventName, handler) -> dispose; ctx.bus.emit(eventName, payload?) -> void",
+      "constraints": [
+        "Provides transient internal messaging scoped to one FlamoRuntime; separate Runtime instances never share events.",
+        "Subscriptions are owned by the current Node Script scope and are removed automatically on dispose.",
+        "One throwing or rejecting subscriber is diagnosed without preventing later subscribers from running.",
+        "Bus events do not enter the Artifact surface, host CustomEvent channel, or canonical input router."
+      ]
+    },
+    {
+      "name": "ctx.components.create",
+      "signature": "await ctx.components.create(exportNameOrExactRef, { parent?, props?, placement?, key?, signal? }?) -> ComponentInstanceHandle",
+      "constraints": [
+        "A string resolves one export and its complete definition closure from the owning Artifact.",
+        "An exact ref is resolved through the configured FlamoComponentResolver and must pass Artifact revision, hashes, Runtime ABI, and component ABI checks.",
+        "Creation is parent-owned, cancellable, and rolled back without a half-mounted entity on failure; one owner may retain at most 1000 dynamic child instances.",
+        "placement supports append, prepend, before, and after; before/after may specify a local gap."
+      ]
+    },
+    {
+      "name": "ctx.components.createBatch",
+      "signature": "await ctx.components.createBatch(requests, { signal? }?) -> readonly ComponentInstanceHandle[]",
+      "constraints": [
+        "One batch accepts at most 100 requests and may be cancelled with a shared AbortSignal; an individual request signal takes precedence.",
+        "If one request fails, every instance created earlier in the batch is destroyed in reverse order."
+      ]
+    },
+    {
+      "name": "ComponentInstanceHandle",
+      "signature": "{ readonly id, readonly root, setProps(patch, { signal? }?), on(event, handler), inspect(), destroy() }",
+      "constraints": [
+        "The handle belongs to one live child instance; on returns an idempotent disposer and destroy is idempotent.",
+        "setProps uses the same serialized atomic property transaction as FlamoInstance.setProps.",
+        "inspect exposes public state together with current ownership and cleanup counters."
+      ]
+    },
+    {
+      "name": "ctx.self.destroy",
+      "signature": "await ctx.self.destroy()",
+      "constraints": [
+        "Idempotently destroys the whole owning FlamoInstance; self does not mean the current ctx.nodeId when a Component or Component Set script is inherited inside a page Runtime.",
+        "Never use this API to remove the current mounted node; use ctx.scene.remove(ctx.nodeId) or RuntimeNode.remove() instead.",
+        "Downloaded-project verification rejects ctx.self.destroy() in reusable Node Scripts; whole-Runtime teardown belongs to the host through instance.destroy().",
+        "Parent-owned descendants, listeners, scheduled tasks, surfaces, captures, and resource references are disposed recursively."
+      ]
+    },
+    {
+      "name": "instance.setProps",
+      "signature": "await instance.setProps(patch, { signal? }?) -> FlamoPropsCommitReceipt",
+      "constraints": [
+        "Validates the complete patch before commit and serializes property mutations per instance.",
+        "Variant changes complete before non-Variant bindings and public update events become observable.",
+        "A failed or cancelled Variant batch restores the prior selections and does not publish a partial props state.",
+        "Inside a Node Script inherited by a concrete Component Set instance, ctx.instance.setProps resolves against the effective inherited surface and automatically targets that instance rather than the owning page Artifact.",
+        "Unknown, unbound, or out-of-scope properties are rejected; a scoped Variant-axis commit includes an applied receipt for the concrete instance in variantReceipts."
+      ]
+    },
+    {
+      "name": "instance.inspect",
+      "signature": "instance.inspect() -> FlamoInspectorInstanceSnapshot",
+      "constraints": [
+        "The lifecycle snapshot includes descendant ownership, Node Script disposers, routed listeners, pending tasks and mutations, slot surfaces, resource references, ECS entity count, and limbo component count.",
+        "Use the snapshot before and after destroy-oriented tests to verify that owned resources return to zero without reading private Runtime fields."
+      ]
+    },
+    {
+      "name": "ctx.behavior",
+      "signature": "ctx.behavior(behaviorRefAtVersion?) -> { binding, role(name), roles(name) } | null",
+      "constraints": [
+        "Select multi-behavior nodes by exact behaviorRef@version identity, for example ctx.behavior('select.behavior@1.0.0').",
+        "role(name) requires exactly one bound target; collection roles must use roles(name).",
+        "Role targets are mapped into the current component instance scope before handles are returned.",
+        "Missing, duplicate, or ambiguous bindings and unresolved role targets fail closed with contract.* interaction trace diagnostics.",
+        "ctx.role(name) remains the compatibility API for nodeArtifacts[*].roles; Behavior implementations should consume nodeArtifacts[*].interactions[].roleBindings through ctx.behavior()."
+      ]
+    },
+    {
+      "name": "ctx.trace",
+      "signature": "ctx.trace(action, detail?)",
+      "constraints": [
+        "Use structured action names and include viewport policy, caret index, and scroll offset for complex interactions.",
+        "Local preview retains the latest 500 trace entries for window.__flamo_project.traceInteraction()."
+      ]
+    },
+    {
+      "name": "flamo.registerProxyBinding",
+      "signature": "flamo.registerProxyBinding(nodeId, (hooks) => ({ state, eventHandlers? }), label?)",
+      "constraints": [
+        "Call flamo.unregisterProxyBinding(nodeId) immediately before hot-registering the same node.",
+        "The binding callback must always return an object, even for lifecycle-only scripts.",
+        "Use hooks.useReactive for state, hooks.useEntityProxy for ECS writes, hooks.onMounted/onUnmounted for external listeners.",
+        "For mounted Flamo instances, pass a scoped API from instance.createScopedFlamoApi(...) and register against flamo.resolveNodeId(reference) so source IDs map to the current instance."
+      ]
+    },
+    {
+      "name": "instance.createScopedFlamoApi",
+      "signature": "instance.createScopedFlamoApi(baseFlamo?)",
+      "constraints": [
+        "Use this before activating an interaction script for a mounted Flamo instance.",
+        "The scoped API maps original node IDs, local IDs, and selectors such as '#Content' to that instance's runtime nodes.",
+        "Do not store a single global disposer for all activations; key cleanup by flamo.instance.id or by the scoped root node."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).animate",
+      "signature": "handle.animate({ x?, y?, width?, height?, scaleX?, scaleY?, rotation?, 'NodeCpt.opacity'? }, { duration, easing })",
+      "constraints": [
+        "Use 'NodeCpt.opacity' for whole-node opacity; bare opacity is invalid in EntityHandle animate/set/get.",
+        "Do not use bare scale.",
+        "Prefer scaleX/scaleY, handle.setScale(), or handle.animateScale() for reliable visual scaling across node types.",
+        "width/height mutate TransformCpt.size and may trigger node-type-specific geometry rebuild semantics."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).animateScale",
+      "signature": "handle.animateScale(scaleX, scaleY, { duration, easing })",
+      "constraints": [
+        "Use this for visual scaling when the intent is to scale what the user sees rather than redefining semantic width/height.",
+        "This API maps to TransformCpt.transform.m00/m11."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).setText",
+      "signature": "handle.setText(text, { preserveStyle?, textData? })",
+      "constraints": [
+        "Use this for dynamic text instead of setting TextCpt.textData directly in generated scripts.",
+        "The runtime clears TextCpt.derivedTextData so stale Figma baselines cannot clip the new string."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).design",
+      "signature": "handle.design() -> NodeSemanticSnapshot",
+      "constraints": [
+        "Preferred read API for identity, hierarchy, geometry, compositing, layout, constraints, appearance, text, media, interaction, component, HTML surface, canvas, and accessibility semantics.",
+        "Returns a normalized design-time snapshot; defaults and lossy conversions are reported in warnings.",
+        "Do not parse private Figma guid, derived text, geometry cache, or instance override encodings in ordinary scripts."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).current",
+      "signature": "await handle.current() -> NodeSemanticSnapshot",
+      "constraints": [
+        "Waits for queued writes and merges live probe geometry, visibility, and opacity with normalized design semantics.",
+        "Use this instead of handle.get() when verifying a post-mutation runtime result."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).measureText",
+      "signature": "handle.measureText(text) -> number",
+      "constraints": [
+        "Uses normalized font family, style, weight, size, and letter spacing from the text semantic snapshot.",
+        "Prefer this over manually constructing a Canvas font from raw Figma fields."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).semanticWrites",
+      "signature": "setSize|setBlendMode|setFill|setFillColor|setFillOpacity|setStroke|setStrokeColor|setStrokeWidth|setCorners|setLayout|setConstraints|setTextStyle|setMedia|setInteractive|setCursor",
+      "constraints": [
+        "Prefer intent APIs over guessed ECS property paths.",
+        "Check semantic-properties.manifest.json for applicability and read/write support."
+      ]
+    },
+    {
+      "name": "flamo.createEntityHandle(nodeId).setInteractive",
+      "signature": "handle.setInteractive({ mode?: 'auto' | 'enabled' | 'disabled', enabled?, pointerEvents?: 'auto' | 'none' | 'box-only' | 'box-none', inert?, hitTestWhenTransparent?, cursor?, zIndex? })",
+      "constraints": [
+        "mode disabled and inert are authoritative and cannot be overridden by registered listeners.",
+        "mode auto activates an interaction boundary only when it has routed listeners; enabled keeps the boundary active without listeners.",
+        "pointerEvents none rejects the subtree, box-only rejects descendants, and box-none excludes only the node's own pick surface.",
+        "hitTestWhenTransparent preserves an explicit hit surface at paint opacity zero while visible=false still removes it from interaction.",
+        "enabled is a compatibility projection; prefer mode for new code."
+      ]
+    },
+    {
+      "name": "app.playMotion",
+      "signature": "app.playMotion({ name, driver, duration, tracks: [{ target, channel, sampler, keyframes }], budget })",
+      "constraints": [
+        "MotionSpec channel: 'opacity' is allowed.",
+        "Use multiple keyframed tracks for concrete performance motion such as arc throws."
+      ]
+    },
+    {
+      "name": "handle.layout",
+      "signature": "handle.layout(): NodeLayoutSnapshot | null",
+      "constraints": [
+        "Returns parent participation, per-axis property owners and local border/content boxes. Inspect source: design is not live measurement.",
+        "Node Script geometry writes reject layout-owned axes before command submission, including set, animate and fast setters. Layout/constraint edits belong to explicit scene authoring.",
+        "Use setHeight or setWidth for a single fixed input axis; setSize may also overwrite a layout-owned dimension."
+      ]
+    },
+    {
+      "name": "handle.setHeight",
+      "signature": "handle.setHeight(height: number): void",
+      "constraints": [
+        "Finite non-negative input height only. Does not rewrite width or position."
+      ]
+    },
+    {
+      "name": "handle.setWidth",
+      "signature": "handle.setWidth(width: number): void",
+      "constraints": [
+        "Finite non-negative input width only. Does not rewrite height or position."
+      ]
+    },
+    {
+      "name": "ctx.observeLayout",
+      "signature": "ctx.observeLayout(ref: string | EntityHandle, callback: (layout: NodeLayoutSnapshot | null) => void): () => void",
+      "constraints": [
+        "Immediately reports current layout/null, then changed snapshots of the latest committed layout.",
+        "Subscriptions share a script-owned Runtime sampler, execute in the owning SceneRuntime and dispose with the script. Static layout() reads alone are not reactive subscriptions."
+      ]
+    },
+    {
+      "name": "ctx.assertLayoutWritable",
+      "signature": "ctx.assertLayoutWritable(ref: string | EntityHandle, properties: readonly string[]): void",
+      "constraints": [
+        "Preflight only: validates all requested layout-sensitive property paths before writes. Unavailable targets and layout conflicts throw.",
+        "Setters and ctx mutation paths still enforce ownership; callers cannot disable protection by skipping preflight."
+      ]
+    },
+    {
+      "name": "ctx.instance.app.getResourcePool",
+      "signature": "ctx.instance.app.getResourcePool() -> GpuSurfacePool",
+      "constraints": [
+        "Borrow the host device and registry. Do not create a second device or destroy the pool."
+      ]
+    },
+    {
+      "name": "ctx.createGpuSurface",
+      "signature": "ctx.createGpuSurface(options: GpuSurfaceOptions) -> GpuSurface",
+      "constraints": [
+        "Experimental WebGPU only. Explicit ready/render/resize and scope-owned dispose; nearest or linear integer output scale.",
+        "Public declarations are emitted from runtime/src/3d and delivered with the exact runtime-contract bundle hash.",
+        "Use surface.own(resource) to transfer disposal. Never transfer the shared device or externally borrowed buffers."
+      ]
+    }
+  ],
+  "forbiddenAliases": [
+    "opacity",
+    "scale",
+    "fillColor"
+  ]
+}

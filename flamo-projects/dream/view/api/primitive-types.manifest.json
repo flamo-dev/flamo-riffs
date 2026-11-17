@@ -1,0 +1,25 @@
+{
+  "version": "scene-v1",
+  "owner": "@flamo/runtime",
+  "kinds": {
+    "frame": { "nodeType": "FRAME", "capabilities": ["children", "layout", "appearance"] },
+    "group": { "nodeType": "GROUP", "capabilities": ["children"] },
+    "rect": { "nodeType": "ROUNDED_RECTANGLE", "capabilities": ["appearance", "corners"] },
+    "line": { "nodeType": "LINE", "capabilities": ["stroke"] },
+    "ellipse": { "nodeType": "ELLIPSE", "capabilities": ["appearance"] },
+    "polygon": { "nodeType": "REGULAR_POLYGON", "capabilities": ["appearance", "count"] },
+    "star": { "nodeType": "STAR", "capabilities": ["appearance", "count", "starInnerScale"] },
+    "vector": { "nodeType": "VECTOR", "capabilities": ["appearance", "vectorData"] },
+    "path": { "nodeType": "VECTOR", "capabilities": ["appearance", "pathData"] },
+    "curve": { "nodeType": "VECTOR", "capabilities": ["stroke", "pathData"] },
+    "arrow": { "nodeType": "VECTOR", "capabilities": ["stroke", "pathData"] },
+    "text": { "nodeType": "TEXT", "capabilities": ["text", "typography", "appearance"] },
+    "textPath": { "nodeType": "TEXT_PATH", "capabilities": ["text", "typography", "pathData"] },
+    "image": { "nodeType": "ROUNDED_RECTANGLE", "capabilities": ["media", "appearance"] },
+    "video": { "nodeType": "ROUNDED_RECTANGLE", "capabilities": ["media", "playback"] },
+    "htmlSurface": { "nodeType": "HTML_SURFACE", "capabilities": ["htmlSurface", "backend", "events"] }
+  },
+  "commonProps": ["id", "name", "position", "size", "scale", "rotation", "visible", "opacity", "fill", "stroke", "strokeWidth", "corners", "interactive", "lifecycle", "metadata"],
+  "lifecycles": ["ephemeral", "session", "persistent"],
+  "note": "This registry is owned by Flamo. User-project artifacts are compatibility fixtures, not primitive definitions."
+}

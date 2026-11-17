@@ -1,0 +1,770 @@
+{
+  "fileKey": "a135eaac0fa728d7",
+  "syncedAt": "2026-10-22T08:30:22.067Z",
+  "note": "Local paths exist when bytes were provided by a .fig ZIP upload or downloaded from a Figma asset URL during direct capture.",
+  "images": [
+    {
+      "hash": "148cde5f79aff59673d89449fbca41e4034ca9ca",
+      "available": true,
+      "path": ".flamo/imports/assets/images/148cde5f79aff59673d89449fbca41e4034ca9ca.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "1e048a5ca5b18e8c73a50096c67788db1601fd79",
+      "available": true,
+      "path": ".flamo/imports/assets/images/1e048a5ca5b18e8c73a50096c67788db1601fd79.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "225:1118",
+          "nodeName": "碎煤机停止",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "2dbb8d1b9b945dac6356db8cf3af3daf85945985",
+      "available": true,
+      "path": ".flamo/imports/assets/images/2dbb8d1b9b945dac6356db8cf3af3daf85945985.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "292:392",
+          "nodeName": "落煤长度二分之一",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "329e680f8a13ff88428b3fe11fb8754f1c9a0df1",
+      "available": true,
+      "path": ".flamo/imports/assets/images/329e680f8a13ff88428b3fe11fb8754f1c9a0df1.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "36528aec5be02fd452abe4e05d25364bc5348878",
+      "available": true,
+      "path": ".flamo/imports/assets/images/36528aec5be02fd452abe4e05d25364bc5348878.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "225:1106",
+          "nodeName": "滚轴筛",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "533ff2f46ee70e1988a46c04b79b0db9c7c19dbe",
+      "available": true,
+      "path": ".flamo/imports/assets/images/533ff2f46ee70e1988a46c04b79b0db9c7c19dbe.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "5aa0613bf641e205ca8402dab946997b8665fb0e",
+      "available": true,
+      "path": ".flamo/imports/assets/images/5aa0613bf641e205ca8402dab946997b8665fb0e.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "225:1087",
+          "nodeName": "叶轮给煤机停止",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": "225:1064",
+          "nodeName": "叶轮给煤机停止",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "5d119d7fbf993b6007d2e5addc57170717761eef",
+      "available": true,
+      "path": ".flamo/imports/assets/images/5d119d7fbf993b6007d2e5addc57170717761eef.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "751f96bfce77804488949adc823848b8eed29765",
+      "available": true,
+      "path": ".flamo/imports/assets/images/751f96bfce77804488949adc823848b8eed29765.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "225:1086",
+          "nodeName": "叶轮给煤机运行",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": "225:1068",
+          "nodeName": "叶轮给煤机运行",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "7aea48e710fd0e9b40cdb9aff58a7ba84fe747dd",
+      "available": true,
+      "path": ".flamo/imports/assets/images/7aea48e710fd0e9b40cdb9aff58a7ba84fe747dd.gif",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "animatedImage.hash"
+        }
+      ]
+    },
+    {
+      "hash": "8c38965be94239b0cef5cbf58d29450bd6a3365f",
+      "available": true,
+      "path": ".flamo/imports/assets/images/8c38965be94239b0cef5cbf58d29450bd6a3365f.gif",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "animatedImage.hash"
+        }
+      ]
+    },
+    {
+      "hash": "b26eb4a181b46d405ec8e52e196e7c0a51b0aa44",
+      "available": true,
+      "path": ".flamo/imports/assets/images/b26eb4a181b46d405ec8e52e196e7c0a51b0aa44.gif",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "animatedImage.hash"
+        }
+      ]
+    },
+    {
+      "hash": "b3f1e1c34dbe5b988cef258854d565d38d1febc7",
+      "available": true,
+      "path": ".flamo/imports/assets/images/b3f1e1c34dbe5b988cef258854d565d38d1febc7.gif",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "animatedImage.hash"
+        }
+      ]
+    },
+    {
+      "hash": "b56b966a275922d031dc8044c8fe7fe6dcacfa27",
+      "available": true,
+      "path": ".flamo/imports/assets/images/b56b966a275922d031dc8044c8fe7fe6dcacfa27.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "292:394",
+          "nodeName": "落煤长度四分之一",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "b8d0a3cd79bd5432544e9b58e4667fc30101be8f",
+      "available": true,
+      "path": ".flamo/imports/assets/images/b8d0a3cd79bd5432544e9b58e4667fc30101be8f.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "305:354",
+          "nodeName": "落煤长度四分之三",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "c8de2e6f53837e7e5084b8a6ab8a92072f19204a",
+      "available": true,
+      "path": ".flamo/imports/assets/images/c8de2e6f53837e7e5084b8a6ab8a92072f19204a.gif",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "animatedImage.hash"
+        }
+      ]
+    },
+    {
+      "hash": "cc24d4cd840b7c6adfb16f3d499e5025bd4bb463",
+      "available": true,
+      "path": ".flamo/imports/assets/images/cc24d4cd840b7c6adfb16f3d499e5025bd4bb463.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "292:393",
+          "nodeName": "落煤长度三分之一",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "dfc6f975f7922d89b2c07747f1b3b6bad1c52dc3",
+      "available": true,
+      "path": ".flamo/imports/assets/images/dfc6f975f7922d89b2c07747f1b3b6bad1c52dc3.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "e978a323a17a1c6ee258302943d38f0e389e9674",
+      "available": true,
+      "path": ".flamo/imports/assets/images/e978a323a17a1c6ee258302943d38f0e389e9674.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "225:1122",
+          "nodeName": "碎煤机运行",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "ed137a3558ed7616f1654bee8c8139c9d6e736c2",
+      "available": true,
+      "path": ".flamo/imports/assets/images/ed137a3558ed7616f1654bee8c8139c9d6e736c2.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "91:100532",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        },
+        {
+          "nodeId": "91:100533",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100542",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100543",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "197:310",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "197:311",
+          "nodeName": "中轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "197:312",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100651",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100652",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100512",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100513",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100640",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100641",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "83:99032",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "83:99033",
+          "nodeName": "中轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "83:99034",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100522",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100523",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100488",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100487",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100502",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100503",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100479",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100478",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100470",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100469",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100461",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100460",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "59:764",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "59:763",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100661",
+          "nodeName": "右轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": "91:100662",
+          "nodeName": "左轮",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "f0800db7f2b956a75724dbbac84ef1f8a958a56e",
+      "available": true,
+      "path": ".flamo/imports/assets/images/f0800db7f2b956a75724dbbac84ef1f8a958a56e.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "f0f702eda5d3d078a55e9aeaf97f9b42dd10dc40",
+      "available": true,
+      "path": ".flamo/imports/assets/images/f0f702eda5d3d078a55e9aeaf97f9b42dd10dc40.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "307:482",
+          "nodeName": "电机运行",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "f16a08ba11173763a6ee2fb2e2dc99698cfc41bf",
+      "available": true,
+      "path": ".flamo/imports/assets/images/f16a08ba11173763a6ee2fb2e2dc99698cfc41bf.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    },
+    {
+      "hash": "f8347cd3a2b196928d8b4d0fe6ee360ff822a7b8",
+      "available": true,
+      "path": ".flamo/imports/assets/images/f8347cd3a2b196928d8b4d0fe6ee360ff822a7b8.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "307:458",
+          "nodeName": "电机停运",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "fe4098f5be31d4d30c0de29355f2ea1287e68c19",
+      "available": true,
+      "path": ".flamo/imports/assets/images/fe4098f5be31d4d30c0de29355f2ea1287e68c19.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": "292:391",
+          "nodeName": "落煤长度完整",
+          "nodeType": "ROUNDED_RECTANGLE",
+          "paintIndex": 0,
+          "paintType": "IMAGE",
+          "field": "fillPaints.image.hash"
+        },
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "image.hash"
+        }
+      ]
+    },
+    {
+      "hash": "ff3625242e05591d7f6d46ff86b4905f217a8c8f",
+      "available": true,
+      "path": ".flamo/imports/assets/images/ff3625242e05591d7f6d46ff86b4905f217a8c8f.png",
+      "sourceUrl": null,
+      "references": [
+        {
+          "nodeId": null,
+          "nodeName": null,
+          "nodeType": "IMAGE",
+          "field": "imageThumbnail.hash"
+        }
+      ]
+    }
+  ],
+  "videos": []
+}

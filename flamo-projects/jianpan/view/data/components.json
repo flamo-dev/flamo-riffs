@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 1,
+  "projectId": "u_5ce5548fa8_project_mb450i",
+  "components": [
+    {
+      "id": "Jianpan2",
+      "name": "jianpan",
+      "rootNodeId": "39:103",
+      "exportName": "Jianpan2",
+      "tagName": "flamo-jianpan2",
+      "roles": {
+        "root": "39:103",
+        "ltzq1Show": "96:438",
+        "ltzs1Show": "96:39",
+        "ltzs2zShow": "96:439",
+        "ltzs2yShow": "96:440",
+        "ltzs3Show": "96:441",
+        "ltzs4Show": "96:442",
+        "ltzf1Show": "96:163",
+        "ltzf2Show": "96:168",
+        "ltzf3Show": "96:181",
+        "ltzf4Show": "96:200",
+        "ltzy1Show": "96:216",
+        "ltzy2Show": "96:443",
+        "ltzy3Show": "96:444"
+      },
+      "controlSurface": {
+        "props": {
+          "ltzq1Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组汽1”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzs1Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组水1”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzs2zShow": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组水2_左”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzs2yShow": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组水2_右”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzs3Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组水3”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzs4Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组水4”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzf1Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组风1”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzf2Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组风2”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzf3Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组风3”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzf4Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组风4”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzy1Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组烟1”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzy2Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组烟2”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          },
+          "ltzy3Show": {
+            "type": "boolean",
+            "schema": {
+              "type": "boolean"
+            },
+            "default": true,
+            "validation": "strict",
+            "description": "控制“流体组烟3”节点的显示隐藏，true 显示，false 隐藏。注释未指定默认值；默认 true 保持原节点可见。",
+            "persistence": "artifact"
+          }
+        },
+        "slots": {
+          "cZFXT": {
+            "name": "CZFXT",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:98",
+            "outlets": [
+              {
+                "outletId": "cZFXT:38%3A98",
+                "target": "38:98"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:1",
+              "name": "CZFXT",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "bZFXT": {
+            "name": "BZFXT",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:97",
+            "outlets": [
+              {
+                "outletId": "bZFXT:38%3A97",
+                "target": "38:97"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:2",
+              "name": "BZFXT",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "fZFXT": {
+            "name": "FZFXT",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:96",
+            "outlets": [
+              {
+                "outletId": "fZFXT:38%3A96",
+                "target": "38:96"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:3",
+              "name": "FZFXT",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "eZFXT": {
+            "name": "EZFXT",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:95",
+            "outlets": [
+              {
+                "outletId": "eZFXT:38%3A95",
+                "target": "38:95"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:4",
+              "name": "EZFXT",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "dZFXT": {
+            "name": "DZFXT",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:94",
+            "outlets": [
+              {
+                "outletId": "dZFXT:38%3A94",
+                "target": "38:94"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:5",
+              "name": "DZFXT",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "aZFXT": {
+            "name": "AZFXT",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:93",
+            "outlets": [
+              {
+                "outletId": "aZFXT:38%3A93",
+                "target": "38:93"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:6",
+              "name": "AZFXT",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "bYCFJ": {
+            "name": "BYCFJ",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:101",
+            "outlets": [
+              {
+                "outletId": "bYCFJ:38%3A101",
+                "target": "38:101"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:7",
+              "name": "BYCFJ",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "bSFJ": {
+            "name": "BSFJ",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:100",
+            "outlets": [
+              {
+                "outletId": "bSFJ:38%3A100",
+                "target": "38:100"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:8",
+              "name": "BSFJ",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "bYFJ": {
+            "name": "BYFJ",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:99",
+            "outlets": [
+              {
+                "outletId": "bYFJ:38%3A99",
+                "target": "38:99"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:9",
+              "name": "BYFJ",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "aYFJ": {
+            "name": "AYFJ",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:92",
+            "outlets": [
+              {
+                "outletId": "aYFJ:38%3A92",
+                "target": "38:92"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:10",
+              "name": "AYFJ",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "aSFJ": {
+            "name": "ASFJ",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:91",
+            "outlets": [
+              {
+                "outletId": "aSFJ:38%3A91",
+                "target": "38:91"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:11",
+              "name": "ASFJ",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "bNB": {
+            "name": "BNB",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:90",
+            "outlets": [
+              {
+                "outletId": "bNB:38%3A90",
+                "target": "38:90"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:12",
+              "name": "BNB",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "aNB": {
+            "name": "ANB",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:89",
+            "outlets": [
+              {
+                "outletId": "aNB:38%3A89",
+                "target": "38:89"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:13",
+              "name": "ANB",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "lTDHHY": {
+            "name": "LTDHHY",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:88",
+            "outlets": [
+              {
+                "outletId": "lTDHHY:38%3A88",
+                "target": "38:88"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:14",
+              "name": "LTDHHY",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "lTDHYW": {
+            "name": "LTDHYW",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:87",
+            "outlets": [
+              {
+                "outletId": "lTDHYW:38%3A87",
+                "target": "38:87"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:15",
+              "name": "LTDHYW",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "gSB": {
+            "name": "GSB",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:86",
+            "outlets": [
+              {
+                "outletId": "gSB:38%3A86",
+                "target": "38:86"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:16",
+              "name": "GSB",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          },
+          "aYCFJ": {
+            "name": "AYCFJ",
+            "accepts": [
+              "artifact",
+              "flamoInstance",
+              "dom",
+              "html",
+              "text"
+            ],
+            "target": "38:85",
+            "outlets": [
+              {
+                "outletId": "aYCFJ:38%3A85",
+                "target": "38:85"
+              }
+            ],
+            "source": "figma",
+            "figma": {
+              "id": "39:17",
+              "name": "AYCFJ",
+              "type": "SLOT",
+              "nodeId": "39:103",
+              "projection": "native",
+              "bindingProjection": "native"
+            }
+          }
+        }
+      },
+      "scripts": [
+        {
+          "id": "jianpan2-visibility",
+          "src": "src/nodes/39_103/script.ts",
+          "compiled": ".flamo/generated/interactions/scripts/jianpan2-visibility/register.js",
+          "kind": "composition",
+          "language": "ts",
+          "behaviorRef": "jianpan2.visibility",
+          "version": "1.0.0"
+        }
+      ],
+      "provenance": {
+        "source": "annotation-83196c71c9844925",
+        "artifact": "view/data/artifact.flamo.json"
+      }
+    }
+  ],
+  "updatedAt": "2026-09-21T03:56:56.771Z"
+}

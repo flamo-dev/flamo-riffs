@@ -1,0 +1,2275 @@
+{
+  "sceneSha256": "a6a6c67c9ea55e00f9495e5e392f218c8d3806725448a34e19ee3a449eec56df",
+  "slotsSha256": "0c1a2629fa83c9b6b1b4f5549ed910fa49ea626438387ccd58a0b38572e13717",
+  "points": {
+    "m0": {
+      "namespace": "unit00",
+      "data": [
+        {
+          "id": "GMJ_1APD#1GMJWZ",
+          "notes": "给煤机_1A皮带#1给煤机位置",
+          "tag": "Y0EAB01AF001GH001",
+          "item": "AV",
+          "actValue": "0~53 从左往右取消填充",
+          "code": ""
+        },
+        {
+          "id": "GMJ_1APD#2GMJWZ",
+          "notes": "给煤机_1A皮带#2给煤机位置",
+          "tag": "Y0EAB01AF002GH001",
+          "item": "AV",
+          "actValue": "0~53 从左往右填充",
+          "code": ""
+        },
+        {
+          "id": "GMJ_1BPD#1GMJWZ",
+          "notes": "给煤机_1B皮带#1给煤机位置",
+          "tag": "Y0EAB02AF001GH001",
+          "item": "AV",
+          "actValue": "0~53 从左往右取消填充",
+          "code": ""
+        },
+        {
+          "id": "GMJ_1BPD#2GMJWZ",
+          "notes": "给煤机_1B皮带#2给煤机位置",
+          "tag": "Y0EAB02AF002GH001",
+          "item": "AV",
+          "actValue": "0~53 从左往右填充",
+          "code": ""
+        },
+        {
+          "id": "GMJ_1APD#1GMJYX",
+          "notes": "给煤机_1A皮带#1给煤机运行",
+          "tag": "Y0EAB01AF001GH2",
+          "item": "DV",
+          "actValue": "TRUE= 运行; false=停止",
+          "code": ""
+        },
+        {
+          "id": "GMJ_1APD#2GMJYX",
+          "notes": "给煤机_1A皮带#2给煤机运行",
+          "tag": "Y0EAB01AF002GH2",
+          "item": "DV",
+          "actValue": "TRUE= 运行; false=停止",
+          "code": ""
+        },
+        {
+          "id": "GMJ_1BPD#1GMJYX",
+          "notes": "给煤机_1B皮带#1给煤机运行",
+          "tag": "Y0EAB02AF001GH2",
+          "item": "DV",
+          "actValue": "TRUE= 运行; false=停止",
+          "code": ""
+        },
+        {
+          "id": "GMJ_1BPD#2GMJYX",
+          "notes": "给煤机_1B皮带#2给煤机运行",
+          "tag": "Y0EAB02AF002GH2",
+          "item": "DV",
+          "actValue": "TRUE= 运行; false=停止",
+          "code": ""
+        },
+        {
+          "id": "PDTBSSZZ_1AWZ1SC",
+          "notes": "皮带头部伸缩装置_1A位置1伸出",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：Y0EAC01AR001GH2==true && Y0BHA09GS003GH2==false",
+          "code": ""
+        },
+        {
+          "id": "PDTBSSZZ_1AWZ2SH",
+          "notes": "皮带头部伸缩装置_1A位置2缩回",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：Y0EAC01AR001GH3==true && Y0BHA09GS003GH2==false",
+          "code": ""
+        },
+        {
+          "id": "PDTBSSZZ_1BWZ1SC",
+          "notes": "皮带头部伸缩装置_1B位置1伸出",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：Y0EAC01AR002GH2==true && Y0BHB08GS001GH2==false",
+          "code": ""
+        },
+        {
+          "id": "PDTBSSZZ_1BWZ2SH",
+          "notes": "皮带头部伸缩装置_1B位置2缩回",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：Y0EAC01AR002GH3==true && Y0BHB08GS001GH2==false",
+          "code": ""
+        },
+        {
+          "id": "ST_2AST",
+          "notes": "三通_2A三通",
+          "tag": "",
+          "item": "",
+          "actValue": "Y0EAC02AR001GH2 == true : 左运行,上运行；Y0EAC02AR001GH3 == true : 右运行,上运行",
+          "code": ""
+        },
+        {
+          "id": "ST_2BST",
+          "notes": "三通_2B三通",
+          "tag": "",
+          "item": "",
+          "actValue": "Y0EAC02AR002GH2 == true : 左运行,上运行；Y0EAC02AR002GH3 == true : 右运行,上运行",
+          "code": ""
+        },
+        {
+          "id": "ST_3AST",
+          "notes": "三通_3A三通",
+          "tag": "",
+          "item": "",
+          "actValue": "Y0EAC03AR001GH2 == true : 左运行,上运行；Y0EAC03AR001GH3 == true : 右运行,上运行",
+          "code": ""
+        },
+        {
+          "id": "ST_3BST",
+          "notes": "三通_3B三通",
+          "tag": "",
+          "item": "",
+          "actValue": "Y0EAC03AR002GH2 == true : 左运行,上运行；Y0EAC03AR002GH3 == true : 右运行,上运行",
+          "code": ""
+        },
+        {
+          "id": "LM_1APDLMZ2APD",
+          "notes": "落煤_1A皮带落煤至2A皮带",
+          "tag": "Y0EAC01AR001GH3",
+          "item": "DV",
+          "actValue": "展示：Y0EAC01AR001GH3==true && Y0BHA09GS003GH2==true",
+          "code": ""
+        },
+        {
+          "id": "LM_1APDLMZ2BPD",
+          "notes": "落煤_1A皮带落煤至2B皮带",
+          "tag": "Y0EAC01AR001GH2",
+          "item": "DV",
+          "actValue": "展示：Y0EAC01AR001GH2==true && Y0BHA09GS003GH2==true",
+          "code": ""
+        },
+        {
+          "id": "LM_1BPDLMZ2APD",
+          "notes": "落煤_1B皮带落煤至2A皮带",
+          "tag": "Y0EAC01AR002GH3",
+          "item": "DV",
+          "actValue": "展示：Y0EAC01AR002GH3==true && Y0BHB08GS001GH2==true",
+          "code": ""
+        },
+        {
+          "id": "LM_1BPDLMZ2BPD",
+          "notes": "落煤_1B皮带落煤至2B皮带",
+          "tag": "Y0EAC01AR002GH2",
+          "item": "DV",
+          "actValue": "展示：Y0EAC01AR002GH2==true && Y0BHB08GS001GH2==true",
+          "code": ""
+        },
+        {
+          "id": "LM_2APDLMZ3APD",
+          "notes": "落煤_2A皮带落煤至3A皮带",
+          "tag": "Y0EAC02AA001GH2",
+          "item": "DV",
+          "actValue": "展示：Y0EAC02AA001GH2==true && Y0BBA05GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_2APDLMZ3BPD",
+          "notes": "落煤_2A皮带落煤至3B皮带",
+          "tag": "Y0EAC02AA001GH3",
+          "item": "DV",
+          "actValue": "展示：Y0EAC02AA001GH3==true && Y0BBA05GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_2BPDLMZ3APD",
+          "notes": "落煤_2B皮带落煤至3A皮带",
+          "tag": "Y0EAC02AA002GH2",
+          "item": "DV",
+          "actValue": "展示：Y0EAC02AA002GH2==true && Y0BBB06GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_2BPDLMZ3BPD",
+          "notes": "落煤_2B皮带落煤至3B皮带",
+          "tag": "Y0EAC02AA002GH3",
+          "item": "DV",
+          "actValue": "展示：Y0EAC02AA002GH3==true && Y0BBB06GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_3APDLMZ4APD",
+          "notes": "落煤_3A皮带落煤至4A皮带",
+          "tag": "Y0EAC03AA001GH2",
+          "item": "DV",
+          "actValue": "展示：Y0EAC03AA001GH2==true && Y0BBA06GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_3APDLMZ4BPD",
+          "notes": "落煤_3A皮带落煤至4B皮带",
+          "tag": "Y0EAC03AA001GH3",
+          "item": "DV",
+          "actValue": "展示：Y0EAC03AA001GH3==true && Y0BBA06GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_3BPDLMZ4APD",
+          "notes": "落煤_3B皮带落煤至4A皮带",
+          "tag": "Y0EAC03AA002GH2",
+          "item": "DV",
+          "actValue": "展示：Y0EAC03AA002GH2==true && Y0BBB07GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_3BPDLMZ4BPD",
+          "notes": "落煤_3B皮带落煤至4B皮带",
+          "tag": "Y0EAC03AA002GH3",
+          "item": "DV",
+          "actValue": "展示：Y0EAC03AA002GH3==true && Y0BBB07GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_4APDLMZAGZS",
+          "notes": "落煤_4A皮带落煤至A滚轴筛",
+          "tag": "Y0BBA07GS001GH1",
+          "item": "DV",
+          "actValue": "展示：Y0BBA07GS001GH1==true && Y0BBA07GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_4BPDLMZBGZS",
+          "notes": "落煤_4B皮带落煤至B滚轴筛",
+          "tag": "Y0BBB08GS001GH1",
+          "item": "DV",
+          "actValue": "展示：Y0BBB08GS001GH1==true && Y0BBB08GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_AGZSLMZ5APD",
+          "notes": "落煤_A滚轴筛落煤至5A皮带",
+          "tag": "Y0EBD01AT001GH5",
+          "item": "DV",
+          "actValue": "展示：Y0EBD01AT001GH5==true && Y0BBA07GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_AGZSLMZASMJ",
+          "notes": "落煤_A滚轴筛落煤至A碎煤机",
+          "tag": "Y0EBD01AT001GH6",
+          "item": "DV",
+          "actValue": "展示：Y0EBD01AT001GH6==true && Y0BBA07GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_ASMJLMZ5APD",
+          "notes": "落煤_A碎煤机落煤至5A皮带",
+          "tag": "Y0EBD01AT001GH6",
+          "item": "DV",
+          "actValue": "展示：Y0EBD01AT001GH6==true && Y0BBA07GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_BGZSLMZ5BPD",
+          "notes": "落煤_B滚轴筛落煤至5B皮带",
+          "tag": "Y0EBD01AT002GH5",
+          "item": "DV",
+          "actValue": "展示：Y0EBD01AT002GH5==true && Y0BBB08GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_BGZSLMZBSMJ",
+          "notes": "落煤_B滚轴筛落煤至B碎煤机",
+          "tag": "Y0EBD01AT002GH6",
+          "item": "DV",
+          "actValue": "展示：Y0EBD01AT002GH6==true && Y0BBB08GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_BSMJLMZ5BPD",
+          "notes": "落煤_B碎煤机落煤至5B皮带",
+          "tag": "Y0EBD01AT002GH6",
+          "item": "DV",
+          "actValue": "展示：Y0EBD01AT002GH6==true && Y0BBB08GS001GH1==true",
+          "code": ""
+        },
+        {
+          "id": "LM_5APDLMZ6APD",
+          "notes": "落煤_5A皮带落煤至6A皮带",
+          "tag": "M_5AML_6A",
+          "item": "DV",
+          "actValue": "展示： 10BBA27GS000GH1==true && M_5AML_6A==true",
+          "code": ""
+        },
+        {
+          "id": "LM_5APDLMZ6BPD",
+          "notes": "落煤_5A皮带落煤至6B皮带",
+          "tag": "M_5AML_6B",
+          "item": "DV",
+          "actValue": "展示：10BBA27GS000GH1 == true  &&  M_5AML_6B == true",
+          "code": ""
+        },
+        {
+          "id": "LM_5APDLMZ6CPD",
+          "notes": "落煤_5A皮带落煤至6C皮带",
+          "tag": "M_5AML_6C",
+          "item": "DV",
+          "actValue": "展示：10BBA27GS000GH1 == true  &&  M_5AML_6C == true",
+          "code": ""
+        },
+        {
+          "id": "LM_5APDLMZ6DPD",
+          "notes": "落煤_5A皮带落煤至6D皮带",
+          "tag": "Y0ECB01AF003GH3",
+          "item": "DV",
+          "actValue": "展示：10BBA27GS000GH1 == true  && Y0ECB01AF003GH3 == true",
+          "code": ""
+        },
+        {
+          "id": "LM_5BPDLMZ6APD",
+          "notes": "落煤_5B皮带落煤至6A皮带",
+          "tag": "M_5BML_6A",
+          "item": "DV",
+          "actValue": "展示： 20BBA26GS000GH1 == true  && M_5BML_6A == true",
+          "code": ""
+        },
+        {
+          "id": "LM_5BPDLMZ6BPD",
+          "notes": "落煤_5B皮带落煤至6B皮带",
+          "tag": "M_5BML_6B",
+          "item": "DV",
+          "actValue": "展示：20BBA26GS000GH1 == true  && M_5BML_6B == true",
+          "code": ""
+        },
+        {
+          "id": "LM_5BPDLMZ6CPD",
+          "notes": "落煤_5B皮带落煤至6C皮带",
+          "tag": "M_5BML_6C",
+          "item": "DV",
+          "actValue": "展示：20BBA26GS000GH1 == true  && M_5BML_6C == true",
+          "code": ""
+        },
+        {
+          "id": "LM_5BPDLMZ6DPD",
+          "notes": "落煤_5B皮带落煤至6D皮带",
+          "tag": "Y0ECB02AF003GH3",
+          "item": "DV",
+          "actValue": "展示：20BBA26GS000GH1 == true  && Y0ECB02AF003GH3 == true",
+          "code": ""
+        },
+        {
+          "id": "LM_6APDLMZ1AYMC",
+          "notes": "落煤_6A皮带落煤至1A原煤仓",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：J0BHA12GS001GH2 == true  && 10ECB01AF001GH3== false  && 10ECB01AF002GH3== false  && 10ECB01AF003GH3== false  && 10ECB01AF004GH3== false  && 10ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6APDLMZ1BYMC",
+          "notes": "落煤_6A皮带落煤至1B原煤仓",
+          "tag": "10ECB01AF001GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS001GH2 == true  && 10ECB01AF001GH3== true  && 10ECB01AF002GH3== false  && 10ECB01AF003GH3== false  && 10ECB01AF004GH3== false  && 10ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6APDLMZ1CYMC",
+          "notes": "落煤_6A皮带落煤至1C原煤仓",
+          "tag": "10ECB01AF002GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS001GH2 == true  && 10ECB01AF002GH3 == true  && 10ECB01AF003GH3 == false  && 10ECB01AF004GH3 == false  && 10ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6APDLMZ1DYMC",
+          "notes": "落煤_6A皮带落煤至1D原煤仓",
+          "tag": "10ECB01AF003GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS001GH2 == true  && 10ECB01AF003GH3 == true  && 10ECB01AF004GH3 == false  && 10ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6APDLMZ1EYMC",
+          "notes": "落煤_6A皮带落煤至1E原煤仓",
+          "tag": "10ECB01AF004GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS001GH2 == true  && 10ECB01AF004GH3 == true  && 10ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6APDLMZ1FYMC",
+          "notes": "落煤_6A皮带落煤至1F原煤仓",
+          "tag": "10ECB01AF005GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS001GH2 == true  && 10ECB01AF005GH3 == true",
+          "code": ""
+        },
+        {
+          "id": "LM_6BPDLMZ1AYMC",
+          "notes": "落煤_6B皮带落煤至1A原煤仓",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：J0BHB12GS001GH2 == true  && 10ECB02AF001GH3== false  && 10ECB02AF002GH3== false  && 10ECB02AF003GH3== false  && 10ECB02AF004GH3== false  && 10ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6BPDLMZ1BYMC",
+          "notes": "落煤_6B皮带落煤至1B原煤仓",
+          "tag": "10ECB02AF001GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS001GH2 == true  && 10ECB02AF001GH3== true  && 10ECB02AF002GH3== false  && 10ECB02AF003GH3== false  && 10ECB02AF004GH3== false  && 10ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6BPDLMZ1CYMC",
+          "notes": "落煤_6B皮带落煤至1C原煤仓",
+          "tag": "10ECB02AF002GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS001GH2 == true  && 10ECB02AF002GH3== true  && 10ECB02AF003GH3== false  && 10ECB02AF004GH3== false  && 10ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6BPDLMZ1DYMC",
+          "notes": "落煤_6B皮带落煤至1D原煤仓",
+          "tag": "10ECB02AF003GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS001GH2 == true  && 10ECB02AF003GH3== true  && 10ECB02AF004GH3== false  && 10ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6BPDLMZ1EYMC",
+          "notes": "落煤_6B皮带落煤至1E原煤仓",
+          "tag": "10ECB02AF004GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS001GH2 == true  && 10ECB02AF004GH3== true  && 10ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6BPDLMZ1FYMC",
+          "notes": "落煤_6B皮带落煤至1F原煤仓",
+          "tag": "10ECB02AF005GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS001GH2 == true  && 10ECB02AF005GH3 == true",
+          "code": ""
+        },
+        {
+          "id": "LM_6CPDLMZ2AYMC",
+          "notes": "落煤_6C皮带落煤至2A原煤仓",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：J0BHA12GS002GH2 == true  && 20ECB01AF001GH3== false  && 20ECB01AF002GH3== false  && 20ECB01AF003GH3== false  && 20ECB01AF004GH3== false  && 20ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6CPDLMZ2BYMC",
+          "notes": "落煤_6C皮带落煤至2B原煤仓",
+          "tag": "20ECB01AF001GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS002GH2 == true  && 20ECB01AF001GH3== true  && 20ECB01AF002GH3== false  && 20ECB01AF003GH3== false  && 20ECB01AF004GH3== false  && 20ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6CPDLMZ2CYMC",
+          "notes": "落煤_6C皮带落煤至2C原煤仓",
+          "tag": "20ECB01AF002GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS002GH2 == true  && 20ECB01AF002GH3== true  && 20ECB01AF003GH3== false  && 20ECB01AF004GH3== false  && 20ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6CPDLMZ2DYMC",
+          "notes": "落煤_6C皮带落煤至2D原煤仓",
+          "tag": "20ECB01AF003GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS002GH2 == true  && 20ECB01AF003GH3== true  && 20ECB01AF004GH3== false  && 20ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6CPDLMZ2EYMC",
+          "notes": "落煤_6C皮带落煤至2E原煤仓",
+          "tag": "20ECB01AF004GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS002GH2 == true  && 20ECB01AF004GH3== true  && 20ECB01AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6CPDLMZ2FYMC",
+          "notes": "落煤_6C皮带落煤至2F原煤仓",
+          "tag": "20ECB01AF005GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHA12GS002GH2 == true  && 20ECB01AF005GH3 == true",
+          "code": ""
+        },
+        {
+          "id": "LM_6DPDLMZ2AYMC",
+          "notes": "落煤_6D皮带落煤至2A原煤仓",
+          "tag": "",
+          "item": "",
+          "actValue": "展示：J0BHB12GS002GH2 == true  && 20ECB02AF001GH3== false  && 20ECB02AF002GH3== false  && 20ECB02AF003GH3== false  && 20ECB02AF004GH3== false  && 20ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6DPDLMZ2BYMC",
+          "notes": "落煤_6D皮带落煤至2B原煤仓",
+          "tag": "20ECB02AF001GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS002GH2 == true  && 20ECB02AF001GH3== true  && 20ECB02AF002GH3== false  && 20ECB02AF003GH3== false  && 20ECB02AF004GH3== false  && 20ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6DPDLMZ2CYMC",
+          "notes": "落煤_6D皮带落煤至2C原煤仓",
+          "tag": "20ECB02AF002GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS002GH2 == true  && 20ECB02AF002GH3== true  && 20ECB02AF003GH3== false  && 20ECB02AF004GH3== false  && 20ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6DPDLMZ2DYMC",
+          "notes": "落煤_6D皮带落煤至2D原煤仓",
+          "tag": "20ECB02AF003GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS002GH2 == true  && 20ECB02AF003GH3== true  && 20ECB02AF004GH3== false  && 20ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6DPDLMZ2EYMC",
+          "notes": "落煤_6D皮带落煤至2E原煤仓",
+          "tag": "20ECB02AF004GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS002GH2 == true  && 20ECB02AF004GH3== true  && 20ECB02AF005GH3 == false",
+          "code": ""
+        },
+        {
+          "id": "LM_6DPDLMZ2FYMC",
+          "notes": "落煤_6D皮带落煤至2F原煤仓",
+          "tag": "20ECB02AF005GH3",
+          "item": "DV",
+          "actValue": "展示：J0BHB12GS002GH2 == true  && 20ECB02AF005GH3 == true",
+          "code": ""
+        },
+        {
+          "id": "DJDL_1APDDJDL",
+          "notes": "电机电流_1A皮带电机电流",
+          "tag": "Y0BHA09GS003CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_1BPDDJDL",
+          "notes": "电机电流_1B皮带电机电流",
+          "tag": "Y0BHB08GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_2APDDJDL",
+          "notes": "电机电流_2A皮带电机电流",
+          "tag": "YOBBA05GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_2BPDDJDL",
+          "notes": "电机电流_2B皮带电机电流",
+          "tag": "YOBBB06GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_3APDDJDL",
+          "notes": "电机电流_3A皮带电机电流",
+          "tag": "YOBBA06GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_3BPDDJDL",
+          "notes": "电机电流_3B皮带电机电流",
+          "tag": "YOBBB07GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_4APDDJDL",
+          "notes": "电机电流_4A皮带电机电流",
+          "tag": "YOBBA07GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_4BPDDJDL",
+          "notes": "电机电流_4B皮带电机电流",
+          "tag": "YOBBB08GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_5APDDJDL",
+          "notes": "电机电流_5A皮带电机电流",
+          "tag": "1OBBA27GS000CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_5BPDDJDL",
+          "notes": "电机电流_5B皮带电机电流",
+          "tag": "20BBA26GS000CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_6APDDJDL",
+          "notes": "电机电流_6A皮带电机电流",
+          "tag": "J0BHA12GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_6BPDDJDL",
+          "notes": "电机电流_6B皮带电机电流",
+          "tag": "J0BHB12GS001CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_6CPDDJDL",
+          "notes": "电机电流_6C皮带电机电流",
+          "tag": "J0BHA12GS002CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "DJDL_6DPDDJDL",
+          "notes": "电机电流_6D皮带电机电流",
+          "tag": "J0BHB12GS002CE12",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "YXZT_1APDYX",
+          "notes": "运行状态_1A皮带运行",
+          "tag": "Y0BHA09GS003GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_1BPDYX",
+          "notes": "运行状态_1B皮带运行",
+          "tag": "Y0BHB08GS001GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_2APDYX",
+          "notes": "运行状态_2A皮带运行",
+          "tag": "Y0BBA05GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_2BPDYX",
+          "notes": "运行状态_2B皮带运行",
+          "tag": "Y0BBB06GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_3APDYX",
+          "notes": "运行状态_3A皮带运行",
+          "tag": "Y0BBA06GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_3BPDYX",
+          "notes": "运行状态_3B皮带运行",
+          "tag": "Y0BBB07GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_4APDYX",
+          "notes": "运行状态_4A皮带运行",
+          "tag": "Y0BBA07GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_4BPDYX",
+          "notes": "运行状态_4B皮带运行",
+          "tag": "Y0BBB08GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_5APDYX",
+          "notes": "运行状态_5A皮带运行",
+          "tag": "10BBA27GS000GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_5BPDYX",
+          "notes": "运行状态_5B皮带运行",
+          "tag": "20BBA26GS000GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_6APDYX",
+          "notes": "运行状态_6A皮带运行",
+          "tag": "J0BHA12GS001GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_6BPDYX",
+          "notes": "运行状态_6B皮带运行",
+          "tag": "J0BHB12GS001GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_6CPDYX",
+          "notes": "运行状态_6C皮带运行",
+          "tag": "J0BHA12GS002GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_6DPDYX",
+          "notes": "运行状态_6D皮带运行",
+          "tag": "J0BHB12GS002GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_AGZSYX",
+          "notes": "运行状态_A滚轴筛运行",
+          "tag": "Y0EBD01AT001GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_ASMJYX",
+          "notes": "运行状态_A碎煤机运行",
+          "tag": "YOBBA10GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_BGZSYX",
+          "notes": "运行状态_B滚轴筛运行",
+          "tag": "Y0EBD01AT002GH2",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "YXZT_BSMJYX",
+          "notes": "运行状态_B碎煤机运行",
+          "tag": "YOBBB10GS001GH1",
+          "item": "DV",
+          "actValue": "true=运行；false=停止",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6DLMQ",
+          "notes": "犁煤器_5A皮带6D犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6CLMQ",
+          "notes": "犁煤器_5A皮带6C犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6BLMQ",
+          "notes": "犁煤器_5A皮带6B犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6DLMQ",
+          "notes": "犁煤器_5B皮带6D犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6CLMQ",
+          "notes": "犁煤器_5B皮带6C犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6BLMQ",
+          "notes": "犁煤器_5B皮带6B犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDFLMQ",
+          "notes": "犁煤器_6A皮带F犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDELMQ",
+          "notes": "犁煤器_6A皮带E犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDDLMQ",
+          "notes": "犁煤器_6A皮带D犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDCLMQ",
+          "notes": "犁煤器_6A皮带C犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDBLMQ",
+          "notes": "犁煤器_6A皮带B犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDFLMQ",
+          "notes": "犁煤器_6B皮带F犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDELMQ",
+          "notes": "犁煤器_6B皮带E犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDDLMQ",
+          "notes": "犁煤器_6B皮带D犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDCLMQ",
+          "notes": "犁煤器_6B皮带C犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDBLMQ",
+          "notes": "犁煤器_6B皮带B犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDFLMQ",
+          "notes": "犁煤器_6C皮带F犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDELMQ",
+          "notes": "犁煤器_6C皮带E犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDDLMQ",
+          "notes": "犁煤器_6C皮带D犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDCLMQ",
+          "notes": "犁煤器_6C皮带C犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDBLMQ",
+          "notes": "犁煤器_6C皮带B犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDFLMQ",
+          "notes": "犁煤器_6D皮带F犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDELMQ",
+          "notes": "犁煤器_6D皮带E犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDDLMQ",
+          "notes": "犁煤器_6D皮带D犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDCLMQ",
+          "notes": "犁煤器_6D皮带C犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDBLMQ",
+          "notes": "犁煤器_6D皮带B犁煤器",
+          "tag": "",
+          "item": "",
+          "actValue": "犁煤器处于落下状态（红色挡板显示）：犁煤器落到位（犁煤器点项后缀是GH3的）== true;\n犁煤器处于抬起状态（绿色挡板显示）：犁煤器抬到位（犁煤器点项后缀是GH2的）== true;\n犁煤器处于中间态（灰色挡板显示）：犁煤器点项后缀是GH3的 == false && 犁煤器点项后缀是GH2的 == false; ",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6DLMQLDW",
+          "notes": "犁煤器_5A皮带6D犁煤器落到位",
+          "tag": "Y0ECB01AF003GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6DLMQTDW",
+          "notes": "犁煤器_5A皮带6D犁煤器抬到位",
+          "tag": "Y0ECB01AF003GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6CLMQLDW",
+          "notes": "犁煤器_5A皮带6C犁煤器落到位",
+          "tag": "Y0ECB01AF002GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6CLMQTDW",
+          "notes": "犁煤器_5A皮带6C犁煤器抬到位",
+          "tag": "Y0ECB01AF002GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6BLMQLDW",
+          "notes": "犁煤器_5A皮带6B犁煤器落到位",
+          "tag": "Y0ECB01AF001GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5APD6BLMQTDW",
+          "notes": "犁煤器_5A皮带6B犁煤器抬到位",
+          "tag": "Y0ECB01AF001GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6DLMQLDW",
+          "notes": "犁煤器_5B皮带6D犁煤器落到位",
+          "tag": "Y0ECB02AF003GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6DLMQTDW",
+          "notes": "犁煤器_5B皮带6D犁煤器抬到位",
+          "tag": "Y0ECB02AF003GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6CLMQLDW",
+          "notes": "犁煤器_5B皮带6C犁煤器落到位",
+          "tag": "Y0ECB02AF002GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6CLMQTDW",
+          "notes": "犁煤器_5B皮带6C犁煤器抬到位",
+          "tag": "Y0ECB02AF002GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6BLMQLDW",
+          "notes": "犁煤器_5B皮带6B犁煤器落到位",
+          "tag": "Y0ECB02AF001GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_5BPD6BLMQTDW",
+          "notes": "犁煤器_5B皮带6B犁煤器抬到位",
+          "tag": "Y0ECB02AF001GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDFLMQLDW",
+          "notes": "犁煤器_6A皮带F犁煤器落到位",
+          "tag": "10ECB01AF005GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDFLMQTDW",
+          "notes": "犁煤器_6A皮带F犁煤器抬到位",
+          "tag": "10ECB01AF005GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDELMQLDW",
+          "notes": "犁煤器_6A皮带E犁煤器落到位",
+          "tag": "10ECB01AF004GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDELMQTDW",
+          "notes": "犁煤器_6A皮带E犁煤器抬到位",
+          "tag": "10ECB01AF004GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDDLMQLDW",
+          "notes": "犁煤器_6A皮带D犁煤器落到位",
+          "tag": "10ECB01AF003GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDDLMQTDW",
+          "notes": "犁煤器_6A皮带D犁煤器抬到位",
+          "tag": "10ECB01AF003GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDCLMQLDW",
+          "notes": "犁煤器_6A皮带C犁煤器落到位",
+          "tag": "10ECB01AF002GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDCLMQTDW",
+          "notes": "犁煤器_6A皮带C犁煤器抬到位",
+          "tag": "10ECB01AF002GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDBLMQLDW",
+          "notes": "犁煤器_6A皮带B犁煤器落到位",
+          "tag": "10ECB01AF001GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6APDBLMQTDW",
+          "notes": "犁煤器_6A皮带B犁煤器抬到位",
+          "tag": "10ECB01AF001GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDFLMQLDW",
+          "notes": "犁煤器_6B皮带F犁煤器落到位",
+          "tag": "10ECB02AF005GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDFLMQTDW",
+          "notes": "犁煤器_6B皮带F犁煤器抬到位",
+          "tag": "10ECB02AF005GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDELMQLDW",
+          "notes": "犁煤器_6B皮带E犁煤器落到位",
+          "tag": "10ECB02AF004GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDELMQTDW",
+          "notes": "犁煤器_6B皮带E犁煤器抬到位",
+          "tag": "10ECB02AF004GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDDLMQLDW",
+          "notes": "犁煤器_6B皮带D犁煤器落到位",
+          "tag": "10ECB02AF003GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDDLMQTDW",
+          "notes": "犁煤器_6B皮带D犁煤器抬到位",
+          "tag": "10ECB02AF003GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDCLMQLDW",
+          "notes": "犁煤器_6B皮带C犁煤器落到位",
+          "tag": "10ECB02AF002GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDCLMQTDW",
+          "notes": "犁煤器_6B皮带C犁煤器抬到位",
+          "tag": "10ECB02AF002GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDBLMQLDW",
+          "notes": "犁煤器_6B皮带B犁煤器落到位",
+          "tag": "10ECB02AF001GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6BPDBLMQTDW",
+          "notes": "犁煤器_6B皮带B犁煤器抬到位",
+          "tag": "10ECB02AF001GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDFLMQLDW",
+          "notes": "犁煤器_6C皮带F犁煤器落到位",
+          "tag": "20ECB01AF005GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDFLMQTDW",
+          "notes": "犁煤器_6C皮带F犁煤器抬到位",
+          "tag": "20ECB01AF005GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDELMQLDW",
+          "notes": "犁煤器_6C皮带E犁煤器落到位",
+          "tag": "20ECB01AF004GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDELMQTDW",
+          "notes": "犁煤器_6C皮带E犁煤器抬到位",
+          "tag": "20ECB01AF004GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDDLMQLDW",
+          "notes": "犁煤器_6C皮带D犁煤器落到位",
+          "tag": "20ECB01AF003GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDDLMQTDW",
+          "notes": "犁煤器_6C皮带D犁煤器抬到位",
+          "tag": "20ECB01AF003GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDCLMQLDW",
+          "notes": "犁煤器_6C皮带C犁煤器落到位",
+          "tag": "20ECB01AF002GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDCLMQTDW",
+          "notes": "犁煤器_6C皮带C犁煤器抬到位",
+          "tag": "20ECB01AF002GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDBLMQLDW",
+          "notes": "犁煤器_6C皮带B犁煤器落到位",
+          "tag": "20ECB01AF001GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6CPDBLMQTDW",
+          "notes": "犁煤器_6C皮带B犁煤器抬到位",
+          "tag": "20ECB01AF001GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDFLMQLDW",
+          "notes": "犁煤器_6D皮带F犁煤器落到位",
+          "tag": "20ECB02AF005GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDFLMQTDW",
+          "notes": "犁煤器_6D皮带F犁煤器抬到位",
+          "tag": "20ECB02AF005GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDELMQLDW",
+          "notes": "犁煤器_6D皮带E犁煤器落到位",
+          "tag": "20ECB02AF004GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDELMQTDW",
+          "notes": "犁煤器_6D皮带E犁煤器抬到位",
+          "tag": "20ECB02AF004GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDDLMQLDW",
+          "notes": "犁煤器_6D皮带D犁煤器落到位",
+          "tag": "20ECB02AF003GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDDLMQTDW",
+          "notes": "犁煤器_6D皮带D犁煤器抬到位",
+          "tag": "20ECB02AF003GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDCLMQLDW",
+          "notes": "犁煤器_6D皮带C犁煤器落到位",
+          "tag": "20ECB02AF002GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDCLMQTDW",
+          "notes": "犁煤器_6D皮带C犁煤器抬到位",
+          "tag": "20ECB02AF002GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDBLMQLDW",
+          "notes": "犁煤器_6D皮带B犁煤器落到位",
+          "tag": "20ECB02AF001GH3",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "LMQ_6DPDBLMQTDW",
+          "notes": "犁煤器_6D皮带B犁煤器抬到位",
+          "tag": "20ECB02AF001GH2",
+          "item": "DV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_YXZT",
+          "notes": "机器人_运行状态",
+          "tag": "J0ZHHSMJQRZT",
+          "item": "DV",
+          "actValue": "为 true 代表运行",
+          "code": ""
+        },
+        {
+          "id": "JQR_CWBJ",
+          "notes": "机器人_超温报警",
+          "tag": "J0ZHHSMJQRCW",
+          "item": "DV",
+          "actValue": "为 true 代表报警，state-dot 红色报警",
+          "code": ""
+        },
+        {
+          "id": "JQR_GZBJ",
+          "notes": "机器人_故障报警",
+          "tag": "J0ZHHSMJQRGZ",
+          "item": "DV",
+          "actValue": "为 true 代表报警，state-dot 红色报警",
+          "code": ""
+        },
+        {
+          "id": "JQR_DCDL",
+          "notes": "机器人_电池电量",
+          "tag": "J0ZHHSMJQRDCDL",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_DCWD",
+          "notes": "机器人_电池温度",
+          "tag": "J0ZHHSMJQRDCWD",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_DL",
+          "notes": "机器人_电流",
+          "tag": "J0ZHHSMJQRDL",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_DY",
+          "notes": "机器人_电压",
+          "tag": "J0ZHHSMJQRDY",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_DJ1WD",
+          "notes": "机器人_电机1温度",
+          "tag": "J0ZHHSMJQRDJ1WD",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_DJ2WD",
+          "notes": "机器人_电机2温度",
+          "tag": "J0ZHHSMJQRDJ2WD",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_LJLC",
+          "notes": "机器人_累计里程",
+          "tag": "J0ZHHSMJQRLJLC",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_HJWD",
+          "notes": "机器人_环境温度",
+          "tag": "J0ZHHSMJQRHJWD",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_HJSD",
+          "notes": "机器人_环境湿度",
+          "tag": "J0ZHHSMJQRHJSD",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_PM2.5Z",
+          "notes": "机器人_PM2.5值",
+          "tag": "J0ZHHSMJQRHJPM2.5",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_PM10Z",
+          "notes": "机器人_PM10值",
+          "tag": "J0ZHHSMJQRHJPM10",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_PM100Z",
+          "notes": "机器人_PM100值",
+          "tag": "J0ZHHSMJQRHJPM100",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_JWND",
+          "notes": "机器人_甲烷浓度",
+          "tag": "J0ZHHSMJQRHJJW",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_YQND",
+          "notes": "机器人_氧气浓度",
+          "tag": "J0ZHHSMJQRHJYQ",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_AQND",
+          "notes": "机器人_氨气浓度",
+          "tag": "J0ZHHSMJQRHJAQ",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_LHQND",
+          "notes": "机器人_硫化氢浓度",
+          "tag": "J0ZHHSMJQRHJLHQ",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_EYHTND",
+          "notes": "机器人_二氧化碳浓度",
+          "tag": "J0ZHHSMJQRHJEYHT",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "JQR_YYHTND",
+          "notes": "机器人_一氧化碳浓度",
+          "tag": "J0ZHHSMJQRHJYYHT",
+          "item": "AV",
+          "actValue": "",
+          "code": ""
+        },
+        {
+          "id": "#1APDBJ_PDSLBJ",
+          "notes": "#1A皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL1A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1APDBJ_PDDMBJ",
+          "notes": "#1A皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM1A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1APDBJ_PDPPBJ",
+          "notes": "#1A皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP1A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1APDBJ_PDYHBJ",
+          "notes": "#1A皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH1A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1APDBJ_RYRQBJ",
+          "notes": "#1A皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ1A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1BPDBJ_PDSLBJ",
+          "notes": "#1B皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL1B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1BPDBJ_PDDMBJ",
+          "notes": "#1B皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM1B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1BPDBJ_PDPPBJ",
+          "notes": "#1B皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP1B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1BPDBJ_PDYHBJ",
+          "notes": "#1B皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH1B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#1BPDBJ_RYRQBJ",
+          "notes": "#1B皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ1B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2APDBJ_PDSLBJ",
+          "notes": "#2A皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL2A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2APDBJ_PDDMBJ",
+          "notes": "#2A皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM2A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2APDBJ_PDPPBJ",
+          "notes": "#2A皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP2A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2APDBJ_PDYHBJ",
+          "notes": "#2A皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH2A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2APDBJ_RYRQBJ",
+          "notes": "#2A皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ2A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2BPDBJ_PDSLBJ",
+          "notes": "#2B皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL2B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2BPDBJ_PDDMBJ",
+          "notes": "#2B皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM2B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2BPDBJ_PDPPBJ",
+          "notes": "#2B皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP2B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2BPDBJ_PDYHBJ",
+          "notes": "#2B皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH2B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#2BPDBJ_RYRQBJ",
+          "notes": "#2B皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ2B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3APDBJ_PDSLBJ",
+          "notes": "#3A皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL3A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3APDBJ_PDDMBJ",
+          "notes": "#3A皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM3A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3APDBJ_PDPPBJ",
+          "notes": "#3A皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP3A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3APDBJ_PDYHBJ",
+          "notes": "#3A皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH3A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3APDBJ_RYRQBJ",
+          "notes": "#3A皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ3A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3BPDBJ_PDSLBJ",
+          "notes": "#3B皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL3B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3BPDBJ_PDDMBJ",
+          "notes": "#3B皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM3B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3BPDBJ_PDPPBJ",
+          "notes": "#3B皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP3B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3BPDBJ_PDYHBJ",
+          "notes": "#3B皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH3B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#3BPDBJ_RYRQBJ",
+          "notes": "#3B皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ3B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4APDBJ_PDSLBJ",
+          "notes": "#4A皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL4A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4APDBJ_PDDMBJ",
+          "notes": "#4A皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM4A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4APDBJ_PDPPBJ",
+          "notes": "#4A皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP4A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4APDBJ_PDYHBJ",
+          "notes": "#4A皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH4A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4APDBJ_RYRQBJ",
+          "notes": "#4A皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ4A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4BPDBJ_PDSLBJ",
+          "notes": "#4B皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL4B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4BPDBJ_PDDMBJ",
+          "notes": "#4B皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM4B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4BPDBJ_PDPPBJ",
+          "notes": "#4B皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP4B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4BPDBJ_PDYHBJ",
+          "notes": "#4B皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH4B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#4BPDBJ_RYRQBJ",
+          "notes": "#4B皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ4B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5APDBJ_PDSLBJ",
+          "notes": "#5A皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL5A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5APDBJ_PDDMBJ",
+          "notes": "#5A皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM5A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5APDBJ_PDPPBJ",
+          "notes": "#5A皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP5A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5APDBJ_PDYHBJ",
+          "notes": "#5A皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH5A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5APDBJ_RYRQBJ",
+          "notes": "#5A皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ5A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5BPDBJ_PDSLBJ",
+          "notes": "#5B皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL5B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5BPDBJ_PDDMBJ",
+          "notes": "#5B皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM5B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5BPDBJ_PDPPBJ",
+          "notes": "#5B皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP5B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5BPDBJ_PDYHBJ",
+          "notes": "#5B皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH5B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#5BPDBJ_RYRQBJ",
+          "notes": "#5B皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ5B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6APDBJ_PDSLBJ",
+          "notes": "#6A皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL6A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6APDBJ_PDDMBJ",
+          "notes": "#6A皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM6A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6APDBJ_PDPPBJ",
+          "notes": "#6A皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP6A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6APDBJ_PDYHBJ",
+          "notes": "#6A皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH6A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6APDBJ_RYRQBJ",
+          "notes": "#6A皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ6A",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6BPDBJ_PDSLBJ",
+          "notes": "#6B皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL6B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6BPDBJ_PDDMBJ",
+          "notes": "#6B皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM6B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6BPDBJ_PDPPBJ",
+          "notes": "#6B皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP6B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6BPDBJ_PDYHBJ",
+          "notes": "#6B皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH6B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6BPDBJ_RYRQBJ",
+          "notes": "#6B皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ6B",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6CPDBJ_PDSLBJ",
+          "notes": "#6C皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL6C",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6CPDBJ_PDDMBJ",
+          "notes": "#6C皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM6C",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6CPDBJ_PDPPBJ",
+          "notes": "#6C皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP6C",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6CPDBJ_PDYHBJ",
+          "notes": "#6C皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH6C",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6CPDBJ_RYRQBJ",
+          "notes": "#6C皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ6C",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6DPDBJ_PDSLBJ",
+          "notes": "#6D皮带报警_皮带撕裂报警",
+          "tag": "J0ZHHSMSL6D",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6DPDBJ_PDDMBJ",
+          "notes": "#6D皮带报警_皮带堵煤报警",
+          "tag": "J0ZHHSMDM6D",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6DPDBJ_PDPPBJ",
+          "notes": "#6D皮带报警_皮带跑偏报警",
+          "tag": "J0ZHHSMPP6D",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6DPDBJ_PDYHBJ",
+          "notes": "#6D皮带报警_皮带烟火报警",
+          "tag": "J0ZHHSMYH6D",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "#6DPDBJ_RYRQBJ",
+          "notes": "#6D皮带报警_人员入侵报警",
+          "tag": "J0ZHHSMRQ6D",
+          "item": "DV",
+          "actValue": "为 true 显示该报警",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_1AYMCLW",
+          "notes": "原煤仓料位_1A原煤仓料位",
+          "tag": "AIM_10ECR01AW002CL1",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_1BYMCLW",
+          "notes": "原煤仓料位_1B原煤仓料位",
+          "tag": "AIM_10ECR02AW002CL1",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_1CYMCLW",
+          "notes": "原煤仓料位_1C原煤仓料位",
+          "tag": "AIM_10ECR03AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_1DYMCLW",
+          "notes": "原煤仓料位_1D原煤仓料位",
+          "tag": "AIM_10ECR04AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_1EYMCLW",
+          "notes": "原煤仓料位_1E原煤仓料位",
+          "tag": "AIM_10ECR05AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_1FYMCLW",
+          "notes": "原煤仓料位_1F原煤仓料位",
+          "tag": "AIM_10ECR06AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_2AYMCLW",
+          "notes": "原煤仓料位_2A原煤仓料位",
+          "tag": "AIM_20ECR01AW002CL1",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_2BYMCLW",
+          "notes": "原煤仓料位_2B原煤仓料位",
+          "tag": "AIM_20ECR02AW002CL1",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_2CYMCLW",
+          "notes": "原煤仓料位_2C原煤仓料位",
+          "tag": "AIM_20ECR03AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_2DYMCLW",
+          "notes": "原煤仓料位_2D原煤仓料位",
+          "tag": "AIM_20ECR04AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_2EYMCLW",
+          "notes": "原煤仓料位_2E原煤仓料位",
+          "tag": "AIM_20ECR05AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "YMCLW_2FYMCLW",
+          "notes": "原煤仓料位_2F原煤仓料位",
+          "tag": "AIM_20ECR06AW002CL2",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:15m ,显示两位小数",
+          "code": ""
+        },
+        {
+          "id": "SW_XFGWSX",
+          "notes": "水位_消防高位水箱",
+          "tag": "AIM_Y0EAC05GWSXYW01",
+          "item": "AV",
+          "actValue": "下限:0m ,上限:2m ,显示两位小数",
+          "code": ""
+        }
+      ]
+    },
+    "m1": {
+      "namespace": "unit01",
+      "data": []
+    },
+    "m2": {
+      "namespace": "unit02",
+      "data": []
+    }
+  }
+}

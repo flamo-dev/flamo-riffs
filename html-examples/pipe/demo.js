@@ -4,11 +4,11 @@ import { attachPipePreview } from './preview-viewport.js';
 // element-level surface methods; the managed pipe scripts expose RuntimeNode
 // methods. Resolve within each element's own instance, never by global name.
 const components = {
-  '1': { nodes: ['13:15'], contract: 'sha256:87bf73edc181620df2b90ecadb733ebf7a0d70092d48aeb74af6495ddd8e73bd' },
-  '2': { nodes: ['21:3'], contract: 'sha256:978f06c44be8b40833b40723eb22593567d230a399cc3b4d8ef2d4b3b9007439' },
-  '3': { nodes: ['10:11'], contract: 'sha256:6b28aa86dc1d1d5f533dd1e7b48abc2182c49ba0b3d413128e4077177eb97c83' },
-  '4': { nodes: ['94:21'], contract: 'sha256:c3e02a5ce2301bd12dc9c67a79d81d43e9aeb386e34474dff18e1299a0f327f0' },
-  group: { nodes: ['23:7', '23:10', '23:14', '23:18'], contract: 'sha256:f945c5ee7bad5322d40c9b2633f653a316d8013a008a726f826ebe2db3be90f7' },
+  '1': { nodes: ['13:15'], contract: 'sha256:569f9f8ff80050d0129b59adcc91635b69b5d3b6e9d31ec46df62323626fa03c' },
+  '2': { nodes: ['21:3'], contract: 'sha256:e1ccd6358dfdca6a857d12ea5696ce53c2f2edb174fcb8d9dfde11903a9fc263' },
+  '3': { nodes: ['10:11'], contract: 'sha256:b216118d3100de60d188b42d4f1d04ef2096d8036348887e8652461c19a7f815' },
+  '4': { nodes: ['94:21'], contract: 'sha256:35f73cadd61da17f49d4f7cbd7f47115589c8f7db18b94bca70b76aa15b3c471' },
+  group: { nodes: ['23:7', '23:10', '23:14', '23:18'], contract: 'sha256:28d7d4ea924aa9f3ed45223b5d13649e1d485ada56c4d6e217f1e91b9f7abad8' },
 };
 
 const cards = [...document.querySelectorAll('[data-pipe]')];

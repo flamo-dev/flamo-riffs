@@ -1,8 +1,8 @@
 export const interactionModules = [
   {
-    "scriptId": "managed:hmi.pipe-flow@2.2.0",
-    "compiled": ".flamo/interaction-library/managed/behaviors/hmi.pipe-flow/2.2.0.js",
-    "entry": "./managed/behaviors/hmi.pipe-flow/2.2.0.js"
+    "scriptId": "managed:hmi.pipe-flow@2.6.0",
+    "compiled": ".flamo/interaction-library/managed/behaviors/hmi.pipe-flow/2.6.0.js",
+    "entry": "./managed/behaviors/hmi.pipe-flow/2.6.0.js"
   }
 ];
 

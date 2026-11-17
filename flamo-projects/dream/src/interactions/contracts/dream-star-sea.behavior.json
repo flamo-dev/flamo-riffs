@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "id": "dream.star-sea",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform"
+      ]
+    },
+    "threads": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform"
+      ]
+    },
+    "starlight": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform"
+      ]
+    },
+    "still": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "replay": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform"
+      ]
+    },
+    "collisionAura": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform",
+        "opacity"
+      ]
+    }
+  },
+  "listens": [
+    "pointermove",
+    "pointerdown",
+    "pointerleave",
+    "pointercancel",
+    "click",
+    "keydown",
+    "pointerup"
+  ],
+  "writes": [
+    "still.visible",
+    "collisionAura.opacity",
+    "collisionAura.transform",
+    "camera.position",
+    "camera.zoom"
+  ],
+  "state": [
+    "time",
+    "touches",
+    "collisions"
+  ],
+  "invariants": [
+    "Replay restores initial fitted camera, original seed and both clocks; clears all transient state",
+    "Meteor-star collisions require simultaneous swept contact with an analytic moving visible star target in the same depth band",
+    "3 meteors and 6 bursts maximum; offscreen trajectories released",
+    "batch buffers and public Runtime onUpdate subscription are released on dispose",
+    "pointer coordinates come from the Runtime event route",
+    "White structural cores with coherent cool or warm pearl accents across all foreground object families",
+    "Supernova topology and palette are sampled once per real star contact; asymmetric clouds, unequal curved jets and dust evolve continuously and expire within 7.8 seconds",
+    "Meteor head, every tail segment and halo share one smooth birth/death opacity envelope; fading objects count toward the limit of 3; offscreen release requires the complete tail/halo bounds outside the viewport; real contact consumes once without delayed explosion",
+    "HUD inverse camera transform is submitted from the owning Runtime onUpdate, with no independent project RAF",
+    "Every meteor is born with its complete head, tail and halo outside the current projected viewport; pre-entry meteors reserve slots and re-enter fade-in if a camera change exposes them",
+    "Meteor screen speed is strictly increasing with projected head, halo and tail size; fade-out continues the same velocity integration"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "rendered-output",
+    "pointer-trace"
+  ],
+  "requiredTraceActions": [
+    "dream.mounted",
+    "dream.frame",
+    "dream.touch",
+    "dream.pan",
+    "dream.zoom",
+    "dream.meteor",
+    "dream.collision",
+    "dream.replay"
+  ],
+  "visualEvidence": {
+    "required": true,
+    "targetRole": "root",
+    "minimumChangedPixels": 1
+  },
+  "renderTraceAction": "dream.frame"
+}

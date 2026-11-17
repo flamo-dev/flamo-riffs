@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "hmi.pipe-flow",
+  "version": "2.4.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform"
+      ]
+    },
+    "flow": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "motion": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform",
+        "visibility"
+      ]
+    },
+    "wall": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "medium": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    },
+    "wallOutline": {
+      "required": false,
+      "cardinality": "zero-or-one",
+      "capabilities": [
+        "visibility"
+      ]
+    }
+  },
+  "listens": [
+    "business-update",
+    "flamo:hmi-pipe-flow:set"
+  ],
+  "writes": [
+    "flow.visible",
+    "motion.visible",
+    "runtimeFlow.geometry",
+    "runtimeFlow.stroke",
+    "runtimeParticles.transform",
+    "runtimeParticles.visible",
+    "wall.visible",
+    "medium.visible",
+    "wallOutline.visible"
+  ],
+  "state": [
+    "enabled",
+    "speed",
+    "acceleration",
+    "direction",
+    "offset",
+    "range",
+    "paused",
+    "ready",
+    "running",
+    "error"
+  ],
+  "invariants": [
+    "ranges use source-local arc length, never group width",
+    "range and reverse preserve phase and paused status",
+    "range does not resize source path, static medium or particles",
+    "particles enter and leave conservatively as complete objects, not pixel-clipped masks",
+    "methods are available during asynchronous initialization",
+    "invalid state and range inputs leave prior state unchanged",
+    "each instance owns its state, ephemeral nodes and frame callback",
+    "dispose and initialization failure clean all owned resources",
+    "host commands require both instanceId and scoped nodeId",
+    "appearance is applied only to mounted runtime entities and restored on disposal"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "phase-delta",
+    "range-output",
+    "instance-isolation",
+    "rendered-output"
+  ],
+  "requiredTraceActions": [
+    "pipe-flow.mounted",
+    "pipe-flow.state",
+    "pipe-flow.range"
+  ],
+  "visualEvidence": {
+    "required": true,
+    "targetRole": "motion",
+    "minimumChangedPixels": 1
+  },
+  "hostEvents": {
+    "command": "flamo:hmi-pipe-flow:set",
+    "state": "flamo:hmi-pipe-flow:state",
+    "target": "instanceId AND scoped nodeId"
+  }
+}

@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="zh-CN"><head>
+<html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Saltline · Flamo 创意集</title>
-  <meta name="description" content="在清晨的四号泊位切断三处中继，突破机械守卫的封锁。使用 GPT-6 和 Flamo 重构渲染的浏览器第一人称射击游戏。">
+  <title data-zh="Saltline · Flamo 创意集">Saltline · Flamo Riffs</title>
+  <meta name="description" content="Disable three relays and break through the mechanical guards at Berth Four. A browser FPS created with GPT-6 and Flamo." data-zh-content="在清晨的四号泊位切断三处中继，突破机械守卫的封锁。使用 GPT-6 和 Flamo 重构渲染的浏览器第一人称射击游戏。">
   <link rel="icon" href="/common/favicon.png"><link rel="canonical" href="https://riffs.flamo.dev/saltline/">
   <link rel="stylesheet" href="./flamo-saltline-web-component/dist/component-loading.css">
   <style>
@@ -19,18 +19,29 @@
     @media(orientation:landscape) and (max-height:550px){nav{display:none}.flamo-component-shell{width:min(100vw,177.7778svh)}main{display:grid;grid-template-rows:1fr}}
   </style>
   <script type="module">
+    import { language, text } from '../common/riffs-language.js';
     import { runtimePath } from '/common/cdn-config.js';
     const game=document.querySelector('flamo-saltline'),status=document.querySelector('[data-flamo-status]'),message=status.querySelector('[data-flamo-message]'),retry=status.querySelector('button');
     retry.addEventListener('click',()=>location.reload());
-    function show(state,text){
+    const labels = {
+      '游戏资源加载失败，请检查网络并重试。':'Game assets could not be loaded. Check your connection and try again.',
+      '正在载入四号泊位…':'Loading Berth Four…', '正在下载游戏资源…':'Downloading game assets…',
+      '正在加载 Flamo 与港区资源…':'Loading Flamo and harbor assets…', '正在启动 Flamo 渲染':'Starting the Flamo renderer…',
+      '正在准备港区几何与材质':'Preparing harbor geometry and materials…', '正在准备角色与雨幕':'Preparing characters and rain…',
+      '正在绘制首帧':'Drawing the first frame…', '四号泊位已就绪':'Berth Four is ready',
+    };
+    let currentLabel = '正在载入四号泊位…';
+    function renderLabel() { message.textContent = text(labels[currentLabel] || currentLabel, currentLabel); }
+    language.addEventListener('change', renderLabel);
+    function show(state,label){
       game.dataset.flamoState=state;game.inert=state!=='ready';game.setAttribute('aria-busy',String(state==='loading'||state==='static'));
-      status.dataset.state=state;status.hidden=state==='ready';message.textContent=text;retry.hidden=state!=='error';
+      status.dataset.state=state;status.hidden=state==='ready';currentLabel=label;renderLabel();retry.hidden=state!=='error';
     }
     const bar=status.querySelector('progress'),count=status.querySelector('small');
     let nativeReady=false,frameReady=false,failed=false;
     function progress(value,label){
       if(failed||value<bar.value)return;
-      bar.value=value;count.textContent=value+'%';message.textContent=label;
+      bar.value=value;count.textContent=value+'%';currentLabel=label;renderLabel();
     }
     function finish(){
       if(nativeReady&&frameReady&&!failed)requestAnimationFrame(()=>requestAnimationFrame(()=>{if(!failed)show('ready','');}));
@@ -53,10 +64,12 @@
       }
     } catch {fail();}
   </script>
+  <link rel="stylesheet" href="/common/language-picker.css">
+  <script type="module" src="/common/riffs-language.js"></script>
 </head><body><main>
-  <nav aria-label="作品导航"><a href="/">← Flamo 创意集</a><span><strong>SALTLINE</strong><a href="https://flamo.dev/" target="_blank" rel="noopener noreferrer">Flamo 官网 ↗</a></span></nav>
-  <section class="stage" aria-label="Saltline 游戏"><div class="flamo-component-shell">
-    <flamo-saltline data-flamo-component inert aria-busy="true" loading-label="正在载入四号泊位…"></flamo-saltline>
-    <div id="saltline-boot" data-flamo-status role="status" aria-live="polite"><strong>SALTLINE</strong><span data-flamo-message>正在载入四号泊位…</span><progress value="0" max="100" aria-label="游戏加载进度"></progress><small aria-hidden="true">0%</small><button hidden>刷新重试</button></div>
-  </div><p class="support" hidden>当前浏览器未提供 WebGPU。请使用支持 WebGPU 的浏览器并启用硬件加速后重新进入游戏。</p><noscript>请启用 JavaScript 载入游戏。</noscript></section>
+  <nav aria-label="Project navigation" data-zh-aria-label="作品导航"><a href="/" data-zh="← Flamo 创意集">← Flamo Riffs</a><span><strong>SALTLINE</strong><a href="https://flamo.dev/" target="_blank" rel="noopener noreferrer" data-zh="Flamo 官网 ↗">Flamo website ↗</a><riffs-language-picker></riffs-language-picker></span></nav>
+  <section class="stage" aria-label="Saltline game" data-zh-aria-label="Saltline 游戏"><div class="flamo-component-shell">
+    <flamo-saltline data-flamo-component inert aria-busy="true" loading-label="Loading Berth Four…" data-zh-loading-label="正在载入四号泊位…"></flamo-saltline>
+    <div id="saltline-boot" data-flamo-status role="status" aria-live="polite"><strong>SALTLINE</strong><span data-flamo-message data-zh="正在载入四号泊位…">Loading Berth Four…</span><progress value="0" max="100" aria-label="Game loading progress" data-zh-aria-label="游戏加载进度"></progress><small aria-hidden="true">0%</small><button hidden data-zh="刷新重试">Reload</button></div>
+  </div><p class="support" hidden data-zh="当前浏览器未提供 WebGPU。请使用支持 WebGPU 的浏览器并启用硬件加速后重新进入游戏。">WebGPU is unavailable. Open the game in a WebGPU browser with hardware acceleration enabled.</p><noscript data-zh="请启用 JavaScript 载入游戏。">Enable JavaScript to load the game.</noscript></section>
 </main></body></html>

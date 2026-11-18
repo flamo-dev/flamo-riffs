@@ -1,3 +1,5 @@
+import { language } from './riffs-language.js';
+
 // Both diagrams use a 1920 × 1080 design surface.
 const cockpit = document.querySelector('.cockpit');
 function fitScreen() {
@@ -9,16 +11,21 @@ window.addEventListener('resize', fitScreen);
 
 const time = document.querySelector('.clock .time');
 const date = document.querySelector('.clock .date');
-const day = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+let day;
+function setClockLocale() {
+  day = new Intl.DateTimeFormat(language.value, { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+  refreshClock();
+}
 let clockTimer;
 function refreshClock() {
   clearTimeout(clockTimer);
   const now = new Date();
-  time.textContent = now.toLocaleTimeString('zh-CN', { hour12: false });
+  time.textContent = now.toLocaleTimeString(language.value, { hourCycle: 'h23' });
   date.textContent = day.format(now);
   clockTimer = setTimeout(refreshClock, 1000 - now.getMilliseconds());
 }
-refreshClock();
+setClockLocale();
+language.addEventListener('change', setClockLocale);
 window.addEventListener('pageshow', refreshClock);
 window.addEventListener('pagehide', () => clearTimeout(clockTimer));
 

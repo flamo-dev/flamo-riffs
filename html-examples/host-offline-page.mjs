@@ -2,7 +2,7 @@ import { runtimePath, viewportPath } from './common/cdn-config.js';
 
 // Keep the original downloadable HTML self-contained. Its hosted copy shares the
 // site's runtime while the offline loader continues to unpack the artwork and interactions.
-export function hostOfflinePage(bytes) {
+export function hostOfflinePage(bytes, page) {
   const html = new TextDecoder('windows-1252').decode(bytes);
   const configTag = /(<script type="application\/json" id="page-config">)([^<]+)(<\/script>)/;
   const match = html.match(configTag);
@@ -22,6 +22,12 @@ export function hostOfflinePage(bytes) {
   }
   if (!config.entries.some(record => record.sharedPath === runtimePath)) throw Error('Missing Flamo runtime entry');
   return html.replace('<meta charset="windows-1252">', '<meta charset="utf-8">')
+    .replace('<html lang="zh-CN">', '<html lang="en">')
+    .replace(/<title>[^<]*<\/title>/, page === 'masterwind'
+      ? '<title data-zh="Flamo · 风大侠 · 借风过峡">Flamo · MasterWind</title>'
+      : '<title data-zh="蒲公英 · 草地">Dandelion · Meadow</title>')
+    .replace('<body>', '<link rel="stylesheet" href="/common/language-picker.css"><script type="module" src="/common/riffs-language.js"></script><body><riffs-language-picker class="artwork-language"></riffs-language-picker>')
+    .replace('<div id="status" role="status">&#27491;&#22312;&#21152;&#36733;&#8230;</div>', '<div id="status" role="status" data-zh="正在加载…">Loading…</div>')
     .replace(/<script type="application\/octet-stream" id="(p\d+)">[\s\S]*?<\/script>/g,
       (block, id) => sharedBlocks.has(id) ? '' : block)
     .replace(configTag, () => match[1]+JSON.stringify(config).replaceAll('<', '\\u003c')+match[3])

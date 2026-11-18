@@ -1,19 +1,22 @@
+import { language, searchableCopy, text } from '../common/riffs-language.js';
+
 const form = document.querySelector('.search');
 const input = form.elements.q;
 const entries = Array.from(document.querySelectorAll('.entry'));
 const empty = document.querySelector('#empty');
 const normalize = value => value.normalize('NFKC').trim().toLowerCase();
 const records = entries.map(entry => {
-  const text = normalize(entry.innerText + ' ' + entry.dataset.keywords);
+  const keywords = normalize(searchableCopy(entry));
   const video = entry.querySelector('video');
   const toggle = entry.querySelector('.preview');
-  if (!video || !toggle) return {text, setVisible(visible) { entry.hidden = !visible; }};
+  if (!video || !toggle) return {keywords, setVisible(visible) { entry.hidden = !visible; }};
   let pausedByUser = false;
   function updateButton() {
-    toggle.textContent = video.paused ? '播放预览' : '暂停预览';
+    toggle.textContent = video.paused ? text('Play preview', '播放预览') : text('Pause preview', '暂停预览');
   }
   video.addEventListener('play', updateButton);
   video.addEventListener('pause', updateButton);
+  language.addEventListener('change', updateButton);
   updateButton();
   toggle.hidden = false;
   toggle.addEventListener('click', () => {
@@ -28,19 +31,19 @@ const records = entries.map(entry => {
     if (!visible) video.pause();
     else if (!pausedByUser) video.play().catch(updateButton);
   }
-  return {text, setVisible};
+  return {keywords, setVisible};
 });
 function filter(updateUrl = true) {
   const words = normalize(input.value).split(/\s+/).filter(Boolean);
   let count = 0;
-  for (const {text, setVisible} of records) {
-    const matches = words.every(word => text.includes(word));
+  for (const {keywords, setVisible} of records) {
+    const matches = words.every(word => keywords.includes(word));
     setVisible(matches);
     if (matches) count++;
   }
   empty.hidden = count !== 0;
   document.querySelector('#count').textContent = String(count).padStart(2, '0');
-  document.querySelector('#count').setAttribute('aria-label', count + ' 个作品');
+  document.querySelector('#count').setAttribute('aria-label', text(count + (count === 1 ? ' project' : ' projects'), count + ' 个作品'));
   if (updateUrl) {
     const url = new URL(location.href);
     if (input.value.trim()) url.searchParams.set('q', input.value.trim()); else url.searchParams.delete('q');
@@ -48,6 +51,7 @@ function filter(updateUrl = true) {
   }
 }
 function restore() { input.value = new URL(location.href).searchParams.get('q') || ''; filter(false); }
+language.addEventListener('change', () => filter(false));
 form.addEventListener('submit', e => { e.preventDefault(); filter(); });
 input.addEventListener('input', () => filter());
 empty.querySelector('button').addEventListener('click', () => { input.value = ''; filter(); input.focus(); });

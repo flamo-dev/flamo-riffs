@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Flamo Riffs · 创意集</title><meta name="description" content="浏览 Flamo 交互创意，预览作品视频，亲手体验每个演示。">
+  <title data-zh="Flamo Riffs · 创意集">Flamo Riffs · Interactive Gallery</title><meta name="description" content="Explore interactive projects made with Flamo. Watch the previews and try each demo in your browser." data-zh-content="浏览 Flamo 交互创意，预览作品视频，亲手体验每个演示。">
   <link rel="canonical" href="https://riffs.flamo.dev/"><link rel="icon" href="/common/favicon.png">
-  <link rel="stylesheet" href="/common/riffs.css?v=3"><link rel="stylesheet" href="/home/home.css?v=7">
-  <script defer src="/common/riffs-shell.js?v=3"></script><script defer src="/home/home.js?v=4"></script>
+  <link rel="stylesheet" href="/common/riffs.css?v=4"><link rel="stylesheet" href="/home/home.css?v=7">
+  <script type="module" src="/common/riffs-shell.js?v=4"></script><script type="module" src="/home/home.js?v=5"></script>
 </head>
 <body>
   <header data-riffs-header><a href="/">Flamo Riffs</a></header>
@@ -13,82 +13,82 @@
     <section class="hero" aria-labelledby="title">
       <div class="hero-art" aria-hidden="true"></div>
       <div class="hero-copy"><div class="series"><span></span>FLAMO RIFFS</div>
-        <h1 id="title">Flamo 创意集<span>.</span></h1>
-        <p>用 Flamo 制作的交互实验。<br>从一段预览开始，亲手试试设计如何动起来。</p>
+        <h1 id="title" data-zh="Flamo 创意集">Flamo Riffs<span>.</span></h1>
+        <p data-zh="用 Flamo 制作的交互实验。" data-zh-next="从一段预览开始，亲手试试设计如何动起来。">Interactive experiments made with Flamo.<br>Watch a preview, then try the design for yourself.</p>
       </div>
       <span class="hero-caption" aria-hidden="true">FIG 01 <i></i> FLOW STUDY</span>
     </section>
     <section class="catalog" aria-labelledby="collection">
-      <div class="catalog-bar"><div class="catalog-title"><h2 id="collection">探索创意</h2><span id="count" role="status" aria-label="作品数量">06</span></div>
+      <div class="catalog-bar"><div class="catalog-title"><h2 id="collection" data-zh="探索创意">Explore the gallery</h2><span id="count" role="status" aria-label="Project count" data-zh-aria-label="作品数量">06</span></div>
         <form role="search" class="search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
-          <label for="q" class="sr-only">搜索创意、标签或关键词</label><input id="q" name="q" type="search" placeholder="搜索创意、标签或关键词" autocomplete="off"><kbd aria-hidden="true">/</kbd>
+          <label for="q" class="sr-only" data-zh="搜索创意、标签或关键词">Search projects, tags or keywords</label><input id="q" name="q" type="search" placeholder="Search projects, tags or keywords" autocomplete="off" data-zh-placeholder="搜索创意、标签或关键词"><kbd aria-hidden="true">/</kbd>
         </form>
       </div>
       <div id="entries">
         <article class="entry" data-keywords="shumei 输煤系统 轨道巡检机器人 皮带 输送带 煤仓 报警 工业可视化 HMI Flamo">
-          <a class="entry-link" href="/shumei/" aria-label="进入输煤监测中心">
-            <div class="entry-media cockpit"><div class="film"><video autoplay muted loop playsinline poster="/shumei/shumei-poster.jpg" src="/shumei/shumei-preview.mp4" aria-label="输煤皮带运行与机器人巡检视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:15</span></div>
+          <a class="entry-link" href="/shumei/" aria-label="Open Coal Handling Monitor" data-zh-aria-label="进入输煤监测中心">
+            <div class="entry-media cockpit"><div class="film"><video autoplay muted loop playsinline poster="/shumei/shumei-poster.jpg" src="/shumei/shumei-preview.mp4" aria-label="Preview of the coal conveyors and inspection robot" data-zh-aria-label="输煤皮带运行与机器人巡检视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:15</span></div>
             <div class="entry-copy"><div class="serial"><span class="pip"></span> EXPERIMENT <b>/ 006</b></div>
-              <h3>输煤监测中心</h3><p>沿着输送带看煤流如何切换线路，观察皮带报警、煤仓料位和轨道巡检机器人读数随模拟工况变化。</p>
-              <div class="tags"><span>输煤流程</span><span>机器人巡检</span></div><div class="visit">进入演示 <span aria-hidden="true">↗</span></div>
+              <h3 data-zh="输煤监测中心">Coal Handling Monitor</h3><p data-zh="沿着输送带看煤流如何切换线路，观察皮带报警、煤仓料位和轨道巡检机器人读数随模拟工况变化。">Follow coal across the conveyors and watch belt alarms, bunker levels and inspection robot readings respond to simulated conditions.</p>
+              <div class="tags"><span data-zh="输煤流程">Coal handling</span><span data-zh="机器人巡检">Robot inspection</span></div><div class="visit" data-zh="进入演示">Open demo <span aria-hidden="true">↗</span></div>
             </div>
           </a>
-          <button class="preview" type="button" hidden>播放预览</button>
+          <button class="preview" type="button" hidden data-zh="播放预览">Play preview</button>
         </article>
         <article class="entry" data-keywords="jianpan 智能监盘 锅炉 机组 健康度 趋势 电厂 工业可视化 HMI Flamo">
-          <a class="entry-link" href="/jianpan/" aria-label="进入智能监盘中心">
-            <div class="entry-media cockpit"><div class="film"><video autoplay muted loop playsinline poster="/jianpan/jianpan-poster.jpg" src="/jianpan/jianpan-preview.mp4" aria-label="机组切换与健康趋势视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:15</span></div>
+          <a class="entry-link" href="/jianpan/" aria-label="Open Power Plant Monitor" data-zh-aria-label="进入智能监盘中心">
+            <div class="entry-media cockpit"><div class="film"><video autoplay muted loop playsinline poster="/jianpan/jianpan-poster.jpg" src="/jianpan/jianpan-preview.mp4" aria-label="Preview of unit switching and equipment health trends" data-zh-aria-label="机组切换与健康趋势视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:15</span></div>
             <div class="entry-copy"><div class="serial"><span class="pip"></span> EXPERIMENT <b>/ 005</b></div>
-              <h3>智能监盘中心</h3><p>切换 1 号、2 号机组，观察锅炉、泵和风机的模拟运行状态。点选系统组，查看对应的健康度趋势。</p>
-              <div class="tags"><span>机组监盘</span><span>健康趋势</span></div><div class="visit">进入演示 <span aria-hidden="true">↗</span></div>
+              <h3 data-zh="智能监盘中心">Power Plant Monitor</h3><p data-zh="切换 1 号、2 号机组，观察锅炉、泵和风机的模拟运行状态。点选系统组，查看对应的健康度趋势。">Switch between units to check the simulated boilers, pumps and fans. Select a system to see how its health changes over time.</p>
+              <div class="tags"><span data-zh="机组监盘">Unit monitoring</span><span data-zh="健康趋势">Health trends</span></div><div class="visit" data-zh="进入演示">Open demo <span aria-hidden="true">↗</span></div>
             </div>
           </a>
-          <button class="preview" type="button" hidden>播放预览</button>
+          <button class="preview" type="button" hidden data-zh="播放预览">Play preview</button>
         </article>
         <article class="entry" data-keywords="蒲公英 Dandelion meadow 草地 花球 种子 微风 3D 自然交互 Flamo">
-          <a class="entry-link" href="/dandelion/" aria-label="进入蒲公英交互演示">
-            <div class="entry-media meadow"><div class="film"><video autoplay muted loop playsinline poster="/dandelion/dandelion-poster.jpg" src="/dandelion/dandelion-preview.mp4" aria-label="蒲公英种子随风飘散的视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:15</span></div>
+          <a class="entry-link" href="/dandelion/" aria-label="Open Dandelion" data-zh-aria-label="进入蒲公英交互演示">
+            <div class="entry-media meadow"><div class="film"><video autoplay muted loop playsinline poster="/dandelion/dandelion-poster.jpg" src="/dandelion/dandelion-preview.mp4" aria-label="Preview of dandelion seeds drifting in the wind" data-zh-aria-label="蒲公英种子随风飘散的视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:15</span></div>
             <div class="entry-copy"><div class="serial"><span class="pip"></span> EXPERIMENT <b>/ 004</b></div>
-              <h3>蒲公英</h3><p>拖动画面，绕着蒲公英看一圈。轻点一下，看种子随风飘远。等花球吹空，三秒后它又会长满。</p>
-              <div class="tags"><span>自然交互</span><span>3D 场景</span></div><div class="visit">进入演示 <span aria-hidden="true">↗</span></div>
+              <h3 data-zh="蒲公英">Dandelion</h3><p data-zh="拖动画面，绕着蒲公英看一圈。轻点一下，看种子随风飘远。等花球吹空，三秒后它又会长满。">Drag to circle the dandelion. Tap to send seeds drifting on the breeze. Once the last seed lifts off, the seed head grows back in three seconds.</p>
+              <div class="tags"><span data-zh="自然交互">Interactive nature</span><span data-zh="3D 场景">3D scene</span></div><div class="visit" data-zh="进入演示">Open demo <span aria-hidden="true">↗</span></div>
             </div>
           </a>
-          <button class="preview" type="button" hidden>播放预览</button>
+          <button class="preview" type="button" hidden data-zh="播放预览">Play preview</button>
         </article>
         <article class="entry" data-keywords="风大侠 MasterWind Master Wind 借风过峡 水墨 滑翔 峡谷 灯塔 游戏 Flamo">
-          <a class="entry-link" href="/masterwind/" aria-label="进入风大侠水墨滑翔游戏">
-            <div class="entry-media gorge"><div class="film"><video autoplay muted loop playsinline poster="/masterwind/masterwind-poster.jpg" src="/masterwind/masterwind-preview.mp4" aria-label="风大侠滑翔视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:10</span></div>
+          <a class="entry-link" href="/masterwind/" aria-label="Play MasterWind" data-zh-aria-label="进入风大侠水墨滑翔游戏">
+            <div class="entry-media gorge"><div class="film"><video autoplay muted loop playsinline poster="/masterwind/masterwind-poster.jpg" src="/masterwind/masterwind-preview.mp4" aria-label="Preview of gliding in MasterWind" data-zh-aria-label="风大侠滑翔视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:10</span></div>
             <div class="entry-copy"><div class="serial"><span class="pip"></span> EXPERIMENT <b>/ 003</b></div>
-              <h3>风大侠</h3><p>看崖边的红绸辨风向，等落叶向对岸扬起时纵身一跃。拉开斗篷，借风滑过云海，点亮峡谷尽头的灯塔。</p>
-              <div class="tags"><span>水墨山水</span><span>滑翔游戏</span></div><div class="visit">开始游戏 <span aria-hidden="true">↗</span></div>
+              <h3 data-zh="风大侠">MasterWind</h3><p data-zh="看崖边的红绸辨风向，等落叶向对岸扬起时纵身一跃。拉开斗篷，借风滑过云海，点亮峡谷尽头的灯塔。">Read the wind in the red silk on the cliff. When the leaves lift toward the far side, leap and spread your cape. Glide across the clouds to light the beacon.</p>
+              <div class="tags"><span data-zh="水墨山水">Ink landscape</span><span data-zh="滑翔游戏">Gliding game</span></div><div class="visit" data-zh="开始游戏">Play game <span aria-hidden="true">↗</span></div>
             </div>
           </a>
-          <button class="preview" type="button" hidden>播放预览</button>
+          <button class="preview" type="button" hidden data-zh="播放预览">Play preview</button>
         </article>
         <article class="entry" data-keywords="Saltline FPS 射击 港区 机械守卫 游戏 Flamo WebGPU 三维 GPT-6 第一人称">
-          <a class="entry-link" href="/saltline/" aria-label="进入 Saltline 第一人称射击游戏">
-            <div class="entry-media harbor"><div class="film"><video autoplay muted loop playsinline poster="/saltline/saltline-poster.jpg?v=3be892e0" src="/saltline/saltline-preview.mp4" aria-label="Saltline 游戏视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:27</span></div>
+          <a class="entry-link" href="/saltline/" aria-label="Play Saltline" data-zh-aria-label="进入 Saltline 第一人称射击游戏">
+            <div class="entry-media harbor"><div class="film"><video autoplay muted loop playsinline poster="/saltline/saltline-poster.jpg?v=3be892e0" src="/saltline/saltline-preview.mp4" aria-label="Saltline gameplay preview" data-zh-aria-label="Saltline 游戏视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:27</span></div>
             <div class="entry-copy"><div class="serial"><span class="pip"></span> EXPERIMENT <b>/ 002</b></div>
-              <h3>Saltline</h3><p>清晨的四号泊位已被封锁。穿过堆场与仓库，切断三处中继，在机械守卫包围码头之前登艇撤离。</p>
-              <div class="tags"><span>第一人称射击</span><span>WebGPU</span></div><div class="visit">开始游戏 <span aria-hidden="true">↗</span></div>
+              <h3>Saltline</h3><p data-zh="清晨的四号泊位已被封锁。穿过堆场与仓库，切断三处中继，在机械守卫包围码头之前登艇撤离。">Berth Four is locked down at dawn. Cross the container yard and warehouses, disable three relays and reach the boat before the mechanical guards close in.</p>
+              <div class="tags"><span data-zh="第一人称射击">First-person shooter</span><span>WebGPU</span></div><div class="visit" data-zh="开始游戏">Play game <span aria-hidden="true">↗</span></div>
             </div>
           </a>
-          <button class="preview" type="button" hidden>播放预览</button>
+          <button class="preview" type="button" hidden data-zh="播放预览">Play preview</button>
         </article>
         <article class="entry" data-keywords="pipe pipes flow pipeline HMI 工业可视化 启停 方向 动效 管网 Web Component 动画">
-          <a class="entry-link" href="/pipe/" aria-label="进入管道实验室交互演示">
-            <div class="entry-media"><div class="film"><video autoplay muted loop playsinline poster="/pipe/pipe-poster.jpg" src="/pipe/pipe-preview.mp4" aria-label="管道实验室视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:09</span></div>
+          <a class="entry-link" href="/pipe/" aria-label="Open Pipe Lab" data-zh-aria-label="进入管道实验室交互演示">
+            <div class="entry-media"><div class="film"><video autoplay muted loop playsinline poster="/pipe/pipe-poster.jpg" src="/pipe/pipe-preview.mp4" aria-label="Pipe Lab preview" data-zh-aria-label="管道实验室视频预览"></video></div><span class="time"><span aria-hidden="true">▶</span> 00:09</span></div>
             <div class="entry-copy"><div class="serial"><span class="pip"></span> EXPERIMENT <b>/ 001</b></div>
-              <h3>管道实验室</h3><p>四种单管道，一组组合管网。切换流向、暂停或重新启动，观察不同路径上的流动变化。</p>
-              <div class="tags"><span>交互组件</span><span>流动效果</span></div>
-              <div class="visit">进入演示 <span aria-hidden="true">↗</span></div>
+              <h3 data-zh="管道实验室">Pipe Lab</h3><p data-zh="四种单管道，一组组合管网。切换流向、暂停或重新启动，观察不同路径上的流动变化。">Explore four individual pipes and one connected network. Reverse the flow, pause it or start it again to see how it moves along each path.</p>
+              <div class="tags"><span data-zh="交互组件">Interactive components</span><span data-zh="流动效果">Flow animation</span></div>
+              <div class="visit" data-zh="进入演示">Open demo <span aria-hidden="true">↗</span></div>
             </div>
           </a>
-          <button class="preview" type="button" hidden>播放预览</button>
+          <button class="preview" type="button" hidden data-zh="播放预览">Play preview</button>
         </article>
       </div>
-      <div id="empty" hidden><h3>没有找到匹配的创意</h3><p>试试「管道」或「流动」，也可以查看全部作品。</p><button type="button">清除搜索</button></div>
+      <div id="empty" hidden><h3 data-zh="没有找到匹配的创意">No matching projects</h3><p data-zh="试试「管道」或「流动」，也可以查看全部作品。">Try “pipe” or “flow”, or clear your search to see all projects.</p><button type="button" data-zh="清除搜索">Clear search</button></div>
     </section>
   </main>
-  <footer data-riffs-footer><a href="https://flamo.dev/">Flamo 官网</a></footer>
+  <footer data-riffs-footer><a href="https://flamo.dev/" data-zh="Flamo 官网">Flamo website</a></footer>
 </body></html>

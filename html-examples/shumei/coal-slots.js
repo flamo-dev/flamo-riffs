@@ -1,3 +1,4 @@
+import { text } from '../common/riffs-language.js';
 import { slotStyles } from './robot-template.js';
 
 const hostStyles = `
@@ -134,7 +135,7 @@ export function updateCoalSlots(slots, values) {
         setHidden(fill, fraction === 0);
         setAttribute(gauge, 'aria-valuemin', String(min));
         setAttribute(gauge, 'aria-valuemax', String(max));
-        setAttribute(gauge, 'aria-valuetext', value === null ? '未知' : `${value}${binding.unit}`);
+        setAttribute(gauge, 'aria-valuetext', value === null ? text('Unknown', '未知') : `${value}${binding.unit}`);
         if (value === null) {
           if (gauge.hasAttribute('aria-valuenow')) gauge.removeAttribute('aria-valuenow');
         } else setAttribute(gauge, 'aria-valuenow', String(value));
@@ -154,11 +155,11 @@ export function updateCoalSlots(slots, values) {
       // Follow the running signal; retain the R-02 patrol and scanning animations.
       setAttribute(element, 'data-motion', run === true ? 'running' : 'paused');
       for (const { node, id, valueNode, status, dot } of binding.rows) {
-        if (id === 'JQR_YXZT') setText(status, run === null ? '未知' : run ? '运行' : '停止');
+        if (id === 'JQR_YXZT') setText(status, run === null ? text('Unknown', '未知') : run ? text('Running', '运行') : text('Stopped', '停止'));
         else if (id === 'JQR_CWBJ' || id === 'JQR_GZBJ') {
           const active = values[id];
           setAttribute(dot, 'class', `state-dot ${active === null ? 'unknown' : active ? 'true' : 'false'}`);
-          setAttribute(dot, 'aria-label', active === null ? '未知' : active ? '报警' : '正常');
+          setAttribute(dot, 'aria-label', active === null ? text('Unknown', '未知') : active ? text('Alarm', '报警') : text('Normal', '正常'));
         } else if (id === 'JQR_DCDL') setText(node, `${formatReading(values[id], 0)}%`);
         else if (id === 'JQR_DCWD') setText(node, `${formatReading(values[id], 1)}℃`);
         else setText(valueNode, formatReading(values[id], id === 'JQR_LJLC' ? 0 : 1));

@@ -10,7 +10,7 @@ async function copy(path, dest = path) {
   await mkdir(dirname(join(out,dest)),{recursive:true});
   await cp(join(source,path),join(out,dest),{recursive:true});
 }
-for (const path of ['home','common/riffs-shell.js','common/riffs.css','common/favicon.png','common/logo.png','common/component-viewport.js','common/flamo-runtime','pipe/index.html','pipe/styles.css','pipe/demo.js','pipe/preview-viewport.js','pipe/pipe.mp4','pipe/pipe-preview.mp4','pipe/pipe-poster.jpg']) await copy(path);
+for (const path of ['home','common/riffs-shell.js','common/product-language.js','common/riffs-language.js','common/language-picker.css','common/riffs.css','common/favicon.png','common/logo.png','common/component-viewport.js','common/flamo-runtime','pipe/index.html','pipe/styles.css','pipe/demo.js','pipe/preview-viewport.js','pipe/pipe.mp4','pipe/pipe-preview.mp4','pipe/pipe-poster.jpg']) await copy(path);
 await copy('home/index.html','index.html');
 await copy('favicon.ico');
 await copy('common/demo-screen.js');
@@ -36,7 +36,7 @@ for (const [file, destination] of [
   ['MasterWind/MasterWind.html', 'masterwind/index.html'],
   ['dandelion/Dandelion · meadow.html', 'dandelion/index.html'],
 ]) {
-  await writeFile(join(out, destination), hostOfflinePage(await readFile(join(source, file))));
+  await writeFile(join(out, destination), hostOfflinePage(await readFile(join(source, file)), destination.split('/')[0]));
 }
 const game='saltline/flamo-saltline-web-component/';
 const gameManifest=JSON.parse(await readFile(join(source,game,'manifest.json'),'utf8'));

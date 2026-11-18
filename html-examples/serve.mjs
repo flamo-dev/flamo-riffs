@@ -15,6 +15,10 @@ const offlinePages = new Map([
 const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json','.wasm':'application/wasm','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.jpg':'image/jpeg','.mp4':'video/mp4','.woff2':'font/woff2' };
 createServer(async (req,res) => {
   try {
+    if (req.url === '/api/account/language') {
+      res.writeHead(req.method === 'GET' ? 200 : 401, {'Content-Type':'application/json','Cache-Control':'no-store'});
+      return res.end(JSON.stringify({accountId:null,language:null}));
+    }
     if (!['GET','HEAD'].includes(req.method)) return res.writeHead(405).end();
     const url = new URL(req.url,'http://localhost');
     const path = decodeURIComponent(url.pathname);
@@ -32,7 +36,7 @@ createServer(async (req,res) => {
     const hostedPage = offlinePage && path.endsWith('/');
     if (offlinePage && !hostedPage) headers['Content-Type'] = 'text/html; charset=windows-1252';
     if (hostedPage || isExportEntry(path)) {
-      const body = Buffer.from(hostedPage ? hostOfflinePage(await readFile(target)) : relocateExport(path,await readFile(target,'utf8')));
+      const body = Buffer.from(hostedPage ? hostOfflinePage(await readFile(target), basename(dirname(target)).toLowerCase()) : relocateExport(path,await readFile(target,'utf8')));
       return res.writeHead(200,{...headers,'Content-Length':body.length}).end(req.method==='HEAD'?undefined:body);
     }
     let start=0, end=info.size-1, status=200;

@@ -1,3 +1,4 @@
+@import url('./language-picker.css');
 *{box-sizing:border-box}
 :root{--riffs-ink:#212022;--riffs-muted:#65626b;--riffs-line:#dedde2;--riffs-purple:#5738ae;--riffs-width:1232px;color-scheme:light}
 .riffs-wrap{width:min(var(--riffs-width),calc(100% - 96px));margin-inline:auto}
@@ -40,3 +41,5 @@ html{scroll-padding-top:76px}
 }
 @media(max-width:820px){.riffs-wrap{width:calc(100% - 48px)}}
 @media(max-width:560px){.riffs-wrap{width:calc(100% - 32px)}.riffs-nav{height:61px}[data-riffs-header]{min-height:61px}.riffs-nav>div{gap:12px}.riffs-nav .riffs-external{padding:7px 10px}.riffs-brand{gap:5px}.riffs-brand b{font-size:22px}.riffs-brand img{width:25px;height:25px}.riffs-brand span{font-size:15px}.riffs-brand i{margin:0 2px}.riffs-foot{gap:10px}.riffs-foot>span,.riffs-foot>a:last-child{font-size:11px}[data-riffs-footer]{margin-top:36px}}
+
+@media(max-width:540px){.riffs-nav>div{gap:4px}.riffs-nav .riffs-external{padding:7px}.riffs-nav .riffs-current{display:none}.riffs-github,.riffs-language-control{width:36px;height:36px}}

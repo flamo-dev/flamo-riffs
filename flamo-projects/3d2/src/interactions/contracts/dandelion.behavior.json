@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "project.dandelion",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform"
+      ]
+    }
+  },
+  "listens": [
+    "pointerdown",
+    "pointermove",
+    "pointerup",
+    "pointercancel",
+    "lostpointercapture"
+  ],
+  "writes": [
+    "dandelion.camera",
+    "dandelion.lens",
+    "dandelion.time",
+    "dandelion.texture"
+  ],
+  "state": [
+    "ready",
+    "time",
+    "yaw",
+    "pitch",
+    "flight"
+  ],
+  "invariants": [
+    "same device and borrowed output texture",
+    "drag and tap are mutually exclusive",
+    "all authored GPU resources released on teardown",
+    "a partially depleted head stays depleted; a bare head refills three seconds after the last seed detaches",
+    "airborne seeds retain their identity across head refills and fade with camera distance",
+    "one continuous world-space wind drives all seed cohorts, grass and stalk, including before the first tap",
+    "a tap schedules staggered detachments without changing the environmental wind",
+    "each seed leaves the current position and orientation of the swaying flower head"
+  ],
+  "requiredTraceActions": [
+    "dandelion.mounted",
+    "dandelion.rotate",
+    "dandelion.gust",
+    "dandelion.refilled"
+  ],
+  "requiredEvidence": [
+    "script-mounted",
+    "rendered-output",
+    "instance-isolation"
+  ],
+  "visualEvidence": {
+    "required": true,
+    "targetRole": "root",
+    "minimumChangedPixels": 1
+  }
+}

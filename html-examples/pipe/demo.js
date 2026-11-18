@@ -1,3 +1,4 @@
+import { language, text } from '../common/riffs-language.js';
 import { attachPipePreview } from './preview-viewport.js';
 
 // Exact behavior roots from the installed exports. These packages have no
@@ -18,9 +19,12 @@ function updateOverview() {
   const failed = cards.filter(card => card.dataset.failed === 'true').length;
   document.querySelector('#running-count').textContent = String(running).padStart(2, '0');
   document.querySelector('#workspace-status').textContent = failed
-    ? `${ready} / 5 已就绪 · ${failed} 个组件待重试`
-    : ready === cards.length ? '全部就绪 · 独立控制' : `${ready} / 5 组件已就绪`;
+    ? text(`${ready} / 5 ready · ${failed} to retry`, `${ready} / 5 已就绪 · ${failed} 个组件待重试`)
+    : ready === cards.length ? text('All ready · Independent controls', '全部就绪 · 独立控制')
+      : text(`${ready} / 5 ready`, `${ready} / 5 组件已就绪`);
 }
+
+language.addEventListener('change', updateOverview);
 
 for (const card of cards) {
   const key = card.dataset.pipe;
@@ -45,14 +49,10 @@ for (const card of cards) {
     card.dataset.ready = 'false';
     delete card.dataset.running;
     buttons.forEach(button => { button.disabled = true; });
-    card.querySelector('[data-state-label]').textContent = '暂不可用';
     overlay.hidden = false;
     card.querySelector('.loading-indicator').hidden = true;
-    card.querySelector('[data-loading-message]').textContent = '组件暂不可用，请刷新重试';
     card.querySelector('.retry').hidden = false;
-    errorMessage.textContent = location.protocol === 'file:'
-      ? '请通过本地 HTTP 服务打开此页面。'
-      : '加载或控制失败，请检查本地资源服务后刷新重试。';
+    renderLabels();
     errorMessage.hidden = false;
     console.error(`[Pipe demo] ${tag}`, error);
     updateOverview();
@@ -77,17 +77,40 @@ for (const card of cards) {
     const uniformDirection = states.every(state => state.direction === states[0].direction);
     card.dataset.running = String(running);
     card.dataset.direction = uniformDirection ? states[0].direction : 'mixed';
-    card.querySelector('[data-state-label]').textContent = running ? '运行中' : '已暂停';
-    play.querySelector('span').textContent = running ? '暂停' : '开始';
-    play.querySelector('use').setAttribute('href', running ? '#icon-pause' : '#icon-play');
-    play.setAttribute('aria-label', `${running ? '暂停' : '开始'}${card.querySelector('h3').textContent}`);
-    direction.querySelector('span').textContent = !uniformDirection ? '混合' : forward ? '正向' : '反向';
-    direction.querySelector('use').setAttribute('href', forward ? '#icon-forward' : '#icon-reverse');
-    direction.title = `当前${!uniformDirection ? '混合方向' : forward ? '正向' : '反向'}，点击切换为${forward ? '反向' : '正向'}`;
-    direction.setAttribute('aria-label', `${card.querySelector('h3').textContent}：${direction.title}`);
+    renderLabels();
     updateOverview();
   }
 
+  function renderLabels() {
+    const pill = card.querySelector('[data-state-label]');
+    if (card.dataset.ready !== 'true') {
+      const failed = card.dataset.failed === 'true';
+      pill.textContent = failed ? text('Unavailable', '暂不可用') : text('Loading', '加载中');
+      card.querySelector('[data-loading-message]').textContent = failed
+        ? text('Component unavailable. Reload to try again.', '组件暂不可用，请刷新重试')
+        : key === 'group' ? text('Loading pipe network…', '正在加载管网…') : text('Loading pipe…', '正在加载管道…');
+      if (failed) errorMessage.textContent = location.protocol === 'file:'
+        ? text('Open this page through a local HTTP server.', '请通过本地 HTTP 服务打开此页面。')
+        : text('Could not load or control this component. Check the resource server and reload.', '加载或控制失败，请检查本地资源服务后刷新重试。');
+      return;
+    }
+    const running = card.dataset.running === 'true';
+    const forward = card.dataset.direction === 'forward';
+    const flow = card.dataset.direction === 'mixed' ? text('Mixed', '混合') : forward ? text('Forward', '正向') : text('Reverse', '反向');
+    const next = forward ? text('Reverse', '反向') : text('Forward', '正向');
+    const action = running ? text('Pause', '暂停') : text('Start', '开始');
+    const name = card.querySelector('h3').textContent;
+    pill.textContent = running ? text('Running', '运行中') : text('Paused', '已暂停');
+    play.querySelector('span').textContent = action;
+    play.querySelector('use').setAttribute('href', running ? '#icon-pause' : '#icon-play');
+    play.setAttribute('aria-label', text(action + ' ' + name, action + name));
+    direction.querySelector('span').textContent = flow;
+    direction.querySelector('use').setAttribute('href', forward ? '#icon-forward' : '#icon-reverse');
+    direction.title = text(flow + ' flow. Switch to ' + next + '.', '当前' + flow + '，点击切换为' + next);
+    direction.setAttribute('aria-label', name + ' · ' + direction.title);
+  }
+
+  language.addEventListener('change', renderLabels);
   async function bind() {
     const current = ++generation;
     try {
@@ -135,12 +158,11 @@ for (const card of cards) {
     card.dataset.failed = 'false';
     delete card.dataset.running;
     buttons.forEach(button => { button.disabled = true; });
-    card.querySelector('[data-state-label]').textContent = '加载中';
+    renderLabels();
     overlay.hidden = false;
     errorMessage.hidden = true;
     card.querySelector('.loading-indicator').hidden = false;
     card.querySelector('.retry').hidden = true;
-    card.querySelector('[data-loading-message]').textContent = '正在加载管道…';
     clearTimeout(timer);
     timer = setTimeout(() => fail(new Error('Component load timed out')), 45000);
     updateOverview();

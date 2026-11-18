@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>智能监盘中心 · 模拟演示</title>
+  <title data-zh="智能监盘中心 · 模拟演示">Power Plant Monitor · Simulation</title>
   <link rel="stylesheet" href="./monitor.css">
   <link rel="stylesheet" href="./flamo-jianpan-web-component/dist/component-loading.css">
   <style id="boiler-state-styles">
@@ -40,26 +40,29 @@
   </style>
   <script type="module" src="./flamo-jianpan-web-component/dist/flamo-jianpan.loader.js"></script>
   <script type="module" src="./demo.js"></script>
+  <link rel="stylesheet" href="/common/language-picker.css">
+  <script type="module" src="/common/riffs-language.js"></script>
 </head>
 <body>
   <div class="cockpit">
     <header class="top-bar">
       <div class="brand">
-        <a aria-label="返回作品列表" class="home-btn" href="../" title="返回作品列表">
+        <a aria-label="Back to gallery" class="home-btn" href="../" title="Back to gallery" data-zh-aria-label="返回作品列表" data-zh-title="返回作品列表">
           <svg class="home-icon" fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="26">
             <path d="M3 12l9-9 9 9"></path>
             <path d="M5 10v10a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1V10"></path>
           </svg>
         </a>
         <div class="text-block">
-          <h1>智能监盘中心 · 模拟演示</h1>
+          <h1 data-zh="智能监盘中心 · 模拟演示">Power Plant Monitor · Simulation</h1>
         </div>
       </div>
       <div class="clock-wrap">
+        <riffs-language-picker></riffs-language-picker>
         <div class="level-tabs" id="level-tabs">
           <span class="scan"></span>
-          <button class="level-tab" data-unit-id="1"><span class="pulse-dot"></span><span class="num">#1</span><span class="label">机组</span></button>
-          <button class="level-tab active" data-unit-id="2"><span class="pulse-dot"></span><span class="num">#2</span><span class="label">机组</span></button>
+          <button class="level-tab" data-unit-id="1"><span class="pulse-dot"></span><span class="num">#1</span><span class="label" data-zh="机组">Unit</span></button>
+          <button class="level-tab active" data-unit-id="2"><span class="pulse-dot"></span><span class="num">#2</span><span class="label" data-zh="机组">Unit</span></button>
         </div>
         <div class="clock">
           <div class="time" id="clock-time">--:--:--</div>
@@ -72,18 +75,18 @@
         <div class="panel">
           <span class="corner tl"></span><span class="corner tr"></span>
           <span class="corner bl"></span><span class="corner br"></span>
-          <div class="panel-header">系统组健康度
+          <div class="panel-header" data-zh="系统组健康度">System health
             <div class="health-hero">
-              <span class="th-name">综合健康度</span>
+              <span class="th-name" data-zh="综合健康度">Overall health</span>
               <span class="th-score" id="healthOverallScore">--</span>
-              <span class="th-unit">分</span>
+              <span class="th-unit" data-zh="分">pts</span>
             </div>
           </div>
           <div class="panel-body">
             <div class="health-carousel" id="healthCarousel">
               <div class="health-pages" id="healthPages"></div>
               <div class="health-dots" id="healthDots">
-                <button aria-label="健康度第 1 页" class="on" type="button"></button><button aria-label="健康度第 2 页" type="button"></button>
+                <button aria-label="System health, page 1" class="on" type="button" data-zh-aria-label="健康度第 1 页"></button><button aria-label="System health, page 2" type="button" data-zh-aria-label="健康度第 2 页"></button>
               </div>
             </div>
           </div>
@@ -92,12 +95,12 @@
           <span class="corner tl"></span><span class="corner tr"></span>
           <span class="corner bl"></span><span class="corner br"></span>
           <div class="panel-header">
-            <span class="panel-title">健康维度得分趋势</span>
-            <span class="trend-period-badge">1小时</span>
+            <span class="panel-title" data-zh="健康维度得分趋势">Health indicators over time</span>
+            <span class="trend-period-badge" data-zh="1小时">1 hour</span>
             <div class="trend-hero">
-              <span class="th-name" id="trendGroupName">炉本体系统组</span>
+              <span class="th-name" id="trendGroupName" data-zh="炉本体系统组">Boiler</span>
               <span class="th-score" id="trendGroupScore">--</span>
-              <span class="th-unit">分</span>
+              <span class="th-unit" data-zh="分">pts</span>
             </div>
           </div>
           <div class="panel-body trend-body">
@@ -113,42 +116,42 @@
           <div class="kpi-card" data-kpi="load">
             <div class="kpi-icon">🚀</div>
             <div class="kpi-text">
-              <div class="name">机组负荷</div>
+              <div class="name" data-zh="机组负荷">Unit load</div>
               <div class="val"><b></b><span class="unit">MW</span></div>
             </div>
           </div>
           <div class="kpi-card" data-kpi="steam_p">
             <div class="kpi-icon">⏱</div>
             <div class="kpi-text">
-              <div class="name">主汽压力</div>
+              <div class="name" data-zh="主汽压力">Main steam pressure</div>
               <div class="val"><b></b><span class="unit">MPa</span></div>
             </div>
           </div>
           <div class="kpi-card" data-kpi="steam_t">
             <div class="kpi-icon">🌡</div>
             <div class="kpi-text">
-              <div class="name">主汽温度</div>
+              <div class="name" data-zh="主汽温度">Main steam temp.</div>
               <div class="val"><b></b><span class="unit">℃</span></div>
             </div>
           </div>
           <div class="kpi-card" data-kpi="reheat1">
             <div class="kpi-icon">🌬️</div>
             <div class="kpi-text">
-              <div class="name">排汽背压</div>
+              <div class="name" data-zh="排汽背压">Exhaust pressure</div>
               <div class="val"><b></b><span class="unit">kPa</span></div>
             </div>
           </div>
           <div class="kpi-card" data-kpi="reheat2">
             <div class="kpi-icon">🎯</div>
             <div class="kpi-text">
-              <div class="name">仪用压力</div>
+              <div class="name" data-zh="仪用压力">Instrument pressure</div>
               <div class="val"><b></b><span class="unit">MPa</span></div>
             </div>
           </div>
           <div class="kpi-card" data-kpi="feed_flow">
             <div class="kpi-icon">💧</div>
             <div class="kpi-text">
-              <div class="name">给水流量</div>
+              <div class="name" data-zh="给水流量">Feedwater flow</div>
               <div class="val"><b></b><span class="unit">T/H</span></div>
             </div>
           </div>
@@ -156,47 +159,47 @@
         <div class="panel diagram-panel">
           <span class="corner tl"></span><span class="corner tr"></span>
           <span class="corner bl"></span><span class="corner br"></span>
-          <div class="panel-header">锅炉汽水系统</div>
+          <div class="panel-header" data-zh="锅炉汽水系统">Boiler steam and water</div>
           <div class="diagram-body">
             <div class="flamo-component-shell" style="width: 100%; height: 100%;">
-              <flamo-jianpan aria-busy="true" data-flamo-component="" inert="" loading-label="正在加载锅炉汽水系统…">
-                <img alt="锅炉燃烧动效" data-boiler-kind="ignition" data-device="ignition" data-name="炉膛点火-运行" data-state="unknown" slot="LTDHHY" src="./fire-burning.gif" style="display: block; width: 100%; height: 100%; object-fit: fill;"/>
-                <img alt="烟囱烟雾动效" data-boiler-kind="ignition" data-device="ignition" data-name="炉膛点火-运行" data-state="unknown" slot="LTDHYW" src="./smoke.gif" style="display: block; width: 100%; height: 100%; object-fit: fill;margin-left: 8px;"/>
+              <flamo-jianpan aria-busy="true" data-flamo-component="" inert="" loading-label="Loading boiler system…" data-zh-loading-label="正在加载锅炉汽水系统…">
+                <img alt="Boiler flame animation" data-boiler-kind="ignition" data-device="ignition" data-name="炉膛点火-运行" data-state="unknown" slot="LTDHHY" src="./fire-burning.gif" style="display: block; width: 100%; height: 100%; object-fit: fill;" data-zh-alt="锅炉燃烧动效"/>
+                <img alt="Stack smoke animation" data-boiler-kind="ignition" data-device="ignition" data-name="炉膛点火-运行" data-state="unknown" slot="LTDHYW" src="./smoke.gif" style="display: block; width: 100%; height: 100%; object-fit: fill;margin-left: 8px;" data-zh-alt="烟囱烟雾动效"/>
                 <div data-boiler-kind="mill" data-device="AZFXT" data-state="unknown" slot="AZFXT" style="width: 100%;height: 100%;">
-                  <div data-boiler-state="stopped" data-name="A 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    A 制粉系统</div>
-                  <div data-boiler-state="running" data-name="A 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    A 制粉系统</div>
+                  <div data-boiler-state="stopped" data-name="A 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="A 制粉系统">
+                    Mill A</div>
+                  <div data-boiler-state="running" data-name="A 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="A 制粉系统">
+                    Mill A</div>
                 </div>
                 <div data-boiler-kind="mill" data-device="BZFXT" data-state="unknown" slot="BZFXT" style="width: 100%;height: 100%;">
-                  <div data-boiler-state="stopped" data-name="B 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    B 制粉系统</div>
-                  <div data-boiler-state="running" data-name="B 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    B 制粉系统</div>
+                  <div data-boiler-state="stopped" data-name="B 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="B 制粉系统">
+                    Mill B</div>
+                  <div data-boiler-state="running" data-name="B 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="B 制粉系统">
+                    Mill B</div>
                 </div>
                 <div data-boiler-kind="mill" data-device="CZFXT" data-state="unknown" slot="CZFXT" style="width: 100%;height: 100%;">
-                  <div data-boiler-state="stopped" data-name="C 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    C 制粉系统</div>
-                  <div data-boiler-state="running" data-name="C 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    C 制粉系统</div>
+                  <div data-boiler-state="stopped" data-name="C 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="C 制粉系统">
+                    Mill C</div>
+                  <div data-boiler-state="running" data-name="C 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="C 制粉系统">
+                    Mill C</div>
                 </div>
                 <div data-boiler-kind="mill" data-device="DZFXT" data-state="unknown" slot="DZFXT" style="width: 100%;height: 100%;">
-                  <div data-boiler-state="stopped" data-name="D 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    D 制粉系统</div>
-                  <div data-boiler-state="running" data-name="D 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    D 制粉系统</div>
+                  <div data-boiler-state="stopped" data-name="D 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="D 制粉系统">
+                    Mill D</div>
+                  <div data-boiler-state="running" data-name="D 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="D 制粉系统">
+                    Mill D</div>
                 </div>
                 <div data-boiler-kind="mill" data-device="EZFXT" data-state="unknown" slot="EZFXT" style="width: 100%;height: 100%;">
-                  <div data-boiler-state="stopped" data-name="E 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    E 制粉系统</div>
-                  <div data-boiler-state="running" data-name="E 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    E 制粉系统</div>
+                  <div data-boiler-state="stopped" data-name="E 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="E 制粉系统">
+                    Mill E</div>
+                  <div data-boiler-state="running" data-name="E 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="E 制粉系统">
+                    Mill E</div>
                 </div>
                 <div data-boiler-kind="mill" data-device="FZFXT" data-state="unknown" slot="FZFXT" style="width: 100%;height: 100%;">
-                  <div data-boiler-state="stopped" data-name="F 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    F 制粉系统</div>
-                  <div data-boiler-state="running" data-name="F 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;">
-                    F 制粉系统</div>
+                  <div data-boiler-state="stopped" data-name="F 制粉系统 停止" style="width: 100%;height: 100%;background-color: rgb(0,97,39);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="F 制粉系统">
+                    Mill F</div>
+                  <div data-boiler-state="running" data-name="F 制粉系统 运行" style="width: 100%;height: 100%;background-color: rgb(136,1,1);color: #fff;font-size: 12px;line-height: 1.2;text-align: center;white-space: nowrap;align-content: center;" data-zh="F 制粉系统">
+                    Mill F</div>
                 </div>
                 <div data-boiler-kind="fan" data-device="AYCFJ" data-state="unknown" slot="AYCFJ" style="width: 100%;height: 100%;">
                   <img data-boiler-state="stopped" data-name="A 一次风机 停止" src="./feng-green.png" style="width: 100%; "/>
@@ -229,17 +232,17 @@
                 <div data-boiler-kind="pump" data-device="ANB" data-state="unknown" slot="ANB" style="width: 100%;height: 100%;">
                   <img data-boiler-state="stopped" data-name="A 凝泵 停止" src="./beng-green.png" style="width: 27px;height: 27px;margin: 0 auto;"/>
                   <img data-boiler-state="running" data-name="A 凝泵 运行" src="./beng-red.png" style="width: 27px;height: 27px;margin: 0 auto;"/>
-                  <span style="font-size: 12px;line-height: 1.2;white-space: nowrap;display: block;margin-top: 2px;width: 100%;text-align: center;">A 凝泵</span>
+                  <span style="font-size: 12px;line-height: 1.2;white-space: nowrap;display: block;margin-top: 2px;width: 100%;text-align: center;" data-zh="A 凝泵">Condensate pump A</span>
                 </div>
                 <div data-boiler-kind="pump" data-device="BNB" data-state="unknown" slot="BNB" style="width: 100%;height: 100%;">
                   <img data-boiler-state="stopped" data-name="B 凝泵 停止" src="./beng-green.png" style="width: 27px;height: 27px;margin: 0 auto;"/>
                   <img data-boiler-state="running" data-name="B 凝泵 运行" src="./beng-red.png" style="width: 27px;height: 27px;margin: 0 auto;"/>
-                  <span style="font-size: 12px;line-height: 1.2;white-space: nowrap;display: block;margin-top: 2px;width: 100%;text-align: center;">B 凝泵</span>
+                  <span style="font-size: 12px;line-height: 1.2;white-space: nowrap;display: block;margin-top: 2px;width: 100%;text-align: center;" data-zh="B 凝泵">Condensate pump B</span>
                 </div>
               </flamo-jianpan>
               <div aria-live="polite" data-flamo-status="" role="status">
-                <span data-flamo-message="">正在加载锅炉汽水系统…</span>
-                <button hidden="" type="button">刷新重试</button>
+                <span data-flamo-message="" data-zh="正在加载锅炉汽水系统…">Loading boiler system…</span>
+                <button hidden="" type="button" data-zh="刷新重试">Reload</button>
               </div>
             </div>
           </div>
@@ -250,7 +253,7 @@
           <span class="corner tl"></span><span class="corner tr"></span>
           <span class="corner bl"></span><span class="corner br"></span>
           <div class="panel-header">
-            <span class="panel-header-title">系统组健康排名</span>
+            <span class="panel-header-title" data-zh="系统组健康排名">System health ranking</span>
             <span class="top-tag">TOP 10</span>
           </div>
           <div class="panel-body">
@@ -261,15 +264,15 @@
           <span class="corner tl"></span><span class="corner tr"></span>
           <span class="corner bl"></span><span class="corner br"></span>
           <div class="panel-header" id="hintsPanelHeader">
-            <span class="panel-header-title">模型提示</span>
-            <span class="live-tag">模拟</span>
+            <span class="panel-header-title" data-zh="模型提示">Model insights</span>
+            <span class="live-tag" data-zh="模拟">Simulated</span>
           </div>
           <div class="panel-body">
             <div class="hints-carousel" id="hintsCarousel">
               <div class="hints-pages" id="hintsPages"></div>
               <div class="hints-dots" id="hintsDots">
-                <button type="button" aria-label="模型提示第 1 页"></button>
-                <button type="button" aria-label="模型提示第 2 页"></button>
+                <button type="button" aria-label="Model insights, page 1" data-zh-aria-label="模型提示第 1 页"></button>
+                <button type="button" aria-label="Model insights, page 2" data-zh-aria-label="模型提示第 2 页"></button>
               </div>
             </div>
           </div>
@@ -278,8 +281,8 @@
           <span class="corner tl"></span><span class="corner tr"></span>
           <span class="corner bl"></span><span class="corner br"></span>
           <div class="panel-header" id="alertsPanelHeader">
-            <span class="panel-header-title">报警列表</span>
-            <span class="live-tag">模拟</span>
+            <span class="panel-header-title" data-zh="报警列表">Alarms</span>
+            <span class="live-tag" data-zh="模拟">Simulated</span>
           </div>
           <div class="panel-body">
             <div class="alerts-grid" id="alertsGrid"></div>

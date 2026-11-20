@@ -1,0 +1,14 @@
+{
+  "version": "scene-v1",
+  "discriminator": "op",
+  "operations": {
+    "create": { "required": ["tempId"], "oneOf": ["kind+props", "spec"] },
+    "mount": { "required": ["node", "parent"], "optional": ["placement", "position"] },
+    "patch": { "required": ["node", "value"] },
+    "move": { "required": ["node", "parent"], "optional": ["placement", "position"] },
+    "detach": { "required": ["node"] },
+    "remove": { "required": ["node"], "optional": ["recursive"] }
+  },
+  "applyOptions": ["dryRun", "atomic", "clientMutationId", "expectedRevision", "source"],
+  "receipt": ["transactionId", "clientMutationId", "status", "baseRevision", "revision", "created", "affectedNodeIds", "warnings", "errors", "traceId", "timestamp"]
+}

@@ -1,0 +1,18 @@
+{
+  "version": "scene-v1",
+  "runtime": "@flamo/runtime",
+  "scene": {
+    "operations": ["create", "mount", "patch", "move", "detach", "remove"],
+    "supports": ["dryRun", "atomicApply", "idempotency", "snapshot", "exportPatch", "describe", "inspect", "camera", "motion"]
+  },
+  "htmlSurface": {
+    "implementedBackends": ["dom-portal", "html-overlay"],
+    "reservedBackends": ["html-texture", "dom-snapshot", "html-in-canvas", "native-lowered"]
+  },
+  "limits": {
+    "maxCreatePerTransaction": 1000,
+    "maxTreeDepth": 64,
+    "maxNodes": 100000,
+    "maxVectorComplexity": 10000
+  }
+}

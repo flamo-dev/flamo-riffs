@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "0.1",
+  "kind": "flamo.artifact-authoring-receipt",
+  "clientMutationId": "electrolyser-design-poster",
+  "requestFingerprint": "03da37b0c2eea96a7f1e3215bb6217c3a33dc9bf0a194fb6973b9dfb1b553ada",
+  "status": "applied",
+  "projectId": "5928a6bf-fa75-4fa4-a98b-4a742804040f",
+  "artifactRevisionBefore": "artifact-rev-1795053858743-adtkc8",
+  "artifactRevisionAfter": "artifact-rev-1795053901899-3bab48b5",
+  "created": {},
+  "affectedNodeIds": [
+    "1065167527:1"
+  ],
+  "operations": [
+    {
+      "index": 0,
+      "op": "patch_node",
+      "status": "applied",
+      "nodeId": "1065167527:1"
+    }
+  ],
+  "resources": [],
+  "warnings": [
+    {
+      "code": "pixel_evidence_unavailable",
+      "message": "Pixel-level visual evidence is unavailable in the structural critic."
+    },
+    {
+      "code": "font_probe_unavailable",
+      "message": "Runtime font availability was not probed."
+    }
+  ],
+  "evidence": {
+    "structural": "passed",
+    "criticScore": 100,
+    "newBlockingIssueCount": 0,
+    "pixel": "unavailable",
+    "fonts": "unavailable",
+    "reload": {
+      "status": "required",
+      "projectId": "5928a6bf-fa75-4fa4-a98b-4a742804040f",
+      "artifactRevision": "artifact-rev-1795053901899-3bab48b5"
+    }
+  },
+  "createdAt": "2026-11-19T02:05:01.899Z"
+}

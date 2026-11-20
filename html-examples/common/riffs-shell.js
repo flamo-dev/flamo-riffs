@@ -17,6 +17,7 @@ document.querySelector('[data-riffs-header]').innerHTML = `
 document.querySelector('[data-riffs-footer]').innerHTML = `
   <div class="riffs-wrap riffs-foot"><a class="riffs-brand" href="/" aria-label="Flamo Riffs home" data-zh-aria-label="Flamo 创意首页">${brand}</a>
     <span>Riffs <i>/</i> <span data-zh="创意实验集">Interactive experiments</span></span>
+    <a class="riffs-newsletter" href="https://flamo.dev/newsletter/?from=riffs/${location.pathname.startsWith('/pipe') ? 'pipe' : 'gallery'}" target="_blank" rel="noopener" data-zh="邮件订阅">Email updates</a>
     <small>Copyright (c) 2025-present <a href="mailto:support@flamo.dev">support@flamo.dev</a></small>
     <a href="https://flamo.dev/" data-zh="Flamo 官网 ↗">Flamo website ↗</a></div>`;
 

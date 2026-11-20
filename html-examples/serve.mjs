@@ -11,6 +11,7 @@ const port = Number(process.argv[2] || 8080);
 const offlinePages = new Map([
   [resolve(root, 'MasterWind'), 'MasterWind.html'],
   [resolve(root, 'dandelion'), 'Dandelion · meadow.html'],
+  [resolve(root, 'motion'), 'index.html'],
 ]);
 const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json','.wasm':'application/wasm','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.jpg':'image/jpeg','.mp4':'video/mp4','.woff2':'font/woff2' };
 createServer(async (req,res) => {

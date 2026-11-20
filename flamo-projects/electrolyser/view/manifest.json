@@ -1,0 +1,37 @@
+{
+  "id": "5928a6bf-fa75-4fa4-a98b-4a742804040f",
+  "name": "电解槽",
+  "assets": {
+    "images": [
+      {
+        "assetId": "45756c5ad9bd333b026c21ff36332df8f5844489f15f2f55c104511f6195b500",
+        "kind": "image",
+        "format": "jpeg",
+        "hash": "45756c5ad9bd333b026c21ff36332df8f5844489f15f2f55c104511f6195b500",
+        "hashAlgorithm": "sha256",
+        "adapterHashes": {
+          "figmaSha1": "4f9c3131dfccfa1ea2f543515f83a7ebda25044e"
+        },
+        "path": ".flamo/imports/assets/45756c5ad9bd333b026c21ff36332df8f5844489f15f2f55c104511f6195b500.jpg",
+        "mimeType": "image/jpeg",
+        "byteLength": 452223,
+        "naturalSize": {
+          "height": 990,
+          "width": 1760
+        },
+        "source": {
+          "kind": "project-file",
+          "projectRelativePath": "assets/electrolyser.jpg",
+          "fileName": "electrolyser.jpg"
+        }
+      }
+    ],
+    "videos": [],
+    "fonts": []
+  },
+  "artifactRevision": "artifact-rev-1795053901899-3bab48b5",
+  "entrypoints": {
+    "artifact": "view/data/artifact.flamo.json"
+  },
+  "updatedAt": "2026-11-19T02:05:01.899Z"
+}

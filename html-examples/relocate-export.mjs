@@ -13,6 +13,8 @@ export function relocateExport(path, text) {
   }
   if (!pipeEntry.test(path)) return text;
   if (path.endsWith('/cdn-config.js')) return "export { FLAMO_CDN_URLS } from '/common/cdn-config.js';\n";
-  return text.replaceAll('http://localhost:8080/common/', '/common/');
+  return text.replaceAll('http://localhost:8080/common/', '/common/')
+    .replace(/\/common\/flamo-runtime\/index\.es\.js\?v=[a-f0-9]+/g, runtimePath)
+    .replace(/\/common\/component-viewport\.js\?v=[a-f0-9]+/g, viewportPath);
 }
 

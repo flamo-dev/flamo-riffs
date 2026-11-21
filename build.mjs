@@ -33,11 +33,17 @@ await copy('dandelion/dandelion-preview.mp4');
 await copy('dandelion/dandelion-poster.jpg');
 await copy('motion/motion-preview.mp4');
 await copy('motion/motion-poster.jpg');
+await copy('electrolyser/electrolyser-preview.mp4');
+await copy('electrolyser/electrolyser-poster.jpg');
+await copy('counter/counter-preview.mp4');
+await copy('counter/counter-poster.jpg');
 // The offline exports embed binary data as Windows-1252 text. The web host serves HTML as UTF-8.
 for (const [file, destination] of [
   ['MasterWind/MasterWind.html', 'masterwind/index.html'],
   ['dandelion/Dandelion · meadow.html', 'dandelion/index.html'],
   ['motion/index.html', 'motion/index.html'],
+  ['electrolyser/index.html', 'electrolyser/index.html'],
+  ['counter/index.html', 'counter/index.html'],
 ]) {
   await writeFile(join(out, destination), hostOfflinePage(await readFile(join(source, file)), destination.split('/')[0]));
 }

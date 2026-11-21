@@ -4,12 +4,18 @@ const titles = {
   masterwind: '<title data-zh="Flamo · 风大侠 · 借风过峡">Flamo · MasterWind</title>',
   dandelion: '<title data-zh="蒲公英 · 草地">Dandelion · Meadow</title>',
   motion: '<title data-zh="Drop Shot · 文件投篮">Drop Shot · File Basketball</title>',
+  electrolyser: '<title data-zh="600 kA 电解槽">600 kA Electrolysis Cell</title>',
+  counter: '<title data-zh="Counter Drop · 四位老虎机">Counter Drop · Slot Machine</title>',
 };
+
+const counterCredit = '<footer class="counter-credit" data-zh="原版 Figma 动效设计由 Nastaran Jamali 创作。此作使用 Flamo 添加互动脚本，改编为四位老虎机。">Original animated Figma design by Nastaran Jamali. Adapted into a four-reel slot machine with Flamo interaction scripts.</footer>';
+const counterLayout = '<style>body{display:flex;flex-direction:column}body>main{flex:1;min-height:0;height:auto}.counter-credit{box-sizing:border-box;padding:8px 16px;text-align:center;background:#202022;color:#f4ede8;font:13px/1.45 system-ui,sans-serif}</style>';
 
 // Keep the original downloadable HTML self-contained. Its hosted copy shares the
 // site's runtime while the offline loader continues to unpack the artwork and interactions.
 export function hostOfflinePage(bytes, page) {
-  const html = new TextDecoder('windows-1252').decode(bytes);
+  let html = new TextDecoder('windows-1252').decode(bytes);
+  if (page === 'counter') html = html.replace('<body>', counterLayout + '<body>').replace('<main></main>', '<main></main>' + counterCredit);
   const configTag = /(<script type="application\/json" id="page-config">)([^<]+)(<\/script>)/;
   const match = html.match(configTag);
   const loaderHook = 'const imports = Object.create(null);';

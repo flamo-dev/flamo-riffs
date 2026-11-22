@@ -6,6 +6,7 @@ const titles = {
   motion: '<title data-zh="Drop Shot · 文件投篮">Drop Shot · File Basketball</title>',
   electrolyser: '<title data-zh="600 kA 电解槽">600 kA Electrolysis Cell</title>',
   counter: '<title data-zh="Counter Drop · 四位老虎机">Counter Drop · Slot Machine</title>',
+  'card-shuffle': '<title data-zh="Card Shuffle · 滑动卡片">Card Shuffle</title>',
 };
 
 const counterCredit = '<footer class="counter-credit" data-zh="原版 Figma 动效设计由 Nastaran Jamali 创作。此作使用 Flamo 添加互动脚本，改编为四位老虎机。">Original animated Figma design by Nastaran Jamali. Adapted into a four-reel slot machine with Flamo interaction scripts.</footer>';
@@ -16,6 +17,10 @@ const counterLayout = '<style>body{display:flex;flex-direction:column}body>main{
 export function hostOfflinePage(bytes, page) {
   let html = new TextDecoder('windows-1252').decode(bytes);
   if (page === 'counter') html = html.replace('<body>', counterLayout + '<body>').replace('<main></main>', '<main></main>' + counterCredit);
+  if (page === 'card-shuffle') {
+    const credit = '<footer class="artwork-credit" data-zh="原版 Figma 设计由 Alejandro Vasquez 创作。我用 Flamo 为卡片添加了左右滑动交互。">Original Figma design by Alejandro Vasquez. I used Flamo to make the cards swipeable.</footer>';
+    html = html.replace('<body>', counterLayout.replace('.counter-credit', '.artwork-credit') + '<body>').replace('<main></main>', '<main></main>' + credit);
+  }
   const configTag = /(<script type="application\/json" id="page-config">)([^<]+)(<\/script>)/;
   const match = html.match(configTag);
   const loaderHook = 'const imports = Object.create(null);';

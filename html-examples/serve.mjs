@@ -14,6 +14,7 @@ const offlinePages = new Map([
   [resolve(root, 'motion'), 'index.html'],
   [resolve(root, 'electrolyser'), 'index.html'],
   [resolve(root, 'counter'), 'index.html'],
+  [resolve(root, 'cardShuffle'), 'playable.html'],
 ]);
 const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json','.wasm':'application/wasm','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.jpg':'image/jpeg','.mp4':'video/mp4','.woff2':'font/woff2' };
 createServer(async (req,res) => {
@@ -25,7 +26,7 @@ createServer(async (req,res) => {
     if (!['GET','HEAD'].includes(req.method)) return res.writeHead(405).end();
     const url = new URL(req.url,'http://localhost');
     const path = decodeURIComponent(url.pathname);
-    const sourcePath = path.replace(/^\/masterwind(?=\/|$)/, '/MasterWind');
+    const sourcePath = path.replace(/^\/masterwind(?=\/|$)/, '/MasterWind').replace(/^\/card-shuffle(?=\/|$)/, '/cardShuffle');
     let target = resolve(root,'.'+(path === '/' ? '/home/index.html' : sourcePath));
     const rel = relative(root,target);
     if (rel.startsWith('..') || isAbsolute(rel)) return res.writeHead(403).end();
@@ -39,7 +40,8 @@ createServer(async (req,res) => {
     const hostedPage = offlinePage && path.endsWith('/');
     if (offlinePage && !hostedPage) headers['Content-Type'] = 'text/html; charset=windows-1252';
     if (hostedPage || isExportEntry(path)) {
-      const body = Buffer.from(hostedPage ? hostOfflinePage(await readFile(target), basename(dirname(target)).toLowerCase()) : relocateExport(path,await readFile(target,'utf8')));
+      const page = basename(dirname(target)) === 'cardShuffle' ? 'card-shuffle' : basename(dirname(target)).toLowerCase();
+      const body = Buffer.from(hostedPage ? hostOfflinePage(await readFile(target), page) : relocateExport(path,await readFile(target,'utf8')));
       return res.writeHead(200,{...headers,'Content-Length':body.length}).end(req.method==='HEAD'?undefined:body);
     }
     let start=0, end=info.size-1, status=200;

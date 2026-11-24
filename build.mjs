@@ -44,6 +44,8 @@ await copy('counter/counter-preview.mp4');
 await copy('counter/counter-poster.jpg');
 await copy('cardShuffle/card-shuffle-preview.mp4', 'card-shuffle/card-shuffle-preview.mp4');
 await copy('cardShuffle/card-shuffle-poster.jpg', 'card-shuffle/card-shuffle-poster.jpg');
+await copy('glassFolder/glass-folder-preview.mp4', 'glass-folder/glass-folder-preview.mp4');
+await copy('glassFolder/glass-folder-poster.jpg', 'glass-folder/glass-folder-poster.jpg');
 // The offline exports embed binary data as Windows-1252 text. The web host serves HTML as UTF-8.
 for (const [file, destination] of [
   ['MasterWind/MasterWind.html', 'masterwind/index.html'],
@@ -52,6 +54,7 @@ for (const [file, destination] of [
   ['electrolyser/index.html', 'electrolyser/index.html'],
   ['counter/index.html', 'counter/index.html'],
   ['cardShuffle/playable.html', 'card-shuffle/index.html'],
+  ['glassFolder/index.html', 'glass-folder/index.html'],
 ]) {
   await writeFile(join(out, destination), hostOfflinePage(await readFile(join(source, file)), destination.split('/')[0]));
 }

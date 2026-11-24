@@ -1,4 +1,12 @@
 {
+  "glass-folder": {
+    "title": "Glass Folder",
+    "usage": "鼠标移入时抬起照片，第一次点击展开，第二次点击让照片从当前姿态飞出，移出后复位。",
+    "api": ["ctx.onActivate"],
+    "source": "flamo-projects/glassFolder/src/glass-folder.ts",
+    "first": "ctx.onActivate(hit, () => {",
+    "last": "});"
+  },
   "card-shuffle": {
     "title": "Card Shuffle",
     "usage": "卡片拖动距离换算为原稿时间，sample 反查位移通道。draw 将得到的时间传入 motion.seek。",

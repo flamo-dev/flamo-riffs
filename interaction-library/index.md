@@ -17,6 +17,8 @@ Read this map first. Search with `rg`, then open only the selected capability or
 
 ## Base
 
+- [Motion folder](src/base/motion-folder.ts) — hover, expand, fly out and reset across two authored motion ranges. See the [recipe](recipes/motion-folder.md) and [Glass Folder demo](https://riffs.flamo.dev/glass-folder/).
+
 - [Character performance](src/base/character-performance.ts) and [stage camera](src/base/stage-camera.ts) — interruptible additive acting, contain sizing, pointer coordinates and authored parallax; [recipe](recipes/character-performance.md).
 
 - [`base/bind-number`](src/base/bind-number.ts) — numeric ratio dimensions and decimal text, using public Runtime layout observation and write preflight; preserves Auto Layout. See [recipe](recipes/number-binding.md).

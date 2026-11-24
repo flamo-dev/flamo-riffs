@@ -1,5 +1,7 @@
 # Recent Changes
 
+- 2026-11-24: Released `0.22.0` with [motion-folder@1.0.0](recipes/motion-folder.md), extracted from Glass Folder. Projects supply their own hit area, layers, motion ranges and flyout offsets.
+
 - 2026-09-29: Added 0.19.0 / hmi.pipe-flow@2.5.0 for GPU-instanced polygon particles. Requires Runtime shape batches; 1.0.0–2.4.0 snapshots remain immutable. Production release is separate.
 
 - 2026-09-29: Added 0.18.0 / hmi.pipe-flow@2.4.0 for runtime-only visibility; published 1.0.0–2.3.0 snapshots remain immutable.

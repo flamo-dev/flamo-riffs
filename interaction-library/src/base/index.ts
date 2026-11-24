@@ -6,3 +6,4 @@ export * from './use-cursor-blink';
 export * from './bind-number';
 export * from './stage-camera';
 export * from './character-performance';
+export * from './motion-folder';

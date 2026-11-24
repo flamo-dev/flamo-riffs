@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "package": "@flamo/interaction-library",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "registryPolicy": {
     "immutableVersions": true,
     "defaultAllowedTiers": ["official", "recommended"],
@@ -12,6 +12,26 @@
     "namespacePolicy": "Community interactions must publish under their own package scope. They may compete with official assets by kind and contract, but must not reuse an official package/name/version identity."
   },
   "assets": [
+    {
+      "id": "base/motion-folder",
+      "name": "@flamo/motion-folder",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "motion-gesture",
+      "summary": "Hover to lift items, activate to expand, activate again to fly out from the current pose, and leave to reset.",
+      "triggers": ["glass folder", "hover", "second click", "flyout", "玻璃文件夹", "悬停", "二次点击", "移出复位"],
+      "roles": ["frame", "hit", "items"],
+      "events": ["pointerenter", "pointerleave", "activate", "playback-state"],
+      "capabilities": ["motion-range", "motion-seek", "transform", "opacity", "visibility", "dispose"],
+      "contracts": ["rendered-pose-continuity", "repeatable-reset", "full-playback-handoff"],
+      "examples": ["glass-folder"],
+      "source": "src/base/motion-folder.ts",
+      "recipe": "recipes/motion-folder.md",
+      "packageRef": "@flamo/interaction-library/base"
+    },
     {
       "id": "hmi/path-flow-appearance",
       "name": "@flamo/hmi-pipe-flow",

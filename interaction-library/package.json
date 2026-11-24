@@ -1,0 +1,15 @@
+{
+  "name": "@flamo/riffs-base",
+  "version": "0.21.0",
+  "private": true,
+  "type": "module",
+  "description": "Public base interaction sources for Flamo projects",
+  "exports": {
+    ".": "./src/base/index.ts",
+    "./package.json": "./package.json",
+    "./base/*": "./src/base/*.ts"
+  },
+  "files": [
+    "src"
+  ]
+}

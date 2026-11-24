@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "hmi.pipe-flow",
+  "version": "2.2.0",
+  "requiredRoles": {
+    "root": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "transform"
+      ]
+    },
+    "flow": {
+      "required": true,
+      "cardinality": "one",
+      "capabilities": [
+        "visibility"
+      ]
+    }
+  },
+  "listens": [
+    "business-update",
+    "flamo:hmi-pipe-flow:set"
+  ],
+  "writes": [
+    "flow.stroke.dashOffset",
+    "motion.visible",
+    "motion:*.transform",
+    "motion:*.opacity",
+    "motion:*.fill",
+    "motion:*.visible"
+  ],
+  "state": [
+    "enabled",
+    "speed",
+    "acceleration",
+    "direction",
+    "offset",
+    "running"
+  ],
+  "invariants": [
+    "legacy dash mode delegates to the immutable v1 behavior",
+    "motion roles belong to the same instance",
+    "random samples remain attached to moving group identities",
+    "group spacing uses cumulative lengths without path modulo",
+    "zero acceleration preserves uniform motion",
+    "each emitted particle has independent age",
+    "positive acceleration runs even at zero launch speed",
+    "pool overflow rejects changes atomically",
+    "pause preserves phase; parameter changes reevaluate phase",
+    "dispose cancels RAF and host listeners",
+    "version 2 compact projection creates ephemeral particles only at runtime",
+    "dispose and failed setup remove every owned particle"
+  ],
+  "requiredEvidence": [
+    "role-binding-compatible",
+    "script-mounted",
+    "phase-delta",
+    "rendered-output",
+    "business-state-control"
+  ],
+  "requiredTraceActions": [
+    "pipe-flow.mounted",
+    "pipe-flow.state",
+    "pipe-flow.phase-sample"
+  ],
+  "visualEvidence": {
+    "required": true,
+    "targetRole": "motion",
+    "minimumChangedPixels": 1
+  },
+  "hostEvents": {
+    "command": "flamo:hmi-pipe-flow:set",
+    "state": "flamo:hmi-pipe-flow:state",
+    "target": "nodeId and/or instanceId"
+  }
+}

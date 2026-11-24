@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "web/single-line-text-editor",
+  "version": "0.9.0",
+  "requiredRoles": {
+    "body": { "required": true, "cardinality": "one", "capabilities": ["hit-test", "pointer-events", "transform"] },
+    "content": { "required": true, "cardinality": "one", "capabilities": ["text", "transform"] },
+    "cursor": { "required": true, "cardinality": "one", "capabilities": ["transform", "visibility"] }
+  },
+  "listens": ["pointerdown", "focus", "blur", "input", "keydown", "compositionstart", "compositionend"],
+  "writes": ["text", "transform.x", "size.width", "visible"],
+  "state": ["value", "caretIndex", "selectionStart", "selectionEnd", "focused", "composing", "scrollX", "cursorLit"],
+  "viewportPolicies": {
+    "preserve": "Do not modify scrollX.",
+    "reveal-caret": "Modify scrollX only when caretX is outside the visible interval.",
+    "reset-start": "Set scrollX to zero."
+  },
+  "transitions": [
+    { "event": "pointerdown-inside", "policy": "preserve", "effect": "place caret using content-local coordinates and refocus before the pending DOM blur is accepted as semantic blur" },
+    { "event": "drag-select", "policy": "reveal-caret", "effect": "sync selectionStart and selectionEnd while revealing the active selection edge" },
+    { "event": "doubleclick-select-all", "policy": "reveal-caret", "effect": "selectionStart = 0 and selectionEnd = value.length" },
+    { "event": "input", "policy": "reveal-caret", "effect": "sync value and selection" },
+    { "event": "arrow-left", "policy": "reveal-caret", "effect": "collapse to selectionStart or move caretIndex - 1" },
+    { "event": "arrow-right", "policy": "reveal-caret", "effect": "collapse to selectionEnd or move caretIndex + 1" },
+    { "event": "home", "policy": "reveal-caret", "effect": "caretIndex = 0" },
+    { "event": "end", "policy": "reveal-caret", "effect": "caretIndex = value.length" },
+    { "event": "focus", "policy": "preserve", "effect": "start cursor blink" },
+    { "event": "blink", "policy": "preserve", "effect": "toggle cursor visibility" },
+    { "event": "external-blur", "policy": "reset-start", "effect": "stop cursor blink" }
+  ],
+  "invariants": [
+    "pointer placement never changes scrollX",
+    "focus and cursor blink never change scrollX",
+    "keyboard movement and input change scrollX only when needed to reveal the caret",
+    "active selection hides the blinking caret until the selection collapses",
+    "selection highlight geometry follows selectionLeftX and selectionWidth after viewport scroll is applied",
+    "textWidth equals the measured natural width of the current value",
+    "contentWidth is at least ceil(textWidth) + 1 so the runtime Canvas text texture is not compressed into a smaller TEXT node box",
+    "visible text geometry uses contentWidth and is not compressed to the viewport width or the bare natural text width",
+    "caret remains within visibleLeft and visibleRight after reveal-caret",
+    "external blur resets scrollX to zero",
+    "native DOM blur is confirmed asynchronously so an internal pointer refocus can cancel it before external-blur behavior runs",
+    "an internal pointer refocus does not execute external-blur behavior",
+    "pointerdown binds directly to the declared hit-area role and does not depend on instance-clone bubbling",
+    "the authoring target alias and hit-test entity share one canonical event route",
+    "the canonical hit-test entity is registered with the canvas adapter for its instance surface",
+    "content-local pointer conversion remains available when an empty text node has zero width"
+  ],
+  "requiredEvidence": ["typecheck", "verify", "canonical-event-route", "real-canvas-pointer", "native-input-focus", "rendered-output", "interaction-trace"],
+  "requiredTraceActions": [
+    "event.pointerdown",
+    "single-line-editor.pointer-place",
+    "single-line-editor.selection",
+    "single-line-editor.select-all",
+    "single-line-editor.focus",
+    "single-line-editor.render"
+  ],
+  "forbiddenAcceptanceShortcuts": [
+    "directly focusing the hidden DOM input instead of clicking the canvas component",
+    "setting input.value and dispatching input without pointer-entry evidence"
+  ]
+}

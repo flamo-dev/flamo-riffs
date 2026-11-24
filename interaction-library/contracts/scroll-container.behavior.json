@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "scroll.container",
+  "version": "1.0.0",
+  "requiredRoles": {
+    "viewport": { "required": true, "cardinality": "one", "capabilities": ["clip", "hit-test", "pointer-events"] },
+    "content": { "required": true, "cardinality": "one", "capabilities": ["transform"] },
+    "horizontalBar": { "required": false, "cardinality": "zero-or-one", "capabilities": ["hit-test", "transform", "opacity"] },
+    "verticalBar": { "required": false, "cardinality": "zero-or-one", "capabilities": ["hit-test", "transform", "opacity"] }
+  },
+  "listens": ["pointerover", "pointerout", "pointerdown", "pointermove", "pointerup", "pointercancel", "lostpointercapture", "wheel", "keydown", "focus", "blur"],
+  "writes": ["transform.position", "opacity", "interactive.hitTestWhenTransparent"],
+  "state": ["idle", "hover", "focused", "dragging-x", "dragging-y", "dragging-content", "momentum", "bounce"],
+  "transitions": [
+    { "event": "pointerover", "from": ["idle"], "to": "hover" },
+    { "event": "pointerdown-thumb-x", "from": ["idle", "hover", "focused"], "to": "dragging-x" },
+    { "event": "pointerdown-thumb-y", "from": ["idle", "hover", "focused"], "to": "dragging-y" },
+    { "event": "pointerdown-content", "from": ["idle", "hover", "focused"], "to": "dragging-content" },
+    { "event": "pointerup", "from": ["dragging-x", "dragging-y"], "to": "hover" },
+    { "event": "pointerup", "from": ["dragging-content"], "to": "momentum" },
+    { "event": "pointercancel", "from": ["dragging-x", "dragging-y"], "to": "idle" },
+    { "event": "pointercancel", "from": ["dragging-content"], "to": "idle" },
+    { "event": "lostpointercapture", "from": ["dragging-x", "dragging-y", "dragging-content"], "to": "idle" }
+  ],
+  "invariants": [
+    "semantic roles are resolved to live physical entities by Runtime",
+    "active drag uses frozen axis geometry and constant-time pointer math",
+    "continuous updates commit at most once per scheduled frame",
+    "pointerup pointercancel and lostpointercapture always close the drag transaction",
+    "hover focus drag and momentum show bars immediately while idle exit uses the configured hide delay",
+    "touch and pen content drags use bounded overscroll momentum and spring settling",
+    "reduced motion settles content at the clamped offset without scheduling momentum frames",
+    "transparent gutters remain hittable through hitTestWhenTransparent",
+    "keyboard scrolling requires a focused scroll viewport",
+    "each enabled axis exposes scrollbar role orientation min max current value and focus order through the host accessibility adapter"
+  ],
+  "requiredEvidence": ["role-binding-compatible", "script-mounted", "all-listeners-routed", "pointer-trace", "keyboard-trace", "visual-state-delta"],
+  "requiredTraceActions": ["event.pointerdown", "scroll.thumb-drag.start", "scroll.thumb-drag.end", "scroll.content-drag.start", "scroll.content-drag.end"],
+  "visualEvidence": { "required": true, "targetRole": "content", "minimumChangedPixels": 1 }
+}

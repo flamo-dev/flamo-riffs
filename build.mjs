@@ -1,11 +1,16 @@
 // Emit only the static files used by the gallery, never the project sources or verification data.
-import { cp, mkdir, readFile, writeFile, readdir } from 'node:fs/promises';
+import { cp, mkdir, readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relocateExport } from './html-examples/relocate-export.mjs';
 import { hostOfflinePage } from './html-examples/host-offline-page.mjs';
+import { buildInteractionExamples, verifyPublishedSources } from './interaction-examples.mjs';
 const source = fileURLToPath(new URL('./html-examples/',import.meta.url));
 const out = process.env.RIFFS_BUILD_DIR ? resolve(process.env.RIFFS_BUILD_DIR) : fileURLToPath(new URL('./dist/',import.meta.url));
+const root = dirname(resolve(source));
+if (process.argv.includes('--release') && !process.env.RIFFS_RELEASE_COMMIT) throw Error('Set RIFFS_RELEASE_COMMIT to the published GitHub commit');
+const catalog = await buildInteractionExamples(root,process.env.RIFFS_RELEASE_COMMIT);
+if (process.env.RIFFS_RELEASE_COMMIT) await verifyPublishedSources(root,catalog);
 async function copy(path, dest = path) {
   await mkdir(dirname(join(out,dest)),{recursive:true});
   await cp(join(source,path),join(out,dest),{recursive:true});
@@ -80,5 +85,11 @@ for (const id of ['1','2','3','4','group']) {
     } else await copy(name);
   }
 }
+await mkdir(join(out,'interaction-library'),{recursive:true});
+for (const {id} of catalog.examples) {
+  const page = await stat(join(out,id,'index.html')).catch(()=>null);
+  if (!page?.isFile() || !page.size) throw Error('Missing staged gallery page: '+id);
+}
+await writeFile(join(out,'interaction-library/cases.json'),JSON.stringify(catalog,null,2)+'\n');
 console.log('Built Flamo Riffs: '+out);
 

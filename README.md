@@ -4,6 +4,10 @@
 
 这里收录了用 Flamo 制作的交互演示。首页可以搜索作品、观看视频预览，点击卡片就能动手体验。在第一个作品[管道实验室](https://riffs.flamo.dev/pipe/)里，你可以逐条暂停管道、反转流向，也可以用一组按钮同时控制整个管网。
 
+## 官方交互示例
+
+按手势、组件方法或 Runtime API 在 [案例索引](interaction-examples.json) 查找作品。`source` 指向实际脚本，`first` 和 `last` 标记相关调用。可在 [线上目录](https://riffs.flamo.dev/interaction-library/cases.json) 直接打开对应源码行。[Glass Folder](interaction-examples/glass-folder.ts) 是基于原稿运动区间的完整手势参考，覆盖移入、快速反向、两次激活和播放交接。
+
 ## 关于 Flamo
 
 Flamo 是一款交互界面创作工具。你可以导入 Figma 设计，保留图层和组件结构，用 TypeScript 或 JavaScript 为图形添加行为、接入数据，再到 Flamo Studio 中预览和调试。完成的设计可以导出为 Web Component，嵌入自己的网页或业务系统。管道实验室里的五个管道组件就是这样接入页面的。

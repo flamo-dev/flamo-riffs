@@ -1,0 +1,121 @@
+{
+  "card-shuffle": {
+    "title": "Card Shuffle",
+    "usage": "卡片拖动距离换算为原稿时间，sample 反查位移通道。draw 将得到的时间传入 motion.seek。",
+    "api": [
+      "ctx.figmaMotionTracks",
+      "track.sample",
+      "ctx.figmaMotion.seek"
+    ],
+    "source": "flamo-projects/cardShuffle/src/card-shuffle.ts",
+    "first": "const track = travel[g.index]!;",
+    "last": "void draw(g,(lo+hi)/2,g.dx,g.dy);"
+  },
+  "counter": {
+    "title": "Counter Drop",
+    "usage": "拖动拉杆，按 pointerId 跟踪当前指针。拉动超过阈值只触发一次。",
+    "api": [
+      "PointerEvent",
+      "setPointerCapture",
+      "pointermove"
+    ],
+    "source": "flamo-projects/counter/src/counter-drop.ts",
+    "first": "function onMove(e:PointerEvent) {",
+    "last": "if (!triggered && pull >= .62) { triggered=true;startSpin(clock()); }"
+  },
+  "electrolyser": {
+    "title": "Electrolyser",
+    "usage": "用节点事件和 eventPoint 区分单指旋转、双指缩放与平移。",
+    "api": [
+      "ctx.on",
+      "ctx.eventPoint",
+      "pointermove"
+    ],
+    "source": "flamo-projects/electrolyser/src/nodes/electrolyser/script.ts",
+    "first": "ctx.on('pointerdown',e=>{const p=ctx.eventPoint(e);if(!p)return;drag.set(e.pointer.pointerId,p);moved=false;e.preventDefault();});",
+    "last": "drag.set(e.pointer.pointerId,p);changed=true;e.preventDefault();"
+  },
+  "motion": {
+    "title": "Drop Shot",
+    "usage": "把浏览器指针转换为画板局部瞄准位置，保留相机缩放和画板变换。",
+    "api": [
+      "ctx.camera.screenToWorld",
+      "ctx.probe",
+      "worldTransform"
+    ],
+    "source": "flamo-projects/motion/src/drop-shot.ts",
+    "first": "function readPoint(e: PointerEvent): Point {",
+    "last": "y: (y * board.m00 - x * board.m10) / det };"
+  },
+  "shumei": {
+    "title": "Coal Handling Monitor",
+    "usage": "宿主按批次给组件写点值，再同步插槽状态。drawing 避免重复进入。",
+    "api": [
+      "applyPointValues",
+      "flamo-ready",
+      "slots"
+    ],
+    "source": "html-examples/shumei/demo.js",
+    "first": "async function render() {",
+    "last": "drawing = false;"
+  },
+  "jianpan": {
+    "title": "Power Plant Monitor",
+    "usage": "组件就绪后写入导出属性，刷新插槽样式，兼容先就绪后绑定监听的情况。",
+    "api": [
+      "flamo-ready",
+      "slotStyles",
+      "Web Component"
+    ],
+    "source": "html-examples/jianpan/demo.js",
+    "first": "if (diagram.dataset.flamoState === 'ready') {",
+    "last": "if (diagram.dataset.flamoState === 'ready') prepareBoiler();"
+  },
+  "dandelion": {
+    "title": "Dandelion",
+    "usage": "释放指针时区分拖动旋转和单击吹散，取消和丢失捕获会清理拖动。",
+    "api": [
+      "pointerup",
+      "pointercancel",
+      "lostpointercapture"
+    ],
+    "source": "flamo-projects/3d/src/dandelion/controls.ts",
+    "first": "meadow.onpointerup = event => {",
+    "last": "meadow.onlostpointercapture = cancel;"
+  },
+  "masterwind": {
+    "title": "MasterWind",
+    "usage": "每次更新按固定步长推进风场和角色，并绘制当前姿态。",
+    "api": [
+      "ctx.onUpdate",
+      "fixed timestep"
+    ],
+    "source": "flamo-projects/MasterWind/src/level.ts",
+    "first": "ctx.onUpdate(dt=>{",
+    "last": "drawHills(s,elapsed,air.across,air.up);drawHero(s,elapsed);paint(s,elapsed);hud();sound.update(s,air,elapsed);"
+  },
+  "saltline": {
+    "title": "Saltline",
+    "usage": "逐帧同步视角，首帧呈现后才开放输入并隐藏占位图。",
+    "api": [
+      "ctx.onUpdate",
+      "ctx.role",
+      "setVisible"
+    ],
+    "source": "flamo-projects/Saltline/src/harbor/script.ts",
+    "first": "ctx.onUpdate(delta=>{",
+    "last": "if(performance.now()-lastReport>250){report();lastReport=performance.now();}"
+  },
+  "pipe": {
+    "title": "Pipe Lab",
+    "usage": "切换导出管道的流向时保留各管道的启停状态。",
+    "api": [
+      "handle.call",
+      "setFlowState",
+      "stopFlow"
+    ],
+    "source": "html-examples/pipe/demo.js",
+    "first": "const next = before.every(state => state.direction === 'forward') ? 'reverse' : 'forward';",
+    "last": "if (readStates().some((state, index) => state.direction !== next || state.running !== before[index].running)) {"
+  }
+}

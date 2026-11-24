@@ -31,18 +31,6 @@
     "first": "function onMove(e:PointerEvent) {",
     "last": "if (!triggered && pull >= .62) { triggered=true;startSpin(clock()); }"
   },
-  "electrolyser": {
-    "title": "Electrolyser",
-    "usage": "用节点事件和 eventPoint 区分单指旋转、双指缩放与平移。",
-    "api": [
-      "ctx.on",
-      "ctx.eventPoint",
-      "pointermove"
-    ],
-    "source": "flamo-projects/electrolyser/src/nodes/electrolyser/script.ts",
-    "first": "ctx.on('pointerdown',e=>{const p=ctx.eventPoint(e);if(!p)return;drag.set(e.pointer.pointerId,p);moved=false;e.preventDefault();});",
-    "last": "drag.set(e.pointer.pointerId,p);changed=true;e.preventDefault();"
-  },
   "motion": {
     "title": "Drop Shot",
     "usage": "把浏览器指针转换为画板局部瞄准位置，保留相机缩放和画板变换。",
@@ -54,30 +42,6 @@
     "source": "flamo-projects/motion/src/drop-shot.ts",
     "first": "function readPoint(e: PointerEvent): Point {",
     "last": "y: (y * board.m00 - x * board.m10) / det };"
-  },
-  "shumei": {
-    "title": "Coal Handling Monitor",
-    "usage": "宿主按批次给组件写点值，再同步插槽状态。drawing 避免重复进入。",
-    "api": [
-      "applyPointValues",
-      "flamo-ready",
-      "slots"
-    ],
-    "source": "html-examples/shumei/demo.js",
-    "first": "async function render() {",
-    "last": "drawing = false;"
-  },
-  "jianpan": {
-    "title": "Power Plant Monitor",
-    "usage": "组件就绪后写入导出属性，刷新插槽样式，兼容先就绪后绑定监听的情况。",
-    "api": [
-      "flamo-ready",
-      "slotStyles",
-      "Web Component"
-    ],
-    "source": "html-examples/jianpan/demo.js",
-    "first": "if (diagram.dataset.flamoState === 'ready') {",
-    "last": "if (diagram.dataset.flamoState === 'ready') prepareBoiler();"
   },
   "dandelion": {
     "title": "Dandelion",

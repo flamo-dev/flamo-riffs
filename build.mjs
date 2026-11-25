@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { relocateExport } from './html-examples/relocate-export.mjs';
 import { hostOfflinePage } from './html-examples/host-offline-page.mjs';
 import { buildInteractionExamples, verifyPublishedSources } from './interaction-examples.mjs';
+import { addCoCreateEntry } from './html-examples/co-create-entry.mjs';
 const source = fileURLToPath(new URL('./html-examples/',import.meta.url));
 const out = process.env.RIFFS_BUILD_DIR ? resolve(process.env.RIFFS_BUILD_DIR) : fileURLToPath(new URL('./dist/',import.meta.url));
 const root = dirname(resolve(source));
@@ -89,10 +90,18 @@ for (const id of ['1','2','3','4','group']) {
   }
 }
 await mkdir(join(out,'interaction-library'),{recursive:true});
-for (const {id} of catalog.examples) {
+const hostedWorks = new Map(catalog.examples.map(({id,title})=>[id,title]));
+// Archived industrial works still have public detail URLs outside the gallery.
+for (const [id,title] of [['shumei','Coal Handling Monitor'],['jianpan','Power Plant Monitor'],['electrolyser','600 kA Electrolysis Cell']])
+  if (!hostedWorks.has(id)) hostedWorks.set(id,title);
+for (const [id,title] of hostedWorks) {
   const page = await stat(join(out,id,'index.html')).catch(()=>null);
   if (!page?.isFile() || !page.size) throw Error('Missing staged gallery page: '+id);
+  const path = join(out,id,'index.html');
+  await writeFile(path,addCoCreateEntry(await readFile(path,'utf8'),id,title));
 }
+for (const path of [join(out,'index.html'),join(out,'home/index.html')])
+  await writeFile(path,addCoCreateEntry(await readFile(path,'utf8')));
 await writeFile(join(out,'interaction-library/cases.json'),JSON.stringify(catalog,null,2)+'\n');
 console.log('Built Flamo Riffs: '+out);
 

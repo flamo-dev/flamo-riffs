@@ -1,2 +1,3 @@
 # Preserve the offline page's embedded binary payload and original line endings.
 html-examples/glassFolder/index.html binary
+html-examples/electroWave/index.html binary

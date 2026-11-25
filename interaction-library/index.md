@@ -17,6 +17,8 @@ Read this map first. Search with `rg`, then open only the selected capability or
 
 ## Base
 
+- [Pointer rail follower](src/base/pointer-rail-follower.ts) slides a fixed-length highlight to the nearest point on each track. [Electro Wave recipe](recipes/pointer-rail-follower.md).
+
 - [Motion folder](src/base/motion-folder.ts) — hover, expand, fly out and reset across two authored motion ranges. See the [recipe](recipes/motion-folder.md) and [Glass Folder demo](https://riffs.flamo.dev/glass-folder/).
 
 - [Character performance](src/base/character-performance.ts) and [stage camera](src/base/stage-camera.ts) — interruptible additive acting, contain sizing, pointer coordinates and authored parallax; [recipe](recipes/character-performance.md).

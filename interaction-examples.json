@@ -1,4 +1,12 @@
 {
+  "electro-wave": {
+    "title": "Electro Wave",
+    "usage": "八条光段沿各自的弯轨趋近鼠标，指针接手时继承原稿播放进度，移出后向标志聚拢。",
+    "api": ["ctx.figmaMotion.getState", "ctx.figmaMotion.pause", "ctx.mounted.probe", "pointermove", "ctx.onUpdate"],
+    "source": "flamo-projects/electroWave/src/pointer-wave.ts",
+    "first": "function follow(point: Point) {",
+    "last": "unsettled = true;"
+  },
   "glass-folder": {
     "title": "Glass Folder",
     "usage": "鼠标移入时抬起照片，第一次点击展开，第二次点击让照片从当前姿态飞出，移出后复位。",

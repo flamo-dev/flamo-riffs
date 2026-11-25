@@ -1,6 +1,7 @@
 import { runtimePath, viewportPath } from './common/cdn-config.js';
 
 const titles = {
+  'electro-wave': '<title data-zh="Electro Wave · 电光轨道">Electro Wave</title>',
   masterwind: '<title data-zh="Flamo · 风大侠 · 借风过峡">Flamo · MasterWind</title>',
   dandelion: '<title data-zh="蒲公英 · 草地">Dandelion · Meadow</title>',
   motion: '<title data-zh="Drop Shot · 文件投篮">Drop Shot · File Basketball</title>',

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "package": "@flamo/interaction-library",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "registryPolicy": {
     "immutableVersions": true,
     "defaultAllowedTiers": ["official", "recommended"],
@@ -12,6 +12,26 @@
     "namespacePolicy": "Community interactions must publish under their own package scope. They may compete with official assets by kind and contract, but must not reuse an official package/name/version identity."
   },
   "assets": [
+    {
+      "id": "base/pointer-rail-follower",
+      "name": "@flamo/pointer-rail-follower",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "motion-gesture",
+      "summary": "Slide fixed-length highlights along independently transformed rails towards the pointer and ease them home on leave.",
+      "triggers": ["pointer tracking", "nearest point", "鼠标跟随", "沿轨聚拢"],
+      "roles": ["frame", "rails"],
+      "events": ["pointermove", "pointerleave", "playback-state"],
+      "capabilities": ["world-space-projection", "arc-length", "external-clock", "playback-handoff"],
+      "contracts": ["fixed-rail-geometry", "constant-highlight-span", "instance-local"],
+      "examples": ["electro-wave"],
+      "source": "src/base/pointer-rail-follower.ts",
+      "recipe": "recipes/pointer-rail-follower.md",
+      "packageRef": "@flamo/interaction-library/base"
+    },
     {
       "id": "base/motion-folder",
       "name": "@flamo/motion-folder",

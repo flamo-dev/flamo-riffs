@@ -1,5 +1,7 @@
 # Recent Changes
 
+- 2026-11-26: Released `0.23.0` with [pointer-rail-follower@1.0.0](recipes/pointer-rail-follower.md), extracted from Electro Wave.
+
 - 2026-11-24: Released `0.22.0` with [motion-folder@1.0.0](recipes/motion-folder.md), extracted from Glass Folder. Projects supply their own hit area, layers, motion ranges and flyout offsets.
 
 - 2026-09-29: Added 0.19.0 / hmi.pipe-flow@2.5.0 for GPU-instanced polygon particles. Requires Runtime shape batches; 1.0.0–2.4.0 snapshots remain immutable. Production release is separate.

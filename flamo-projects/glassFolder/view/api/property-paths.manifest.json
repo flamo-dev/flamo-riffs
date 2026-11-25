@@ -1,0 +1,58 @@
+{
+  "version": "semantic-v1",
+  "readablePaths": [
+    "NodeCpt.name", "NodeCpt.type", "NodeCpt.visible", "NodeCpt.locked", "NodeCpt.opacity", "NodeCpt.blendMode",
+    "TransformCpt.size", "TransformCpt.transform", "TransformCpt.worldTransform",
+    "LayoutCpt.stackMode", "LayoutCpt.stackSpacing", "LayoutCpt.stackCounterSpacing", "LayoutCpt.stackHorizontalPadding", "LayoutCpt.stackVerticalPadding", "LayoutCpt.stackPaddingRight", "LayoutCpt.stackPaddingBottom", "LayoutCpt.stackPrimaryAlignItems", "LayoutCpt.stackCounterAlignItems", "LayoutCpt.stackPrimarySizing", "LayoutCpt.stackCounterSizing", "LayoutCpt.stackWrap",
+    "AlignCpt.stackPositioning", "AlignCpt.horizontalConstraint", "AlignCpt.verticalConstraint", "AlignCpt.stackChildPrimaryGrow", "AlignCpt.stackChildAlignSelf",
+    "FillStyleCpt.fillPaints", "FillStyleCpt.effects", "StrokeStyleCpt.strokePaints", "StrokeStyleCpt.strokeWeight", "StrokeStyleCpt.strokeAlign", "StrokeStyleCpt.strokeJoin", "StrokeStyleCpt.strokeCap", "StrokeStyleCpt.strokeDashArray", "StrokeStyleCpt.strokeDashOffset",
+    "CornerCpt.cornerRadius", "CornerCpt.rectangleTopLeftCornerRadius", "CornerCpt.rectangleTopRightCornerRadius", "CornerCpt.rectangleBottomLeftCornerRadius", "CornerCpt.rectangleBottomRightCornerRadius",
+    "TextCpt.textData", "TextCpt.fontSize", "TextCpt.fontName.family", "TextCpt.fontName.style", "TextCpt.lineHeight", "TextCpt.letterSpacing", "TextCpt.textAlignHorizontal", "TextCpt.textAlignVertical", "TextCpt.textDecoration", "TextCpt.textAutoResize",
+    "InteractiveCpt.enabled", "InteractiveCpt.cursor", "InteractiveCpt.zIndex", "HtmlSurfaceCpt.surface", "HtmlSurfaceCpt.backend", "HtmlSurfaceCpt.eventMode"
+  ],
+  "writablePaths": [
+    "NodeCpt.visible", "NodeCpt.opacity", "NodeCpt.blendMode",
+    "TransformCpt.size", "TransformCpt.transform.m02", "TransformCpt.transform.m12", "TransformCpt.transform.m00", "TransformCpt.transform.m11", "TransformCpt.rotation",
+    "LayoutCpt.stackMode", "LayoutCpt.stackSpacing", "LayoutCpt.stackCounterSpacing", "LayoutCpt.stackHorizontalPadding", "LayoutCpt.stackVerticalPadding", "LayoutCpt.stackPaddingRight", "LayoutCpt.stackPaddingBottom", "LayoutCpt.stackPrimaryAlignItems", "LayoutCpt.stackCounterAlignItems", "LayoutCpt.stackPrimarySizing", "LayoutCpt.stackCounterSizing", "LayoutCpt.stackWrap",
+    "AlignCpt.stackPositioning", "AlignCpt.horizontalConstraint", "AlignCpt.verticalConstraint", "AlignCpt.stackChildPrimaryGrow", "AlignCpt.stackChildAlignSelf",
+    "FillStyleCpt.fillPaints", "StrokeStyleCpt.strokePaints", "StrokeStyleCpt.strokeWeight", "StrokeStyleCpt.strokeDashArray", "StrokeStyleCpt.strokeDashOffset",
+    "CornerCpt.cornerRadius", "CornerCpt.rectangleTopLeftCornerRadius", "CornerCpt.rectangleTopRightCornerRadius", "CornerCpt.rectangleBottomLeftCornerRadius", "CornerCpt.rectangleBottomRightCornerRadius",
+    "TextCpt.textData", "TextCpt.fontSize", "TextCpt.fontName", "TextCpt.lineHeight", "TextCpt.letterSpacing", "TextCpt.textAlignHorizontal", "TextCpt.textAlignVertical", "TextCpt.textDecoration",
+    "InteractiveCpt.enabled", "InteractiveCpt.cursor", "InteractiveCpt.zIndex"
+  ],
+  "semanticApis": ["design", "current", "measureText", "setSize", "setBlendMode", "setFill", "setFillColor", "setFillOpacity", "setStroke", "setStrokeColor", "setStrokeWidth", "setCorners", "setLayout", "setConstraints", "setText", "setTextStyle", "setMedia", "setInteractive", "setCursor"],
+  "validPropertyPaths": [
+    "NodeCpt.opacity",
+    "TransformCpt.size.x",
+    "TransformCpt.size.y",
+    "TransformCpt.transform.m02",
+    "TransformCpt.transform.m12",
+    "TransformCpt.rotation",
+    "TransformCpt.transform.m00",
+    "TransformCpt.transform.m11",
+    "NodeCpt.visible",
+    "CornerCpt.cornerRadius",
+    "StrokeStyleCpt.strokeDashOffset"
+  ],
+  "handleAnimateAliases": [
+    "x",
+    "y",
+    "width",
+    "height",
+    "scaleX",
+    "scaleY",
+    "rotation",
+    "NodeCpt.opacity",
+    "strokeDashOffset"
+  ],
+  "ambiguousBareProperties": [
+    {
+      "property": "opacity",
+      "rule": "Use 'NodeCpt.opacity' in EntityHandle/proxy writes; MotionSpec channel 'opacity' is allowed."
+    },
+    {
+      "property": "scale",
+      "rule": "Use scaleX/scaleY, handle.setScale(), handle.animateScale(), or MotionSpec scaleX/scaleY for visual scaling. Use width/height only when you mean semantic size; never animate or set bare scale."
+    }
+  ]
+}

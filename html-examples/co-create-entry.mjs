@@ -12,11 +12,8 @@ export function addCoCreateEntry(html, id, title) {
   html = html.replace('</title>', '</title>' + assets);
   if (!id) return html.replace('https://flamo.dev/co-create/panel.html', origin + '/co-create/panel.html');
   const query = new URLSearchParams({ from: 'work', work: id, title }).toString().replaceAll('&', '&amp;');
-  const fixed = html.includes('riffs-newsletter artwork-newsletter');
   const link =
-    '<a class="flamo-co-trigger' +
-    (fixed ? ' co-over-art' : '') +
-    '" data-co-create="work" data-zh="用我的设计试试" href="' +
+    '<a class="flamo-co-trigger" data-co-create="work" data-zh="用我的设计试试" href="' +
     origin +
     '/co-create/panel.html?' +
     query +

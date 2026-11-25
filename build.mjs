@@ -20,6 +20,7 @@ for (const path of ['home','common/riffs-shell.js','common/product-language.js',
 await copy('home/index.html','index.html');
 await copy('favicon.ico');
 await copy('common/demo-screen.js');
+await copy('common/work-toolbar.css');
 await copy('common/cdn-config.js');
 for (const [page, component, hostFiles] of [
   ['shumei', 'flamo-coal-system', ['coal-slots.js', 'robot-template.js']],

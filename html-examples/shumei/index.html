@@ -50,16 +50,6 @@
     box-shadow: inset 0 0 18px rgba(0, 100, 180, 0.18), 0 1px 0 rgba(0, 180, 255, 0.32);
     position: relative;
   }
-  .brand { display: flex; align-items: center; gap: 12px;  }
-  .home-btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 48px; height: 48px; padding: 0;  flex-shrink: 0;
-    color: #b9d8f0; background: transparent; border: none; border-radius: 8px; cursor: pointer;
-    transition: all 0.25s ease;
-  }
-  .home-btn:hover { color: #fff; background: rgba(0, 180, 255, 0.12); }
-  .home-btn:active { transform: translateY(1px); }
-  .home-btn .home-icon { display: block; }
   .brand-text { display: flex; align-items: center; justify-content: center; min-width: 0; grid-column: 2; }
   .brand-text h1 {
     font-family: 'Orbitron', 'Microsoft YaHei', sans-serif;
@@ -94,27 +84,25 @@
 <script type="module" src="./flamo-coal-system-web-component/dist/flamo-coal-system.loader.js"></script>
 
   <link rel="stylesheet" href="/common/language-picker.css?v=2">
+  <link rel="stylesheet" href="/common/work-toolbar.css">
   <script type="module" src="/common/riffs-language.js"></script>
 </head>
-<body>
+<body class="work-page" style="--toolbar-background:#061f3a;--toolbar-color:#b8d4ee">
+  <header class="work-toolbar">
+    <nav aria-label="Project navigation" data-zh-aria-label="作品导航">
+      <a href="/" data-zh="← Flamo 创意集">← Flamo Riffs</a>
+      <a href="https://flamo.dev/" data-zh="Flamo 官网 ↗">Flamo website ↗</a>
+    </nav>
+    <div class="work-actions"><a class="riffs-newsletter" href="https://flamo.dev/newsletter/?from=riffs/shumei" target="_blank" rel="noopener" data-zh="邮件订阅">Email updates</a><riffs-language-picker></riffs-language-picker></div>
+  </header>
+  <div class="cockpit-viewport">
 <div class="cockpit">
 
   <header class="top-bar">
-    <div class="brand">
-
-      <a class="home-btn" href="../" title="Back to gallery" aria-label="Back to gallery" data-zh-title="返回作品列表" data-zh-aria-label="返回作品列表">
-        <svg class="home-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 12l9-9 9 9"/>
-          <path d="M5 10v10a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1V10"/>
-        </svg>
-      </a>
-    </div>
     <div class="brand-text">
       <h1 data-zh="输煤监测中心 · 模拟演示">Coal Handling Monitor · Simulation</h1>
     </div>
     <div class="clock-wrap">
-      <a class="riffs-newsletter" href="https://flamo.dev/newsletter/?from=riffs/shumei" target="_blank" rel="noopener" data-zh="邮件订阅">Email updates</a>
-        <riffs-language-picker></riffs-language-picker>
       <div class="clock">
         <div class="time" id="clockTime">--:--:--</div>
         <div class="date" id="clockDate">--</div>
@@ -623,6 +611,7 @@
       <button type="button" hidden data-zh="刷新重试">Reload</button>
     </div>
   </main>
+</div>
 </div>
 
 <script type="module" src="./demo.js"></script>

@@ -46,7 +46,14 @@ export function hostOfflinePage(bytes, page) {
   return html.replace('<meta charset="windows-1252">', '<meta charset="utf-8">')
     .replace('<html lang="zh-CN">', '<html lang="en">')
     .replace(/<title>[^<]*<\/title>/, titles[page])
-    .replace('<body>', `<link rel="stylesheet" href="/common/language-picker.css?v=2"><script type="module" src="/common/riffs-language.js"></script><body><a class="riffs-newsletter artwork-newsletter" href="https://flamo.dev/newsletter/?from=riffs/${page}" target="_blank" rel="noopener" data-zh="邮件订阅">Email updates</a><riffs-language-picker class="artwork-language"></riffs-language-picker>`)
+    .replace('<body>', `<link rel="stylesheet" href="/common/language-picker.css?v=2"><link rel="stylesheet" href="/common/work-toolbar.css"><script type="module" src="/common/riffs-language.js"></script>
+<body class="work-page"><header class="work-toolbar">
+  <nav aria-label="Project navigation" data-zh-aria-label="作品导航">
+    <a href="/" data-zh="← Flamo 创意集">← Flamo Riffs</a>
+    <a href="https://flamo.dev/" data-zh="Flamo 官网 ↗">Flamo website ↗</a>
+  </nav>
+  <div class="work-actions"><a class="riffs-newsletter" href="https://flamo.dev/newsletter/?from=riffs/${page}" target="_blank" rel="noopener" data-zh="邮件订阅">Email updates</a><riffs-language-picker></riffs-language-picker></div>
+</header>`)
     .replace('<div id="status" role="status">&#27491;&#22312;&#21152;&#36733;&#8230;</div>', '<div id="status" role="status" data-zh="正在加载…">Loading…</div>')
     .replace(/<script type="application\/octet-stream" id="(p\d+)">[\s\S]*?<\/script>/g,
       (block, id) => sharedBlocks.has(id) ? '' : block)

@@ -2,12 +2,13 @@ import { language } from './riffs-language.js';
 
 // Both diagrams use a 1920 × 1080 design surface.
 const cockpit = document.querySelector('.cockpit');
+const viewport = cockpit.parentElement;
 function fitScreen() {
-  const scale = Math.min(innerWidth / 1920, innerHeight / 1080);
+  const scale = Math.min(viewport.clientWidth / 1920, viewport.clientHeight / 1080);
   cockpit.style.transform = `translate(-50%, -50%) scale(${scale})`;
 }
 fitScreen();
-window.addEventListener('resize', fitScreen);
+new ResizeObserver(fitScreen).observe(viewport);
 
 const time = document.querySelector('.clock .time');
 const date = document.querySelector('.clock .date');

@@ -1,40 +1,50 @@
-# Flamo Riffs 创意集
+# Flamo Riffs
 
-**[在线访问 Flamo Riffs 创意集 →](https://riffs.flamo.dev/)**
+**English** · [简体中文](README.zh-CN.md)
 
-这里收录了用 Flamo 制作的交互演示。首页可以搜索作品、观看视频预览，点击卡片就能动手体验。在第一个作品[管道实验室](https://riffs.flamo.dev/pipe/)里，你可以逐条暂停管道、反转流向，也可以用一组按钮同时控制整个管网。
+Flamo turns Figma designs into interactive works you can share on the web. In Flamo Studio, you can attach behavior directly to the layers you drew. Describe the interaction to AI, or write it in TypeScript or JavaScript, then try it in Preview. Export the result as a standalone HTML file to share, or as a Web Component to embed in your app.
 
-## 官方交互示例
+[Explore the live gallery](https://riffs.flamo.dev/) · [Try Flamo](https://flamo.dev/) · [Developer docs](https://flamo.dev/docs/)
 
-按手势、组件方法或 Runtime API 在 [案例索引](interaction-examples.json) 查找作品。`source` 指向实际脚本，`first` 和 `last` 标记相关调用。可在 [线上目录](https://riffs.flamo.dev/interaction-library/cases.json) 直接打开对应源码行。[Glass Folder](interaction-examples/glass-folder.ts) 是基于原稿运动区间的完整手势参考，覆盖移入、快速反向、两次激活和播放交接。
+## Watch Flamo in action
 
-## 关于 Flamo
+Pull the orange lever in *Counter Drop* and four reels spin. This two-minute introduction shows how a pair of Figma counters became a playable game, how a pipe keeps its hand-drawn bend when embedded in a web page, and how a 3D dandelion meadow fits in one HTML file.
 
-Flamo 是一款交互界面创作工具。你可以导入 Figma 设计，保留图层和组件结构，用 TypeScript 或 JavaScript 为图形添加行为、接入数据，再到 Flamo Studio 中预览和调试。完成的设计可以导出为 Web Component，嵌入自己的网页或业务系统。管道实验室里的五个管道组件就是这样接入页面的。
+https://github.com/user-attachments/assets/2c9c2464-ecfd-4ced-b10f-702c052ae72c
 
-[访问 Flamo 官网](https://flamo.dev/) · [阅读开发文档](https://flamo.dev/docs/)
+[English video file · 2:08](readme-video/flamo-en.mp4)
 
-## 本地预览
+## Try an interaction
+
+- **Electro Wave.** Move your pointer across the canvas. Eight blue lights glide to the closest point on their own tracks. [Try Electro Wave](https://riffs.flamo.dev/electro-wave/)
+- **Pipe Lab.** Pause one pipe, reverse another, or control the whole network at once. The page uses five Web Components exported from Flamo. [Try Pipe Lab](https://riffs.flamo.dev/pipe/)
+
+The gallery has searchable previews. Open any card to try the work yourself.
+
+## Official interaction examples
+
+Search the [case index](interaction-examples.json) by gesture, component method, or Runtime API. Each entry’s `source` points to the script, and `first` and `last` mark the relevant lines. The [live catalog](https://riffs.flamo.dev/interaction-library/cases.json) links directly to those lines on GitHub. The [Glass Folder script](interaction-examples/glass-folder.ts) shows how hovering, two quick clicks, and leaving the folder interact with the original animation. The [official interaction library](interaction-library/) contains reusable behaviors and integration recipes.
+
+## Preview locally
 
 ```sh
 node html-examples/serve.mjs 8189
 ```
 
-打开 [本地创意首页](http://localhost:8189/) 即可预览。`html-examples/home/` 是首页源码目录。`html-examples/shumei/`、`html-examples/jianpan/` 分别存放输煤监测中心、智能监盘中心及各自的 15 秒预览视频。
+Open the [local gallery](http://localhost:8189/). The gallery source is in `html-examples/home/`. The coal-handling and plant-monitoring demos and their 15-second previews are in `html-examples/shumei/` and `html-examples/jianpan/`.
 
-## 构建静态站
+## Build the static site
 
 ```sh
 node build.mjs
 ```
 
-将生成的 `dist/` 作为**独立站点根目录**。构建器保留导出包里的组件合同，并将在线页面的模块和 Worker 指向同源的共享资源。不要直接发布整个工程（其中含有源设计和验收材料）。静态主机需要正常提供目录首页、JavaScript MIME、HTTPS 和视频 Range 请求。
+Publish the contents of `dist/` as the site root. The build preserves the component contracts and points modules and workers to shared assets on the same origin. Project sources and verification files stay in the checkout. The static host must support directory indexes, JavaScript MIME types, HTTPS, and video range requests.
 
-所有在线案例共用 `/common/flamo-runtime/` 和 `/common/component-viewport.js`。升级时，将最新 Flamo 共享资源包安装到 `html-examples/common/`，并将包提供的两个版本参数更新到 `html-examples/common/cdn-config.js`。风大侠和蒲公英的原始单页 HTML 仍可离线打开。发布时用空目录构建，避免带入上次发布的旧文件。
+All hosted examples use `/common/flamo-runtime/` and `/common/component-viewport.js`. To upgrade them, install the Flamo shared resources in `html-examples/common/` and update the two version parameters in `html-examples/common/cdn-config.js`. The original MasterWind and Dandelion HTML exports also work offline. Use an empty build directory for a release.
 
-## Flamo 自托管配置
+## Self-hosting with Flamo
 
-配套 Flamo 仓库中，`OfficialHeader.astro` 定义“创意”导航；`deploy/ubuntu/Caddyfile` 为 `riffs.flamo.dev` 提供独立静态站点，`deploy/ubuntu/compose.yaml` 将宿主机 `/srv/flamo-riffs` 只读挂到 Web 容器的 `/srv/riffs`。官网仍使用原有站点根目录。
+In the companion Flamo repository, `OfficialHeader.astro` defines the gallery navigation link. `deploy/ubuntu/Caddyfile` serves `riffs.flamo.dev` as a separate static site, and `deploy/ubuntu/compose.yaml` mounts `/srv/flamo-riffs` read-only at `/srv/riffs` in the web container. The main Flamo website uses its own site root.
 
-首次发布：在服务器上将经过验证的 `dist/` 内容解包到新的 `/srv/flamo-riffs/releases/<版本>/`，使 `/srv/flamo-riffs/current` 指向相对目标 `releases/<版本>`，再发布 Flamo 官网 Web 导航、Caddy 和挂载配置。后续更新创意集只需发布新的静态目录并原子切换 `current`；回滚切回前一版本。不要在容器内覆盖文件。发布后验证首页、搜索、视频播放、详情交互，以及从官网到演示站的跳转。
-
+For the first deployment, unpack the verified build into `/srv/flamo-riffs/releases/<version>/`, point `/srv/flamo-riffs/current` at the relative target `releases/<version>`, and deploy the navigation, Caddy configuration, and volume mount. For later releases, stage a new directory and switch `current` atomically. To roll back, switch it to the previous release. Verify the homepage, search, video playback, detail-page interactions, and navigation from the Flamo website.

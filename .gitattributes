@@ -1,3 +1,6 @@
 # Preserve the offline page's embedded binary payload and original line endings.
 html-examples/glassFolder/index.html binary
 html-examples/electroWave/index.html binary
+html-examples/softScrollY/index.html binary
+# Keep the published viewport bytes identical to the shared resource package.
+html-examples/common/component-viewport.js text eol=crlf

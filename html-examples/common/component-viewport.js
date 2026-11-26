@@ -23,7 +23,10 @@ export function computeComponentViewport(bounds, width, height, fit = 'contain')
 export function attachComponentViewport(host, app, getBounds, options) {
   const viewport = host.shadowRoot.querySelector('.viewport');
   const extent = host.shadowRoot.querySelector('.extent');
-  const canvas = host.canvas;
+  return attachCanvasViewport(viewport, extent, host.canvas, app, getBounds, options);
+}
+
+export function attachCanvasViewport(viewport, extent, canvas, app, getBounds, options) {
   const fit = options.fit;
   viewport.style.overflowX = fit === 'height' ? 'auto' : 'hidden';
   viewport.style.overflowY = fit === 'width' ? 'auto' : 'hidden';

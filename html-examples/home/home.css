@@ -36,4 +36,6 @@ h1{font-size:clamp(43px,5.2vw,78px);letter-spacing:-.055em;line-height:1.08;marg
 .entry-media.cockpit{background:linear-gradient(135deg,#18354d,#32576a);padding:14px 5%;aspect-ratio:auto}.cockpit .film{border-color:#466678}
 .entry-media.court{background:#e5eef1;padding:14px 5%;aspect-ratio:auto}
 .court .film{width:min(100%,242px);aspect-ratio:4/5;border-color:#bccbd2}
+.entry-media.photo-strip{background:#eeeae0;padding:14px 5%;aspect-ratio:auto}
+.photo-strip .film{width:min(100%,242px);aspect-ratio:4/5;border-color:#d0cabe}
 .entry-copy .motion-credit{margin-top:.65em}

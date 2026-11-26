@@ -1,4 +1,12 @@
 {
+  "soft-scroll-y": {
+    "title": "SoftScrollY",
+    "usage": "原版 Figma 设计稿由 Nastaran Jamali 创作。我在此基础上用 Flamo 和 Codex 加入了真实拖动交互。上下拖动时，照片跟随指针位移；松手后，照片按释放速度继续滑动并逐渐停下。",
+    "api": ["ctx.on", "ctx.eventDelta", "track.timeAtValue", "ctx.figmaMotion.seek", "ctx.onUpdate"],
+    "source": "flamo-projects/softScrollY/src/scroll-y.ts",
+    "first": "function seek(y: number) {",
+    "last": "if (performance.now() - lastMove < 250) endCoast = ctx.onUpdate(coast);"
+  },
   "electro-wave": {
     "title": "Electro Wave",
     "usage": "原版 Figma 设计稿由 Hardik Gondhiya 创作。我用 Flamo 和 Codex 加入了鼠标交互：八条蓝色光条从原稿当前的播放位置沿各自的弯轨向鼠标聚拢，鼠标移出后再聚向中央标志。",

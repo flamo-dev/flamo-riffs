@@ -1,5 +1,7 @@
 # Recent Changes
 
+- 2026-11-26: Released `0.24.0` with [motion-drag-scrubber@1.0.0](recipes/motion-drag-scrubber.md), extracted from SoftScrollY.
+
 - 2026-11-26: Released `0.23.0` with [pointer-rail-follower@1.0.0](recipes/pointer-rail-follower.md), extracted from Electro Wave.
 
 - 2026-11-24: Released `0.22.0` with [motion-folder@1.0.0](recipes/motion-folder.md), extracted from Glass Folder. Projects supply their own hit area, layers, motion ranges and flyout offsets.

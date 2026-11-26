@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "package": "@flamo/interaction-library",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "registryPolicy": {
     "immutableVersions": true,
     "defaultAllowedTiers": ["official", "recommended"],
@@ -12,6 +12,26 @@
     "namespacePolicy": "Community interactions must publish under their own package scope. They may compete with official assets by kind and contract, but must not reuse an official package/name/version identity."
   },
   "assets": [
+    {
+      "id": "base/motion-drag-scrubber",
+      "name": "@flamo/motion-drag-scrubber",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "motion-gesture",
+      "summary": "Drag a translation track to seek the authored frame, then coast from release velocity.",
+      "triggers": ["drag", "momentum", "scrub timeline", "拖动", "惯性", "时间轴"],
+      "roles": ["frame", "content"],
+      "events": ["pointerdown", "drag", "dragend", "pointerup", "pointercancel", "wheel", "playback-state"],
+      "capabilities": ["motion-track-inversion", "motion-seek", "horizontal-drag", "vertical-drag", "inertia", "playback-handoff"],
+      "contracts": ["monotonic-translation", "local-drag-displacement", "instance-local"],
+      "examples": ["soft-scroll-y"],
+      "source": "src/base/motion-drag-scrubber.ts",
+      "recipe": "recipes/motion-drag-scrubber.md",
+      "packageRef": "@flamo/interaction-library/base/motion-drag-scrubber"
+    },
     {
       "id": "base/pointer-rail-follower",
       "name": "@flamo/pointer-rail-follower",

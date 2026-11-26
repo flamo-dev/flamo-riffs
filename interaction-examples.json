@@ -1,7 +1,7 @@
 {
   "electro-wave": {
     "title": "Electro Wave",
-    "usage": "八条光段沿各自的弯轨趋近鼠标，指针接手时继承原稿播放进度，移出后向标志聚拢。",
+    "usage": "原版 Figma 设计稿由 Hardik Gondhiya 创作。我用 Flamo 和 Codex 加入了鼠标交互：八条蓝色光条从原稿当前的播放位置沿各自的弯轨向鼠标聚拢，鼠标移出后再聚向中央标志。",
     "api": ["ctx.figmaMotion.getState", "ctx.figmaMotion.pause", "ctx.mounted.probe", "pointermove", "ctx.onUpdate"],
     "source": "flamo-projects/electroWave/src/pointer-wave.ts",
     "first": "function follow(point: Point) {",

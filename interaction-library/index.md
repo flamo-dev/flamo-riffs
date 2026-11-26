@@ -17,6 +17,8 @@ Read this map first. Search with `rg`, then open only the selected capability or
 
 ## Base
 
+- [Horizontal flick strip](src/base/flick-motion-strip.ts) turns a quick release or a wheel gesture into travel along an authored horizontal track. [SoftScrollX recipe](recipes/flick-motion-strip.md).
+
 - [Motion drag scrubber](src/base/motion-drag-scrubber.ts) drives a Figma Motion frame through a drag, release and inertial stop. [SoftScrollY recipe](recipes/motion-drag-scrubber.md).
 
 - [Pointer rail follower](src/base/pointer-rail-follower.ts) slides a fixed-length highlight to the nearest point on each track. [Electro Wave recipe](recipes/pointer-rail-follower.md).

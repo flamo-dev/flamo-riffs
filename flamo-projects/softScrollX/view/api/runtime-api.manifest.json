@@ -144,6 +144,27 @@
       ]
     },
     {
+      "name": "ctx.eventDelta",
+      "aliases": ["coordinates", "coordinate", "drag delta", "dragDelta", "wheel delta", "坐标", "坐标系", "拖动位移"],
+      "signature": "ctx.eventDelta(dragOrWheelEvent, referenceNodeIdOrRole?) -> { x, y } | null",
+      "constraints": [
+        "Use a fixed reference such as the content parent. Drag is cumulative from pointer down. Wheel is one increment, normalized from pixels, lines or pages. Both return local design units, including camera and parent transforms.",
+        "ctx.on('drag', e => { const delta = ctx.eventDelta(e); if (delta) update(startY + delta.y); }); For wheel, use currentY - delta.y for conventional content scrolling.",
+        "For a point use ctx.eventPoint. For raw canvas-layout CSS points query camera. For a Motion gesture query timeAtValue and measure with project.previewDrag."
+      ]
+    },
+    {
+      "name": "ctx.camera",
+      "signature": "ctx.camera.get(), screenToWorld(point), worldToScreen(point), set(patch), panTo(point), zoomTo(zoom), fit(target), reset()",
+      "constraints": ["screenToWorld takes canvas-layout CSS pixels. For a routed event use ctx.eventPoint or ctx.eventDelta with a stable reference. Camera zoom and devicePixelRatio require no manual compensation."]
+    },
+    {
+      "name": "FigmaMotionTrack.timeAtValue",
+      "aliases": ["timeAtValue", "track.timeAtValue", "scrub"],
+      "signature": "track.timeAtValue(value, {axis?, startMs?, endMs?}?) -> number | null",
+      "constraints": ["axis is a zero-based channel component (Y = 1 on MOTION_TRANSLATION_XY). Time is milliseconds. A monotone interval can increase or decrease. Outside its value range the result is clamped. Specify an interval for a reversing track. Unreachable HOLD values, ambiguous intervals, and invalid inputs return null. For an attainable plateau the earliest time is used."]
+    },
+    {
       "name": "ctx.eventPoint",
       "signature": "ctx.eventPoint(event, targetRef?) -> { x, y } | null",
       "constraints": [

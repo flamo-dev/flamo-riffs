@@ -4570,7 +4570,7 @@ export interface FlamoClickEvent extends BaseFlamoEvent {
   detail: number;
 }
 export interface FlamoWheelEvent extends BaseFlamoEvent {
-  type: 'wheel'; deltaX: number; deltaY: number; deltaZ: number; deltaMode: number;
+  type: 'wheel'; deltaX: number; deltaY: number; deltaZ: number; deltaMode: number; isPinch?: boolean;
 }
 export interface FlamoKeyboardEvent extends BaseFlamoEvent {
   type: 'keydown' | 'keyup'; key: string; code: string; keyCode: number; repeat: boolean;
@@ -4723,6 +4723,7 @@ export interface FigmaMotionTrack {
   readonly startMs: number;
   readonly endMs: number;
   sample(timeMs: number): readonly number[];
+  timeAtValue(value: number, options?: {axis?: number; startMs?: number; endMs?: number}): number | null;
 }
 
 export interface FigmaMotionPlaybackState {
@@ -4797,6 +4798,7 @@ export interface NodeScriptContext {
   onActivate(ref: string | undefined, handler: (event: NodeScriptEventMap['click'] | NodeScriptEventMap['keydown']) => void, options?: NodeScriptActivationOptions): () => void;
   /** Prefer this over hard-coded parent/child offsets. Uses event.coordinates.world and the target's live transform. */
   eventPoint(event: BaseFlamoEvent, ref?: string): FlamoPoint2D | null;
+  eventDelta(event: FlamoDragEvent | FlamoWheelEvent, ref?: string): FlamoPoint2D | null;
   /** @deprecated Prefer mounted.children(ref). */
   mountedContent(ref: string): NodeScriptMountedContentSnapshot | null;
   trace(action: string, detail?: unknown): void;

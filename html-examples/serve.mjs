@@ -18,6 +18,7 @@ const offlinePages = new Map([
   [resolve(root, 'glassFolder'), 'index.html'],
   [resolve(root, 'electroWave'), 'index.html'],
   [resolve(root, 'softScrollY'), 'index.html'],
+  [resolve(root, 'softScrollX'), 'index.html'],
 ]);
 const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json','.wasm':'application/wasm','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.jpg':'image/jpeg','.mp4':'video/mp4','.woff2':'font/woff2' };
 createServer(async (req,res) => {
@@ -29,7 +30,7 @@ createServer(async (req,res) => {
     if (!['GET','HEAD'].includes(req.method)) return res.writeHead(405).end();
     const url = new URL(req.url,'http://localhost');
     const path = decodeURIComponent(url.pathname);
-    const sourcePath = path.replace(/^\/masterwind(?=\/|$)/, '/MasterWind').replace(/^\/card-shuffle(?=\/|$)/, '/cardShuffle').replace(/^\/glass-folder(?=\/|$)/, '/glassFolder').replace(/^\/electro-wave(?=\/|$)/, '/electroWave').replace(/^\/soft-scroll-y(?=\/|$)/, '/softScrollY');
+    const sourcePath = path.replace(/^\/masterwind(?=\/|$)/, '/MasterWind').replace(/^\/card-shuffle(?=\/|$)/, '/cardShuffle').replace(/^\/glass-folder(?=\/|$)/, '/glassFolder').replace(/^\/electro-wave(?=\/|$)/, '/electroWave').replace(/^\/soft-scroll-y(?=\/|$)/, '/softScrollY').replace(/^\/soft-scroll-x(?=\/|$)/, '/softScrollX');
     let target = resolve(root,'.'+(path === '/' ? '/home/index.html' : sourcePath));
     const rel = relative(root,target);
     if (rel.startsWith('..') || isAbsolute(rel)) return res.writeHead(403).end();
@@ -44,7 +45,7 @@ createServer(async (req,res) => {
     if (offlinePage && !hostedPage) headers['Content-Type'] = 'text/html; charset=windows-1252';
     if (hostedPage || isExportEntry(path)) {
       const folder = basename(dirname(target));
-      const page = ({cardShuffle: 'card-shuffle', glassFolder: 'glass-folder', electroWave: 'electro-wave', softScrollY: 'soft-scroll-y'})[folder] ?? folder.toLowerCase();
+      const page = ({cardShuffle: 'card-shuffle', glassFolder: 'glass-folder', electroWave: 'electro-wave', softScrollY: 'soft-scroll-y', softScrollX: 'soft-scroll-x'})[folder] ?? folder.toLowerCase();
       const body = Buffer.from(hostedPage ? hostOfflinePage(await readFile(target), page) : relocateExport(path,await readFile(target,'utf8')));
       return res.writeHead(200,{...headers,'Content-Length':body.length}).end(req.method==='HEAD'?undefined:body);
     }

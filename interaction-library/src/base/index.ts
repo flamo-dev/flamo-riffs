@@ -8,4 +8,5 @@ export * from './stage-camera';
 export * from './character-performance';
 export * from './motion-folder';
 export * from './motion-drag-scrubber';
+export * from './flick-motion-strip';
 export * from './pointer-rail-follower';

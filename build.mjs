@@ -52,6 +52,8 @@ await copy('electroWave/electro-wave-preview.mp4', 'electro-wave/electro-wave-pr
 await copy('electroWave/electro-wave-poster.jpg', 'electro-wave/electro-wave-poster.jpg');
 await copy('softScrollY/soft-scroll-y-preview.mp4', 'soft-scroll-y/soft-scroll-y-preview.mp4');
 await copy('softScrollY/soft-scroll-y-poster.jpg', 'soft-scroll-y/soft-scroll-y-poster.jpg');
+await copy('softScrollX/soft-scroll-x-preview.mp4', 'soft-scroll-x/soft-scroll-x-preview.mp4');
+await copy('softScrollX/soft-scroll-x-poster.jpg', 'soft-scroll-x/soft-scroll-x-poster.jpg');
 // The offline exports embed binary data as Windows-1252 text. The web host serves HTML as UTF-8.
 for (const [file, destination] of [
   ['MasterWind/MasterWind.html', 'masterwind/index.html'],
@@ -63,6 +65,7 @@ for (const [file, destination] of [
   ['glassFolder/index.html', 'glass-folder/index.html'],
   ['electroWave/index.html', 'electro-wave/index.html'],
   ['softScrollY/index.html', 'soft-scroll-y/index.html'],
+  ['softScrollX/index.html', 'soft-scroll-x/index.html'],
 ]) {
   await writeFile(join(out, destination), hostOfflinePage(await readFile(join(source, file)), destination.split('/')[0]));
 }

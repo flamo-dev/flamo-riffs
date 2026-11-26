@@ -1,4 +1,12 @@
 {
+  "soft-scroll-x": {
+    "title": "SoftScrollX",
+    "usage": "原版 Figma 设计稿由 Nastaran Jamali 创作。我在此基础上用 Flamo 和 Codex 加入了真实拖动交互。左右拖动影集，快速松手会继续滑行，按住停稳再松手则停在当前照片。横向触控板和竖向滚轮都可浏览。",
+    "api": ["ctx.eventDelta", "track.timeAtValue", "ctx.figmaMotion.seek", "ctx.onUpdate", "wheel"],
+    "source": "flamo-projects/softScrollX/src/scroll-x.ts",
+    "first": "function drag(pointerId, dx) {",
+    "last": "if (Math.abs(speed) < 0.012) stopCoast();"
+  },
   "soft-scroll-y": {
     "title": "SoftScrollY",
     "usage": "原版 Figma 设计稿由 Nastaran Jamali 创作。我在此基础上用 Flamo 和 Codex 加入了真实拖动交互。上下拖动时，照片跟随指针位移；松手后，照片按释放速度继续滑动并逐渐停下。",

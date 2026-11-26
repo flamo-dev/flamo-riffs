@@ -1,5 +1,7 @@
 # Recent Changes
 
+- 2026-11-27: Released `0.25.0` with [flick-motion-strip@1.0.0](recipes/flick-motion-strip.md), extracted from SoftScrollX.
+
 - 2026-11-26: Released `0.24.0` with [motion-drag-scrubber@1.0.0](recipes/motion-drag-scrubber.md), extracted from SoftScrollY.
 
 - 2026-11-26: Released `0.23.0` with [pointer-rail-follower@1.0.0](recipes/pointer-rail-follower.md), extracted from Electro Wave.

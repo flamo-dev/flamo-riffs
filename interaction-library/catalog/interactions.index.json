@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "package": "@flamo/interaction-library",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "registryPolicy": {
     "immutableVersions": true,
     "defaultAllowedTiers": ["official", "recommended"],
@@ -12,6 +12,26 @@
     "namespacePolicy": "Community interactions must publish under their own package scope. They may compete with official assets by kind and contract, but must not reuse an official package/name/version identity."
   },
   "assets": [
+    {
+      "id": "base/flick-motion-strip",
+      "name": "@flamo/flick-motion-strip",
+      "version": "1.0.0",
+      "publisher": "flamo",
+      "tier": "official",
+      "lifecycle": "active",
+      "immutable": true,
+      "kind": "motion-gesture",
+      "summary": "Drag an authored horizontal strip, coast on a quick release, stop after holding, or scroll with either wheel axis.",
+      "triggers": ["horizontal filmstrip", "flick", "wheel", "横向影集", "轻甩", "滚轮"],
+      "roles": ["frame", "content"],
+      "events": ["pointerdown", "drag", "dragend", "pointerup", "pointercancel", "wheel", "playback-state"],
+      "capabilities": ["motion-track-inversion", "motion-seek", "release-velocity", "wheel-axis-fallback", "playback-handoff"],
+      "contracts": ["horizontal-translation", "fixed-frame-local-displacement", "instance-local"],
+      "examples": ["soft-scroll-x"],
+      "source": "src/base/flick-motion-strip.ts",
+      "recipe": "recipes/flick-motion-strip.md",
+      "packageRef": "@flamo/interaction-library/base/flick-motion-strip"
+    },
     {
       "id": "base/motion-drag-scrubber",
       "name": "@flamo/motion-drag-scrubber",

@@ -1,6 +1,7 @@
 import { runtimePath, viewportPath } from './common/cdn-config.js';
 
 const titles = {
+  'soft-scroll-x': '<title data-zh="SoftScrollX · 横向影集">SoftScrollX</title>',
   'soft-scroll-y': '<title data-zh="SoftScrollY · 拖动影集">SoftScrollY</title>',
   'electro-wave': '<title data-zh="Electro Wave · 电光轨道">Electro Wave</title>',
   masterwind: '<title data-zh="Flamo · 风大侠 · 借风过峡">Flamo · MasterWind</title>',
@@ -19,7 +20,7 @@ const counterLayout = '<style>body{display:flex;flex-direction:column}body>main{
 // site's runtime while the offline loader continues to unpack the artwork and interactions.
 export function hostOfflinePage(bytes, page) {
   let html = new TextDecoder('windows-1252').decode(bytes);
-  if (page === 'soft-scroll-y') {
+  if (page === 'soft-scroll-x' || page === 'soft-scroll-y') {
     const credit = '<footer class="artwork-credit" data-zh="原版 Figma 设计稿由 Nastaran Jamali 创作。我在此基础上用 Flamo 和 Codex 加入了真实拖动交互。">Nastaran Jamali created the original Figma design. I used Flamo and Codex to make the photo strip draggable.</footer>';
     html = html.replace('<body>', counterLayout.replace('.counter-credit', '.artwork-credit') + '<body>').replace('<main></main>', '<main></main>' + credit);
   }

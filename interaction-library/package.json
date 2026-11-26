@@ -1,6 +1,6 @@
 {
   "name": "@flamo/interaction-library",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "private": true,
   "license": "UNLICENSED",
   "type": "module",
@@ -9,6 +9,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./base": "./src/base/index.ts",
+    "./base/flick-motion-strip": "./src/base/flick-motion-strip.ts",
     "./base/motion-drag-scrubber": "./src/base/motion-drag-scrubber.ts",
     "./hmi": "./src/hmi/index.ts",
     "./hmi/pipe-flow": "./src/hmi/pipe-flow.ts",

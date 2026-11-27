@@ -2,9 +2,9 @@
 
 Deploy flamo-runtime/ and component-viewport.js directly under http://localhost:8080/common/. Keep the Runtime directory contents together; do not add another directory level or query parameters to filenames.
 
-For this release, copy `runtime/flamo-runtime/` and `runtime/component-viewport.js` from the official [Flamo 26.1126.05 feature package](https://flamo.dev/desktop-features/releases/92752732634d735fad543ec2cbc9b7f4ed85d9ca77cba5e3334388d6d7ddce4a/features.zip). Its SHA-256 is `b310754386df3411ec9a1397226361dc247ba6b83c9106d31290a45b2d71313b`.
+For this release, copy `runtime/flamo-runtime/` and `runtime/component-viewport.js` from the official [Flamo 26.1127.02 feature package](https://flamo.dev/desktop-features/releases/a760b03a2724a10764469ea9f7a1c9731302c00e63a2df459256dbd9b01ce10e/features.zip). Its SHA-256 is `3c987ce201ca8db9f3b370a3984f0482d7d0e3ef2f2f95bd9f288282895cff56`.
 
-Runtime: http://localhost:8080/common/flamo-runtime/index.es.js?v=5778be0cd289c3718fd780d30ee8718a3fd87c697e5cbb46a9710e1d942b08d1
+Runtime: http://localhost:8080/common/flamo-runtime/index.es.js?v=8dfb5cf5a7b9086ddd588d557e545c8c9e2f0799e3a5bf50ea075898d24ad615
 Viewport: http://localhost:8080/common/component-viewport.js?v=2422d4da6065ff4fedf2c98c0c721f0fb9cb6e546389c6a6448a00c0f7d6dd51
 
 Serve JavaScript with a JavaScript MIME type and allow cross-origin module requests (CORS). Use a new version directory when updating a versioned deployment.

@@ -1,4 +1,12 @@
 {
+  "love-trip": {
+    "title": "Love Trip",
+    "usage": "原版 Figma 设计稿由 Nastaran Jamali 创作。在此基础上，用 Flamo 和 Codex 实现真正的播放交互。按中央键播放 15 秒音乐，唱片与音柱沿原稿轨迹运动，再按停止归零。",
+    "api": ["ctx.onActivate", "ctx.figmaMotion.playRange", "ctx.figmaMotion.subscribe", "ctx.onUpdate", "AudioContext"],
+    "source": "flamo-projects/loveTrip/src/love-trip-player.ts",
+    "first": "const time = (seconds * 1000) % state.durationMs;",
+    "last": "const update = ctx.onUpdate(() => followAudio());"
+  },
   "soft-scroll-x": {
     "title": "SoftScrollX",
     "usage": "原版 Figma 设计稿由 Nastaran Jamali 创作。我在此基础上用 Flamo 和 Codex 加入了真实拖动交互。左右拖动影集，快速松手会继续滑行，按住停稳再松手则停在当前照片。横向触控板和竖向滚轮都可浏览。",

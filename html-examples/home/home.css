@@ -38,4 +38,6 @@ h1{font-size:clamp(43px,5.2vw,78px);letter-spacing:-.055em;line-height:1.08;marg
 .court .film{width:min(100%,242px);aspect-ratio:4/5;border-color:#bccbd2}
 .entry-media.photo-strip{background:#eeeae0;padding:14px 5%;aspect-ratio:auto}
 .photo-strip .film{width:min(100%,242px);aspect-ratio:4/5;border-color:#d0cabe}
+.entry-media.record-player{background:#eadedb;padding:14px 5%;aspect-ratio:auto}
+.record-player .film{width:min(100%,280px);aspect-ratio:25/26;border-color:#b69894}
 .entry-copy .motion-credit{margin-top:.65em}
